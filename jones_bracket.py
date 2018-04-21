@@ -13,29 +13,14 @@ ctyr2 = [[8,1,1,2],[2,7,3,8],[4,5,5,6],[6,3,7,4]]
 troj = [[6,1,1,2],[2,5,3,6],[4,3,5,4]]
 troj2 =[[6,1,1,2],[4,3,5,4],[2,5,3,6]] 
 dvoj = [[4,1,1,2],[2,3,3,4]]
-A = {1 : 1}
-B = {-1 : 1}
-Ao = {2 : -1, -2 : -1}
+
 N = 0
 
-
-
-def krat(p, q):
-    s = {}
-    for j in list(p):
-        for k in list(q):
-            s[j+k] = s.get(j+k, 0) + p[j]*q[k]
-    return s
-    
-
-def plus(p, q):
-    return {exp : p.get(exp, 0) + q.get(exp, 0) for exp in set(p) | set(q)}
-
-def writhe(uzel):
+def writhe(knot):
     w = 0
-    n = len(uzel)
-    for kriz in uzel:
-        a, b, c, d = kriz
+    n = len(knot)
+    for cross in knot:
+        a, b, c, d = cross
         if a == b or c == d:
             w = w + 1
             continue
@@ -54,98 +39,66 @@ def writhe(uzel):
             w = w - 1
     return w
 
-def spoj(uzel, co, kam):
-    knot = copy.deepcopy(uzel)
+def connect(knot, what, where):
+    knot = copy.deepcopy(knot)
     for i in range(len(knot)):
         for j in range(4):
-            if knot[i][j] == co:
-                knot[i][j] = kam
+            if knot[i][j] == what:
+                knot[i][j] = where
     return knot
 
-def dic2pol(d):
-    for e in sorted(d):
-        if d[e] != 0:
-            print(d[e], "(A^", e, ")", end = ' ')
-    return
+def addWrithe(poly, knot):
+    w = writhe(knot)
+    C = laurent({-3*w: 1})
+    return C * poly
 
-def tisk(d):
-    for e in sorted(d):
-        if d[e] != 0:
-            print(d[e], "(t^", e/4, ")", end = ' ')
-    return
-
-def invariantuj(poly, uzel):
-    w = writhe(uzel)
-    C = {-3*w: 1}
-    return krat(C, poly)
-
-
-
-def bracket(uzel, flag):
+def bracket(givenKnot, unknots):
+    knot = copy.deepcopy(givenKnot)
+    poly = laurent({})
     global N
-    if flag == 0:
+    if unknots == 0:
         N=N+1
-    knot = copy.deepcopy(uzel)
-    if flag:
-        if flag == 1 and knot == []:
-            poly = {}
-            poly[0] = 1
-            return poly
-        poly = krat(Ao, bracket(knot, flag-1))
-        #print(uzel, " s kruznici ma polynom ")
-        #dic2pol(poly)
-        #print()
-        #print("vracim " ,uzel, " s kruznici")
-        #dic2pol(poly)
-        #print(" ")
+    if unknots > 0:
+        if unknots == 1 and knot == []:
+            poly = one
+            return one
+        poly = C * bracket(knot, unknots-1)
         return poly
-    poly = {}
     if knot == []:
-        poly[0] = 1
-        #print("jenom kruznice")
+        poly = one
         return poly
+    
     a, b, c, d = knot.pop();
-    flag1, flag2 = 0, 0
-    if (a == b or c == d) or (a == d and b == c):   # ohyby sem a tam
-        flag1 = 1
-    if (a == d or b == c) or (a == b and c == d):   # ohyby sem a tam
-        flag2 = 1
-    if a == b and c == d:
-        flag1 = 2
-    if a == d and b == c:
-        flag2 = 2
-    if d == a:
-        knot1 = spoj(knot, b, a)
-        knot1 = spoj(knot1, c, d)
+    unknots1, unknots2 = 0, 0
+
+    if a == b and c == d:    #A
+        unknots1 = 2
+    elif (a == b or c == d) or (a == d and b == c):  #B
+        unknots1 = 1
+    if a == d and b == c:     #C
+        unknots2 = 2
+    elif (a == d or b == c) or (a == b and c == d):   #D
+        unknots2 = 1
+        
+    if d == a:   #E
+        knot1 = connect(knot, b, a)
+        knot1 = connect(knot1, c, d)
     else:
-        knot1 = spoj(knot, a, b)
-        knot1 = spoj(knot1, d, c)
-    if a == b:
-        knot2 = spoj(knot, d, a)
-        knot2 = spoj(knot2, c, b)
+        knot1 = connect(knot, a, b)
+        knot1 = connect(knot1, d, c)
+    if a == b:    #F
+        knot2 = connect(knot, d, a)
+        knot2 = connect(knot2, c, b)
     else:
-        knot2 = spoj(knot, a, d)
-        knot2 = spoj(knot2, b, c)
-    poly = plus(krat(A, bracket(knot1, flag1)), krat(B, bracket(knot2, flag2)))
-    #print(uzel, " ma polynom ")
-    #dic2pol(poly)
-    #print(" ")
-    #inv = invariantuj(poly, uzel)
-    #inv = invariantuj(poly, uzel)
-    #print(uzel)
-    #dic2pol(poly)
-    #print("writhe ", writhe(uzel))
-    #tisk(inv)
-    #print(" ")
+        knot2 = connect(knot, a, d)
+        knot2 = connect(knot2, b, c)
+        
+    poly = (A * bracket(knot1, unknots1)) + (B * bracket(knot2, unknots2))
     return poly
 
-def jones(uzel):
-    br = bracket(uzel, 0)
-    inv = invariantuj(br, uzel)
-    tisk(inv)
-    return inv
+def jones(knot):
+    bracketPoly = bracket(knot, 0)
+    invPoly = addWrithe(bracketPoly, knot)
+    jonesPoly = substitution(invPoly)
+    return toText(jonesPoly)
 
-
-
-#a =bracket(trefoil, False)  
-#dic2pol(a)
