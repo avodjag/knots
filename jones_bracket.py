@@ -1,4 +1,5 @@
 import copy
+from laurent import *
 
 # uzly
 trefoil = [[1,5,2,4],[3,1,4,6],[5,3,6,2]]
@@ -144,11 +145,6 @@ def jones(uzel):
     tisk(inv)
     return inv
 
-def posloup(pred):
-    t_2 = {2:1}
-    c = {-1/2: -1, 3/2:1}
-    return plus(krat(pred, t_2), c)
-    
 
 
 #a =bracket(trefoil, False)  
