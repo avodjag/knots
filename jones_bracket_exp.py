@@ -52,6 +52,7 @@ def addWrithe(poly, knot):
     C = laurent({-3*w: 1})
     return C * poly
 
+
 def bracket(givenKnot, unknots):
     knot = copy.deepcopy(givenKnot)
     poly = laurent({})
