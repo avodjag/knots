@@ -38,6 +38,12 @@ def substitution(poly):
     substPowers = {exp/4 : poly.powers[exp] for exp in poly.powers.keys()}
     return laurent(substPowers)
 
+def power(poly, exp):
+    res = one
+    for i in range(exp):
+        res = res*poly
+    return res
+
 # constants
 A = laurent({1 : 1})
 B = laurent({-1 : 1})
