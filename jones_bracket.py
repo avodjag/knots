@@ -88,7 +88,7 @@ def unloop(knot):
             loops.append(edge)
     while loops != []:
         edge = loops.pop()
-        if len(knot[edge]) == 0:
+        if edge not in knot:
             continue
         a, b, c, d, sign = knot[edge][0]
         exp = exp + sign
@@ -104,7 +104,7 @@ def unloop(knot):
             unknots = unknots + uncross(knot, loops, edge, a, c)
         if c == d and c == edge:
             unknots = unknots + uncross(knot, loops, edge, a, b)
-        knot[edge] = []
+        del knot[edge]
     return [exp, unknots]
                 
         
@@ -131,12 +131,11 @@ def add_writhe(poly, knot):
     return C * poly
 
 
-def bracket(givenKnot, unknots):
-    knot = copy.deepcopy(givenKnot)
+def bracket(prev_knot, unknots, looped):
+    knot = dict(prev_knot)
     poly = laurent({})
+    
     global N
-    if unknots == 0:
-        N=N+1
     if unknots > 0:
         if unknots == 1 and knot == []:
             poly = one
@@ -146,8 +145,23 @@ def bracket(givenKnot, unknots):
     if knot == []:
         poly = one
         return poly
+    if looped:
+        exp, loop_unknots = unloop(knot)
+        if exp != 0 or loop_unknots > 0:
+            Aw = laurent({-3*exp : 1})
+            poly = Aw * power(Ao, unknots) * bracket(knot, 0, False)
+            return poly
+
+    N = N + 1
+
+    edge = next(iter(knot))
+    crossing = knot[edge][1]
+    knot[edge] = [knot[edge[0]]]
     
-    a, b, c, d = knot.pop();
+    a, b, c, d, s = crossing
+
+    # potud upraveno na dic strukturu
+    
     unknots1, unknots2 = 0, 0
 
     if a == b and c == d:    #A
@@ -172,12 +186,13 @@ def bracket(givenKnot, unknots):
         knot2 = PDconnect(knot, a, d)
         knot2 = PDconnect(knot2, b, c)
         
-    poly = (A * bracket(knot1, unknots1)) + (B * bracket(knot2, unknots2))
+    poly = (A * bracket(knot1, unknots1, True)) + (B * bracket(knot2, unknots2, True))
     return poly
 
-def jones(knot):
-    bracket_poly = bracket(knot, 0)
-    inv_poly = add_writhe(bracket_poly, knot)
+def jones(PDknot):
+    knot = PD_to_dic(PDknot)
+    bracket_poly = bracket(knot, 0, True)
+    inv_poly = add_writhe(bracket_poly, PDknot)
     jones_poly = substitution(inv_poly)
     return toText(jones_poly)
 
