@@ -14,7 +14,7 @@ ctyr2 = [[8,1,1,2],[2,7,3,8],[4,5,5,6],[6,3,7,4]]
 troj = [[6,1,1,2],[2,5,3,6],[4,3,5,4]]
 troj2 =[[6,1,1,2],[4,3,5,4],[2,5,3,6]] 
 dvoj = [[4,1,1,2],[2,3,3,4]]
-loop = [[1,1,2,2]]
+loop = [[2,1,2,1]]
 
 N = 0
 
@@ -45,7 +45,20 @@ def PD_to_dic(PDknot):
             knot[edge].append([a, b, c, d, s])
     return knot
 
-def rename(knot, what, where):    # prepojuje jenom v ostatnich, v tom mazanem nic nedela
+def dic_to_PD(knot):
+    PDknot = []
+    for edge in knot.keys():
+        for crossing in knot[edge]:
+            if crossing[:5] not in PDknot:
+                PDknot.append(crossing[:5])
+    return PDknot
+
+t = PD_to_dic(trefoil)
+o = PD_to_dic(osm)
+c = PD_to_dic(ctyr)
+l = PD_to_dic(loop)
+
+def rename(knot, what, where):    
     for i in range(len(knot[what])):
         edge = knot[what][i]
         new_edge = list(edge)
@@ -60,7 +73,7 @@ def rename(knot, what, where):    # prepojuje jenom v ostatnich, v tom mazanem n
 
 def uncross(knot, loops, edge, what, where):
     if what == where:
-        knot[what] = []
+        del knot[what]
         return 1
     else:
         rename(knot, what, where)
@@ -88,7 +101,7 @@ def unloop(knot):
             loops.append(edge)
     while loops != []:
         edge = loops.pop()
-        if edge not in knot:
+        if edge not in knot: 
             continue
         a, b, c, d, sign = knot[edge][0]
         exp = exp + sign
@@ -106,7 +119,32 @@ def unloop(knot):
             unknots = unknots + uncross(knot, loops, edge, a, b)
         del knot[edge]
     return [exp, unknots]
-                
+
+def connect(knot, crossing, what, where):
+    if knot[what][0] == crossing:
+        other_crossing = knot[what][1]
+    else:
+        other_crossing = knot[what][0]
+    
+    if knot[where][0] == crossing:
+        knot[where][0] = other_crossing
+    else:
+        knot[where][1] = other_crossing
+    for neighbour in set(crossing[:4]).union(other_crossing[:4]):
+        if neighbour == what:
+            continue
+        for j in range(len(knot[neighbour])):
+            for i in range(4):
+                if knot[neighbour][j][i] == what:
+                    knot[neighbour][j][i] = where
+    if knot[where][0] == knot[where][1]:
+        knot[where] = [knot[where][0]]
+
+def relabel_crossing(crossing, what, where):
+    for i in range(4):
+        if crossing[i] == what:
+            crossing[i] = where
+    return crossing
         
 
 def writhe(PDknot):
@@ -132,7 +170,9 @@ def add_writhe(poly, knot):
 
 
 def bracket(prev_knot, unknots, looped):
-    knot = dict(prev_knot)
+    
+    knot = copy.deepcopy(prev_knot)
+    print(dic_to_PD(knot))
     poly = laurent({})
     
     global N
@@ -142,50 +182,55 @@ def bracket(prev_knot, unknots, looped):
             return one
         poly = C * bracket(knot, unknots-1)
         return poly
-    if knot == []:
+    if knot == {}:
         poly = one
         return poly
     if looped:
         exp, loop_unknots = unloop(knot)
         if exp != 0 or loop_unknots > 0:
             Aw = laurent({-3*exp : 1})
-            poly = Aw * power(Ao, unknots) * bracket(knot, 0, False)
+            print("odmotano") #je to spatne, moc prejmenovani
+            print(dic_to_PD(knot))
+            poly = Aw * power(C, unknots) * bracket(knot, 0, False)
             return poly
 
     N = N + 1
 
     edge = next(iter(knot))
     crossing = knot[edge][1]
-    knot[edge] = [knot[edge[0]]]
-    
+    #print(edge)
+    #print(crossing)
     a, b, c, d, s = crossing
-
-    # potud upraveno na dic strukturu
     
     unknots1, unknots2 = 0, 0
 
-    if a == b and c == d:    #A
-        unknots1 = 2
-    elif (a == b or c == d) or (a == d and b == c):  #B
-        unknots1 = 1
-    if a == d and b == c:     #C
-        unknots2 = 2
-    elif (a == d or b == c) or (a == b and c == d):   #D
-        unknots2 = 1
-        
-    if d == a:   #E
-        knot1 = PDconnect(knot, b, a)
-        knot1 = connect(knot1, c, d)
+    knot1 = copy.deepcopy(knot)
+    knot2 = copy.deepcopy(knot)
+    
+    if edge == b or edge == c:    
+        connect(knot1, crossing, b, a)
+        connect(knot1, relabel_crossing(crossing, b, a), c, d)
+        del knot1[b]
+        del knot1[c]
     else:
-        knot1 = PDconnect(knot, a, b)
-        knot1 = connect(knot1, d, c)
-    if a == b:    #F
-        knot2 = PDconnect(knot, d, a)
-        knot2 = PDconnect(knot2, c, b)
-    else:
-        knot2 = PDconnect(knot, a, d)
-        knot2 = PDconnect(knot2, b, c)
+        connect(knot1, crossing, a, b)
+        connect(knot1, relabel_crossing(crossing, a, b), d, c)
+        del knot1[a]
+        del knot1[d]
         
+    if edge == d or edge == c:        
+        connect(knot2, crossing, d, a)
+        connect(knot2, relabel_crossing(crossing, d, a), c, b)
+        del knot2[d]
+        del knot2[c]
+    else:        
+        connect(knot2, crossing, a, d)
+        connect(knot2, relabel_crossing(crossing,a, d), b, c)
+        del knot2[a]
+        del knot2[b]
+
+    
+
     poly = (A * bracket(knot1, unknots1, True)) + (B * bracket(knot2, unknots2, True))
     return poly
 
