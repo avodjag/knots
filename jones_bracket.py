@@ -3,6 +3,7 @@ from laurent import *
 
 # uzly
 trefoil = [[1,5,2,4],[3,1,4,6],[5,3,6,2]]
+# bracket: 't^-7 - t^-3 - t^5', jones: 't^-4.0 - t^-3.0 - t^-1.0'
 k6_3 = [[4,2,5,1],[8,4,9,3],[12,9,1,10],[10,5,11,6],[6,11,7,12],[2,8,3,7]]
 osm = [[4,2,5,1],[8,6,1,5],[6,3,7,4],[2,7,3,8]]
 pet1 = [[2,8,3,7],[4,10,5,9],[6,2,7,1],[8,4,9,3],[10,6,1,5]]
@@ -14,7 +15,8 @@ ctyr2 = [[8,1,1,2],[2,7,3,8],[4,5,5,6],[6,3,7,4]]
 troj = [[6,1,1,2],[2,5,3,6],[4,3,5,4]]
 troj2 =[[6,1,1,2],[4,3,5,4],[2,5,3,6]] 
 dvoj = [[4,1,1,2],[2,3,3,4]]
-loop = [[2,1,2,1]]
+#loop = [[2,1,2,1]] spatna loop
+loop = [[2, 1, 1, 2]]
 
 N = 0
 
@@ -119,7 +121,7 @@ def unloop(knot):
         if c == d and c == edge:
             unknots = unknots + uncross(knot, loops, edge, a, b)
         del knot[edge]
-    return [exp, unknots]
+    return [exp, unknots]    # ma tu byt plus ci minus?
 
 def connect(knot, crossing, what, where):
     if knot[what][0] == crossing:
@@ -174,7 +176,7 @@ def add_writhe(poly, knot):
 def bracket(prev_knot, unknots, looped):
     
     knot = copy.deepcopy(prev_knot)
-    print(dic_to_PD(knot))
+    #print(dic_to_PD(knot))
     poly = laurent({})
     
     global N
@@ -183,17 +185,20 @@ def bracket(prev_knot, unknots, looped):
             poly = one
             return one
         poly = C * bracket(knot, unknots-1)
+        print("Uzel " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
         return poly
     if knot == {}:
         poly = one
+        print("Prazdny " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
         return poly
     if looped:
-        exp, loop_unknots = unloop(knot)
+        exp, loop_unknots = unloop(knot)  #neni tu problem, ze nekopiruju?
         if exp != 0 or loop_unknots > 0:
             Aw = laurent({-3*exp : 1})
             #print("odmotano") #je to spatne, moc prejmenovani
             #print(dic_to_PD(knot))
             poly = Aw * power(C, unknots) * bracket(knot, 0, False)
+            print("Rozmotany uzel " + str(dic_to_PD(prev_knot)) + " ma polynom : " + toText(poly))
             return poly
 
     N = N + 1
@@ -230,6 +235,7 @@ def bracket(prev_knot, unknots, looped):
         del knot2[b] 
 
     poly = (A * bracket(knot1, unknots1, True)) + (B * bracket(knot2, unknots2, True))
+    print("Uzel " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
     return poly
 
 def jones(PDknot):
@@ -238,4 +244,8 @@ def jones(PDknot):
     inv_poly = add_writhe(bracket_poly, PDknot)
     jones_poly = substitution(inv_poly)
     return toText(jones_poly)
+
+#trefoil 
+# Uzel [[3, 5, 2, 6, 1], [5, 3, 6, 2, 1]] ma polynom : t^-4 + t^-2
+# ale ma to byt '- t^-4 - t^4'
 
