@@ -13,7 +13,7 @@ ctyr2 = [[8,1,1,2],[2,7,3,8],[4,5,5,6],[6,3,7,4]]
 troj = [[6,1,1,2],[2,5,3,6],[4,3,5,4]]
 troj2 =[[6,1,1,2],[4,3,5,4],[2,5,3,6]] 
 dvoj = [[4,1,1,2],[2,3,3,4]]
-loop = [[2,1,2,1]]    #nefunguje pro loop
+loop = [[2,1,2,1]]   # nefunguje pro loop
 
 
 N = 0
@@ -24,7 +24,7 @@ def writhe(knot):
     for cross in knot:
         a, b, c, d = cross
         if a == b or c == d:
-jones9            w = w + 1
+            w = w + 1
             continue
         if a == d or b == c:
             w = w - 1
