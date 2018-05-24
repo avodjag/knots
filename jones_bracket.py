@@ -82,7 +82,8 @@ def uncross(knot, loops, edge, what, where):
             what_crossing = knot[what][1]
         else:
             what_crossing = knot[what][0]
-        knot[what] = []
+        # knot[what] = []
+        del knot[what]
         if knot[where][0] == crossing:
             if knot[where][1] == what_crossing:
                 loops.append(where)
@@ -105,17 +106,17 @@ def unloop(knot):
             continue
         a, b, c, d, sign = knot[edge][0]
         exp = exp + sign
-        if a == b and (a == edge or b == edge):   # co kdyz b edge?
+        if a == b and a == edge:   
             unknots = unknots + uncross(knot, loops, edge, c, d)
-        if a == c and (a == edge or c == edge):
+        if a == c and a == edge:
             unknots = unknots + uncross(knot, loops, edge, b, d)
-        if a == d and (a == edge or d == edge):
+        if a == d and a == edge:
             unknots = unknots + uncross(knot, loops, edge, b, c)
-        if b == c and (b == edge or c == edge):
+        if b == c and b == edge:
             unknots = unknots + uncross(knot, loops, edge, a, d)
-        if b == d and (b == edge or d == edge):
+        if b == d and b == edge:
             unknots = unknots + uncross(knot, loops, edge, a, c)
-        if c == d and (c == edge or d == edge):
+        if c == d and c == edge:
             unknots = unknots + uncross(knot, loops, edge, a, b)
         del knot[edge]
     return [exp, unknots]
@@ -141,10 +142,11 @@ def connect(knot, crossing, what, where):
         knot[where] = [knot[where][0]]
 
 def relabel_crossing(crossing, what, where):
+    new_crossing = list(crossing)
     for i in range(4):
-        if crossing[i] == what:
-            crossing[i] = where
-    return crossing
+        if new_crossing[i] == what:
+            new_crossing[i] = where
+    return new_crossing
         
 
 def writhe(PDknot):
@@ -189,8 +191,8 @@ def bracket(prev_knot, unknots, looped):
         exp, loop_unknots = unloop(knot)
         if exp != 0 or loop_unknots > 0:
             Aw = laurent({-3*exp : 1})
-            print("odmotano") #je to spatne, moc prejmenovani
-            print(dic_to_PD(knot))
+            #print("odmotano") #je to spatne, moc prejmenovani
+            #print(dic_to_PD(knot))
             poly = Aw * power(C, unknots) * bracket(knot, 0, False)
             return poly
 
@@ -198,8 +200,6 @@ def bracket(prev_knot, unknots, looped):
 
     edge = next(iter(knot))
     crossing = knot[edge][1]
-    #print(edge)
-    #print(crossing)
     a, b, c, d, s = crossing
     
     unknots1, unknots2 = 0, 0
@@ -227,9 +227,7 @@ def bracket(prev_knot, unknots, looped):
         connect(knot2, crossing, a, d)
         connect(knot2, relabel_crossing(crossing,a, d), b, c)
         del knot2[a]
-        del knot2[b]
-
-    
+        del knot2[b] 
 
     poly = (A * bracket(knot1, unknots1, True)) + (B * bracket(knot2, unknots2, True))
     return poly
