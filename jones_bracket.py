@@ -40,7 +40,7 @@ def PD_to_dic(PDknot):
         a, b, c, d = crossing
         s = sign(crossing, n)
         for edge in crossing:
-            if knot[edge] != [] and knot[edge][-1] == [a, b, c, d, s]:
+            if knot[edge] != [] and knot[edge][-1] == [a, b, c, d, s]:      # smycka, uz to tam bylo pridano
                 continue
             knot[edge].append([a, b, c, d, s])
     return knot
@@ -98,14 +98,14 @@ def unloop(knot):
     loops = []
     for edge in knot.keys():
         if len(knot[edge]) == 1:
-            loops.append(edge)
+            loops.append(edge)  # nemelo by se to jeste kontrolovat?
     while loops != []:
         edge = loops.pop()
         if edge not in knot: 
             continue
         a, b, c, d, sign = knot[edge][0]
         exp = exp + sign
-        if a == b and a == edge:
+        if a == b and a == edge:   # co kdyz b edge?
             unknots = unknots + uncross(knot, loops, edge, c, d)
         if a == c and a == edge:
             unknots = unknots + uncross(knot, loops, edge, b, d)
