@@ -98,24 +98,24 @@ def unloop(knot):
     loops = []
     for edge in knot.keys():
         if len(knot[edge]) == 1:
-            loops.append(edge)  # nemelo by se to jeste kontrolovat?
+            loops.append(edge)  
     while loops != []:
         edge = loops.pop()
-        if edge not in knot: 
+        if edge not in knot:   # uz to zmizelo behem
             continue
         a, b, c, d, sign = knot[edge][0]
         exp = exp + sign
-        if a == b and a == edge:   # co kdyz b edge?
+        if a == b and (a == edge or b == edge):   # co kdyz b edge?
             unknots = unknots + uncross(knot, loops, edge, c, d)
-        if a == c and a == edge:
+        if a == c and (a == edge or c == edge):
             unknots = unknots + uncross(knot, loops, edge, b, d)
-        if a == d and a == edge:
+        if a == d and (a == edge or d == edge):
             unknots = unknots + uncross(knot, loops, edge, b, c)
-        if b == c and b == edge:
+        if b == c and (b == edge or c == edge):
             unknots = unknots + uncross(knot, loops, edge, a, d)
-        if b == d and b == edge:
+        if b == d and (b == edge or d == edge):
             unknots = unknots + uncross(knot, loops, edge, a, c)
-        if c == d and c == edge:
+        if c == d and (c == edge or d == edge):
             unknots = unknots + uncross(knot, loops, edge, a, b)
         del knot[edge]
     return [exp, unknots]
