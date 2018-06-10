@@ -115,7 +115,8 @@ def unloop(knot):
         edge = loops.pop()
         if edge not in knot:   # uz to zmizelo behem
             continue
-        a, b, c, d, sign = knot[edge][0]
+        a, b, c, d, s = knot[edge][0]
+        sign = loopSign(knot[edge][0])
         F = laurent({sign*3: -1})
         E = E*F
         if a == b and a == edge:   
