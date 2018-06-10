@@ -96,9 +96,16 @@ def uncross(knot, loops, edge, what, where):
                 knot[where][0] = what_crossing
         return 0
 
+def loopSign(crossing):
+    a, b, c, d, s = crossing
+    if a == b or c == d:
+        return 1
+    else:
+        return -1
+
 
 def unloop(knot):
-    exp = 0
+    E = one
     unknots = 0
     loops = []
     for edge in knot.keys():
@@ -109,7 +116,8 @@ def unloop(knot):
         if edge not in knot:   # uz to zmizelo behem
             continue
         a, b, c, d, sign = knot[edge][0]
-        exp = exp + sign
+        F = laurent({sign*3: -1})
+        E = E*F
         if a == b and a == edge:   
             unknots = unknots + uncross(knot, loops, edge, c, d)
         if a == c and a == edge:
@@ -123,7 +131,7 @@ def unloop(knot):
         if c == d and c == edge:
             unknots = unknots + uncross(knot, loops, edge, a, b)
         del knot[edge]
-    return [exp, unknots]    # ma tu byt plus ci minus?
+    return [E, unknots]    # ma tu byt plus ci minus?
 
 def connect(knot, crossing, what, where):
     if knot[what][0] == crossing:
@@ -171,7 +179,10 @@ def PDconnect(knot, what, where):
 
 def add_writhe(poly, knot):
     w = writhe(knot)
-    D = laurent({-3*w: 1})
+    if w%2 == 0:
+        D = laurent({-3*w: 1})
+    else:
+        D = laurent({-3*w: -1})
     return D * poly
 
 
@@ -194,12 +205,12 @@ def bracket(prev_knot, unknots, looped):
         print("Prazdny " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
         return poly
     if looped:
-        exp, loop_unknots = unloop(knot)  #neni tu problem, ze nekopiruju?
-        if exp != 0 or loop_unknots > 0:
-            Aw = laurent({-3*exp : 1})
+        E, loop_unknots = unloop(knot)  #neni tu problem, ze nekopiruju?
+        if E != one or loop_unknots > 0:
+            #Aw = laurent({-3*exp : 1})
             #print("odmotano") #je to spatne, moc prejmenovani
             #print(dic_to_PD(knot))
-            poly = Aw * power(C, unknots) * bracket(knot, 0, False)
+            poly = E * power(C, unknots) * bracket(knot, 0, False)
             print("Rozmotany uzel " + str(dic_to_PD(prev_knot)) + " ma polynom : " + toText(poly))
             return poly
 
@@ -246,6 +257,11 @@ def jones(PDknot):
     inv_poly = add_writhe(bracket_poly, PDknot)
     jones_poly = substitution(inv_poly)
     return toText(jones_poly)
+
+def pbracket(PDknot):
+    knot = PD_to_dic(PDknot)
+    bracket_poly = bracket(knot, 0, True)
+    return toText(bracket_poly, 'A')
 
 #trefoil 
 # Uzel [[3, 5, 2, 6, 1], [5, 3, 6, 2, 1]] ma polynom : t^-4 + t^-2 hopf link

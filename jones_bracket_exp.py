@@ -52,7 +52,10 @@ def connect(knot, what, where):
 
 def addWrithe(poly, knot):
     w = writhe(knot)
-    D = laurent({-3*w: 1})
+    if w%2 == 0:
+        D = laurent({-3*w: 1})
+    else:
+        D = laurent({-3*w: -1})
     return D * poly
 
 
@@ -105,4 +108,10 @@ def jones(knot):
     invPoly = addWrithe(bracketPoly, knot)
     jonesPoly = substitution(invPoly)
     return toText(jonesPoly)
+
+def pbracket(knot):
+    bracketPoly = bracket(knot, 0)
+    return toText(bracketPoly, 'A')
+    
+
 
