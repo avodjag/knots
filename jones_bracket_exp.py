@@ -52,8 +52,8 @@ def connect(knot, what, where):
 
 def addWrithe(poly, knot):
     w = writhe(knot)
-    C = laurent({-3*w: 1})
-    return C * poly
+    D = laurent({-3*w: 1})
+    return D * poly
 
 
 def bracket(givenKnot, unknots):

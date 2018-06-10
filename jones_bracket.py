@@ -17,7 +17,9 @@ troj2 =[[6,1,1,2],[4,3,5,4],[2,5,3,6]]
 dvoj = [[4,1,1,2],[2,3,3,4]]
 #loop = [[2,1,2,1]] spatna loop
 loop = [[2, 1, 1, 2]]
+loopp = [[1,1,2,2]]
 
+hopf = [[1,4,2,3], [3,2,4,1]]
 N = 0
 
 def sign(PDcrossing, n):
@@ -169,8 +171,8 @@ def PDconnect(knot, what, where):
 
 def add_writhe(poly, knot):
     w = writhe(knot)
-    C = laurent({-3*w: 1})
-    return C * poly
+    D = laurent({-3*w: 1})
+    return D * poly
 
 
 def bracket(prev_knot, unknots, looped):
@@ -246,6 +248,8 @@ def jones(PDknot):
     return toText(jones_poly)
 
 #trefoil 
-# Uzel [[3, 5, 2, 6, 1], [5, 3, 6, 2, 1]] ma polynom : t^-4 + t^-2
+# Uzel [[3, 5, 2, 6, 1], [5, 3, 6, 2, 1]] ma polynom : t^-4 + t^-2 hopf link
 # ale ma to byt '- t^-4 - t^4'
+# bere asi spatne znamínko v linku
+
 
