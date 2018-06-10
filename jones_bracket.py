@@ -76,10 +76,15 @@ def rename(knot, what, where):
                     knot[neighb][k] = new_edge
 
 def uncross(knot, loops, edge, what, where):
+    if what == 9:
+        print("FKFJHHHHHHHHHHHHHSKJFDHK")
+        print("kam: " + str(where))
+        print(str(dic_to_PD(knot)) )
+        print("edge: " + str(edge))
     if what == where:
         del knot[what]
         return 1
-    else:
+    else:                   #odtud je problem
         rename(knot, what, where)
         crossing = knot[edge][0]
         if knot[what][0] == crossing:
@@ -113,6 +118,12 @@ def unloop(knot):
             loops.append(edge)  
     while loops != []:
         edge = loops.pop()
+        print("jsem na hrane " + str(edge))
+        print(str(dic_to_PD(knot)) )
+        if dic_to_PD(knot) == [[9, 5, 5, 9, 1], [3, 9, 9, 3, 1]]:
+            for k in knot.keys():
+                print("hrana " + str(k))
+                print(knot[k])
         if edge not in knot:   # uz to zmizelo behem
             continue
         a, b, c, d, s = knot[edge][0]
@@ -132,9 +143,15 @@ def unloop(knot):
         if c == d and c == edge:
             unknots = unknots + uncross(knot, loops, edge, a, b)
         del knot[edge]
-    return [E, unknots]    # ma tu byt plus ci minus?
+    return [E, unknots]   
 
 def connect(knot, crossing, what, where):
+    if where not in knot:
+        print(str(where) + " where tam neni")
+        print(str(dic_to_PD(knot)) )
+    if what not in knot:
+        print(str(what) + " what tam neni")
+        print(str(dic_to_PD(knot)) )
     if knot[what][0] == crossing:
         other_crossing = knot[what][1]
     else:
@@ -190,7 +207,7 @@ def add_writhe(poly, knot):
 def bracket(prev_knot, unknots, looped):
     
     knot = copy.deepcopy(prev_knot)
-    #print(dic_to_PD(knot))
+    print(dic_to_PD(knot))
     poly = laurent({})
     
     global N
@@ -199,11 +216,11 @@ def bracket(prev_knot, unknots, looped):
             poly = one
             return one
         poly = C * bracket(knot, unknots-1)
-        print("Uzel " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
+        #print("Uzel " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
         return poly
     if knot == {}:
         poly = one
-        print("Prazdny " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
+        #print("Prazdny " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
         return poly
     if looped:
         E, loop_unknots = unloop(knot)  #neni tu problem, ze nekopiruju?
@@ -212,7 +229,7 @@ def bracket(prev_knot, unknots, looped):
             #print("odmotano") #je to spatne, moc prejmenovani
             #print(dic_to_PD(knot))
             poly = E * power(C, unknots) * bracket(knot, 0, False)
-            print("Rozmotany uzel " + str(dic_to_PD(prev_knot)) + " ma polynom : " + toText(poly))
+            #print("Rozmotany uzel " + str(dic_to_PD(prev_knot)) + " ma polynom : " + toText(poly))
             return poly
 
     N = N + 1
@@ -249,7 +266,7 @@ def bracket(prev_knot, unknots, looped):
         del knot2[b] 
 
     poly = (A * bracket(knot1, unknots1, True)) + (B * bracket(knot2, unknots2, True))
-    print("Uzel " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
+    #print("Uzel " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
     return poly
 
 def jones(PDknot):
@@ -264,9 +281,8 @@ def pbracket(PDknot):
     bracket_poly = bracket(knot, 0, True)
     return toText(bracket_poly, 'A')
 
-#trefoil 
-# Uzel [[3, 5, 2, 6, 1], [5, 3, 6, 2, 1]] ma polynom : t^-4 + t^-2 hopf link
-# ale ma to byt '- t^-4 - t^4'
-# bere asi spatne znamínko v linku
+#pet1
+# stane se tam [[9, 5, 5, 9, 1], [3, 9, 9, 3, 1]]
+# to by nemelo
 
 
