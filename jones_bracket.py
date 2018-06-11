@@ -21,6 +21,7 @@ loopp = [[1,1,2,2]]
 
 hopf = [[1,4,2,3], [3,2,4,1]]
 N = 0
+M = 0
 
 def sign(PDcrossing, n):
     a, b, c, d = PDcrossing
@@ -76,11 +77,11 @@ def rename(knot, what, where):
                     knot[neighb][k] = new_edge
 
 def uncross(knot, loops, edge, what, where):
-    if what == 9:
-        print("FKFJHHHHHHHHHHHHHSKJFDHK")
-        print("kam: " + str(where))
-        print(str(dic_to_PD(knot)) )
-        print("edge: " + str(edge))
+    #if what == 9:
+        #print("FKFJHHHHHHHHHHHHHSKJFDHK")
+        #print("kam: " + str(where))
+        #print(str(dic_to_PD(knot)) )
+        #print("edge: " + str(edge))
     if what == where:
         del knot[what]
         return 1
@@ -99,6 +100,12 @@ def uncross(knot, loops, edge, what, where):
                 knot[where] = [what_crossing]
             else:
                 knot[where][0] = what_crossing
+        else:
+            if knot[where][0] == what_crossing:
+                loops.append(where)
+                knot[where] = [what_crossing]
+            else:
+                knot[where][1] = what_crossing
         return 0
 
 def loopSign(crossing):
@@ -117,13 +124,15 @@ def unloop(knot):
         if len(knot[edge]) == 1:
             loops.append(edge)  
     while loops != []:
+        #print(str(dic_to_PD(knot)) )
+        #print("loops")
+        #print(loops)
         edge = loops.pop()
-        print("jsem na hrane " + str(edge))
-        print(str(dic_to_PD(knot)) )
-        if dic_to_PD(knot) == [[9, 5, 5, 9, 1], [3, 9, 9, 3, 1]]:
-            for k in knot.keys():
-                print("hrana " + str(k))
-                print(knot[k])
+        #print("jsem na hrane " + str(edge))
+        #if dic_to_PD(knot) == [[9, 5, 5, 9, 1], [3, 9, 9, 3, 1]]:
+            #for k in knot.keys():
+                #print("hrana " + str(k))
+                #print(knot[k])
         if edge not in knot:   # uz to zmizelo behem
             continue
         a, b, c, d, s = knot[edge][0]
@@ -207,10 +216,14 @@ def add_writhe(poly, knot):
 def bracket(prev_knot, unknots, looped):
     
     knot = copy.deepcopy(prev_knot)
-    print(dic_to_PD(knot))
+    #print(dic_to_PD(knot))
     poly = laurent({})
     
     global N
+    global M
+
+    M = M + 1
+    
     if unknots > 0:
         if unknots == 1 and knot == []:
             poly = one
@@ -233,6 +246,11 @@ def bracket(prev_knot, unknots, looped):
             return poly
 
     N = N + 1
+
+    #if dic_to_PD(knot) == [[7, 3, 3, 7, 1]]:
+     #   for k in knot.keys():
+      #      print("hrana " + str(k))
+       #     print(knot[k])
 
     edge = next(iter(knot))
     crossing = knot[edge][1]
