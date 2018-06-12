@@ -84,7 +84,10 @@ def uncross(knot, loops, edge, what, where):
         #print("edge: " + str(edge))
     if what == where:
         del knot[what]
-        return 1
+        if len(knot.keys()) == 1:
+            return 0
+        else:    # vznika vedlejsi kruznice a je tam nejaky zbytek
+            return 1
     else:                   #odtud je problem
         rename(knot, what, where)
         crossing = knot[edge][0]
@@ -212,11 +215,181 @@ def add_writhe(poly, knot):
         D = laurent({-3*w: -1})
     return D * poly
 
+def isReidTwo(knot, edge):
+    #if len(knot[edge]) == 1:
+     #   print(dic_to_PD(knot))
+      #  print(edge)
+       # print(knot[edge])
+    cross1 = knot[edge][0]
+    cross2 = knot[edge][1]
 
-def bracket(prev_knot, unknots, looped):
+    if cross1[1] == cross2[1]:
+        if cross1[2] == cross2[0]:
+            return 1   
+        if cross1[0] == cross2[2]:
+            return 2
+    if cross1[3] == cross2[3]:
+        if cross1[2] == cross2[0]:
+            return 3
+        if cross1[0] == cross2[2]:
+            return 4
+    return 0
+
+#musi uz byt unlooped
+def reidTwo(knot):
+    unknots = 0
+    looped = False
+    changed = False
+    edges = []
+    toDel = []
+    for edge in list(knot.keys()):
+
+        if looped:
+            break
+        
+        if edge in toDel:
+            continue 
+        code = isReidTwo(knot, edge)
+        
+        if not code:
+            continue
+
+        changed = True
+        
+        print("ANO")
+        print(dic_to_PD(knot))
+        
+        cross1 = knot[edge][0]
+        cross2 = knot[edge][1]
+        
+        if code == 1:
+            a = cross1[3]
+            b = cross1[1]
+            c = cross2[3]
+            x = cross1[0]
+            y = cross1[2]
+            z = cross2[2]                    
+        if code == 2:
+            a = cross1[2]
+            b = cross1[0]
+            c = cross2[0]
+            x = cross1[3]
+            y = cross1[1]
+            z = cross2[3]
+        if code == 3:
+            a = cross1[0]
+            b = cross1[2]
+            c = cross2[2]
+            x = cross1[1]
+            y = cross1[3]
+            z = cross2[1]
+        if code == 4:
+            a = cross1[1]
+            b = cross1[3]
+            c = cross2[1]
+            x = cross1[2]
+            y = cross1[0]
+            z = cross2[0]
+
+        print("kod " + str([a, b, x, y]))
+        if [a, b, x, y] == [4, 17, 10, 13]:
+            print("HUZZZZAA")
+            
+        if a == c:    # jenom smazat
+            unknots = unknots + 1
+        else:
+            rename(knot, a, c)    #a - > c
+            
+            cross1 = knot[edge][0]
+            cross2 = knot[edge][1]
+
+            if len(knot[a]) != 2:
+                print(dic_to_PD(knot))
+
+            if knot[a][0] == cross1:
+                aCross = knot[a][1]
+            else:
+                aCross = knot[a][0]
+
+            if knot[c][0] == cross2:
+                if knot[c][1] == aCross:
+                    knot[c] = [aCross]
+                    looped = True
+                else:
+                    knot[c][0] = aCross
+            else:
+                if knot[c][0] == aCross:
+                    knot[c] = [aCross]
+                    looped = True
+                else:
+                    knot[c][1] = aCross
+
+
+        if x == z:    # jenom smazat
+            unknots = unknots + 1
+        else:            
+            rename(knot, x, z)   
+            cross1 = knot[edge][0]
+            cross2 = knot[edge][1]
+            
+            if [a, b, x, y] == [4, 17, 10, 13]:
+                print("knot[edge], kde edge je " + str(edge))
+                print(knot[edge])
+                print("x")
+                print(knot[x])
+                print("z")
+                print(knot[z])
+                print("cross1")
+                print(cross1)
+                print("cross2")
+                print(cross2)
+
+            if knot[x][0] == cross1:
+                xCross = knot[x][1]
+            else:
+                xCross = knot[x][0]
+
+            if knot[z][0] == cross2:
+                if knot[z][1] == xCross:
+                    knot[z] = [xCross]
+                    looped = True
+                else:
+                    knot[z][0] = xCross
+            else:
+                if knot[z][0] == xCross:
+                    knot[z] = [xCross]
+                    looped = True
+                else:
+                    knot[z][1] = xCross
+
+        toDel = toDel + [a, b, x, y]
+        
+        del knot[a]
+        del knot[b]
+        del knot[x]
+        del knot[y]
+
+        if [a, b, x, y] == [4, 17, 10, 13]:
+            print("c")
+            print(knot[c])
+            print("z")
+            print(knot[z])
+            print(c)
+            print(z)
+            
+        
+
+    print("out")
+    print(dic_to_PD(knot))
+
+    return [changed, looped, unknots]
+            
+            
+
+def bracket(prev_knot, reid2, looped):
     
     knot = copy.deepcopy(prev_knot)
-    #print(dic_to_PD(knot))
+    print(dic_to_PD(knot))
     poly = laurent({})
     
     global N
@@ -224,40 +397,39 @@ def bracket(prev_knot, unknots, looped):
 
     M = M + 1
     
-    if unknots > 0:
-        if unknots == 1 and knot == []:
-            poly = one
-            return one
-        poly = C * bracket(knot, unknots-1)
-        #print("Uzel " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
-        return poly
     if knot == {}:
         poly = one
         #print("Prazdny " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
         return poly
+
     if looped:
-        E, loop_unknots = unloop(knot)  #neni tu problem, ze nekopiruju?
+        E, loop_unknots = unloop(knot)
+        if loop_unknots > 0:
+            print("ANO")
         if E != one or loop_unknots > 0:
             #Aw = laurent({-3*exp : 1})
             #print("odmotano") #je to spatne, moc prejmenovani
             #print(dic_to_PD(knot))
-            poly = E * power(C, unknots) * bracket(knot, 0, False)
+            poly = E * power(C, loop_unknots) * bracket(knot, True, False)
             #print("Rozmotany uzel " + str(dic_to_PD(prev_knot)) + " ma polynom : " + toText(poly))
             return poly
+        
+    if reid2:
+        changed, reidLooped, reidUnknots = reidTwo(knot)
+        looped = max(reidLooped, looped)
+        if changed:
+             if knot == {} and reidUnknots > 0:
+                 poly = power(C, reidUnknots-1)
+             else:
+                 poly = power(C, reidUnknots) * bracket(knot, False, looped)
+             return poly
 
     N = N + 1
-
-    #if dic_to_PD(knot) == [[7, 3, 3, 7, 1]]:
-     #   for k in knot.keys():
-      #      print("hrana " + str(k))
-       #     print(knot[k])
-
+    
     edge = next(iter(knot))
     crossing = knot[edge][1]
     a, b, c, d, s = crossing
     
-    unknots1, unknots2 = 0, 0
-
     knot1 = copy.deepcopy(knot)
     knot2 = copy.deepcopy(knot)
     
@@ -283,24 +455,23 @@ def bracket(prev_knot, unknots, looped):
         del knot2[a]
         del knot2[b] 
 
-    poly = (A * bracket(knot1, unknots1, True)) + (B * bracket(knot2, unknots2, True))
+    poly = (A * bracket(knot1, True, True)) + (B * bracket(knot2, True, True))
     #print("Uzel " + str(dic_to_PD(knot)) + " ma polynom : " + toText(poly))
     return poly
 
 def jones(PDknot):
     knot = PD_to_dic(PDknot)
-    bracket_poly = bracket(knot, 0, True)
+    bracket_poly = bracket(knot, True, True)
     inv_poly = add_writhe(bracket_poly, PDknot)
     jones_poly = substitution(inv_poly)
     return toText(jones_poly)
 
 def pbracket(PDknot):
     knot = PD_to_dic(PDknot)
-    bracket_poly = bracket(knot, 0, True)
+    bracket_poly = bracket(knot, True, True)
     return toText(bracket_poly, 'A')
 
-#pet1
-# stane se tam [[9, 5, 5, 9, 1], [3, 9, 9, 3, 1]]
-# to by nemelo
-
-
+# problem [[2,11,3,12],[4,9,5,10],[5,19,6,18],[7,15,8,14],[10,1,11,2],[12,3,13,4],[13,17,14,16],[15,9,16,8],[17,1,18,20],[19,7,20,6]]
+# taky [[1,8,2,9],[3,18,4,19],[5,12,6,13],[7,10,8,11],[9,2,10,3],[11,6,12,7],[14,20,15,19],[16,14,17,13],[17,4,18,5],[20,16,1,15]]
+# vlastne tam, kde se to pouzije
+k = [[1,4,2,3], [2,4,1,3]]
