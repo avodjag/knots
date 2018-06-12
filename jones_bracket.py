@@ -256,9 +256,6 @@ def reidTwo(knot):
 
         changed = True
         
-        print("ANO")
-        print(dic_to_PD(knot))
-        
         cross1 = knot[edge][0]
         cross2 = knot[edge][1]
         
@@ -291,10 +288,6 @@ def reidTwo(knot):
             y = cross1[0]
             z = cross2[0]
 
-        print("kod " + str([a, b, x, y]))
-        if [a, b, x, y] == [4, 17, 10, 13]:
-            print("HUZZZZAA")
-            
         if a == c:    # jenom smazat
             unknots = unknots + 1
         else:
@@ -302,9 +295,6 @@ def reidTwo(knot):
             
             cross1 = knot[edge][0]
             cross2 = knot[edge][1]
-
-            if len(knot[a]) != 2:
-                print(dic_to_PD(knot))
 
             if knot[a][0] == cross1:
                 aCross = knot[a][1]
@@ -331,18 +321,6 @@ def reidTwo(knot):
             rename(knot, x, z)   
             cross1 = knot[edge][0]
             cross2 = knot[edge][1]
-            
-            if [a, b, x, y] == [4, 17, 10, 13]:
-                print("knot[edge], kde edge je " + str(edge))
-                print(knot[edge])
-                print("x")
-                print(knot[x])
-                print("z")
-                print(knot[z])
-                print("cross1")
-                print(cross1)
-                print("cross2")
-                print(cross2)
 
             if knot[x][0] == cross1:
                 xCross = knot[x][1]
@@ -369,19 +347,6 @@ def reidTwo(knot):
         del knot[x]
         del knot[y]
 
-        if [a, b, x, y] == [4, 17, 10, 13]:
-            print("c")
-            print(knot[c])
-            print("z")
-            print(knot[z])
-            print(c)
-            print(z)
-            
-        
-
-    print("out")
-    print(dic_to_PD(knot))
-
     return [changed, looped, unknots]
             
             
@@ -389,7 +354,7 @@ def reidTwo(knot):
 def bracket(prev_knot, reid2, looped):
     
     knot = copy.deepcopy(prev_knot)
-    print(dic_to_PD(knot))
+    #print(dic_to_PD(knot))
     poly = laurent({})
     
     global N
@@ -404,8 +369,6 @@ def bracket(prev_knot, reid2, looped):
 
     if looped:
         E, loop_unknots = unloop(knot)
-        if loop_unknots > 0:
-            print("ANO")
         if E != one or loop_unknots > 0:
             #Aw = laurent({-3*exp : 1})
             #print("odmotano") #je to spatne, moc prejmenovani
