@@ -38,17 +38,6 @@ def inTriangle(triangle, X):
         return True
     return False
 
-def triangulation(points):
-    hull = convexHull(points)
-    triang = triangPoly(hull)
-    for P in points:
-        if P in hull:
-            continue
-        for tr in triang:
-            if inTriangle(tr, P):
-                break
-        
-
 # na primce proste nechavam, bo by s tim slo pohnout, ackoli tam budou dvojite hrany
 # po smeru rucicek
 def convexHull(points):
@@ -94,7 +83,23 @@ def triangPoly(polygon):
     for i in range(1, n-1):
         triang.append([polygon[0], polygon[i], polygon[i+1]])
     return triang
-       
+
+
+def triangulation(points):
+    hull = convexHull(points)
+    triang = triangPoly(hull)
+    for P in points:
+        if P in hull:
+            continue
+        for tr in triang:
+            if inTriangle(tr, P):
+                break
+        A, B, C = tr
+        triang.remove(tr)
+        triang.append([A, B, P])
+        triang.append([B, C, P])
+        triang.append([C, A, P])
+    return triang
     
 
 def isInCircumricle(X, triangle):
@@ -106,3 +111,37 @@ def isInCircumricle(X, triangle):
     if det == 0:
         return False
     return True
+
+def triangToGraph(triang, points):
+    G = [ [] for i in range(len(points))]
+    for tr in triang:
+        A, B, C = tr
+        
+        i = points.index(A)
+        if B not in  G[i]:
+            G[i].append(B)
+            H[i].append(points.index(B))
+        if C not in  G[i]:
+            G[i].append(C)
+            H[i].append(points.index(C))
+            
+        i = points.index(B)
+        if A not in  G[i]:
+            G[i].append(A)
+            H[i].append(points.index(A))
+        if C not in  G[i]:
+            G[i].append(C)
+            H[i].append(points.index(C))
+            
+        i = points.index(C)
+        if A not in  G[i]:
+            G[i].append(A)
+            H[i].append(points.index(A))
+        if B not in  G[i]:
+            G[i].append(B)
+            H[i].append(points.index(B))
+    return [G, H]
+
+def graphToKnot(graph):
+    
+        
