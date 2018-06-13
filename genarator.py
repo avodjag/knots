@@ -41,9 +41,8 @@ def inTriangle(triangle, X):
 # na primce proste nechavam, bo by s tim slo pohnout, ackoli tam budou dvojite hrany
 # po smeru rucicek
 def convexHull(points):
-    if len(points) < 4:
-        print("Kratke")
-        return
+    if len(points) < 3:
+        return points
     p = sorted(points)
     ho = [p[0], p[1]]
     for i in range(2, len(points)):
@@ -112,8 +111,10 @@ def isInCircumricle(X, triangle):
         return False
     return True
 
+# chcu sousedni vrcholy serazene po smeru rucicek
 def triangToGraph(triang, points):
     G = [ [] for i in range(len(points))]
+    H = [ [] for i in range(len(points))]
     for tr in triang:
         A, B, C = tr
         
@@ -140,8 +141,21 @@ def triangToGraph(triang, points):
         if B not in  G[i]:
             G[i].append(B)
             H[i].append(points.index(B))
+
+    # pridat trizeni po smeru hodinovych rucicek
+    # seradit horni a dolni
+    # a bude to
+
+    for i in range(len(G)):
+        H[i] = convexHull(G[i] + [points[i]])
+        if points[i] in H[i]:
+            H[i].remove(points[i])
     return [G, H]
+
+p=randomPoints(5)
+tr = triangulation(p)
+G, H = triangToGraph(tr, p)
 
 def graphToKnot(graph):
     
-        
+        pass
