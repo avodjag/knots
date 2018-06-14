@@ -75,6 +75,47 @@ def convexHull(points):
     hull = ho + ol[1:-1]
     return hull
 
+def star(X, points):
+    ho = []
+    do = []
+    for P in points:
+        if P[1] > X[1]:
+            ho.append(P)
+        else:
+            do.append(P)
+
+    for i in range(len(ho)):
+        for j in range(i, len(ho)):
+            A = ho[j]
+            flag = True
+            for k in range(i, len(ho)):
+                B = ho[k]
+                d = side([X, A], B)
+                if d < 0:
+                    flag = False
+                    break
+            if flag:
+                tmp = ho[i]
+                ho[i] = A
+                ho[j] = tmp
+
+    for i in range(len(do)):
+        for j in range(i, len(do)):
+            A = do[j]
+            flag = True
+            for k in range(i, len(do)):
+                B = do[k]
+                d = side([X, A], B)
+                if d < 0:
+                    flag = False
+                    break
+            if flag:
+                tmp = do[i]
+                do[i] = A
+                do[j] = tmp
+                
+    return ho + do
+
 # po smeru, [0, i, i+1]
 def triangPoly(polygon):
     n = len(polygon)
@@ -141,28 +182,21 @@ def triangToGraph(triang, points):
     # seradit horni a dolni
     # a bude to
 
+
     for i in range(n):
         P = points[i]
-        up = []
-        dn = []
-        for v in G[i]:
-            if v[1] > P[1]:
-                up.append(v)
-            else:   # rovnost nemuze nastat
-                dn.append(v)
-        up = sorted(up)
-        dn = list(reversed(sorted(dn)))
-        G[i] = up + dn
+        G[i] = star(P, G[i])
 
     for i in range(n):
         for v in G[i]:
             H[i].append(points.index(v))
 
-    return H
+    return [G, H]
 
-p=randomPoints(5)
+#p=randomPoints(5)
+p=[[27, 418], [198, 414], [197, 240], [67, 392], [375, 11]]
 tr = triangulation(p)
-H = triangToGraph(tr, p)
+G, H = triangToGraph(tr, p)
 
 def makeEdges(G):
     n = len(G)
@@ -174,18 +208,125 @@ def makeEdges(G):
                 edges.append(e)
     return edges
 
+def unchecked(order):
+    for i in range(len(order)):
+        if order[i] == [-1, -1]:
+            return i
+    return -1
+
 def graphToKnot(G):
     # kazde hrane priradit ty sousedni
     # pak vybrat nahodny vrchol
     # prochazet a v kazdem vybrat nahodne orientaci
 
-    n = len(G)
-    
+    n = len(G)    
     edges = makeEdges(G)
+    m = len(edges)
 
     crossings = []
 
     for e in edges:
         u, v = e
         
+        unbr = G[u]
+        k = len(unbr)        
+
+        ui = unbr.index(v)
+        ai = unbr[(ui+1)%k]
+        a = edges.index([min(ai, u), max(ai, u)])
+        di = unbr[(ui-1)%k]
+        d = edges.index([min(di, u), max(di, u)])
+
+        vnbr = G[v]
+        l = len(vnbr)
+
+        vi = vnbr.index(u)
+        ci = vnbr[(vi+1)%l]
+        c = edges.index([min(ci, v), max(ci, v)])
+        bi = vnbr[(vi-1)%l]
+        b = edges.index([min(bi, v), max(bi, v)])
+
+        crossings.append([a, b, c, d])
+
+    signs = [random.randrange(2) for i in range(m)]
+    order = [[-1, -1] for i in range(m)]
+
+    start = unchecked(order)
+    
+    while start != -1:
+        print(order)
+        print(start)
+        a, b, c, d = crossings[start]
+        if order[start][0] == -1:
+            order[start][0] = 1
+            prev = start
+            nxt = c
+            nechci = a
+        else:
+            order[start][1] = 1
+            prev = start
+            nxt = d
+            nechci = b
+        cnt = 0
+        while [prev, nxt] != [nechci, start]:
+            a, b, c, d = crossings[nxt]
+            ind = crossings[nxt].index(prev)
+            print(nxt)
+            cnt = cnt + 1
+            if cnt > 10:
+                print("erri")
+                break
+            if ind == 0:
+                order[nxt][0] = 1
+                newNxt = c
+            elif ind == 1:
+                order[nxt][1] = 1
+                newNxt = d
+            elif ind == 2:
+                order[nxt][0] = 0
+                newNxt = a
+            elif ind == 3:
+                order[nxt][1] = 0
+                newNxt = b
+            prev = nxt
+            nxt = newNxt
+
+        start = unchecked(order)
+
+    PD = []
+
+    for i in range(m):
+        a, b, c, d = crossings[i]
+        stav = order[i]
+        sign = signs[i]
+
+        if stav == [1, 1]:
+            if sign == 1:
+                cross = [b, c, d, a]
+            else:
+                cross = [a, b, c, d]
+        elif stav == [1, 0]:
+            if sign == 1:
+                cross = [a, b, c, d]
+            else:
+                cross = [d, a, b, c]
+        elif stav == [0, 1]:
+            if sign == 1:
+                cross = [c, d, a, b]
+            else:
+                cross = [b, c, d, a]
+        elif stav == [0, 0]:
+            if sign == 1:
+                cross = [d, a, b, c]
+            else:
+                cross = [c, d, a, b]
+        else:
+            print(stav)
+            
+    return PD       
+            
         
+c=graphToKnot(H)
+edges = makeEdges(H)
+
+# [[167, 95], [360, 473], [95, 270], [39, 334], [230, 89]]
