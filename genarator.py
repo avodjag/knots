@@ -113,49 +113,79 @@ def isInCircumricle(X, triangle):
 
 # chcu sousedni vrcholy serazene po smeru rucicek
 def triangToGraph(triang, points):
-    G = [ [] for i in range(len(points))]
-    H = [ [] for i in range(len(points))]
+    n = len(points)
+    G = [ [] for i in range(n)]
+    H = [ [] for i in range(n)]
     for tr in triang:
         A, B, C = tr
         
         i = points.index(A)
         if B not in  G[i]:
             G[i].append(B)
-            H[i].append(points.index(B))
         if C not in  G[i]:
             G[i].append(C)
-            H[i].append(points.index(C))
             
         i = points.index(B)
         if A not in  G[i]:
             G[i].append(A)
-            H[i].append(points.index(A))
         if C not in  G[i]:
             G[i].append(C)
-            H[i].append(points.index(C))
             
         i = points.index(C)
         if A not in  G[i]:
             G[i].append(A)
-            H[i].append(points.index(A))
         if B not in  G[i]:
             G[i].append(B)
-            H[i].append(points.index(B))
 
     # pridat trizeni po smeru hodinovych rucicek
     # seradit horni a dolni
     # a bude to
 
-    for i in range(len(G)):
-        H[i] = convexHull(G[i] + [points[i]])
-        if points[i] in H[i]:
-            H[i].remove(points[i])
-    return [G, H]
+    for i in range(n):
+        P = points[i]
+        up = []
+        dn = []
+        for v in G[i]:
+            if v[1] > P[1]:
+                up.append(v)
+            else:   # rovnost nemuze nastat
+                dn.append(v)
+        up = sorted(up)
+        dn = list(reversed(sorted(dn)))
+        G[i] = up + dn
+
+    for i in range(n):
+        for v in G[i]:
+            H[i].append(points.index(v))
+
+    return H
 
 p=randomPoints(5)
 tr = triangulation(p)
-G, H = triangToGraph(tr, p)
+H = triangToGraph(tr, p)
 
-def graphToKnot(graph):
+def makeEdges(G):
+    n = len(G)
+    edges = []
+    for i in range(n):
+        for v in G[i]:
+            e = [min(i, v), max(i, v)]            
+            if e not in edges:
+                edges.append(e)
+    return edges
+
+def graphToKnot(G):
+    # kazde hrane priradit ty sousedni
+    # pak vybrat nahodny vrchol
+    # prochazet a v kazdem vybrat nahodne orientaci
+
+    n = len(G)
     
-        pass
+    edges = makeEdges(G)
+
+    crossings = []
+
+    for e in edges:
+        u, v = e
+        
+        
