@@ -193,10 +193,7 @@ def triangToGraph(triang, points):
 
     return [G, H]
 
-#p=randomPoints(5)
-p=[[27, 418], [198, 414], [197, 240], [67, 392], [375, 11]]
-tr = triangulation(p)
-G, H = triangToGraph(tr, p)
+
 
 def makeEdges(G):
     n = len(G)
@@ -210,9 +207,10 @@ def makeEdges(G):
 
 def unchecked(order):
     for i in range(len(order)):
-        if order[i] == [-1, -1]:
+        if order[i][0] == -1 or order[i][1] == -1:
             return i
     return -1
+
 
 def graphToKnot(G):
     # kazde hrane priradit ty sousedni
@@ -247,15 +245,15 @@ def graphToKnot(G):
         b = edges.index([min(bi, v), max(bi, v)])
 
         crossings.append([a, b, c, d])
+    #print(crossings)
 
     signs = [random.randrange(2) for i in range(m)]
     order = [[-1, -1] for i in range(m)]
 
     start = unchecked(order)
+    knotEdge = []
     
     while start != -1:
-        print(order)
-        print(start)
         a, b, c, d = crossings[start]
         if order[start][0] == -1:
             order[start][0] = 1
@@ -268,14 +266,12 @@ def graphToKnot(G):
             nxt = d
             nechci = b
         cnt = 0
+        knotEdge.append([nechci, start])
         while [prev, nxt] != [nechci, start]:
+            knotEdge.append([prev, nxt])
             a, b, c, d = crossings[nxt]
             ind = crossings[nxt].index(prev)
-            print(nxt)
-            cnt = cnt + 1
-            if cnt > 10:
-                print("erri")
-                break
+                
             if ind == 0:
                 order[nxt][0] = 1
                 newNxt = c
@@ -290,10 +286,13 @@ def graphToKnot(G):
                 newNxt = b
             prev = nxt
             nxt = newNxt
+            #print(knotEdge)
 
         start = unchecked(order)
 
-    PD = []
+    notPD = []
+
+    #print(knotEdge)
 
     for i in range(m):
         a, b, c, d = crossings[i]
@@ -322,11 +321,44 @@ def graphToKnot(G):
                 cross = [c, d, a, b]
         else:
             print(stav)
-            
+        notPD.append(cross)
+
+
+    #print("notPD")
+    #print(notPD)
+    
+    PD = notPD
+    
+    for i in range(len(notPD)):
+        for j in range(len(notPD[i])):
+            if [notPD[i][j], i] in knotEdge:
+                PD[i][j] = knotEdge.index([notPD[i][j], i] ) + 1
+            else:
+                PD[i][j] = knotEdge.index([i,notPD[i][j]] ) + 1
+
+    print(PD)
+    
     return PD       
             
-        
-c=graphToKnot(H)
+
+
+def generator(n):
+    p=randomPoints(n)
+    print("p")
+    print(p)
+    #p=[[27, 418], [198, 414], [197, 240], [67, 392], [375, 11]]
+    tr = triangulation(p)
+    print("tr")
+    G, H = triangToGraph(tr, p)
+    print("H")
+            
+    c=graphToKnot(H)
+    print(c)
+    edges = makeEdges(H)
+    
+p=[[250, 517], [122, 644], [326, 207], [642, 486], [618, 510], [374, 166], [679, 252]]
+tr = triangulation(p)
+G, H = triangToGraph(tr, p)
 edges = makeEdges(H)
 
-# [[167, 95], [360, 473], [95, 270], [39, 334], [230, 89]]
+# problem, kdyz ma vrchol deg 2 nebo 1

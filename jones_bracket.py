@@ -364,7 +364,7 @@ def bracket(prev_knot, reid2, looped):
     global N
     global M
     global K
-    global counter
+    #global counter
 
     M = M + 1
     
@@ -394,13 +394,18 @@ def bracket(prev_knot, reid2, looped):
              return poly
 
     N = N + 1
-
-    if K < N:
-        K = 2*K
+    if N == 1:
+        print(len(dic_to_PD(knot)))
+    
+    #if K < N:
+     #   K = 2*K
+      #  print(N)
+       # print(len(dic_to_PD(knot)))
+    if N%1000 == 0:
         print(N)
-        print(len(list(knot.keys())))
+        print(len(dic_to_PD(knot)))
 
-    counter[len(knot)] = counter[len(knot)] + 1
+    #counter[len(knot)] = counter[len(knot)] + 1
     #print(len(knot))
     
     edge = next(iter(knot))
