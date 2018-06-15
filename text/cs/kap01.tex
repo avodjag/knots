@@ -4,21 +4,121 @@
 
 \section{Co uvnitř}
 
+
+
 Definice, důkaz ekvivalence definic, \#P 
 Předpokládám reudenaistra a pod
+
+Studium invariantů, polynomů
+Skein relation
+Uzel
+Link
+Pro linky? Uzly?
+Diagramy - popsat?
+
+Ukázat, že ampirichal knot má substituci (wiki říká, že přes kauffman)
+
+Uzel, orientace, link.
+
+\section{začátek}
+Popis kladných a záporných křížení
+
+Pro popis polynomů na uzlech se používají skein (česky přadeno) vztahy.
+Skein vztah popisuje, jaký je vztah mezi polynomy tří linků $L_+$, $ L_-$ a $L_0$, jejichž diagramy jsou identické až na oblast jednoho křížení. V linku $L_+$ má toto křížení kladnou orientaci, v $L_-$ zápornou a v $L_0$ je křížení rozpojené, viz obrázek.
 
 \section{Definice}
 
 \begin{definice}\label{def01:1}
-Jonesův polynom uzlu $V_L(t)$ $L$ je Laurentův polynom v proměnné $t$ splňující následující vlastnosti
+Jonesův polynom orientovaného uzlu $K$ je laurentův polynom značený $V_K(t)$ v proměnné $\sqrt t$ (tj. polynom v $Z[\sqrt t, \sqrt{t^{-1}}]$), který
 \begin{itemize}
-
+\item
+je uzlový invariant
 \item 
-Je to uzlový invariant
-\item 
- $V_\circlearrowleft = 1$ normalizace 
+  je normalizovaný, tedy polynom triviálního uzlu $V_\circlearrowleft$ má hodnotu $1$ 
 \item  
-splňuje vřetenový vztah 
-$$ \frac{1}{t} V_{L+} - t V_{L-} = (\sqrt{t}  + \frac{1}{\sqrt{t}}) V_{L_0}$$
+splňuje skein vztah 
+$$ \frac{1}{t} V_{K+} - t V_{K-} = (\sqrt{t}  + \frac{1}{\sqrt{t}}) V_{K_0}$$
 \end{itemize}
 \end{definice}
+
+Zmena, musi to byt s linky
+
+Korektnost definice plyne z faktu, že z každého uzlového diagramu lze změnou křížení z kladného na záporné či obracéně získat diagram triviálního uzlu. Jonesův polynom každého uzlu lze tedy díky skein vztahu rekurzivně spočítatz jeho libovolného diagramu.
+
+Ekvivalentní definice Jonesova polynomu, kterou použijeme v k výpočtu, je založena na závorkovém polynomu (bracket polynomial, Kauffman bracket).
+
+\section{Závorkový polynom}
+Závorkový polynom je definovaný pouze pro diagramy neorientovaných linků (tedy nikoli pro samotné linky). Je počítán z jednodušších uzlů.
+
+\begin{definice}\label{def01:2}
+Závorkový polynom neorientovaného diagramu $D$, značení $\langle D \rangle$, je Laurentův polynom v proměnné $A$, definovaný třemi odvozovacími pravidly:
+\begin{enumerate}[i.]
+\item
+$ \langle \bigcirc  \rangle = 1$, kde $\bigcirc$ značí diagram s jednou komponentou bez křížení
+\item
+$ \langle krizeni  \rangle = A  \langle vert \rangle + A^{-1}  \langle hor \rangle $, kde $krizeni$ značí diagram obsahující křížení, $vert$ je diagram, který je shodný až na dané křížení, které je vertikální rozpojeno a $hor$ je diagram, v němž je křížení rozpojeno horizontálně.
+\item
+$ \langle D \cup \bigcirc \rangle = (-A^2 - A^{-2}) \langle D \rangle$, kde $D \cup \bigcirc $ značí sjednocení diagramu $D$ a diagramu s jednou komponentou bez křížení.
+\end{enumerate}
+
+\end{definice}
+
+\begin{dusl}
+$ \langle krizeni opacne  \rangle = A  \langle hor \rangle + A^{-1}  \langle vert \rangle $
+\end{dusl}
+
+\begin{lemma}
+$ \langle smycka \rangle = A^{-3} \langle odsmycka \rangle$
+$ \langle smycka naopak \rangle = A^{3} \langle odsmycka \rangle$
+\end{lemma}
+\begin{dukaz}
+Par obrazku
+\end{dukaz}
+
+Dva diagramy jsou ekvivalentni, pokud mezi nimi existuje série Reidematre
+
+Obrázek Reidemastra
+
+\begin{tvrz}
+Závorkový polynom je invariantní vůči druhému Reidemastrovi
+\end{tvrz}
+\begin{dukaz}
+Par obrazku
+\end{dukaz}
+
+\begin{dusl}
+Závorkový polynom je invariantní vůči třetímu Reidemastrovi.
+\end{dusl}
+\begin{dukaz}
+Par obrazku
+\end{dukaz}
+
+\begin{definice}
+Zakroucení (writhe) orientovaného diagramu $D$ je součet znamení všech křížení v $D$, značí se $w(D)$.
+\end{definice}
+
+\begin{definice}
+Normalizovaný závorkový polynom orientovaného linku $L$ definijeme $X(L) = (-A^3)^{-w(D)}\langle D \rangle$, kde je libovolný diagram linku $L$.
+\end{definice}
+
+Korektnost definice plyne z následujícího tvrzení.
+
+\begin{tvrz}
+Normalizovaný závorkový polynom je uzlový (linkový) invariant.
+\end{tvrz}
+\begin{dukaz}
+Již víme, že je invariatní vůčí dva a tři, podle lemmatu bla bla je i podle jedna a je to hotovo.
+\end{dukaz}
+
+\begin{veta}
+Normalizovaný závorkový polynom se substituovanou proměnnou je roven Jonesovu polynomu.
+\end{veta}
+\begin{dukaz}
+Jedna sedi podle tvrzení
+Dva sedi podle definice
+Tři se musí nějak dokázat
+\end{dukaz}
+
+
+
+
