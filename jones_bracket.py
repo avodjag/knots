@@ -354,18 +354,19 @@ def reidTwo(knot):
 def twoSide(knot):
     for e in knot.keys():
         a, b, c, d, s= knot[e][0]
-        A, B, C, D, S = knot[e][1]
-
-        if b == C and c == B:
+        if a != e and a in knot[e][1]:
             return e
-        if c == D and b == A:
+        if b != e and b in knot[e][1]:
             return e
-        if C == d and B == a:
+        if c != e and c in knot[e][1]:
+            return e
+        if d != e and d in knot[e][1]:
             return e
     return -1
 
 def threeSide(knot):
-    cross = -1
+    edge = -1
+    cross = []
     for e in knot.keys():
         c1 = knot[e][0]  # udelat to pak prohozene
         c2 = knot[e][1]
@@ -382,17 +383,59 @@ def threeSide(knot):
             c10 = knot[e1][0]
 
         if knot[e2][0] == c2:
-            c20 = knot[e1][1]
+            c20 = knot[e2][1]
         else:
-            c20 = knot[e1][0]
+            c20 = knot[e2][0]
 
         if c10 != c20:
             break
 
         if e1%2 == e2%2:
-            return c10
+            return e1
         else:
+            edge = e1
             cross = c10
+            
+    for e in knot.keys():
+        c1 = knot[e][1]  # udelat to pak prohozene
+        c2 = knot[e][0]
+
+        i1 = c1.index(e)
+        i2 = c2.index(e)
+
+        e1 = c1[(i1+1)%4]
+        e2 = c2[(i2-1)%4]
+
+        if knot[e1][0] == c1:
+            c10 = knot[e1][1]
+        else:
+            c10 = knot[e1][0]
+
+        if knot[e2][0] == c2:
+            c20 = knot[e2][1]
+        else:
+            c20 = knot[e2][0]
+
+        if c10 != c20:
+            break
+
+        if e1%2 == e2%2:
+            return e1
+        else:
+            edge = e1
+            cross = c10
+    if edge == -1:
+        print(dic_to_PD(knot))
+        for e in knot.keys():
+            print(e)
+            print(knot[e])
+    else:
+        print("nekdy")
+    if knot[edge][0] == cross:
+        tmp = knot[edge][1]
+        knot[edge][1] = cross
+        knot[edge][0] = tmp
+    return edge
             
 
 def bracket(prev_knot, reid2, looped):
@@ -451,10 +494,15 @@ def bracket(prev_knot, reid2, looped):
     #print(len(knot))
     
     #edge = next(iter(knot))
+    edge = twoSide(knot)
 
+    if edge == -1:
+        edge = threeSide(knot)
+    if edge == -1:
+        print(dic_to_PD(knot))
 
-    if not (twoSide(knot) or threeSide(knot)):
-        print("smth wrong")
+    #if not (twoSide(knot) or threeSide(knot)):
+        #print("smth wrong")
     crossing = knot[edge][1]
     a, b, c, d, s = crossing
     
@@ -506,3 +554,7 @@ k = [[1,4,2,3], [2,4,1,3]]
 k50 = [[1, 40, 2, 41], [23, 3, 24, 2], [3, 43, 4, 42], [4, 26, 5, 25], [66, 5, 67, 6], [61, 7, 62, 6], [86, 7, 87, 8], [8, 81, 9, 82], [9, 48, 10, 49], [49, 10, 50, 11], [11, 90, 12, 91], [91, 12, 92, 13], [13, 92, 14, 93], [14, 51, 15, 52], [15, 59, 16, 58], [29, 17, 30, 16], [17, 97, 18, 96], [18, 36, 19, 35], [72, 20, 73, 19], [73, 20, 74, 21], [21, 100, 22, 1], [22, 39, 23, 40], [24, 42, 25, 41], [26, 43, 27, 44], [68, 27, 69, 28], [77, 29, 78, 28], [30, 57, 31, 58], [94, 31, 95, 32], [53, 32, 54, 33], [33, 54, 34, 55], [55, 34, 56, 35], [36, 97, 37, 98], [70, 38, 71, 37], [38, 76, 39, 75], [44, 68, 45, 67], [78, 46, 79, 45], [46, 59, 47, 60], [88, 47, 89, 48], [89, 51, 90, 50], [52, 94, 53, 93], [56, 95, 57, 96], [79, 60, 80, 61], [85, 62, 86, 63], [63, 82, 64, 83], [64, 84, 65, 83], [84, 66, 85, 65], [69, 76, 70, 77], [71, 99, 72, 98], [74, 99, 75, 100], [80, 88, 81, 87]]
 
 k49 = [[1, 38, 2, 39], [35, 2, 36, 3], [40, 3, 41, 4], [33, 5, 34, 4], [5, 59, 6, 58], [57, 7, 58, 6], [7, 57, 8, 56], [59, 9, 60, 8], [42, 10, 43, 9], [10, 32, 11, 31], [96, 11, 97, 12], [12, 86, 13, 85], [13, 86, 14, 87], [69, 15, 70, 14], [88, 15, 89, 16], [16, 68, 17, 67], [90, 18, 91, 17], [91, 18, 92, 19], [66, 20, 67, 19], [93, 21, 94, 20], [21, 65, 22, 64], [22, 51, 23, 52], [23, 51, 24, 50], [25, 25, 26, 24], [26, 49, 27, 50], [80, 28, 81, 27], [28, 54, 29, 53], [74, 29, 75, 30], [61, 31, 62, 30], [32, 42, 33, 41], [39, 35, 40, 34], [36, 98, 37, 97], [98, 38, 1, 37], [60, 43, 61, 44], [44, 55, 45, 56], [76, 46, 77, 45], [77, 46, 78, 47], [78, 48, 79, 47], [79, 48, 80, 49], [52, 81, 53, 82], [54, 76, 55, 75], [73, 63, 74, 62], [63, 83, 64, 82], [65, 93, 66, 92], [68, 89, 69, 90], [70, 88, 71, 87], [71, 94, 72, 95], [83, 73, 84, 72], [84, 96, 85, 95]]
+# 168040
+# rozbite na k49, k50
+#mozna na vsech uzlech, kde je jenom trojice?
+# prozkoumat tenhle [[7, 41, 24, 40], [17, 7, 14, 36], [27, 15, 28, 14], [15, 34, 16, 35], [16, 30, 17, 29], [31, 25, 32, 24], [25, 42, 26, 39], [33, 26, 34, 27], [28, 35, 29, 36], [41, 30, 42, 31], [39, 33, 40, 32]]
