@@ -350,7 +350,49 @@ def reidTwo(knot):
         del knot[y]
 
     return [changed, looped, unknots]
-            
+
+def twoSide(knot):
+    for e in knot.keys():
+        a, b, c, d, s= knot[e][0]
+        A, B, C, D, S = knot[e][1]
+
+        if b == C and c == B:
+            return e
+        if c == D and b == A:
+            return e
+        if C == d and B == a:
+            return e
+    return -1
+
+def threeSide(knot):
+    cross = -1
+    for e in knot.keys():
+        c1 = knot[e][0]  # udelat to pak prohozene
+        c2 = knot[e][1]
+
+        i1 = c1.index(e)
+        i2 = c2.index(e)
+
+        e1 = c1[(i1+1)%4]
+        e2 = c2[(i2-1)%4]
+
+        if knot[e1][0] == c1:
+            c10 = knot[e1][1]
+        else:
+            c10 = knot[e1][0]
+
+        if knot[e2][0] == c2:
+            c20 = knot[e1][1]
+        else:
+            c20 = knot[e1][0]
+
+        if c10 != c20:
+            break
+
+        if e1%2 == e2%2:
+            return c10
+        else:
+            cross = c10
             
 
 def bracket(prev_knot, reid2, looped):
@@ -401,14 +443,18 @@ def bracket(prev_knot, reid2, looped):
      #   K = 2*K
       #  print(N)
        # print(len(dic_to_PD(knot)))
-    if N%1000 == 0:
+    if N%10000 == 0:
         print(N)
         print(len(dic_to_PD(knot)))
 
     #counter[len(knot)] = counter[len(knot)] + 1
     #print(len(knot))
     
-    edge = next(iter(knot))
+    #edge = next(iter(knot))
+
+
+    if not (twoSide(knot) or threeSide(knot)):
+        print("smth wrong")
     crossing = knot[edge][1]
     a, b, c, d, s = crossing
     
