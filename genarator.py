@@ -268,6 +268,10 @@ def graphToKnot(G):
         cnt = 0
         knotEdge.append([nechci, start])
         while [prev, nxt] != [nechci, start]:
+            cnt = cnt + 1
+            if cnt > n*n:
+                return False
+                break
             knotEdge.append([prev, nxt])
             a, b, c, d = crossings[nxt]
             ind = crossings[nxt].index(prev)
@@ -336,26 +340,30 @@ def graphToKnot(G):
             else:
                 PD[i][j] = knotEdge.index([i,notPD[i][j]] ) + 1
 
-    print(PD)
+    #print(PD)
     
     return PD       
             
 
 
-def generator(n):
+def makeKnot(n):
+    c = True
     p=randomPoints(n)
-    print("p")
-    print(p)
-    #p=[[27, 418], [198, 414], [197, 240], [67, 392], [375, 11]]
+
     tr = triangulation(p)
-    print("tr")
     G, H = triangToGraph(tr, p)
-    print("H")
-            
     c=graphToKnot(H)
-    print(c)
-    edges = makeEdges(H)
-    
+    while c == False:
+        p=randomPoints(n)
+        tr = triangulation(p)
+        G, H = triangToGraph(tr, p)
+        c=graphToKnot(H)
+    #print(c)
+    #edges = makeEdges(H)
+    print(len(c))
+    return c
+
+
 p=[[250, 517], [122, 644], [326, 207], [642, 486], [618, 510], [374, 166], [679, 252]]
 tr = triangulation(p)
 G, H = triangToGraph(tr, p)
