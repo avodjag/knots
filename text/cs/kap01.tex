@@ -2,11 +2,10 @@
 
 \chapter{Definice a vlastnosti Jonesova polynomu}
 
-\section{Co uvnitř}
 
 
 
-Definice, důkaz ekvivalence definic, \#P 
+Definice, důkaz ekvivalence definic
 Předpokládám reudenaistra a pod
 
 Studium invariantů, polynomů
@@ -19,33 +18,44 @@ Diagramy - popsat?
 Ukázat, že ampirichal knot má substituci (wiki říká, že přes kauffman)
 
 Uzel, orientace, link.
+Vhodné věci tučně
 
 \section{začátek}
-Popis kladných a záporných křížení
 
-Pro popis polynomů na uzlech se používají skein (česky přadeno) vztahy.
-Skein vztah popisuje, jaký je vztah mezi polynomy tří linků $L_+$, $ L_-$ a $L_0$, jejichž diagramy jsou identické až na oblast jednoho křížení. V linku $L_+$ má toto křížení kladnou orientaci, v $L_-$ zápornou a v $L_0$ je křížení rozpojené, viz obrázek.
+Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho diagramem, tedy vhodnému rovinnému nakreslení nějaké jeho projekce. Každý uzel má nekonečně mnoho diagramů, ovšem uzlový invariant každému přiřadí stejnou hodnotu (což je blbá věta)
+
+V diagramu orientovaného linku rozlišujeme křížení s kladnou a zápornou orientací, viz obrázek.
+
+Pro popis polynomů uzlech a lincích se používají skein (česky přadeno) vztahy.
+Skein vztah popisuje, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_-$ a $L_0$, jejichž diagramy jsou identické až na oblast jednoho křížení. V linku $L_+$ má toto křížení kladnou orientaci, v $L_-$ zápornou a v $L_0$ je křížení rozpojené, viz obrázek.
 
 \section{Definice}
 
 \begin{definice}\label{def01:1}
-Jonesův polynom orientovaného uzlu $K$ je laurentův polynom značený $V_K(t)$ v proměnné $\sqrt t$ (tj. polynom v $Z[\sqrt t, \sqrt{t^{-1}}]$), který
+Jonesův polynom orientovaného linku $L$ je laurentův polynom značený v proměnné $\sqrt t$ (tj. polynom v $Z[\sqrt t, \sqrt{t^{-1}}]$), značený $V_K(t)$ , který
 \begin{itemize}
 \item
-je uzlový invariant
+je invariantní vůči *** transformacím,
 \item 
-  je normalizovaný, tedy polynom triviálního uzlu $V_\circlearrowleft$ má hodnotu $1$ 
+  je normalizovaný, tedy polynom  $V_\circlearrowleft$ triviálního uzlu má hodnotu $1$ ,
 \item  
 splňuje skein vztah 
-$$ \frac{1}{t} V_{K+} - t V_{K-} = (\sqrt{t}  + \frac{1}{\sqrt{t}}) V_{K_0}$$
+$$ \frac{1}{t} V_{L+} - t V_{L-} = (\sqrt{t}  + \frac{1}{\sqrt{t}}) V_{L_0}$$
 \end{itemize}
 \end{definice}
 
-Zmena, musi to byt s linky
+\begin{lemma}
+Lemma o tom, jak se spočítá polynom sjednocení unknots. Vzorec
+\end{lemma}
+\begin{dukaz}
+Pro dvě kružnice ze skein, pro dvě to plyne indukcí.
+\end{dukaz}
 
-Korektnost definice plyne z faktu, že z každého uzlového diagramu lze změnou křížení z kladného na záporné či obracéně získat diagram triviálního uzlu. Jonesův polynom každého uzlu lze tedy díky skein vztahu rekurzivně spočítatz jeho libovolného diagramu.
+\begin{pozn}
+Z každého diagramu uzlu lze změnou křížení z kladného na záporné či obraceně získat diagram triviálního uzlu. Z každého diagramu linku tedy můžeme změnou křížení získat diagram sjednocení triviálních uzlů, jejichž polynom známe podle předchozího lemmatu. Jonesův polynom každého linku lze tedy díky skein vztahu rekurzivně spočítat z jeho libovolného diagramu. Definice je tím pádem korektní.
+\end{pozn}
 
-Ekvivalentní definice Jonesova polynomu, kterou použijeme v k výpočtu, je založena na závorkovém polynomu (bracket polynomial, Kauffman bracket).
+Definice Jonesova polynomu pomocí skein vztahů není příliš vhodná pro algoritmický výpočet. K němu použijeme ekvivalentní definici založenou na použití tzv. závorkového polynomu (bracket polynomial, Kauffman bracket).
 
 \section{Závorkový polynom}
 Závorkový polynom je definovaný pouze pro diagramy neorientovaných linků (tedy nikoli pro samotné linky). Je počítán z jednodušších uzlů.
@@ -75,9 +85,7 @@ $ \langle smycka naopak \rangle = A^{3} \langle odsmycka \rangle$
 Par obrazku
 \end{dukaz}
 
-Dva diagramy jsou ekvivalentni, pokud mezi nimi existuje série Reidematre
-
-Obrázek Reidemastra
+Je známý výsledek, že dva diagramy znázorňují stejný lnk (jsou ekvivalentní), pokud mezi nimi existuje série Reidematreových pohybů. Předchozí lemma nám říká, že závorkový polynom není invariantní vůči prvnímu typu Reidemastra. Je ovšem invariantní vůči zbylým typům.
 
 \begin{tvrz}
 Závorkový polynom je invariantní vůči druhému Reidemastrovi
@@ -92,6 +100,8 @@ Závorkový polynom je invariantní vůči třetímu Reidemastrovi.
 \begin{dukaz}
 Par obrazku
 \end{dukaz}
+
+Potřebujeme tedy nějakou úpravu, aby to fungovalo. Měřit míru zakroucení, writhe.
 
 \begin{definice}
 Zakroucení (writhe) orientovaného diagramu $D$ je součet znamení všech křížení v $D$, značí se $w(D)$.
@@ -120,5 +130,6 @@ Tři se musí nějak dokázat
 \end{dukaz}
 
 
-
+Ještě ampirichal knot?
+Asi už je to navíc.
 

@@ -360,10 +360,25 @@ def makeKnot(n):
         c=graphToKnot(H)
     #print(c)
     #edges = makeEdges(H)
-    print(len(c))
+    #print(len(c))
     return c
 
-
+#nageneruje uzly
+def generuj(n):
+    mam = []
+    for i in range(4, n):
+        for j in range(30):
+            c = makeKnot(i)
+            l = len(c)
+            delka = str(l)
+            if l not in mam:
+                mam.append(l)
+                file = open("./uzly/" + delka + ".txt", "w")
+                file.write(str(c))
+                file.close()
+    mam.sort()
+    print(mam)
+    
 p=[[250, 517], [122, 644], [326, 207], [642, 486], [618, 510], [374, 166], [679, 252]]
 tr = triangulation(p)
 G, H = triangToGraph(tr, p)
