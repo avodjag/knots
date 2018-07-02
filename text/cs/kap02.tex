@@ -1,8 +1,7 @@
 %%% Druhá kapitola
-\chapter{Druhá}
+\chapter{Výpočet Jonesova polynomu}
 
 
-\section{Co v ní}
 Je to v tride number P  
 Popis algoritmu, vypocet horniho odhadu, dolní odhad pro nějakou třídu uzlů, na které se to rozbije, skripta z počítačové algebry, důkaz správnosti algoritmu
 Odhad složitosti?
@@ -10,3 +9,136 @@ Odhad složitosti?
 
 Bylo by zajímavé identifikovat, pro které typy uzlů je algoritmus efektivní a pro které naopak dosahuje nejhorších výsledků.
 Rychle na kanonickych nakreslenich torus uzlu a preclikovych uzlu.
+
+Asi citovat complexity zoo.
+A třeba kapitoly?
+
+Jak se používá velké O?
+Už jsem viděla, že můžu použít O(0.83). Ale co s tím spodním?
+Co problém, co algoritmus.
+
+\section{Výpočetní složitost problému}
+
+Podle (On the computational complexity of the Jones and Tutte polynomials) patří problém určení Jonesova polynomu alternujího uzlu do třídy složitosti \#P, dokonce je tento problém \# P-těžký. 
+
+Třída \#P obsahuje problémy, jejichž cílem je určit počet přijímacích cest nedeterministického Turingova stroje, jedná se tedy o rozšíření problémů třídy NP. Například problém \# SAT znamená nejen určit, jestli existuje pravdivostní ohodnocení Boolovské formule, ale i spočítat, kolik takových ohodnocení existuje celkem.
+
+Říct, co z toho plyne. Jako že nemůžu najít lineární algoritmus. Nebo bych jako byla fakt dobrá, kdyby ano.
+
+\section{Algoritmus}
+Nejdriv chcu popsat, že to tak jde. Pak dodat pseudokód.
+
+Do jakých detailů? Jak popsat implementaci? Python? Důkaz správnosti - vždy se zastaví. Vstup s počtem křížení. Vstup je PD notace (to až nějak v implementaci).
+
+--------------
+
+Náš algoritmus dostane na vstupu diagram orientovaného linku s $n$ kříženími zapsaný v PD notaci.
+
+\subsection{PD notace} 
+
+PD notace je zápis sestávajací ze čtveřice čísel pro každé křížení a jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od $1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje spodem a pokračuje se s úseky proti směru hodinových ručiček. Viz obrázek.
+
+\subsection{Přímočarý algoritmus}
+
+Jak již bylo naznačeno, k výpočtu Jonesova polynomu používáme závorkový polynom a následnou normalizaci pomocí writhe.
+
+Závorkový polynom lze spočítat jednoduchým rekurzivním algoritmem.
+
+\begin{code}
+Bracket(link)
+   \textbf{if} link nemá křížení
+       return 1
+       
+   vyber křížení.
+   
+   link_v := link s křížením rozpojeným vertikálně
+   if link_v obsahuje disjukntní kružnici
+       unknot_v := 1
+   else
+       unknot_v := 0
+       
+   link_h := link s křížením rozpojeným horizontálně
+   
+   if link_h obsahuje disjukntní kružnici
+       unknot_h := 1
+   else
+       unknot_h := 0
+  Tohle se na pseudokod vážně nehodí, nejde tady ani zvýrazňovat.
+\end{code}
+
+\begin{algorithm}
+\KwData{Diagram v PD n otaci}
+\KwResult{Závorkový polynom}
+$\sqrt{3}$
+\caption{How to write algorithms}
+\end{algorithm}
+
+Pak se k tomu přidá writhe (mám ukázat, jak se počítá z PD notace?) a je to.
+
+Takže teď zápis algoritmu se substitucí a writhe.
+
+Zjevně je tento algoritmus v $O(2^n)$.
+
+\subsection{Průběžné rozmotávání}
+Algoritmus můžeme zrychlit, pokud se ho pokusíme v každém kroku rozmotat. 
+
+Odmotávání smyček odpovídá prvnímu Reidematrovi a musíme to pak přenásobit.
+
+Také se můžeme zbavit dvou křížení druhým Reidematrovým pohybem.
+
+Oba typy jsou rozmotatelné v lineárním čase vzhledem k počtu křížení.
+
+\subsection{Vhodná volba křížení}
+Tady nějak nezáleží na orientaci.
+
+Algoritmu můžeme výrazně urychlit vhodnou volbou křížení k rozpojení ve výpočtu závorkového polynomu tak, aby bylo rozpojený uzel možné co nejvíce rozmotat.
+
+Každý linkový diagram odpovídá rovinnému grafu, v němž křížení představují vrcholy (vždy stupně čtyři) a úseky mězi kříženími hrany. Dále budeme při popisu diagramů používat grafovou terminologii.
+
+Link s $n$ kříženími odpovídá tedy grafu s $n$ vrcholy a 2$n$ hranami.
+
+Eulerova formule pro rovinné grafy říká, že $v - e +f = 2$, kde $v$ značí počet vrcholů, $e$ počet hran a $f$ počet stěn.
+
+V našem případě tedy dostáváme vzorec pro počet stěn $f = n+2$.
+
+Každá hrana náleží dvěma stěnám, tedy rozdělujeme 4$n$ hran mezi $n+2$, takže musí existovat stěna, která je ohraničená méně než čtyřmi hranami.
+
+Stěna s jednou hranou je právě smyčka. NOPE! ono je asi dulezite kvuli pocitani sten, ze je to rozmotane. NOPE~ v pohode
+
+Stěna s dvěma hranami je buď odstranitelná, nebo typ A.
+
+Stěna se třemi hranami je buď B1, nebo B2.
+
+Typ je prostě nejlepší, ten vybereme a v dalším kroku hned půjde něco rozmotat.
+
+Pak preferujeme typ B1 - není to blbost? Nemám nejdřív chtít B1?
+
+Pak B2. Z něj uděláme B1 a v dalším kroku bude pohoda.
+
+\subsection{Konečný algoritmus}
+Pseudokód toho celého. Jones jako v tom prvním. Nebo ho uvést až tady a nahoře se na to odkázat.
+
+Vždy se zjevně zastaví.
+Každopádně tady uvést pseudokód.
+\section{Analýza složitosti algoritmu}
+\subsection{Horní odhad}
+Algoritmus nejrychleji běží, pokud link rozmotává. K nejmenší míře rozmotávání dochází, pokud se tam vždycky najde jen B2. Musím si to rozdělit do sudého a lichého kroku. V sudém kroku nalezne jen B2, v lichém pak musí být B1, a tedy se jedna větev zmenší, ale jinak nic.
+
+To se napíše do stromu.
+
+Z toho se udělá rekurentní vzorec.
+
+Z toho vypočítáme, jak to vychází.
+
+Algoritmus má tedy časovou složitost $O(...)$
+
+\subsection{Dolní odhad}
+------------------------
+Analýza jak to jde.
+
+Dolní odhad
+Kolečka.
+
+Plyne z toho složitost?
+
+Citovat PD notaci
