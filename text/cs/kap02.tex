@@ -26,6 +26,7 @@ Třída \#P obsahuje problémy, jejichž cílem je určit počet přijímacích 
 Nejdriv chcu popsat, že to tak jde. Pak dodat pseudokód.
 
 Do jakých detailů? Jak popsat implementaci? Python? Důkaz správnosti - vždy se zastaví. Vstup s počtem křížení. Vstup je PD notace (to až nějak v implementaci).
+Podkapitola na implementační detaily a vychytávky?
 
 --------------
 
@@ -35,13 +36,15 @@ Náš algoritmus dostane na vstupu diagram orientovaného linku s $n$ křížen�
 
 PD notace je zápis sestávajací ze čtveřice čísel pro každé křížení a jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od $1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje spodem, a pokračuje se s úseky navazujícími proti směru hodinových ručiček. Viz obrázek.
 
+Linky
+
 \subsection{Výpočet Jonesova polynomu ze závorkového polynomu}
 
 Jak již bylo řečeno, k výpočtu Jonesova polynomu používáme závorkový polynom. Podle věty se Jonesův polynom získá z normalizovaného závorkového polynomu substitucí proměnné. 
 
 \begin{algorithm}[H]
 \DontPrintSemicolon
-\KwData{Diagram linku $L$  s $n$ krízení}
+\KwData{Diagram linku $L$  s $n$ krížení}
 \KwResult{Jonesův polynom v proměnné $t$}
 \SetKwData{bracketPoly}{závorkovýPolynom}
 \SetKwData{writhe}{zamotání}
@@ -50,6 +53,7 @@ Jak již bylo řečeno, k výpočtu Jonesova polynomu používáme závorkový p
 \SetKwFunction{Writhe}{Writhe}
 \SetKwFunction{Bracket}{Bracket}
 \SetKwFunction{Substituce}{Substituce}
+
 
 \BlankLine
 
@@ -74,7 +78,15 @@ Dále se budeme zabývat výpočtem závorkový polynom.
 
 
 \subsection{Přímočarý výpočet závorkového polynomu}
+
+Možná to celé nahradit diagramy.
+
 Z definice závorkového polynomu plyne jednoduchý rekurzivní algoritmus.
+
+Budu tomu říkat rozpojení křížení. Synové s $n-1$.
+
+Háčky jsou možné, ale nesmí být jednoslovné názvy.
+Polynomy rovnou psát v jake jsou proměnné.
 
 \begin{algorithm}[H]
 
@@ -92,7 +104,7 @@ Z definice závorkového polynomu plyne jednoduchý rekurzivní algoritmus.
 
 
 \Fn{\Bracket{$L$}}{
-\KwData{Diagram linku s $n$ krízeními}
+\KwData{Diagram linku s $n$ kríženími}
 \KwResult{Závorkový polynom v promenne $A$}
 \If{link $L$ je kruznice}{\KwRet 1}
 vyber \cross linku $L$
@@ -113,14 +125,16 @@ vyber \cross linku $L$
 \caption{Závorkový polynom} 
 \end{algorithm}
 
-Závorkový polynom linku s $n$ kříženími se vypočte ze dvou závorkových polynomů linků s $n-1$ kříženími. Algoritmus má tedy časovou složitost $O(2^n)$. Stejnou časovou složitost by měl i výpočet Jonesova polynomu používající tento postup.
+Závorkový polynom linku s $n$ kříženími se vypočte ze dvou závorkových polynomů linků s $n-1$ kříženími. Algoritmus má tedy časovou složitost $\mathcal{O}(2^n)$. Stejnou časovou složitost má i výpočet Jonesova polynomu používající tento postup.
+Zastaví + koretnost.
+
 
 \subsection{Průběžné rozmotávání}
 Algoritmus na výpočet závorkového polynomu zrychlíme, pokud se link pokusíme v každém kroku rozmotat, tedy pokud nalezneme diagram ekvivalentního uzlu s menším množstvím křížení. 
 
 V PD notaci jsou snadno naleznutelné případy, kdy lze link rozmotat použitím prvního či druhého Reidemastrova pohybu.
 
-Při použití prvního Reidemastrova pohybu odmotáme jednu smyčkua zbavíme se jednoho křížení, ovšem výsledný závorkový polynom se změní o mocninu $A^3$.
+Při použití prvního Reidemastrova pohybu odmotáme jednu smyčkua zbavíme se jednoho křížení, ovšem výsledný závorkový polynom se změní o mocninu $A^3$ podle lemmatu.
 
 Použitím druhého Reidematrova pohybu se zbavíme dvou křížení a polynom zůstane podle lemmatu stejný.
 
@@ -133,16 +147,28 @@ Použitím druhého Reidematrova pohybu se zbavíme dvou křížení a polynom z
 \SetKwData{v}{VL}
 \SetKwData{Hk}{Hk}
 \SetKwData{Vk}{Vk}
+\SetKwData{L}{L}
+\SetKwData{e}{e}
 \SetKwFunction{Bracket}{Bracket}%
 \SetKwData{bracketPoly}{zavorkPoly}
 
 \SetKwProg{Fn}{Function}{}{end}
 
 
-\Fn{\Bracket{$L$}}{
-\KwData{Diagram linku s $n$ krízeními}
-\KwResult{Závorkový polynom v promenne $A$}
+\Fn{\Bracket{\L}}{
 
+Rozmotej link \L prvnim Reid pohybem\\
+\If{neco rozmotano}{
+\e $\leftarrow$ soucet znaminek rozmotanych krizeni\\
+\KwRet $A^{3 \e}$ \Bracket{rozmotany link} \\
+}
+Rozmotej link \L druhym Reid pohybem\\
+Jeste jednou rozmotej link \L prvnim Reid pohybem\\
+\If{neco rozmotano}{
+\e $\leftarrow$ soucet znaminek rozmotanych krizeni\\
+\KwRet $A^{3 \e}$ \Bracket{rozmotany link} \\
+}
+Jeste kolik vzniklo samostatnych kruznic
 .
 .
 .
@@ -153,42 +179,59 @@ Použitím druhého Reidematrova pohybu se zbavíme dvou křížení a polynom z
 \caption{Závorkový polynom s rozmotáváním} 
 \end{algorithm}
 
+Zastaví + koretnost.
+Rozmotávání běží v lineárním čase vzhledem k $n$, celková časová složitost tedy zůstává $\mathcal{O}(2^n)$.
 
 \subsection{Vhodná volba křížení}
 Tady nějak nezáleží na orientaci.
 
-Algoritmu můžeme výrazně urychlit vhodnou volbou křížení k rozpojení ve výpočtu závorkového polynomu tak, aby bylo rozpojený uzel možné co nejvíce rozmotat.
+Algoritmus dále můžeme zlepšit vhodnou volbou křížení, které rozpojíme.
+Dokážeme, že ke vzniku linku, který lze částečně rozmotat způsobem popsaným v předchozí části, je vždy potřeba rozpojit nejvýše dvě křížení.
+Algoritmus bude volit právě ta křížení, jejichž rozpojení nám v dalších krocích zajistí možnost rozmotání.
 
-Každý linkový diagram odpovídá rovinnému grafu, v němž křížení představují vrcholy (vždy stupně čtyři) a úseky mězi kříženími hrany. Dále budeme při popisu diagramů používat grafovou terminologii.
-
-Link s $n$ kříženími odpovídá tedy grafu s $n$ vrcholy a 2$n$ hranami.
+\subsubsection{Diagram jako rovinný graf}
+Každý linkový diagram odpovídá rovinnému grafu, v němž křížení představují vrcholy (vždy stupně čtyři) a úseky mezi kříženími hrany. Diagram s $n$ kříženími odpovídá grafu s $n$ vrcholy a 2$n$ hranami.
+Dále budeme v této sekci k popisu diagramů používat grafovou terminologii. Předpokládejme také, že pracujeme s diagramem, který už je rozmotaný ve smyslu rozmotávání v sekci bla.
 
 Eulerova formule pro rovinné grafy říká, že $v - e +f = 2$, kde $v$ značí počet vrcholů, $e$ počet hran a $f$ počet stěn.
 
 V našem případě tedy dostáváme vzorec pro počet stěn $f = n+2$.
 
-Každá hrana náleží dvěma stěnám, tedy rozdělujeme 4$n$ hran mezi $n+2$, takže musí existovat stěna, která je ohraničená méně než čtyřmi hranami.
+Každá hrana náleží dvěma stěnám, rozdělujeme tedy 4$n$ hran mezi $n+2$. Z toho plyne, že musí existovat stěna, která je ohraničená méně než čtyřmi hranami.
 
-Stěna s jednou hranou je právě smyčka. NOPE! ono je asi dulezite kvuli pocitani sten, ze je to rozmotane. NOPE~ v pohode
+\subsubsection{Typy stěn}
 
-Stěna s dvěma hranami je buď odstranitelná, nebo typ A.
+Stěna s jednou hranou by v linku odpovídala smyčce, ty jsou ovšem podle předpokladu už odstraněny rozmotáním.
 
-Stěna se třemi hranami je buď B1, nebo B2.
+Stěna se dvěma hranami, která není rozmotatelná, musí v diagramu odpovídat jedné ze situací na obrázku. Všimněme si, že rozpojením křížení $a_1$ i $a_2$ buď ve vertikálním, nebo horizontálním směru vznikne smyčka. Volbou křížení $a_1$ nebo $a_2$ je tedy zaručeno, že jeden syn má po rozmotání nejvýše $n-2$ křížení.
 
-Typ je prostě nejlepší, ten vybereme a v dalším kroku hned půjde něco rozmotat.
+Stěna se třemi hranami v diagramu odpovídá buď typu B, nebo C zobrazeným na obrázku.
 
-Pak preferujeme typ B1 - není to blbost? Nemám nejdřív chtít B1?
+Ve stěně typu B získáme horizontálním rozpojením křížení $b_1$ syna, jenž jde rozmotat druhým Reidematrovým pohybem. Jeho diagram tedy bude mít nejvýše $n-3$ křížení.
 
-Pak B2. Z něj uděláme B1 a v dalším kroku bude pohoda.
+Ve stěně typu C není rozpojením žádného křížení rozmotání zaručeno. Ovšem rozpojením kterého koli křížení získáme jednoho syna se stěnou typu A. Existuje tedy prasyn s nejvýše $n-3$ kříženími.
+
+Jelikož chceme maximalizovat rozmotání synů, jsou preference algoritmu na volbu křížení $b_1 \textgreater a_i \textgreater c_i$. Z předchozího rozboru plyne, že alespoň jedno z těchto křížení musí existovat.
+
+V PD notaci je možné toto křížení nalézt v lineárním čase vzhledem k $n$.
 
 \subsection{Konečný algoritmus}
-Pseudokód toho celého. Jones jako v tom prvním. Nebo ho uvést až tady a nahoře se na to odkázat.
+Pseudokód toho celého. 
 
-Vždy se zjevně zastaví.
+Vždy se zjevně zastaví. Je korektní, bo to platilo pořád.
 Každopádně tady uvést pseudokód.
+
+\subsection{Implementace}
+Python?
+Práce, záludnosti? Rozdělování?
+Rychlá práce s PD notací? Jak jsem toho docílila?
 \section{Analýza složitosti algoritmu}
 \subsection{Horní odhad}
-Algoritmus nejrychleji běží, pokud link rozmotává. K nejmenší míře rozmotávání dochází, pokud se tam vždycky najde jen B2. Musím si to rozdělit do sudého a lichého kroku. V sudém kroku nalezne jen B2, v lichém pak musí být B1, a tedy se jedna větev zmenší, ale jinak nic.
+Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotávávaní. Například na diagramu, který je můžné absolutně rozmotat použitím prvních dvou Reidemasterových pohybů poběží nejhůř v kvadratickém čase. Zdůvodnit?
+
+Horní odhad rychlosti tedy provedeme na případu diagramu, v němž dojde k pouze k minimálnímu rozmotávání. Tedy nejdode k rozmotání jiných křížení než těch, která jsou zaručená rozborem v sekci Volba vhodného křížení.
+Také v případech, kdy není předchozí volbou křížení zaručena existence stěny typu A, bude existovat pouze stěna typu C, která zaručuje rozmotání pouze u vnuka.
+
 
 To se napíše do stromu.
 

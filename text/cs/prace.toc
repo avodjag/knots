@@ -12,16 +12,19 @@
 \contentsline {subsection}{\numberline {2.2.3}P\IeC {\v r}\IeC {\'\i }mo\IeC {\v c}ar\IeC {\'y} v\IeC {\'y}po\IeC {\v c}et z\IeC {\'a}vorkov\IeC {\'e}ho polynomu}{7}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Pr\IeC {\r u}b\IeC {\v e}\IeC {\v z}n\IeC {\'e} rozmot\IeC {\'a}v\IeC {\'a}n\IeC {\'\i }}{8}{subsection.2.2.4}
 \contentsline {subsection}{\numberline {2.2.5}Vhodn\IeC {\'a} volba k\IeC {\v r}\IeC {\'\i }\IeC {\v z}en\IeC {\'\i }}{8}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}Kone\IeC {\v c}n\IeC {\'y} algoritmus}{8}{subsection.2.2.6}
+\contentsline {subsubsection}{Diagram jako rovinn\IeC {\'y} graf}{8}{section*.3}
+\contentsline {subsubsection}{Typy st\IeC {\v e}n}{9}{section*.4}
+\contentsline {subsection}{\numberline {2.2.6}Kone\IeC {\v c}n\IeC {\'y} algoritmus}{9}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}Implementace}{9}{subsection.2.2.7}
 \contentsline {section}{\numberline {2.3}Anal\IeC {\'y}za slo\IeC {\v z}itosti algoritmu}{9}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Horn\IeC {\'\i } odhad}{9}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Doln\IeC {\'\i } odhad}{9}{subsection.2.3.2}
-\contentsline {chapter}{\numberline {3}T\IeC {\v r}et\IeC {\'\i }}{10}{chapter.3}
-\contentsline {section}{\numberline {3.1}Co v n\IeC {\'\i }}{10}{section.3.1}
-\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{11}{chapter*.3}
-\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'e} literatury}{12}{chapter*.4}
-\contentsline {chapter}{Seznam obr\'azk\r {u}}{13}{chapter*.5}
-\contentsline {chapter}{Seznam tabulek}{14}{chapter*.6}
-\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{15}{chapter*.7}
-\contentsline {chapter}{\numberline {A}P\IeC {\v r}\IeC {\'\i }lohy}{16}{appendix.A}
-\contentsline {section}{\numberline {A.1}Prvn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }loha}{16}{section.A.1}
+\contentsline {subsection}{\numberline {2.3.2}Doln\IeC {\'\i } odhad}{10}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {3}T\IeC {\v r}et\IeC {\'\i }}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Co v n\IeC {\'\i }}{11}{section.3.1}
+\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{12}{chapter*.5}
+\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'e} literatury}{13}{chapter*.6}
+\contentsline {chapter}{Seznam obr\'azk\r {u}}{14}{chapter*.7}
+\contentsline {chapter}{Seznam tabulek}{15}{chapter*.8}
+\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{16}{chapter*.9}
+\contentsline {chapter}{\numberline {A}P\IeC {\v r}\IeC {\'\i }lohy}{17}{appendix.A}
+\contentsline {section}{\numberline {A.1}Prvn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }loha}{17}{section.A.1}

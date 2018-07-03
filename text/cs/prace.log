@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  3 JUL 2018 12:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  3 JUL 2018 16:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2372,7 +2372,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 6.
 
 pdfTeX warning: pdflatex (file ../img/logo-cs.pdf): PDF inclusion: found PDF ve
 rsion <1.5>, but at most version <1.4> allowed
-<../img/logo-cs.pdf, id=110, 506.4591pt x 156.49065pt>
+<../img/logo-cs.pdf, id=114, 506.4591pt x 156.49065pt>
 File: ../img/logo-cs.pdf Graphic file (type pdf)
 <use ../img/logo-cs.pdf>
 Package pdftex.def Info: ../img/logo-cs.pdf  used on input line 10.
@@ -2445,11 +2445,11 @@ Package hyperref Info: Option `pageanchor' set `true' on input line 55.
 
  (./kap01.tex
 Kapitola 1.
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 38.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 39.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
+Underfull \hbox (badness 10000) in paragraph at lines 51--54
 
  []
 
@@ -2458,27 +2458,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--53
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
+Underfull \hbox (badness 10000) in paragraph at lines 85--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--96
+Underfull \hbox (badness 10000) in paragraph at lines 94--97
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--103
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--122
+Underfull \hbox (badness 10000) in paragraph at lines 120--123
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 126--131
+Underfull \hbox (badness 10000) in paragraph at lines 127--132
 
  []
 
@@ -2492,35 +2492,41 @@ Kapitola 2.
 
 
 ]
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 56.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 60.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 56.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 60.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [7] [8]) [9]
+) [7] [8]
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 214.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 214.
+
+[9]) [10]
 \openout2 = `kap03.aux'.
 
-
-(./kap03.tex
+ (./kap03.tex
 Kapitola 3.
-) [10
+) [11
 
 
 
 ]
 \openout2 = `zaver.aux'.
 
- (./zaver.tex) [11
+ (./zaver.tex) [12
 
 
 
 ]
 \openout2 = `literatura.aux'.
 
- (./literatura.tex (./prace.bbl)) [12
+ (./literatura.tex (./prace.bbl)) [13
 
 
 
@@ -2529,20 +2535,20 @@ Kapitola 3.
 \openout7 = `prace.lof'.
 
 
-[13
+[14
 
 
 ] (./prace.lot)
 \tf@lot=\write8
 \openout8 = `prace.lot'.
 
- [14
+ [15
 
-] [15
+] [16
 
 ]
 P\v {r}\'{\i }loha A.
-[16
+[17
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 177.
@@ -2552,17 +2558,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
 Package rerunfilecheck Info: File `prace.out' has not changed.
-(rerunfilecheck)             Checksum: 007C340EDA41299873845915488850D1;3934.
+(rerunfilecheck)             Checksum: 68838FEDF66614DF5024F672842A0880;4056.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
  ) 
 Here is how much of TeX's memory you used:
- 16582 strings out of 492982
- 229853 string characters out of 6132512
+ 16591 strings out of 492982
+ 229938 string characters out of 6132512
  300758 words of memory out of 5000000
- 19723 multiletter control sequences out of 15000+600000
+ 19726 multiletter control sequences out of 15000+600000
  79893 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,14n,35p,522b,2256s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,17n,35p,522b,2256s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/t
 exmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2017/texmf-dist/fon
@@ -2581,9 +2587,9 @@ e/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/tex
 mf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb>
-Output written on prace.pdf (20 pages, 644220 bytes).
+Output written on prace.pdf (21 pages, 649803 bytes).
 PDF statistics:
- 363 PDF objects out of 1000 (max. 8388607)
- 71 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 378 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 234 words of extra memory for PDF output out of 10000 (max. 10000000)
 
