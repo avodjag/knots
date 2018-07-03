@@ -8,19 +8,20 @@
 \contentsline {section}{\numberline {2.1}V\IeC {\'y}po\IeC {\v c}etn\IeC {\'\i } slo\IeC {\v z}itost probl\IeC {\'e}mu}{6}{section.2.1}
 \contentsline {section}{\numberline {2.2}Algoritmus}{6}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}PD notace}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}P\IeC {\v r}\IeC {\'\i }mo\IeC {\v c}ar\IeC {\'y} algoritmus}{7}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Pr\IeC {\r u}b\IeC {\v e}\IeC {\v z}n\IeC {\'e} rozmot\IeC {\'a}v\IeC {\'a}n\IeC {\'\i }}{7}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Vhodn\IeC {\'a} volba k\IeC {\v r}\IeC {\'\i }\IeC {\v z}en\IeC {\'\i }}{7}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Kone\IeC {\v c}n\IeC {\'y} algoritmus}{8}{subsection.2.2.5}
-\contentsline {section}{\numberline {2.3}Anal\IeC {\'y}za slo\IeC {\v z}itosti algoritmu}{8}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Horn\IeC {\'\i } odhad}{8}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Doln\IeC {\'\i } odhad}{8}{subsection.2.3.2}
-\contentsline {chapter}{\numberline {3}T\IeC {\v r}et\IeC {\'\i }}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Co v n\IeC {\'\i }}{9}{section.3.1}
-\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{10}{chapter*.3}
-\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'e} literatury}{11}{chapter*.4}
-\contentsline {chapter}{Seznam obr\'azk\r {u}}{12}{chapter*.5}
-\contentsline {chapter}{Seznam tabulek}{13}{chapter*.6}
-\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{14}{chapter*.7}
-\contentsline {chapter}{\numberline {A}P\IeC {\v r}\IeC {\'\i }lohy}{15}{appendix.A}
-\contentsline {section}{\numberline {A.1}Prvn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }loha}{15}{section.A.1}
+\contentsline {subsection}{\numberline {2.2.2}V\IeC {\'y}po\IeC {\v c}et Jonesova polynomu ze z\IeC {\'a}vorkov\IeC {\'e}ho polynomu}{7}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}P\IeC {\v r}\IeC {\'\i }mo\IeC {\v c}ar\IeC {\'y} v\IeC {\'y}po\IeC {\v c}et z\IeC {\'a}vorkov\IeC {\'e}ho polynomu}{7}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Pr\IeC {\r u}b\IeC {\v e}\IeC {\v z}n\IeC {\'e} rozmot\IeC {\'a}v\IeC {\'a}n\IeC {\'\i }}{8}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Vhodn\IeC {\'a} volba k\IeC {\v r}\IeC {\'\i }\IeC {\v z}en\IeC {\'\i }}{8}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Kone\IeC {\v c}n\IeC {\'y} algoritmus}{8}{subsection.2.2.6}
+\contentsline {section}{\numberline {2.3}Anal\IeC {\'y}za slo\IeC {\v z}itosti algoritmu}{9}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Horn\IeC {\'\i } odhad}{9}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Doln\IeC {\'\i } odhad}{9}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {3}T\IeC {\v r}et\IeC {\'\i }}{10}{chapter.3}
+\contentsline {section}{\numberline {3.1}Co v n\IeC {\'\i }}{10}{section.3.1}
+\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{11}{chapter*.3}
+\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'e} literatury}{12}{chapter*.4}
+\contentsline {chapter}{Seznam obr\'azk\r {u}}{13}{chapter*.5}
+\contentsline {chapter}{Seznam tabulek}{14}{chapter*.6}
+\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{15}{chapter*.7}
+\contentsline {chapter}{\numberline {A}P\IeC {\v r}\IeC {\'\i }lohy}{16}{appendix.A}
+\contentsline {section}{\numberline {A.1}Prvn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }loha}{16}{section.A.1}

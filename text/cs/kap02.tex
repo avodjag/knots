@@ -10,9 +10,6 @@ Odhad složitosti?
 Bylo by zajímavé identifikovat, pro které typy uzlů je algoritmus efektivní a pro které naopak dosahuje nejhorších výsledků.
 Rychle na kanonickych nakreslenich torus uzlu a preclikovych uzlu.
 
-Asi citovat complexity zoo.
-A třeba kapitoly?
-
 Jak se používá velké O?
 Už jsem viděla, že můžu použít O(0.83). Ale co s tím spodním?
 Co problém, co algoritmus.
@@ -36,57 +33,126 @@ Náš algoritmus dostane na vstupu diagram orientovaného linku s $n$ křížen�
 
 \subsection{PD notace} 
 
-PD notace je zápis sestávajací ze čtveřice čísel pro každé křížení a jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od $1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje spodem a pokračuje se s úseky proti směru hodinových ručiček. Viz obrázek.
+PD notace je zápis sestávajací ze čtveřice čísel pro každé křížení a jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od $1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje spodem, a pokračuje se s úseky navazujícími proti směru hodinových ručiček. Viz obrázek.
 
-\subsection{Přímočarý algoritmus}
+\subsection{Výpočet Jonesova polynomu ze závorkového polynomu}
 
-Jak již bylo naznačeno, k výpočtu Jonesova polynomu používáme závorkový polynom a následnou normalizaci pomocí writhe.
+Jak již bylo řečeno, k výpočtu Jonesova polynomu používáme závorkový polynom. Podle věty se Jonesův polynom získá z normalizovaného závorkového polynomu substitucí proměnné. 
 
-Závorkový polynom lze spočítat jednoduchým rekurzivním algoritmem.
+\begin{algorithm}[H]
+\DontPrintSemicolon
+\KwData{Diagram linku $L$  s $n$ krízení}
+\KwResult{Jonesův polynom v proměnné $t$}
+\SetKwData{bracketPoly}{závorkovýPolynom}
+\SetKwData{writhe}{zamotání}
+\SetKwData{jones}{jonesůvPolynom}
+\SetKwData{normal}{normalizovanýPolynom}
+\SetKwFunction{Writhe}{Writhe}
+\SetKwFunction{Bracket}{Bracket}
+\SetKwFunction{Substituce}{Substituce}
 
-\begin{code}
-Bracket(link)
-   \textbf{if} link nemá křížení
-       return 1
-       
-   vyber křížení.
-   
-   link_v := link s křížením rozpojeným vertikálně
-   if link_v obsahuje disjukntní kružnici
-       unknot_v := 1
-   else
-       unknot_v := 0
-       
-   link_h := link s křížením rozpojeným horizontálně
-   
-   if link_h obsahuje disjukntní kružnici
-       unknot_h := 1
-   else
-       unknot_h := 0
-  Tohle se na pseudokod vážně nehodí, nejde tady ani zvýrazňovat.
-\end{code}
+\BlankLine
 
-\begin{algorithm}
-\KwData{Diagram v PD n otaci}
-\KwResult{Závorkový polynom}
-$\sqrt{3}$
-\caption{How to write algorithms}
+\bracketPoly $\leftarrow$ \Bracket{$L$}
+\tcc*[r]{v proměnné $A$}
+
+\writhe $\leftarrow$ \Writhe{$L$}
+
+\normal $\leftarrow$ $ (-A^3)^{\writhe} \times \bracketPoly $
+\jones $\leftarrow$ \Substituce{\normal , $A$, $t^{1/2}$}
+
+\KwRet \jones 
+
+\caption{Jonesův polynom} 
 \end{algorithm}
 
-Pak se k tomu přidá writhe (mám ukázat, jak se počítá z PD notace?) a je to.
+V PD notaci lze jednoduše určit, jestli je křížení kladné, či záporné orientace, tedy zamotání spočítáme v $\mathcal{O} (n)$ čase.
+spočítáme v lineárním čase vzhledem k počtu křížení.
 
-Takže teď zápis algoritmu se substitucí a writhe.
+Dále se budeme zabývat výpočtem závorkový polynom.
 
-Zjevně je tento algoritmus v $O(2^n)$.
+
+
+\subsection{Přímočarý výpočet závorkového polynomu}
+Z definice závorkového polynomu plyne jednoduchý rekurzivní algoritmus.
+
+\begin{algorithm}[H]
+
+\DontPrintSemicolon
+
+\SetKwData{cross}{krizeni}
+\SetKwData{h}{HL}
+\SetKwData{v}{VL}
+\SetKwData{Hk}{Hk}
+\SetKwData{Vk}{Vk}
+\SetKwFunction{Bracket}{Bracket}%
+\SetKwData{bracketPoly}{zavorkPoly}
+
+\SetKwProg{Fn}{Function}{}{end}
+
+
+\Fn{\Bracket{$L$}}{
+\KwData{Diagram linku s $n$ krízeními}
+\KwResult{Závorkový polynom v promenne $A$}
+\If{link $L$ je kruznice}{\KwRet 1}
+vyber \cross linku $L$
+\\
+\h $\leftarrow$ link $L$ , kde \cross je rozpojeno horizontálne
+\\
+\v $\leftarrow$ link $L$, kde \cross je rozpojeno vertikálne
+\\
+
+\eIf{v linku \h vznikla disjunktni kruznice} {Hk $\leftarrow$ 1} {Hk $\leftarrow$ 0}
+\eIf{v linku \v vznikla disjunktni kruznice} {Vk $\leftarrow$ 1} {Vk $\leftarrow$ 0}
+
+\bracketPoly $\leftarrow$ $A(-A^2 - A^{-2})^{\Hk} $ \Bracket{\h} + $A^{-1}(-A^2 - A^{-2})^{\Vk} $ \Bracket{\v}
+
+\KwRet \bracketPoly
+}
+
+\caption{Závorkový polynom} 
+\end{algorithm}
+
+Závorkový polynom linku s $n$ kříženími se vypočte ze dvou závorkových polynomů linků s $n-1$ kříženími. Algoritmus má tedy časovou složitost $O(2^n)$. Stejnou časovou složitost by měl i výpočet Jonesova polynomu používající tento postup.
 
 \subsection{Průběžné rozmotávání}
-Algoritmus můžeme zrychlit, pokud se ho pokusíme v každém kroku rozmotat. 
+Algoritmus na výpočet závorkového polynomu zrychlíme, pokud se link pokusíme v každém kroku rozmotat, tedy pokud nalezneme diagram ekvivalentního uzlu s menším množstvím křížení. 
 
-Odmotávání smyček odpovídá prvnímu Reidematrovi a musíme to pak přenásobit.
+V PD notaci jsou snadno naleznutelné případy, kdy lze link rozmotat použitím prvního či druhého Reidemastrova pohybu.
 
-Také se můžeme zbavit dvou křížení druhým Reidematrovým pohybem.
+Při použití prvního Reidemastrova pohybu odmotáme jednu smyčkua zbavíme se jednoho křížení, ovšem výsledný závorkový polynom se změní o mocninu $A^3$.
 
-Oba typy jsou rozmotatelné v lineárním čase vzhledem k počtu křížení.
+Použitím druhého Reidematrova pohybu se zbavíme dvou křížení a polynom zůstane podle lemmatu stejný.
+
+\begin{algorithm}[H]
+
+\DontPrintSemicolon
+
+\SetKwData{cross}{krizeni}
+\SetKwData{h}{HL}
+\SetKwData{v}{VL}
+\SetKwData{Hk}{Hk}
+\SetKwData{Vk}{Vk}
+\SetKwFunction{Bracket}{Bracket}%
+\SetKwData{bracketPoly}{zavorkPoly}
+
+\SetKwProg{Fn}{Function}{}{end}
+
+
+\Fn{\Bracket{$L$}}{
+\KwData{Diagram linku s $n$ krízeními}
+\KwResult{Závorkový polynom v promenne $A$}
+
+.
+.
+.
+
+\KwRet \bracketPoly
+}
+
+\caption{Závorkový polynom s rozmotáváním} 
+\end{algorithm}
+
 
 \subsection{Vhodná volba křížení}
 Tady nějak nezáleží na orientaci.

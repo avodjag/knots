@@ -1,5 +1,5 @@
 import random
-
+from jones_bracket import *
 
 def randomPoints(n):
     points = []
@@ -212,7 +212,7 @@ def unchecked(order):
     return -1
 
 
-def graphToKnot(G):
+def graphToKnot(G, link = False):
     # kazde hrane priradit ty sousedni
     # pak vybrat nahodny vrchol
     # prochazet a v kazdem vybrat nahodne orientaci
@@ -271,7 +271,6 @@ def graphToKnot(G):
             cnt = cnt + 1
             if cnt > n*n:
                 return False
-                break
             knotEdge.append([prev, nxt])
             a, b, c, d = crossings[nxt]
             ind = crossings[nxt].index(prev)
@@ -293,6 +292,8 @@ def graphToKnot(G):
             #print(knotEdge)
 
         start = unchecked(order)
+        if not link and start != -1:
+            return False
 
     notPD = []
 
@@ -343,34 +344,131 @@ def graphToKnot(G):
     #print(PD)
     
     return PD       
-            
 
 
-def makeKnot(n):
+def dalsi(seen):
+    if True not in index:
+        return False
+    ind = seen.index(True)
+    return ind + 1
+
+def index(kde, co):
+    if kde[0] == co:
+        return 0
+    else:
+        return 1
+
+def replace(what, where, knot):
+    for i in range(4):
+        e = what[i]
+        for j in range(len(knot[e])):
+            if knot[e][j] == what:
+                knot[e][j] = where
+
+# vazne jenom knot
+def alternate(PDknot):
+
+    n = len(PDknot)
+    seen = [False for i in range(2*n)]
+    edge = PDknot[0][2]
+    ex = PDknot[0] + [sign(PDknot[0], n)]
+    knot = PD_to_dic(PDknot)
+    s = 1
+    while not seen[edge-1]:
+        seen[edge-1] = True
+        if len(knot[edge]) == 1:
+            cross = knot[edge][0]
+            a, b, c, d, x = cross
+            sgn = sign(cross[:4], n)
+            ex = cross
+            if s == 0:
+                if c == edge:
+                    #nemusim menit
+                    if sgn == 1:
+                        edge = b
+                    else:
+                        edge = d
+                else:
+                    if sgn == 1:
+                        replace(cross, [d, a, b, c, s], knot)
+                        edge = c
+                    else:
+                        replace(cross, [b, c, d, a, s], knot)
+                        edge = c
+            else:
+                if a == edge:
+                    if sgn == 1:
+                        edge = c
+                    else:
+                        edge = c
+                else:
+                    if sgn == 1:
+                        replace(cross, [d, a, b, c, s], knot)
+                        edge = b
+                    else:
+                        replace(cross, [b, c, d, a, s], knot)
+                        edge = d
+            continue
+        
+        exIndex = index(knot[edge], ex)
+        cross = knot[edge][(exIndex+1)%2]
+        a, b, c, d, x = cross
+        ind = cross.index(edge)
+        if s == 0:
+            if ind == 0:
+                ex = cross
+                edge = cross[2]
+            else:
+                newCross = [edge, cross[(ind+1)%4], cross[(ind+2)%4], cross[(ind+3)%4], s]
+                replace(cross, newCross, knot)
+                ex = newCross
+                edge = newCross[2]
+        elif s == 1:
+            if ind%2 == 1:
+                ex = cross
+                edge = cross[(ind+2)%2]
+            else:
+                if b < c or c == 1:
+                    newCross = [b, c, d, a]
+                    replace(cross, [b, c, d, a, s], knot)
+                    ex = newCross
+                    edge = c
+                else:
+                    newCross = [d, a, b, c]
+                    replace(cross, [d, a, b, c, s], knot)
+                    ex = newCross
+                    edge = c
+
+        s = (s+1)%2
+    return dic_to_PD(knot)
+
+def makeKnot(n, link = False):
     c = True
-    p=randomPoints(n)
+    p = randomPoints(n)
 
     tr = triangulation(p)
     G, H = triangToGraph(tr, p)
-    c=graphToKnot(H)
+    c = graphToKnot(H, link)
     while c == False:
-        p=randomPoints(n)
+        p = randomPoints(n)
         tr = triangulation(p)
         G, H = triangToGraph(tr, p)
-        c=graphToKnot(H)
+        c = graphToKnot(H, link)
     #print(c)
     #edges = makeEdges(H)
     #print(len(c))
     return c
 
 #nageneruje uzly
-def generuj(n):
+def generuj(n, alt = False, link = False):
     mam = []
     for i in range(4, n):
         for j in range(30):
-            c = makeKnot(i)
+            c = makeKnot(i, link)
             l = len(c)
             delka = str(l)
+            if alt:
+                c = alternate(c)
             if l not in mam:
                 mam.append(l)
                 file = open("./uzly/" + delka + ".txt", "w")
