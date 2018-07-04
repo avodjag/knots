@@ -397,7 +397,7 @@ def threeSide(knot):
             continue
 
         if e1%2 == e2%2:
-            return e1
+            return [e1, 'B']
         else:
             edge = e1
             cross = c10
@@ -426,22 +426,18 @@ def threeSide(knot):
             continue
 
         if e1%2 == e2%2:
-            return e1
+            return [e1, 'B']
         else:
             edge = e1
             cross = c10
+
     if edge == -1:
-        print(dic_to_PD(knot))
-        for e in knot.keys():
-            print(e)
-            print(knot[e])
-    else:
-        print("nekdy")
+        return [edge, 'D'] #jakoze nic
     if knot[edge][0] == cross:
         tmp = knot[edge][1]
         knot[edge][1] = cross
         knot[edge][0] = tmp
-    return edge
+    return [edge, 'C']
             
 
 def bracket(prev_knot, reid2, looped):
@@ -496,19 +492,25 @@ def bracket(prev_knot, reid2, looped):
         print(N)
         print(len(dic_to_PD(knot)))
 
-    #counter[len(knot)] = counter[len(knot)] + 1
-    #print(len(knot))
-    
+    #nahodny vyber
     #edge = next(iter(knot))
-    edge = twoSide(knot)
 
-    if edge == -1:
-        edge = threeSide(knot)
-    if edge == -1:
-        print(dic_to_PD(knot))
+    #nejdriv bere A
+    #edge = twoSide(knot)
 
-    #if not (twoSide(knot) or threeSide(knot)):
-        #print("smth wrong")
+    #if edge == -1:
+    #    edge = threeSide(knot)
+    #if edge == -1:
+    #    print(dic_to_PD(knot))
+
+    edge, typ = threeSide(knot)
+    if typ == 'C' or typ == 'D':
+        edge2 = twoSide(knot)
+        if edge2 != -1:
+            edge = edge2
+
+    
+
     crossing = knot[edge][1]
     a, b, c, d, s = crossing
     
