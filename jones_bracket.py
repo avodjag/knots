@@ -35,10 +35,16 @@ def sign(PDcrossing, n):
         return 1
     if b == 2*n and d == 1:
         return -1
-    if b > d:
-        return 1
+    if abs(b-d) == 1:
+        if b > d:
+            return 1
+        else:
+            return -1
     else:
-        return -1
+        if b > d:
+            return -1
+        else:
+            return 1
 
 def PD_to_dic(PDknot):
     n = len(PDknot)
