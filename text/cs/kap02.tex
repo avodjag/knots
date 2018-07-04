@@ -211,7 +211,7 @@ Ve stěně typu B získáme horizontálním rozpojením křížení $b_1$ syna, 
 
 Ve stěně typu C není rozpojením žádného křížení rozmotání zaručeno. Ovšem rozpojením kterého koli křížení získáme jednoho syna se stěnou typu A. Existuje tedy prasyn s nejvýše $n-3$ kříženími.
 
-Jelikož chceme maximalizovat rozmotání synů, jsou preference algoritmu na volbu křížení $b_1 \textgreater a_i \textgreater c_i$. Z předchozího rozboru plyne, že alespoň jedno z těchto křížení musí existovat.
+Jelikož chceme maximalizovat rozmotání synů, jsou preference algoritmu na volbu křížení $b_1 < a_i  < c_i$. Z předchozího rozboru plyne, že alespoň jedno z těchto křížení musí existovat.
 
 V PD notaci je možné toto křížení nalézt v lineárním čase vzhledem k $n$.
 
@@ -232,22 +232,40 @@ Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotáv�
 Horní odhad rychlosti tedy provedeme na případu diagramu, v němž dojde k pouze k minimálnímu rozmotávání. Tedy nejdode k rozmotání jiných křížení než těch, která jsou zaručená rozborem v sekci Volba vhodného křížení.
 Také v případech, kdy není předchozí volbou křížení zaručena existence stěny typu A, bude existovat pouze stěna typu C, která zaručuje rozmotání pouze u vnuka.
 
+Průběh algoritmu zakreslíme jako binární strom, kde číslo ve vrcholu je počet křížení diagramu. V kořeni máme diagram s $n$ kříženími, v němž rozmotáme křížení stěny C, takže jeho synové jsou diagramy s $n-1$ kříženími obsahující stěnu typu A. Jejich synové budou tedy diagramy velikosti $n-2$ a $n-3$.
+V lichých hladinách stromu má tedy vrchol syny o jedna menší, v sudých hladinách je jeden syn o dva menší.
 
-To se napíše do stromu.
+\begin{forest}
+  [n[n-1[n-2[n-3[n-4[...][...]][n-5[...][...]]][n-3[...][...]]][n-3[n-4[n-5[...][...]][n-6[...][...]]][n-4[...][...]]]][n-1[n-2[...][...]][n-3[...][...]]]]
+\end{forest}
 
-Z toho se udělá rekurentní vzorec.
+Získáme rekurentní rovnici na počet operací výpočtu závorkového polynomu diagramu velikosti $n$.
 
-Z toho vypočítáme, jak to vychází.
+$$T(n) = 2 T(n-2) + 2 T(n-3) + C_L n + 2 C_L (n-1)$$
 
-Algoritmus má tedy časovou složitost $O(...)$
+Člen $C_L n + 2 C_L (n-1)$, kde $C_L$ je konstanta, vyjadřuje, že na rozdělení každého diagramu na syny (rozmotání a volba křížení) je potřeba lineární počet operací vzhledem k počtu křížení.
+
+Rekurence lze řešit pomocí vytvořujících funkcí a rozkladu na parciální zlomky. Výpočtem získáme vzorec
+$$ T(n) \approx C_1 2^{0.82 n } + C_2 n 2^{0.09 n } + C_3 2^{0.09 n } + C_4 n + C_5 = \mathcal{O}( 2^{0.82 n }),  $$
+
+kde $C_i$ jsou jisté konstanty.
+
+Podle sekce je na výpočet Jonesova polynomu ze závorkového pouze lineární počet operací. Dohromady má tedy náš algoritmus na výpočet Jonesova polynomu časovou složitost $\mathcal{O}( 2^{0.82 n })$.
 
 \subsection{Dolní odhad}
-------------------------
-Analýza jak to jde.
-
-Dolní odhad
 Kolečka.
 
-Plyne z toho složitost?
+Provedeme analýzu průběhu algoritmu na linku $L$ s diagramem, který vznikne z diagramu Borromeovských kruhů přidáváním kružnic. Kružnice přidáváme tak, aby vždy protla dva další kruhy celkem ve čtyřech bodech a vzniklý diagram byl alternující, tj. aby se střídala křížení vedená zdola a zvrchu. Příklad na obrázku.
 
-Citovat PD notaci
+Diagram skládající se z $k$ kružnic má $4k-6$ křížení.
+
+Na obrázku je znázorněn možný průběh výpočtu závorkového polynomu na tomto diagramu takový, že jsou postupně odpojovány krajní kružnice. 
+
+Z obrázku plyne, že časová složitost algoritmu na diagramu s $n$ kříženími splňuje rekurenci
+$$ T(n) = 8T(n-4) + C_1 n + C_0  $$
+pro jisté konstanty $C_0$, $C_1$.
+
+A tedy $T(n) = \Omega(8^{\frac{n}{4}})  =  \Omega{O}(2^{0.75 n})$. Nebo i tady omega? To velké o je tu divné.
+
+Dokázali jsme, že náš algoritmus na výpočet Jonesova polynomu má časovou složitost $\Omega(2^{0.75n})$.
+
