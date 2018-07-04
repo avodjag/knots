@@ -1,5 +1,6 @@
 import copy
 from laurent import *
+var = 'A'
 
 # uzly
 trefoil = [[1,5,2,4],[3,1,4,6],[5,3,6,2]]
@@ -20,6 +21,7 @@ loop = [[2, 1, 1, 2]]
 loopp = [[1,1,2,2]]
 
 hopf = [[1,4,2,3], [3,2,4,1]]
+z = [[1,5,2,4],[5,1,6,8],[2,8,3,7],[6,4,7,3]]
 N = 0
 M = 0
 K = 1
@@ -361,14 +363,14 @@ def twoSide(knot):
     for e in knot.keys():
         a, b, c, d, s= knot[e][0]
         if a != e and a in knot[e][1]:
-            return e
+            return [e, 'A']
         if b != e and b in knot[e][1]:
-            return e
+            return [e, 'A']
         if c != e and c in knot[e][1]:
-            return e
+            return [e, 'A']
         if d != e and d in knot[e][1]:
-            return e
-    return -1
+            return [e, 'A']
+    return [-1, 'A']
 
 def threeSide(knot):
     edge = -1
@@ -397,6 +399,10 @@ def threeSide(knot):
             continue
 
         if e1%2 == e2%2:
+            if knot[e1][1] != c10:
+                tmp = knot[e1][1]
+                knot[e1][1] = c10
+                knot[e1][0] = tmp
             return [e1, 'B']
         else:
             edge = e1
@@ -426,6 +432,10 @@ def threeSide(knot):
             continue
 
         if e1%2 == e2%2:
+            if knot[e1][1] != c10:
+                tmp = knot[e1][1]
+                knot[e1][1] = c10
+                knot[e1][0] = tmp
             return [e1, 'B']
         else:
             edge = e1
@@ -441,10 +451,12 @@ def threeSide(knot):
             
 
 def bracket(prev_knot, reid2, looped):
-
+    
     #reid2 = False
     
     knot = copy.deepcopy(prev_knot)
+    #print("vel")
+    #print(len(dic_to_PD(knot)))
     #print(dic_to_PD(knot))
     poly = laurent({})
     
@@ -496,22 +508,20 @@ def bracket(prev_knot, reid2, looped):
     #edge = next(iter(knot))
 
     #nejdriv bere A
-    #edge = twoSide(knot)
-
-    #if edge == -1:
-    #    edge = threeSide(knot)
-    #if edge == -1:
-    #    print(dic_to_PD(knot))
-
-    edge, typ = threeSide(knot)
-    if typ == 'C' or typ == 'D':
-        edge2 = twoSide(knot)
-        if edge2 != -1:
-            edge = edge2
-
-    
+    edge, typ = twoSide(knot)
+    if(var == 'A'):
+        if edge == -1:
+            edge, typ = threeSide(knot)
+    else:
+        edge, typ = threeSide(knot)
+        if typ == 'C' or typ == 'D':
+            edge2 = twoSide(knot)
+            if edge2 != -1:
+                edge, typ = edge2
 
     crossing = knot[edge][1]
+    #print(crossing)
+    #print(edge)
     a, b, c, d, s = crossing
     
     knot1 = copy.deepcopy(knot)

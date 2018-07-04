@@ -433,12 +433,14 @@ def bracket(prev_knot, reid2, looped):
     if(var == 'A'):
         if edge == -1:
             edge, typ = threeSide(knot)
-    else:   #var B
+    elif(var == 'B'):   #var B
         edge, typ = threeSide(knot)
         if typ == 'C' or typ == 'D':
             edge2 = twoSide(knot)
             if edge2 != -1:
                 edge, typ = edge2
+    else:
+        edge = next(iter(knot))
 
     crossing = knot[edge][1]
 
@@ -472,7 +474,13 @@ def bracket(prev_knot, reid2, looped):
     poly = (A * bracket(knot1, True, True)) + (B * bracket(knot2, True, True))
     return poly
 
-def jones(PDknot):
+# jones(knot) ... var A
+# jones(knot, 'B') ... var B
+# jones(knot, 'R') ... random
+
+def jones(PDknot, vr = 'A'):
+    global var
+    var = vr
     knot = PD_to_dic(PDknot)
     bracket_poly = bracket(knot, True, True)
     inv_poly = add_writhe(bracket_poly, PDknot)
@@ -484,3 +492,4 @@ def pbracket(PDknot):
     bracket_poly = bracket(knot, True, True)
     return toText(bracket_poly, 'A')
 
+k49 = [[1, 38, 2, 39], [35, 2, 36, 3], [40, 3, 41, 4], [33, 5, 34, 4], [5, 59, 6, 58], [57, 7, 58, 6], [7, 57, 8, 56], [59, 9, 60, 8], [42, 10, 43, 9], [10, 32, 11, 31], [96, 11, 97, 12], [12, 86, 13, 85], [13, 86, 14, 87], [69, 15, 70, 14], [88, 15, 89, 16], [16, 68, 17, 67], [90, 18, 91, 17], [91, 18, 92, 19], [66, 20, 67, 19], [93, 21, 94, 20], [21, 65, 22, 64], [22, 51, 23, 52], [23, 51, 24, 50], [25, 25, 26, 24], [26, 49, 27, 50], [80, 28, 81, 27], [28, 54, 29, 53], [74, 29, 75, 30], [61, 31, 62, 30], [32, 42, 33, 41], [39, 35, 40, 34], [36, 98, 37, 97], [98, 38, 1, 37], [60, 43, 61, 44], [44, 55, 45, 56], [76, 46, 77, 45], [77, 46, 78, 47], [78, 48, 79, 47], [79, 48, 80, 49], [52, 81, 53, 82], [54, 76, 55, 75], [73, 63, 74, 62], [63, 83, 64, 82], [65, 93, 66, 92], [68, 89, 69, 90], [70, 88, 71, 87], [71, 94, 72, 95], [83, 73, 84, 72], [84, 96, 85, 95]]
