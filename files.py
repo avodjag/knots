@@ -1,3 +1,4 @@
+import ast
 def fileToPD(filename):
     PDknot = []
     f = open(filename, 'r')
@@ -41,3 +42,17 @@ def safe(tr):
         f = open("./torus/" + i[0] + '.txt', 'w')
         f.write(str(i[1:]))
         f.close()
+
+def data():
+    data = open("knotData.txt", 'r')
+    count = [0 for i in range(13)]
+    for line in data:
+        if line == 'PDNotation\n':
+            continue
+        PD = ast.literal_eval(line)
+        l = len(PD)
+        f = open("./uzly/table/" + str(l) + "_" + str(count[l]) + ".txt", 'w')
+        f.write(line)
+        f.close()
+        count[l] = count[l] + 1
+    data.close()
