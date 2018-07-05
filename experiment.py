@@ -36,7 +36,7 @@ def measure(direc, var='A'):
 
 # da uzly velikosti m az n-1       
 def measure2(direc, m, n, var='A'):
-    log = open("./uzly/logs/" + direc[5:-1] +  "_log_" + var + "_" + str(m) + "_" + str(n-1) + "_" + ".txt", "w")
+    log = open("./uzly/logs/" + direc[5:-1] +  "_log_" + var + "_" + str(m) + "_" + str(n-1) + "_" + ".txt", "a+")
     log.close()
     files = [(str(i) + ".txt") for i in range(m, n)]
     for filename in files:
@@ -75,24 +75,36 @@ def do():
 
     #measure2(knots, 13, 50, 'A')
     #print("a")
-    measure2(knots, 13, 35, 'B')
-    print("b")
-    measure2(knots, 13, 20, 'R')
-    print("c")
+    #measure2(knots, 13, 35, 'B')
+    #print("b")
+    #measure2(knots, 13, 20, 'R')
+    #print("c")
 
-    measure2(alt, 13, 40, 'A')
-    print("a")
-    measure2(alt, 13, 35, 'B')
-    print("b")
-    measure2(alt, 13, 20, 'R')
-    print("c")
+    #measure2(alt, 13, 40, 'A')
+    #print("a")
+    #measure2(alt, 13, 35, 'B')
+    #print("b")
+    #measure2(alt, 13, 20, 'R')
+    #print("c")
 
-    measure2(links, 13, 40, 'A')
-    print("a")
-    measure2(links, 13, 35, 'B')
-    print("b")
-    measure2(links, 13, 20, 'R')
-    print("c")
+    #measure2(links, 13, 40, 'A')
+    #print("a")
+    #measure2(links, 13, 35, 'B')
+    #print("b")
+    #measure2(links, 13, 20, 'R')
+    #print("c")
 
+    measure2(knots, 35, 40, 'B')
+    measure2(alt, 35, 40, 'B')
+    measure2(links, 35, 40, 'B')
+
+    measure2(knots, 40, 45, 'B')
+    measure2(alt, 40, 45, 'B')
+    measure2(links, 40, 45, 'B')
+
+    measure2(knots, 45, 50, 'B')
+    measure2(alt, 45, 50, 'B')
+    measure2(links, 45, 50, 'B')
+    
     print("alllllll")
     

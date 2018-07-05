@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  4 JUL 2018 12:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  5 JUL 2018 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2895,51 +2895,311 @@ Package: inlinedef 2008/07/10 v1.0 Inlined expansions within definitions
 (/usr/local/texlive/2017/texmf-dist/tex/latex/forest/forest-lib-linguistics.sty
 Package: forest-lib-linguistics 2017/07/14 v0.1.2
 \standardnodestrutbox=\box85
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen279
+\captionmargin@=\dimen280
+\captionwidth=\dimen281
+\caption@tempdima=\dimen282
+\caption@indent=\dimen283
+\caption@parindent=\dimen284
+\caption@hangindent=\dimen285
 )
-Package hyperref Info: Option `unicode' set `true' on input line 125.
-Package hyperref Info: Option `breaklinks' set `true' on input line 126.
+\c@ContinuedFloat=\count329
+Package caption Info: hyperref package is loaded.
+)
+\c@subfigure=\count330
+\c@subtable=\count331
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/spath3/tikzlibraryknots.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/latex/spath3/spath3.sty
+Package: spath3 2016/02/19 v1.1 Functions for manipulating PGF soft paths
+\l__spath_tmpa_dim=\dimen286
+\l__spath_tmpb_dim=\dimen287
+\l__spath_tmpa_int=\count332
+
+*************************************************
+* LaTeX warning: "kernel/deprecated-variant"
+* 
+* Variant form 'nnV' deprecated for base form '\spath_get:nnN'. One should not
+* change an argument from type 'N' to type 'V': base form only accepts a
+* single token argument.
+*************************************************
+*************************************************
+* LaTeX warning: "kernel/deprecated-variant"
+* 
+* Variant form 'VnV' deprecated for base form '\spath_get:nnN'. One should not
+* change an argument from type 'N' to type 'V': base form only accepts a
+* single token argument.
+*************************************************
+\l__spath_l_int=\count333
+\l__spath_rl_int=\count334
+\l__spath_nc_int=\count335
+\l__spath_minx_dim=\dimen288
+\l__spath_miny_dim=\dimen289
+\l__spath_maxx_dim=\dimen290
+\l__spath_maxy_dim=\dimen291
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \MakeSPath with sig. 'mm' on line 1292.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \MakeSPathList with sig. 'mm' on line 1303.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CloneSPath with sig. 'mm' on line 1307.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SPathInfo with sig. 'mm' on line 1311.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SPathPrepare with sig. 'm' on line 1315.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SPathListPrepare with sig. 'm' on line 1322.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SPathInfoInto with sig. 'mmm' on line 1327.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SPathShow with sig. 'm' on line 1331.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SPathTranslate with sig. 'mmm' on line 1335.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SPathTranslateInto with sig. 'mmmm' on line 1340.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SPathScale with sig. 'mmm' on line 1344.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SPathScaleInto with sig. 'mmmm' on line 1349.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SPathWeld with sig. 'mm' on line 1353.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SPathWeldInto with sig. 'mmm' on line 1358.
+.................................................
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryintersections.code.tex)
+\l__knot_tmpa_int=\count336
+\l__knot_strands_int=\count337
+\l__knot_intersections_int=\count338
+\l__knot_filaments_int=\count339
+\l__knot_component_start_int=\count340
+\l__knot_tmpa_dim=\dimen292
+\l__knot_tmpb_dim=\dimen293
+\l__knot_tmpc_dim=\dimen294
+\l__knot_tolerance_dim=\dimen295
+\l__knot_clip_radius_dim=\dimen296
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \flipcrossings with sig. 'm' on line 184.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \strand with sig. 'O{}' on line 191.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-environment"
+. 
+. Defining environment 'knot' with sig. 'O{}' on line 198.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \redraw with sig. 'mm' on line 685.
+.................................................
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/hobby/tikzlibraryhobby.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/latex/hobby/pgflibraryhobby.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/latex/hobby/hobby.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/latex/hobby/pml3array.sty
+\l_array_base_int=\count341
+\l_array_top_int=\count342
+\l_array_tmp_int=\count343
+\g_array_base_int=\count344
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbyVersion with sig. '' on line 41.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbyDate with sig. '' on line 45.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \HobbyDisableAux with sig. '' on line 59.
+.................................................
+\l_hobby_npoints_int=\count345
+\l_hobby_draw_int=\count346
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbyinit with sig. 'mmm' on line 669.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbyaddpoint with sig. 'm' on line 699.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbysetparams with sig. 'm' on line 705.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbygenpath with sig. '' on line 721.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbygenifnecpath with sig. 'm' on line 732.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbygenuseifnecpath with sig. 'm' on line 744.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbyusepath with sig. 'm' on line 748.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbysavepath with sig. 'm' on line 751.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbyrestorepath with sig. 'm' on line 756.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbyshowpath with sig. 'm' on line 761.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbygenusepath with sig. '' on line 767.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \hobbyclearpath with sig. '' on line 770.
+.................................................
+)))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathreplacing.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
+s.code.tex
+\pgfdecoratedcompleteddistance=\dimen297
+\pgfdecoratedremainingdistance=\dimen298
+\pgfdecoratedinputsegmentcompleteddistance=\dimen299
+\pgfdecoratedinputsegmentremainingdistance=\dimen300
+\pgf@decorate@distancetomove=\dimen301
+\pgf@decorate@repeatstate=\count347
+\pgfdecorationsegmentamplitude=\dimen302
+\pgfdecorationsegmentlength=\dimen303
+)
+\tikz@lib@dec@box=\box86
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathreplacing.code.tex))
+Package hyperref Info: Option `unicode' set `true' on input line 140.
+Package hyperref Info: Option `breaklinks' set `true' on input line 141.
 
 \@input{makra.aux}
 \openout2 = `makra.aux'.
 
 (./makra.tex
-\c@veta=\count329
-\c@definice=\count330
+\c@veta=\count348
+\c@definice=\count349
 ) (./prace.aux (./titulka.aux) (./uvod.aux) (./kap01.aux)
 (./kap02.aux) (./kap03.aux) (./zaver.aux) (./literatura.aux))
 \openout1 = `prace.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 132.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 147.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 147.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 132.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 147.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-\AtBeginShipoutBox=\box86
-Package hyperref Info: Link coloring OFF on input line 132.
+\AtBeginShipoutBox=\box87
+Package hyperref Info: Link coloring OFF on input line 147.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -2947,11 +3207,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count331
+\c@section@level=\count350
 )
-LaTeX Info: Redefining \ref on input line 132.
-LaTeX Info: Redefining \pageref on input line 132.
-LaTeX Info: Redefining \nameref on input line 132.
+LaTeX Info: Redefining \ref on input line 147.
+LaTeX Info: Redefining \pageref on input line 147.
+LaTeX Info: Redefining \nameref on input line 147.
 
 (./prace.out) (./prace.out)
 \@outlinefile=\write7
@@ -2960,16 +3220,16 @@ LaTeX Info: Redefining \nameref on input line 132.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count332
-\scratchdimen=\dimen279
-\scratchbox=\box87
-\nofMPsegments=\count333
-\nofMParguments=\count334
+\scratchcounter=\count351
+\scratchdimen=\dimen304
+\scratchbox=\box88
+\nofMPsegments=\count352
+\nofMParguments=\count353
 \everyMPshowfont=\toks59
-\MPscratchCnt=\count335
-\MPscratchDim=\dimen280
-\MPnumerator=\count336
-\makeMPintoPDFobject=\count337
+\MPscratchCnt=\count354
+\MPscratchDim=\dimen305
+\MPnumerator=\count355
+\makeMPintoPDFobject=\count356
 \everyMPtoPDFconversion=\toks60
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -2989,6 +3249,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 \openout2 = `titulka.aux'.
 
  (./titulka.tex
@@ -3070,49 +3332,41 @@ Package hyperref Info: Option `pageanchor' set `true' on input line 55.
 
  (./kap01.tex
 Kapitola 1.
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 39.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Underfull \hbox (badness 10000) in paragraph at lines 51--54
-
- []
-
 [3
 
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 85--88
+] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 213--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--97
+Underfull \hbox (badness 10000) in paragraph at lines 221--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--104
+Underfull \hbox (badness 10000) in paragraph at lines 235--238
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--123
+Underfull \hbox (badness 10000) in paragraph at lines 251--272
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 127--132
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 287--289
 
  []
 
-) [5]
+) [6]
 \openout2 = `kap02.aux'.
 
  (./kap02.tex
 Kapitola 2.
-[6
+[7
 
 
 
@@ -3125,32 +3379,32 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 60.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [7] [8] [9]
+) [8] [9] [10]
 Overfull \hbox (0.8699pt too wide) in paragraph at lines 248--249
 []\T1/lmr/m/n/12 Rekurence lze °e-²it po-mocí vy-tvo-°u-jí-cích funkcí a roz-kl
 adu na par-ci-ální zlomky.|
  []
 
-[10]) [11]
+[11]) [12]
 \openout2 = `kap03.aux'.
 
  (./kap03.tex
 Kapitola 3.
-) [12
+) [13
 
 
 
 ]
 \openout2 = `zaver.aux'.
 
- (./zaver.tex) [13
+ (./zaver.tex) [14
 
 
 
 ]
 \openout2 = `literatura.aux'.
 
- (./literatura.tex (./prace.bbl)) [14
+ (./literatura.tex (./prace.bbl)) [15
 
 
 
@@ -3159,62 +3413,64 @@ Kapitola 3.
 \openout9 = `prace.lof'.
 
 
-[15
+[16
 
 
 ] (./prace.lot)
 \tf@lot=\write10
 \openout10 = `prace.lot'.
 
- [16
+ [17
 
-] [17
+] [18
 
 ]
 P\v {r}\'{\i }loha A.
-[18
+[19
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
  (./prace.aux (./titulka.aux) (./uvod.aux) (./kap01.aux) (./kap02.aux)
 (./kap03.aux) (./zaver.aux) (./literatura.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
 Package rerunfilecheck Info: File `prace.out' has not changed.
-(rerunfilecheck)             Checksum: 68838FEDF66614DF5024F672842A0880;4056.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 178.
+(rerunfilecheck)             Checksum: 66165562D93D7BC2850E034F2E9BC994;4095.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
- 47677 strings out of 492982
- 959916 string characters out of 6132512
- 976958 words of memory out of 5000000
- 50508 multiletter control sequences out of 15000+600000
- 606525 words of font info for 68 fonts, out of 8000000 for 9000
+ 50308 strings out of 492982
+ 1023378 string characters out of 6132512
+ 1029491 words of memory out of 5000000
+ 53084 multiletter control sequences out of 15000+600000
+ 609100 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 157i,17n,176p,10357b,3365s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 158i,17n,306p,10380b,3367s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
-17/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/texmf-dist/
-fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvi
-ps/lm/lm-mathsy.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/l
-mbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/
-type1/public/lm/lmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
-c/lm/lmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.pf
-b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2017/texm
-f-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fon
-ts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
-blic/lm/lmtt12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
-nts/symbols/msam10.pfb>
-Output written on prace.pdf (22 pages, 662352 bytes).
+17/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2017/texmf-d
+ist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2017/texmf-dist/fonts/
+enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/l
+m/lmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmcsc10.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2017/texmf-dist/fo
+nts/type1/public/lm/lmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
+ublic/lm/lmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lm
+r17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr6.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/t
+exmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2017/texmf-dist/
+fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
+/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm
+/lmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on prace.pdf (23 pages, 703545 bytes).
 PDF statistics:
- 390 PDF objects out of 1000 (max. 8388607)
- 78 named destinations out of 1000 (max. 500000)
+ 422 PDF objects out of 1000 (max. 8388607)
+ 91 named destinations out of 1000 (max. 500000)
  246 words of extra memory for PDF output out of 10000 (max. 10000000)
 
