@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  6 JUL 2018 17:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  6 JUL 2018 21:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3496,37 +3496,50 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 
-] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 271--273
+]
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
+
+ []
+
+[4]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 169.
+
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Underfull \hbox (badness 10000) in paragraph at lines 238--283
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--283
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--296
+Underfull \hbox (badness 10000) in paragraph at lines 372--375
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 309--330
+Underfull \hbox (badness 10000) in paragraph at lines 388--409
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 345--347
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 424--426
 
  []
 
-) [6]
+) [7]
 \openout2 = `kap02.aux'.
 
  (./kap02.tex
 Kapitola 2.
-[7
+[8
 
 
 
@@ -3539,32 +3552,32 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 60.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [8] [9] [10]
+) [9] [10] [11]
 Overfull \hbox (0.8699pt too wide) in paragraph at lines 248--249
 []\T1/lmr/m/n/12 Rekurence lze °e-²it po-mocí vy-tvo-°u-jí-cích funkcí a roz-kl
 adu na par-ci-ální zlomky.|
  []
 
-[11]) [12]
+[12]) [13]
 \openout2 = `kap03.aux'.
 
  (./kap03.tex
 Kapitola 3.
-) [13
+) [14
 
 
 
 ]
 \openout2 = `zaver.aux'.
 
- (./zaver.tex) [14
+ (./zaver.tex) [15
 
 
 
 ]
 \openout2 = `literatura.aux'.
 
- (./literatura.tex (./prace.bbl)) [15
+ (./literatura.tex (./prace.bbl)) [16
 
 
 
@@ -3573,20 +3586,20 @@ Kapitola 3.
 \openout9 = `prace.lof'.
 
 
-[16
+[17
 
 
 ] (./prace.lot)
 \tf@lot=\write10
 \openout10 = `prace.lot'.
 
- [17
+ [18
 
-] [18
+] [19
 
 ]
 P\v {r}\'{\i }loha A.
-[19
+[20
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 199.
@@ -3596,44 +3609,45 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 199.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 199.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 199.
 Package rerunfilecheck Info: File `prace.out' has not changed.
-(rerunfilecheck)             Checksum: 1E161C1BD1C11E659548E23E72F29028;4096.
+(rerunfilecheck)             Checksum: 8AA0496B7C2DD43472D31BD273E2FB21;4097.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 199.
  ) 
 Here is how much of TeX's memory you used:
- 60158 strings out of 492982
- 1354303 string characters out of 6132512
- 1481852 words of memory out of 5000000
- 62761 multiletter control sequences out of 15000+600000
- 646674 words of font info for 109 fonts, out of 8000000 for 9000
+ 60229 strings out of 492982
+ 1356043 string characters out of 6132512
+ 1482852 words of memory out of 5000000
+ 62827 multiletter control sequences out of 15000+600000
+ 647049 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  158i,17n,306p,10380b,3367s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
 17/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2017/texmf-d
-ist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2017/texmf-dist/fonts/
-enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/l
-m/lmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmcsc10.
-pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2017/texmf-dist/f
-onts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
-public/lm/lmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/l
-mr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr17.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fo
-nts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
-public/lm/lmss12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/
-lmss8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2017/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on prace.pdf (23 pages, 735874 bytes).
+ist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc
+/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/
+lm-rm.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx12.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2017/texm
+f-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2017/texmf-dist/fon
+ts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
+blic/lm/lmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr
+10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr12.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2017/texmf-dist/fon
+ts/type1/public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
+lic/lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lms
+s12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmss8.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2017/texmf-dist
+/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
+e1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on prace.pdf (24 pages, 740583 bytes).
 PDF statistics:
- 444 PDF objects out of 1000 (max. 8388607)
- 93 named destinations out of 1000 (max. 500000)
+ 456 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 500000)
  246 words of extra memory for PDF output out of 10000 (max. 10000000)
 
