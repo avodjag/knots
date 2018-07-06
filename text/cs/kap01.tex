@@ -2,65 +2,119 @@
 
 \chapter{Definice a vlastnosti Jonesova polynomu}
 
-Vhodné věci tučně, Zmínit původní definici?, Nekonzistentní používání V(t), V? Dvojtečky po platí
+Vhodné věci kurzívou, Zmínit původní definici?, Nekonzistentní používání V(t), V? Dvojtečky po platí
 
 Původní definice Jonesova polynomu vycházela z operátorových algeber. A že tady to je na lincích.
 \section{Základní pojmy}
+Jonesův polynom je invariant nejen uzlů, ale také linků, tedy více propletených uzlů. Pokud není řečeno jinak, pracujeme v textu s linky. 
+Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho diagramem. Diagram je vhodné rovinné nakreslení nějaké linkové projekce, v němž je rozlišeno, jestli křížení vedou zvrchu nebo zespodu. Každý link má nekonečně mnoho diagramů.
 
-Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho diagramem. Link je vnoření ... Diagram je vhodné rovinné nakreslení nějaké linkové projekce, v němž je rozlišeno, jestli křížení vedou zvrchu nebo zespodu. Každý link má nekonečně mnoho diagramů.
-
-V diagramu orientovaného linku rozlišujeme křížení s kladnou a zápornou orientací, viz obrázek.
+V diagramu orientovaného linku rozlišujeme křížení s kladnou a zápornou orientací.
 
 \begin{figure}[h]  
 \centering 
 \begin{subfigure}[t]{0.4\linewidth}\centering
-\begin{tikzpicture}[scale=3] 
+\begin{tikzpicture}[scale=2] 
 \draw [thick] (0,0) -- (0.33,0.33);
 \draw [thick,->] (0.66,0.66)-- (1,1);
 \draw [thick,->] (0,1)  -- (1,0);
 \end{tikzpicture} 
-\caption{Kladná orientace} \label{fig:M1}  
+\caption{Kladná orientace} 
 \end{subfigure}
 \begin{subfigure}[t]{0.4\linewidth}\centering
-\begin{tikzpicture}[scale=3]
+\begin{tikzpicture}[scale=2]
 \draw [thick,->] (0,0) -- (1,1);
 \draw [thick] (0,1) -- (0.33, 0.66);
 \draw [thick,->] (0.66, 0.33) -- (1,0);
 \end{tikzpicture}  
-\caption{Záporná orientace} \label{fig:M2}  
+\caption{Záporná orientace}
 \end{subfigure}
 \caption{Orientace křížení}
 \end{figure}  
 
-Pro popis polynomů na uzlech a lincích se často používají tzv. skein (česky přadenové) vztahy.
-Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_-$ a $L_0$, jejichž diagramy jsou identické až na oblast jednoho křížení. V linku $L_+$ má toto křížení kladnou orientaci, v $L_-$ zápornou a v $L_0$ je křížení rozpojené, viz obrázek.
+
+Pro popis polynomů na uzlech a lincích se často používají \emph{skein vztahy} \footnote{česky přadenové vztahy}.
+Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_-$ a $L_0$, jejichž diagramy jsou identické až na oblast jednoho křížení. V linku $L_+$ má toto křížení kladnou orientaci, v $L_-$ zápornou a v $L_0$ je křížení rozpojené.
+
+\begin{figure}[h]  
+\centering 
+\begin{subfigure}[t]{0.4\linewidth}\centering
+\begin{tikzpicture}[scale=2] 
+\draw [thick] (0,0) -- (0.33,0.33);
+\draw [thick,->] (0.66,0.66)-- (1,1);
+\draw [thick,->] (0,1)  -- (1,0);
+\end{tikzpicture} 
+\caption{$L_+$} 
+\end{subfigure}
+\begin{subfigure}[t]{0.4\linewidth}\centering
+\begin{tikzpicture}[scale=2]
+\draw [thick,->] (0,0) -- (1,1);
+\draw [thick] (0,1) -- (0.33, 0.66);
+\draw [thick,->] (0.66, 0.33) -- (1,0);
+\end{tikzpicture}  
+\caption{$L_-$}
+\end{subfigure}
+\begin{subfigure}[t]{0.4\linewidth}\centering
+\begin{tikzpicture} [scale=2]
+\draw  [thick,->](0,0) .. controls (1/2,1/2)  .. (1,0);
+\draw  [thick,->](0,1) .. controls (1/2,1/2)  .. (1,1);
+\end{tikzpicture}
+\caption{$L_0$}
+\end{subfigure}
+\caption{Diagramy skein vztahu}
+\end{figure}
 
 \section{Definice}
 
 \begin{definice}\label{def01:1}
-Jonesův polynom orientovaného linku $L$ je Laurentův polynom v proměnné $\sqrt t$ (tj. polynom v $Z[\sqrt t, \sqrt{t^{-1}}]$), značený $V_L(t)$ , který
+\emph{Jonesův polynom} orientovaného linku $L$ je Laurentův polynom v proměnné $\sqrt t$ (tj. polynom v $\Z[t^{1/2}, t^{-1/2}]$), značený $V_L(t)$ , který:
 \begin{enumerate}[i.]
 \item
 je linkový invariant,
 \item 
-  je normalizovaný, tedy polynom  $V_\circlearrowleft$ triviálního uzlu má hodnotu $1,$
+  je normalizovaný, tedy polynom  $V_\circlearrowleft$, kde $\circlearrowleft$ je orientovaný triviální uzel, má hodnotu $1,$
 \item  
 splňuje skein vztah 
 $$ \frac{1}{t} V_{L_+} - t V_{L_-} = (\sqrt{t}  - \frac{1}{\sqrt{t}}) V_{L_0}.$$
 \end{enumerate}
 \end{definice}
 
-\begin{lemma}
-Buď $L$ link, který se skládá z $k$ neprotínajících se orientovaných triviálních uzlů. Pak $V_L(t) = (- \sqrt{t} -\frac{1}{\sqrt{t}} )^{k-1}	$.
+\begin{lemma}\label{l01:1}
+Buď $L$ link, který se skládá z $k$ neprotínajících se orientovaných triviálních uzlů. Pak pro Jonesův polynom linku $L$ platí: $$V_L(t) = (- \sqrt{t} -\frac{1}{\sqrt{t}} )^{k-1}.$$
 \end{lemma}
 \begin{dukaz}
-Libovolně orientované triviální linky jsou ekvivalentní, stačí tedy vztah dokázat na diagramu zobrazujícím $k$ souhlasně orientovaných disjunktních kružnic.\\
-Pro $k = 2$ je $L_0 = $, $L_- = $ a $L_+ = $. Diagramy $L_+$ a $L_-$ zobrazují triviální uzly, takže $V_{L_+} = V_{L_-} = 1$. Použitím skein vztahu získáme $V_ L = V_{L_0} = - \sqrt{t} -\frac{1}{\sqrt{t}} 	$. \\
+Libovolně orientované triviální uzly jsou ekvivalentní. Vztah tedy stačí dokázat pro diagram skládající se z $k$ libovolně orientovaných disjunktních kružnic.\\
+Pro $k = 2$ je $L_0 = $
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm, scale = 0.2]
+\clip(-1.1,-1.1) rectangle (3.5,1.1);
+\draw  (0,0) circle (1cm);
+\draw  (2.38,0) circle (1cm);
+\draw [line width=1pt] (0.6246950475544243,0.7808688094430303)-- (1,0.79);
+\draw [line width=1pt] (0.6246950475544243,0.7808688094430303)-- (0.58,0.39);
+\draw [line width=1pt] (1.7783415438306172,0.7987534676731457)-- (1.42,0.77);
+\draw [line width=1pt] (1.7783415438306172,0.7987534676731457)-- (1.8,0.41);
+\end{tikzpicture}, $L_- = $
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm, scale = 0.2]
+\clip(-1.1,-1.1) rectangle (3.196466376386043,1.0990637767762312);
+\draw [shift={(0,0)}]   plot[domain=0:5.105410206761974,variable=\t]({1*1*cos(\t r)+0*1*sin(\t r)},{0*1*cos(\t r)+1*1*sin(\t r)});
+\draw [shift={(2,0)}]  plot[domain=-3.141592653589793:1.9340463984318206,variable=\t]({1*1*cos(\t r)+0*1*sin(\t r)},{0*1*cos(\t r)+1*1*sin(\t r)});
+\draw [line width=0.5pt] (0.6222441255753678,0.7828232547561078)-- (1,0.78);
+\draw [line width=0.5pt] (0.64,0.4)-- (0.6222441255753678,0.7828232547561078);
+\end{tikzpicture}
+ a $L_+ = $
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm, scale = 0.2]
+\clip(-1.1403462213720332,-1.2) rectangle (3.0406984599653097,1.225538970539465);
+\draw [shift={(0,0)}]  plot[domain=-5.158880748950075:0,variable=\t]({1*1.0280466904740395*cos(\t r)+0*1.0280466904740395*sin(\t r)},{0*1.0280466904740395*cos(\t r)+1*1.0280466904740395*sin(\t r)});
+\draw [shift={(2,0)}]  plot[domain=-2.0668400051610742:3.141592653589793,variable=\t]({1*0.9664884893261791*cos(\t r)+0*0.9664884893261791*sin(\t r)},{0*0.9664884893261791*cos(\t r)+1*0.9664884893261791*sin(\t r)});
+\draw [line width=0.5pt] (1.9692781611446357,0.6947891351587211)-- (1.977324654938205,0.966222453023282);
+\draw [line width=0.5pt] (1.7119284298490884,1.200910273373297)-- (1.977324654938205,0.966222453023282);
+\end{tikzpicture}. Diagramy $L_+$ a $L_-$ zobrazují triviální uzly, takže $V_{L_+} = V_{L_-} = 1$. Použitím skein vztahu získáme $V_ L = V_{L_0} = - \sqrt{t} -\frac{1}{\sqrt{t}} 	$. \\
 Pro $k > 2$ jsou $L_-$ a $L_+ $ diagramy linků s $k-1$ kružnicemi, ze skein vztahu dostaneme $V_ L = V_{L_0} = (- \sqrt{t} -\frac{1}{\sqrt{t}} )^{k-1}$.
 \end{dukaz}  
 \begin{pozn}
 Z každého diagramu uzlu lze změnou několika křížení vedených zvrchu na křížení vedených zespodu získat diagram triviálního uzlu. Z každého diagramu linku tedy můžeme změnou křížení získat diagram sjednocení triviálních uzlů, jejichž Jonesův polynom je podle předchozího lemmatu známý. Jonesův polynom každého linku lze tedy pomocí skein vztahu rekurzivně spočítat z jeho libovolného diagramu. Definice je tím pádem korektní.
 \end{pozn}
+
 
 Definice Jonesova polynomu pomocí skein vztahů není vhodná pro algoritmický výpočet, neboť rozpoznat, jestli diagram odpovídá triviálnímu uzlu, je složitý problém. K výpočtu použijeme ekvivalentní definici založenou na použití tzv. závorkového polynomu.
 
@@ -121,10 +175,6 @@ $ \rangle + A^{-1}  \langle $
 $ \rangle $
 \end{dusl}
 
-
-
-
-
 \begin{lemma}  
 Pro závorkové polynomy linků, jejichž diagramy obsahují smyčku, platí
 \begin{enumerate}[i.]
@@ -137,16 +187,17 @@ consider self intersections=true,
 clip width = 4,
 end tolerance=1pt,
 ] 
+\clip (0,-1) rectangle (2.5,1);
 \strand (0,-1) .. controls (3,3) and (3,-3) ..  (0,1);
 \end{knot}
 \end{tikzpicture}
 $\rangle = -A^{-3} \langle $
 %odsmycka
 \begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
+\clip (0,-1) rectangle (2,1);
 \draw (0,1) .. controls (2.5,0) ..  (0,-1);
 \end{tikzpicture}
 $  \rangle$ 
-
 \item
 $ \langle $
 \begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
@@ -155,12 +206,14 @@ consider self intersections=true,
 clip width = 4,
 end tolerance=1pt,
 ] 
+\clip (0,-1) rectangle (2.5,1);
 \strand (0,1) .. controls (3,-3) and (3,3) ..  (0,-1);
 \end{knot}
 \end{tikzpicture}
 $  \rangle = -A^{3} \langle $
 %odsmycka
 \begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
+\clip (0,-1) rectangle (2,1);
 \draw (0,1) .. controls (2.5,0) ..  (0,-1);
 \end{tikzpicture}
 $ \rangle$
@@ -178,6 +231,7 @@ consider self intersections=true,
 clip width = 4,
 end tolerance=1pt,
 ] 
+\clip (0,-1) rectangle (2.5,1);
 \strand (0,-1) .. controls (3,3) and (3,-3) ..  (0,1);
 \end{knot}
 \end{tikzpicture}
@@ -189,21 +243,25 @@ $\rangle =  A \langle $
 $ \bigcup \bigcirc \rangle + A^{-1} \langle$  
 %odsmycka
 \begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
+\clip (0,-1) rectangle (2,1);
 \draw (0,1) .. controls (2.5,0) ..  (0,-1);
 \end{tikzpicture}
 $\rangle  = A (-A^2 - A^{-2})  \langle$  
 %odsmycka
 \begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
+\clip (0,-1) rectangle (2,1);
 \draw (0,1) .. controls (2.5,0) ..  (0,-1);
 \end{tikzpicture}
 $\rangle+ A^{-1}  \langle$  
 %odsmycka
 \begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
+\clip (0,-1) rectangle (2,1);
 \draw (0,1) .. controls (2.5,0) ..  (0,-1);
 \end{tikzpicture}
 $\rangle = -A^{-3} \langle $
 %odsmycka
 \begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
+\clip (0,-1) rectangle (2,1);
 \draw (0,1) .. controls (2.5,0) ..  (0,-1);
 \end{tikzpicture}
 $  \rangle$ 
@@ -280,7 +338,7 @@ Ověříme, že $X_L(t^{1/4})$ splňuje podmínky v Definici 1.
 \item
 Podle předchozího tvrzení je linkový invariant.
 \item
-$X_\circlearrowleft = (-A^3)^0 \langle \bigcirc  \rangle = 1$ 
+Zamotání triviální uzlu $w( \bigcirc) = 0$, tedy $X_\circlearrowleft = (-A^3)^{w( \bigcirc)} \langle \bigcirc  \rangle = 1$ 
 \item
 fd
 \end{enumerate}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  5 JUL 2018 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  6 JUL 2018 17:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3156,50 +3156,193 @@ s.code.tex
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.pathreplacing.code.tex))
-Package hyperref Info: Option `unicode' set `true' on input line 140.
-Package hyperref Info: Option `breaklinks' set `true' on input line 141.
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.markings.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.markings.code.tex))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarybending.code.tex
+File: tikzlibrarybending.code.tex 2013/09/17 v3.0.1a (rcs-revision 1.2)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/modules/pgfmodulebending.co
+de.tex
+File: pgfmodulebending.code.tex 2013/09/30 v3.0.1a (rcs-revision 1.18)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/modules/pgfmodulenonlineart
+ransformations.code.tex
+File: pgfmodulenonlineartransformations.code.tex 2013/10/09 v3.0.1a (rcs-revisi
+on 1.4)
+\pgftransformnonlinearflatness=\dimen304
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibrarycurvili
+near.code.tex
+File: pgflibrarycurvilinear.code.tex 2015/05/14 v3.0.1a (rcs-revision 1.4)
+\pgf@curvilinear@time@a=\dimen305
+\pgf@curvilinear@length@a=\dimen306
+\pgf@curvilinear@length@b=\dimen307
+\pgf@curvilinear@length@c=\dimen308
+\pgf@curvilinear@length@d=\dimen309
+)
+\pgf@arrows@the@rigidity=\dimen310
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2017/06/05 v1.15 Data Visualization (1.15)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks59
+\t@pgfplots@tokb=\toks60
+\t@pgfplots@tokc=\toks61
+\pgfplots@tmpa=\dimen311
+\c@pgfplots@coordindex=\count348
+\c@pgfplots@scanlineindex=\count349
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric
+.code.tex))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.c
+ode.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
+soldpgfsupp_loader.code.tex
+Package pgfplots: loading complementary arithmetics for your pgf version...
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
+soldpgfsupp_pgflibraryfpu.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
+soldpgfsupp_pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count350
+))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code
+.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+liststructure.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+liststructureext.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+array.code.tex
+\c@pgfplotsarray@tmp=\count351
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+matrix.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable
+shared.code.tex
+\c@pgfplotstable@counta=\count352
+\t@pgfplotstable@a=\toks62
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+deque.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.co
+de.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.da
+ta.code.tex))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb
+.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplot
+s.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count353
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
+.surfshading.pgfsys-pdftex.def)))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.
+code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.cod
+e.tex))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.c
+ode.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.c
+ode.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandle
+r.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.
+code.tex)))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.
+tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessin
+g.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.cod
+e.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.
+tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.te
+x)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathmorphing.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathmorphing.code.tex))
+\pgfplots@numplots=\count354
+\pgfplots@xmin@reg=\dimen312
+\pgfplots@xmax@reg=\dimen313
+\pgfplots@ymin@reg=\dimen314
+\pgfplots@ymax@reg=\dimen315
+\pgfplots@zmin@reg=\dimen316
+\pgfplots@zmax@reg=\dimen317
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmar
+ks.code.tex
+File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
+)))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup9
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+code.tex
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen318
+))
+Package hyperref Info: Option `unicode' set `true' on input line 146.
+Package hyperref Info: Option `breaklinks' set `true' on input line 147.
 
 \@input{makra.aux}
 \openout2 = `makra.aux'.
 
 (./makra.tex
-\c@veta=\count348
-\c@definice=\count349
+\c@veta=\count355
+\c@definice=\count356
 ) (./prace.aux (./titulka.aux) (./uvod.aux) (./kap01.aux)
 (./kap02.aux) (./kap03.aux) (./zaver.aux) (./literatura.aux))
 \openout1 = `prace.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 147.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 147.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 153.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 153.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 147.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 153.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 \AtBeginShipoutBox=\box87
-Package hyperref Info: Link coloring OFF on input line 147.
+Package hyperref Info: Link coloring OFF on input line 153.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -3207,11 +3350,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count350
+\c@section@level=\count357
 )
-LaTeX Info: Redefining \ref on input line 147.
-LaTeX Info: Redefining \pageref on input line 147.
-LaTeX Info: Redefining \nameref on input line 147.
+LaTeX Info: Redefining \ref on input line 153.
+LaTeX Info: Redefining \pageref on input line 153.
+LaTeX Info: Redefining \nameref on input line 153.
 
 (./prace.out) (./prace.out)
 \@outlinefile=\write7
@@ -3220,17 +3363,17 @@ LaTeX Info: Redefining \nameref on input line 147.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count351
-\scratchdimen=\dimen304
+\scratchcounter=\count358
+\scratchdimen=\dimen319
 \scratchbox=\box88
-\nofMPsegments=\count352
-\nofMParguments=\count353
-\everyMPshowfont=\toks59
-\MPscratchCnt=\count354
-\MPscratchDim=\dimen305
-\MPnumerator=\count355
-\makeMPintoPDFobject=\count356
-\everyMPtoPDFconversion=\toks60
+\nofMPsegments=\count359
+\nofMParguments=\count360
+\everyMPshowfont=\toks63
+\MPscratchCnt=\count361
+\MPscratchDim=\dimen320
+\MPnumerator=\count362
+\makeMPintoPDFobject=\count363
+\everyMPtoPDFconversion=\toks64
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -3251,9 +3394,13 @@ e
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.15}).
+
 \openout2 = `titulka.aux'.
 
- (./titulka.tex
+(./titulka.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 6.
 
 
@@ -3300,6 +3447,11 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 31.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
 
@@ -3332,32 +3484,40 @@ Package hyperref Info: Option `pageanchor' set `true' on input line 55.
 
  (./kap01.tex
 Kapitola 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 36.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 36.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 36.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 47.
 [3
 
 
 
 ] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 213--215
+Underfull \hbox (badness 10000) in paragraph at lines 271--273
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--225
+Underfull \hbox (badness 10000) in paragraph at lines 279--283
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--238
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--272
+Underfull \hbox (badness 10000) in paragraph at lines 293--296
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 287--289
+Underfull \hbox (badness 10000) in paragraph at lines 309--330
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
 
  []
 
@@ -3429,22 +3589,22 @@ P\v {r}\'{\i }loha A.
 [19
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 199.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 199.
  (./prace.aux (./titulka.aux) (./uvod.aux) (./kap01.aux) (./kap02.aux)
 (./kap03.aux) (./zaver.aux) (./literatura.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 199.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 199.
 Package rerunfilecheck Info: File `prace.out' has not changed.
-(rerunfilecheck)             Checksum: 66165562D93D7BC2850E034F2E9BC994;4095.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
+(rerunfilecheck)             Checksum: 1E161C1BD1C11E659548E23E72F29028;4096.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 199.
  ) 
 Here is how much of TeX's memory you used:
- 50308 strings out of 492982
- 1023378 string characters out of 6132512
- 1029491 words of memory out of 5000000
- 53084 multiletter control sequences out of 15000+600000
- 609100 words of font info for 68 fonts, out of 8000000 for 9000
+ 60158 strings out of 492982
+ 1354303 string characters out of 6132512
+ 1481852 words of memory out of 5000000
+ 62761 multiletter control sequences out of 15000+600000
+ 646674 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  158i,17n,306p,10380b,3367s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
@@ -3454,23 +3614,26 @@ ist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2017/texmf-dist/fonts/
 enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/l
 m/lmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmcsc10.
 pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2017/texmf-dist/fo
-nts/type1/public/lm/lmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
-ublic/lm/lmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lm
-r17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr6.pfb></us
-r/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2017/texmf-dist/
-fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
-/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm
-/lmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/loca
-l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on prace.pdf (23 pages, 703545 bytes).
+local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2017/t
+exmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2017/texmf-dist/f
+onts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
+public/lm/lmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/l
+mr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr17.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2017/t
+exmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fo
+nts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
+public/lm/lmss12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/
+lmss8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2017/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on prace.pdf (23 pages, 735874 bytes).
 PDF statistics:
- 422 PDF objects out of 1000 (max. 8388607)
- 91 named destinations out of 1000 (max. 500000)
+ 444 PDF objects out of 1000 (max. 8388607)
+ 93 named destinations out of 1000 (max. 500000)
  246 words of extra memory for PDF output out of 10000 (max. 10000000)
 
