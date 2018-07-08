@@ -1,0 +1,552 @@
+
+
+*******************************************************************************
+Sun Jul  8 11:24:47 2018
+
+
+FIT:    data read from "alt_knots_log_A_13_44_.dat" every ::18::32 using 1:3
+        format = x:z
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 14213.5           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 26.6786
+
+initial set of free parameter values
+
+a1              = 1
+b1              = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 45.9106
+rel. change during last iteration : -6.05017e-07
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.95599
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3.82588
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a1              = 0.417679         +/- 0.1297       (31.05%)
+b1              = -8.88772         +/- 4.891        (55.03%)
+
+
+correlation matrix of the fit parameters:
+
+               a1     b1     
+a1              1.000 
+b1             -0.994  1.000 
+
+
+*******************************************************************************
+Sun Jul  8 11:24:47 2018
+
+
+FIT:    data read from "alt_knots_log_B_13_44_.dat" every ::18::32 using 1:3
+        format = x:z
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 13140.5           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 26.6786
+
+initial set of free parameter values
+
+a2              = 1
+b2              = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 55.5297
+rel. change during last iteration : -7.35776e-07
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.15116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 4.62748
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a2              = 0.506117         +/- 0.1426       (28.18%)
+b2              = -10.9864         +/- 5.379        (48.96%)
+
+
+correlation matrix of the fit parameters:
+
+               a2     b2     
+a2              1.000 
+b2             -0.994  1.000 
+
+
+*******************************************************************************
+Sun Jul  8 11:24:47 2018
+
+
+FIT:    data read from "alt_knots_log_R_13_39_.dat" every ::18::27  using 1:3
+        format = x:z
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7746.86           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 24.8261
+
+initial set of free parameter values
+
+a3              = 1
+b3              = 1
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 37.192
+rel. change during last iteration : -5.99315e-13
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.30503
+variance of residuals (reduced chisquare) = WSSR/ndf   : 5.31314
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a3              = 0.861889         +/- 0.2976       (34.53%)
+b3              = -23.4322         +/- 10.44        (44.57%)
+
+
+correlation matrix of the fit parameters:
+
+               a3     b3     
+a3              1.000 
+b3             -0.997  1.000 
+
+
+*******************************************************************************
+Sun Jul  8 16:21:50 2018
+
+
+FIT:    data read from "alt_knots_log_A_13_44_.dat" every ::18::32 using 1:3
+        format = x:z
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 14213.5           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 26.6786
+
+initial set of free parameter values
+
+a1              = 1
+b1              = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 45.9106
+rel. change during last iteration : -6.05017e-07
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.95599
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3.82588
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a1              = 0.417679         +/- 0.1297       (31.05%)
+b1              = -8.88772         +/- 4.891        (55.03%)
+
+
+correlation matrix of the fit parameters:
+
+               a1     b1     
+a1              1.000 
+b1             -0.994  1.000 
+
+
+*******************************************************************************
+Sun Jul  8 16:21:50 2018
+
+
+FIT:    data read from "alt_knots_log_B_13_44_.dat" every ::18::32 using 1:3
+        format = x:z
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 13140.5           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 26.6786
+
+initial set of free parameter values
+
+a2              = 1
+b2              = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 55.5297
+rel. change during last iteration : -7.35776e-07
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.15116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 4.62748
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a2              = 0.506117         +/- 0.1426       (28.18%)
+b2              = -10.9864         +/- 5.379        (48.96%)
+
+
+correlation matrix of the fit parameters:
+
+               a2     b2     
+a2              1.000 
+b2             -0.994  1.000 
+
+
+*******************************************************************************
+Sun Jul  8 16:21:50 2018
+
+
+FIT:    data read from "alt_knots_log_R_13_39_.dat" every ::18::27  using 1:3
+        format = x:z
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7746.86           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 24.8261
+
+initial set of free parameter values
+
+a3              = 1
+b3              = 1
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 37.192
+rel. change during last iteration : -5.99315e-13
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.30503
+variance of residuals (reduced chisquare) = WSSR/ndf   : 5.31314
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a3              = 0.861889         +/- 0.2976       (34.53%)
+b3              = -23.4322         +/- 10.44        (44.57%)
+
+
+correlation matrix of the fit parameters:
+
+               a3     b3     
+a3              1.000 
+b3             -0.997  1.000 
+
+
+*******************************************************************************
+Sun Jul  8 19:27:42 2018
+
+
+FIT:    data read from "alt_knots_log_A_13_44_.dat" every ::18::32 using 1:3
+        format = x:z
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 14213.5           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 26.6786
+
+initial set of free parameter values
+
+a1              = 1
+b1              = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 45.9106
+rel. change during last iteration : -6.05017e-07
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.95599
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3.82588
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a1              = 0.417679         +/- 0.1297       (31.05%)
+b1              = -8.88772         +/- 4.891        (55.03%)
+
+
+correlation matrix of the fit parameters:
+
+               a1     b1     
+a1              1.000 
+b1             -0.994  1.000 
+
+
+*******************************************************************************
+Sun Jul  8 19:27:42 2018
+
+
+FIT:    data read from "alt_knots_log_B_13_44_.dat" every ::18::32 using 1:3
+        format = x:z
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 13140.5           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 26.6786
+
+initial set of free parameter values
+
+a2              = 1
+b2              = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 55.5297
+rel. change during last iteration : -7.35776e-07
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.15116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 4.62748
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a2              = 0.506117         +/- 0.1426       (28.18%)
+b2              = -10.9864         +/- 5.379        (48.96%)
+
+
+correlation matrix of the fit parameters:
+
+               a2     b2     
+a2              1.000 
+b2             -0.994  1.000 
+
+
+*******************************************************************************
+Sun Jul  8 19:27:42 2018
+
+
+FIT:    data read from "alt_knots_log_R_13_41_.dat" every ::18::27  using 1:3
+        format = x:z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 8703.42           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 25.1942
+
+initial set of free parameter values
+
+a3              = 1
+b3              = 1
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 37.8101
+rel. change during last iteration : -1.88112e-13
+
+degrees of freedom    (FIT_NDF)                        : 8
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.174
+variance of residuals (reduced chisquare) = WSSR/ndf   : 4.72626
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a3              = 0.808884         +/- 0.2393       (29.59%)
+b3              = -21.6477         +/- 8.525        (39.38%)
+
+
+correlation matrix of the fit parameters:
+
+               a3     b3     
+a3              1.000 
+b3             -0.997  1.000 
+
+
+*******************************************************************************
+Sun Jul  8 19:28:12 2018
+
+
+FIT:    data read from "alt_knots_log_A_13_44_.dat" every ::18::32 using 1:3
+        format = x:z
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 14213.5           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 26.6786
+
+initial set of free parameter values
+
+a1              = 1
+b1              = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 45.9106
+rel. change during last iteration : -6.05017e-07
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.95599
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3.82588
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a1              = 0.417679         +/- 0.1297       (31.05%)
+b1              = -8.88772         +/- 4.891        (55.03%)
+
+
+correlation matrix of the fit parameters:
+
+               a1     b1     
+a1              1.000 
+b1             -0.994  1.000 
+
+
+*******************************************************************************
+Sun Jul  8 19:28:12 2018
+
+
+FIT:    data read from "alt_knots_log_B_13_44_.dat" every ::18::32 using 1:3
+        format = x:z
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 13140.5           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 26.6786
+
+initial set of free parameter values
+
+a2              = 1
+b2              = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 55.5297
+rel. change during last iteration : -7.35776e-07
+
+degrees of freedom    (FIT_NDF)                        : 12
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.15116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 4.62748
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a2              = 0.506117         +/- 0.1426       (28.18%)
+b2              = -10.9864         +/- 5.379        (48.96%)
+
+
+correlation matrix of the fit parameters:
+
+               a2     b2     
+a2              1.000 
+b2             -0.994  1.000 
+
+
+*******************************************************************************
+Sun Jul  8 19:28:12 2018
+
+
+FIT:    data read from "alt_knots_log_R_13_41_.dat" every ::18::27  using 1:3
+        format = x:z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 8703.42           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 25.1942
+
+initial set of free parameter values
+
+a3              = 1
+b3              = 1
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 37.8101
+rel. change during last iteration : -1.88112e-13
+
+degrees of freedom    (FIT_NDF)                        : 8
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.174
+variance of residuals (reduced chisquare) = WSSR/ndf   : 4.72626
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a3              = 0.808884         +/- 0.2393       (29.59%)
+b3              = -21.6477         +/- 8.525        (39.38%)
+
+
+correlation matrix of the fit parameters:
+
+               a3     b3     
+a3              1.000 
+b3             -0.997  1.000 

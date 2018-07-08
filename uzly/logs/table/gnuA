@@ -1,27 +1,22 @@
 set terminal postscript eps enhanced color font 'Helvetica,20'
-set output 'knotsABR.eps'
+set output 'tableA.eps'
 
 reset
 
 set   autoscale                        # scale axes automatically
 unset log                              # remove any log-scaling
 unset label   
-set pointsize 1
+set pointsize 0.1
 
 set style line 11 lc rgb '#808080' lt 1
 set border 3 back ls 11
 set tics nomirror
-
 set key left top
-set key spacing 3
 
-set logscale y
 
 set xlabel 'Pocet krizeni'
 set ylabel 'Cas [s]'
 
-plot "knots_log_A_13_44_.dat" using 1:2 title 'Algoritmus A',\
-"knots_log_B_13_44_.dat" using 1:2 title 'Algoritmus B',\
-"knots_log_R_13_42_.dat" using 1:2 title 'Algoritmus R'
-
+plot "table_log_A.txt" using 2:3 title 'Algoritmus A',\
+"meansA.dat" using 1:2 title 'Prumer' with points pointtype 3 ps 1
 

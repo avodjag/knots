@@ -14,7 +14,7 @@ def addLog(filename):
     out.close()
 
 def mean(filename, druhe):
-    out = open("meansR.dat", "w")
+    out = open("meansB.dat", "w")
     f = open(filename, "r")
     a = [0 for i in range(13)]
     c = [0 for i in range(13)]
