@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  6 JUL 2018 21:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  7 JUL 2018 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1560,62 +1560,60 @@ e
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.15}).
 
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 133.
-
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 33.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 133.
-
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 33.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 133
-.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 33.
+
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 133
-.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 33.
+
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 133.
+(Font)              <10> on input line 33.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 133.
+(Font)              <7> on input line 33.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 133.
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 133.
+(Font)              <5> on input line 33.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 33.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
+) [1
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[1
-
-] [2{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./pics.aux) ) 
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./
+pics.aux) ) 
 Here is how much of TeX's memory you used:
- 34606 strings out of 492982
- 842210 string characters out of 6132512
- 938947 words of memory out of 5000000
- 37671 multiletter control sequences out of 15000+600000
+ 34617 strings out of 492982
+ 842424 string characters out of 6132512
+ 939947 words of memory out of 5000000
+ 37682 multiletter control sequences out of 15000+600000
  548527 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,7n,119p,10373b,828s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr9.pfb>
-Output written on pics.pdf (2 pages, 50339 bytes).
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/u
+sr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texli
+ve/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2017/texmf-dist/f
+onts/type1/public/lm/lmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
+public/lm/lmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lm
+r9.pfb>
+Output written on pics.pdf (2 pages, 75350 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
+ 33 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,21 @@
+set terminal postscript eps enhanced color font 'Helvetica,10'
+set output 'altABR.eps'
+
+set   autoscale                        # scale axes automatically
+unset log                              # remove any log-scaling
+unset label   
+set pointsize 1
+
+set style line 11 lc rgb '#808080' lt 1
+set border 3 back ls 11
+set tics nomirror
+
+set logscale
+
+set xlabel 'Pocet krizeni'
+set ylabel 'Cas [s]'
+
+plot "alt_knots_log_B_13_44_.txt" using 2:3 title 'Algoritmus B',\
+"alt_knots_log_R_13_19_.txt" using 2:3 title 'Algoritmus R',\
+"alt_knots_log_A_13_39_.txt" using 2:3 title 'Algoritmus A'
+
