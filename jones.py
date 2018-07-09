@@ -1,5 +1,6 @@
 import copy
 from laurent import *
+import random
 var = 'A'
 
 N=0
@@ -439,8 +440,10 @@ def bracket(prev_knot, reid2, looped):
             edge2 = twoSide(knot)
             if edge2 != -1:
                 edge, typ = edge2
-    else:
+    elif(var == 'R'):
         edge = next(iter(knot))
+    else:
+        edge = random.choice(list(knot.keys()))
 
     crossing = knot[edge][1]
 
@@ -476,7 +479,8 @@ def bracket(prev_knot, reid2, looped):
 
 # jones(knot) ... var A
 # jones(knot, 'B') ... var B
-# jones(knot, 'R') ... random
+# jones(knot, 'R') ... po vlaknu
+# jones(knot, 'RND') ... random
 
 def jones(PDknot, vr = 'A'):
     global var

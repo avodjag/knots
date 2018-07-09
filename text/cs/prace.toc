@@ -23,15 +23,15 @@
 \contentsline {section}{\numberline {3.1}Mal\IeC {\'e} tabulkov\IeC {\'e} uzly}{14}{section.3.1}
 \contentsline {section}{\numberline {3.2}N\IeC {\'a}hodn\IeC {\'e} uzly a linky}{14}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Generov\IeC {\'a}n\IeC {\'\i } n\IeC {\'a}hodn\IeC {\'y}ch link\IeC {\r u} a uzl\IeC {\r u}}{14}{subsection.3.2.1}
-\contentsline {subsubsection}{P\IeC {\v r}evod rovinn\IeC {\'e}ho grafu na link}{14}{section*.8}
-\contentsline {subsubsection}{Generov\IeC {\'a}n\IeC {\'\i } n\IeC {\'a}hodn\IeC {\'y}ch rovinn\IeC {\'y}ch graf\IeC {\r u}}{14}{section*.9}
-\contentsline {subsubsection}{Implementace}{15}{section*.11}
-\contentsline {subsection}{\numberline {3.2.2}Test}{15}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Torusov\IeC {\'e} uzly}{15}{section.3.3}
-\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{16}{chapter*.12}
-\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'e} literatury}{17}{chapter*.13}
-\contentsline {chapter}{Seznam obr\'azk\r {u}}{18}{chapter*.14}
-\contentsline {chapter}{Seznam tabulek}{19}{chapter*.15}
-\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{20}{chapter*.16}
-\contentsline {chapter}{\numberline {A}P\IeC {\v r}\IeC {\'\i }lohy}{21}{appendix.A}
-\contentsline {section}{\numberline {A.1}Prvn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }loha}{21}{section.A.1}
+\contentsline {subsubsection}{P\IeC {\v r}evod rovinn\IeC {\'e}ho grafu na link}{14}{section*.10}
+\contentsline {subsubsection}{Generov\IeC {\'a}n\IeC {\'\i } n\IeC {\'a}hodn\IeC {\'y}ch rovinn\IeC {\'y}ch graf\IeC {\r u}}{14}{section*.11}
+\contentsline {subsubsection}{Implementace}{14}{section*.13}
+\contentsline {subsection}{\numberline {3.2.2}Test}{16}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Torusov\IeC {\'e} uzly}{16}{section.3.3}
+\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{19}{chapter*.18}
+\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'e} literatury}{20}{chapter*.19}
+\contentsline {chapter}{Seznam obr\'azk\r {u}}{21}{chapter*.20}
+\contentsline {chapter}{Seznam tabulek}{22}{chapter*.21}
+\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{23}{chapter*.22}
+\contentsline {chapter}{\numberline {A}P\IeC {\v r}\IeC {\'\i }lohy}{24}{appendix.A}
+\contentsline {section}{\numberline {A.1}Prvn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }loha}{24}{section.A.1}

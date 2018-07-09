@@ -20,4 +20,4 @@ set ylabel 'Cas [s]'
 
 plot "torus_log_A_NE2.txt" using 2:3 title 'Algoritmus A',\
 "torus_log_B_NE2.txt" using 2:3 title 'Algoritmus B',\
-"torus_log_R_NE2.txt" using 2:3 title 'Algoritmus R'
+"torus_log_RND_NE2.txt" using 2:3 title 'Algoritmus RND'

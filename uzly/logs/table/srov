@@ -19,5 +19,5 @@ set ylabel 'Cas [s]'
 
 plot "meansA.dat" using 1:2 title 'Prumer algoritmu A' with points pointtype 3 ps 1,\
 "meansB.dat" using 1:2 title 'Prumer algoritmu B' with points pointtype 3 ps 1,\
-"meansR.dat" using 1:2 title 'Prumer algoritmu R' with points pointtype 3 ps 1
+"meansRND.dat" using 1:2 title 'Prumer algoritmu RND' with points pointtype 3 ps 1
 

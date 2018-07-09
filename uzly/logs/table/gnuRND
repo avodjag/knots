@@ -1,5 +1,5 @@
 set terminal postscript eps enhanced color font 'Helvetica,15'
-set output 'tableR.eps'
+set output 'tableRND.eps'
 
 reset
 
@@ -17,6 +17,6 @@ set key left top
 set xlabel 'Pocet krizeni'
 set ylabel 'Cas [s]'
 
-plot "table_log_R.txt" using 2:3 title 'Algoritmus R',\
-"meansR.dat" using 1:2 title 'Prumer' with points pointtype 3 ps 1
+plot "table_log_RND.txt" using 2:3 title 'Algoritmus RND',\
+"meansRND.dat" using 1:2 title 'Prumer' with points pointtype 3 ps 1
 

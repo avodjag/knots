@@ -4,9 +4,32 @@
 
 V této sekci představíme výsledky implementace výpočtu Jonesova polynomu. Změříme délku běhu algoritmu a jeho variant na malých uzlech, náhodých uzlech a lincích a na speciálních typech uzlů.
 
+Varianty
+
 \section{Malé tabulkové uzly}
 
-Prostě že se to dělá a že to je rychlé a že je ta tabulka. Větší smysl to má pro větší.
+
+
+\begin{figure}[p]\centering
+\includegraphics{../img/multiTable}
+\caption{Doba běhu algoritmů na tabulkových uzlech do 12 křížení s vyznačenými průměry.}
+\label{obr03:multiTable}
+\end{figure}
+
+Algoritmy jsme vyzkoušely na všech uzlech, které mají projekci s maximálně dvanácti kříženími. PD notace uzlů byla získána z databáze KnotInfo. 
+
+U všech tří algoritmů byl už u malých uzlů znatelný exponenciální růst doby běhu (viz Obrázek~\ref{obr03:multiTable}).
+ 
+
+Ze srovnání průměrných dob běhu plyne, že nejlepší čas dosahuje algoritmus A, těsně následuje algoritmus RND a nejpomalejší je algoritmus B (viz Obrázek~\ref{obr03:srovTable}). Podobné výsledky se budou objevovat i nadále.
+	
+\begin{figure}[p]\centering
+\includegraphics{../img/srovTable}
+\caption{Průměrné časy algoritmů na tabulkových uzlech do 12 křížení.}
+\label{obr03:srovTable}
+\end{figure}
+
+
 \section{Náhodné uzly a linky}
 
 \subsection{Generování náhodných linků a uzlů}
@@ -77,9 +100,45 @@ Linky?
 U uzlů a alt od větších uzlů fitovat data a shrnout.
 
 \section{Torusové uzly}
-Rovnou srovnání B a R.
+Rychlost algoritmů jsme vyzkoušeli na 36 nejmenších torusových uzlech. Jejich PD notaci jsme získali z databáze knot atlas.
 
-Pak rozebrat ty dva kusy.
+\begin{figure}[p]\centering
+\includegraphics{../img/torusSrov}
+\caption{Doby běhu algoritmů na 36 torusových uzlech, logaritmická škála.}
+\label{obr03:torusSrov}
+\end{figure}
+
+Na grafu dob běhu algoritmů lze rozlišit dva shluky bodů (viz Obrázek~\ref{obr03:torusSrov}). Spodní shluk odpovídá torusovým uzlům ($2k+1$, 2), tedy těm, které se obmotají dvakrát podél osy rotace torusu a jejich diagram má tvar dvou zakroucených vláken s $2k+1$ kříženími.
+
+\begin{figure}[h]\centering
+\begin{tikzpicture}[use Hobby shortcut]
+\begin{knot}[
+  consider self intersections=true,
+%  draft mode=crossings,
+  flip crossing/.list={2,4,6} 
+]
+\strand ([closed]90:2) foreach \k in {1,...,11} { .. (90-360/11+\k*720/11:1.5) .. (90+\k*720/11:2) } (90:2);
+\end{knot}
+\end{tikzpicture}
+\caption{Torusový uzel (11,2).}
+\label{obr04:torus11}
+\end{figure}
+
+\begin{figure}[p]\centering
+\includegraphics{../img/torus2}
+\caption{Doby běhu algoritmů na torusových uzlech (3,2) až (35,2).}
+\label{obr03:torus2}
+\end{figure}
+
+Všechny stěny tohoto uzlu jsou ohraničené pouze dvěma hranami. Rozpojením libovolného křížení jedním směrem vznikne torusový link ($2k$, 2), druhým směrem triviální uzel, který lze rozmotat někalika prvními Reidemeistrovými pohyby. Z linku zase rozpojením libovolného křížení vznikne uzel ($2k-1$, 2). Rozpojení a rozmotávání má lineární časovou složitost, celkově tedy všechny tři algoritmy spočítají Jonesův polynom tohoto typu torusových uzlů v kvadratickém čase (viz Obrázek~\ref{obr03:torus2}).
+
+\begin{figure}[p]\centering
+\includegraphics{../img/torusNe2FIT}
+\caption{Doby běhu algoritmů na malých torusových uzlech ($p$, $q\neq 2$) proložené křivkami, logaritmická škála.}
+\label{obr03:torusFIT}
+\end{figure}
+
+Na torusových uzlech tvaru ($p$, $q$), kde $q\neq 2$ již doba běhu algoritmu roste exponenciálně. Nejrychlejší je algoritmus A, příslušná  exponenciála je tvaru $2^{53n}$ (viz Obrázek~\ref{obr03:torusFIT}).
 
 Nezapomenou dělat závěry a shrnovat.
 
