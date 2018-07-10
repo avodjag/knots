@@ -3,6 +3,9 @@ set output 'knotsFIT.eps'
 
 reset
 
+set encoding iso_8859_1 
+
+
 set   autoscale                        # scale axes automatically
 unset log                              # remove any log-scaling
 unset label   
@@ -24,27 +27,27 @@ f1(x) = a1*x+b1
 
 a1=1;b1=1;
 
-fit f1(x) "knots_log_A_13_45_.dat" every ::25::33 using 1:3 via a1, b1;
+fit f1(x) "knots_log_A_13_46_.dat" using 1:3 via a1, b1;
 
 f2(x) = a2*x+b2
 
 a2=1;b2=1;
 
-fit f2(x) "knots_log_B_13_45_.dat" every ::25::33 using 1:3 via a2, b2;
+fit f2(x) "knots_log_B_13_45_.dat" using 1:3 via a2, b2;
 
 f3(x) = a3*x+b3
 
 a3=1;b3=1;
 
-fit f3(x) "knots_log_R_13_45_.dat" every ::25::33  using 1:3 via a3, b3;
+fit f3(x) "knots_log_RND_13_44_.dat" using 1:3 via a3, b3;
 
 set logscale y
 unset log cb
 
-plot "knots_log_A_13_45_.dat" every ::18::33  using 1:2 title 'Algoritmus A',\
-"knots_log_B_13_45_.dat" every ::18::33 using 1:2 title 'Algoritmus B',\
-"knots_log_R_13_45_.dat" every ::18::33  using 1:2 title 'Algoritmus R',\
-exp((a1*x+b1)*log(2)) lt rgb "red" title 'fit A: c*2^{0.49*n}',\
-exp((a2*x+b2)*log(2)) lt rgb "green" title 'fit B: c*2^{0.55*n}',\
-exp((a3*x+b3)*log(2)) lt rgb "blue" title 'fit R: c*2^{0.42*n}'
+plot "knots_log_A_13_46_.dat" using 1:2 title 'Algoritmus A',\
+"knots_log_B_13_45_.dat" using 1:2 title 'Algoritmus B',\
+"knots_log_RND_13_44_.dat"  using 1:2 title 'Algoritmus RND',\
+exp((a1*x+b1)*log(2)) lt rgb "red" title 'fit A: c*2^{0.487*n}',\
+exp((a2*x+b2)*log(2)) lt rgb "green" title 'fit B: c*2^{0.503 *n}',\
+exp((a3*x+b3)*log(2)) lt rgb "blue" title 'fit RND: c*2^{0.520 *n}'
 

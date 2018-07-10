@@ -8,8 +8,6 @@ Varianty
 
 \section{Malé tabulkové uzly}
 
-
-
 \begin{figure}[p]\centering
 \includegraphics{../img/multiTable}
 \caption{Doba běhu algoritmů na tabulkových uzlech do 12 křížení s vyznačenými průměry.}
@@ -17,7 +15,6 @@ Varianty
 \end{figure}
 
 Algoritmy jsme vyzkoušely na všech uzlech, které mají projekci s maximálně dvanácti kříženími. PD notace uzlů byla získána z databáze KnotInfo. 
-
 U všech tří algoritmů byl už u malých uzlů znatelný exponenciální růst doby běhu (viz Obrázek~\ref{obr03:multiTable}).
  
 
@@ -94,13 +91,66 @@ Jsme tedy schopni nagenerovat uzly, alternující uzly a linky libovolné veliko
 Takto generované uzly jsou také poměrně \uv{zamotané}, tedy rozmotávací krok algoritmu neodstraní příliš mnoho křížení.
 
 \subsection{Test}
-Rozdíl mezi uzly a alternujícími uzly.
-Rozdíly algoritmů na uzlech.
-Linky?
-U uzlů a alt od větších uzlů fitovat data a shrnout.
+
+\begin{figure}[p]\centering
+\includegraphics{../img/knotsFIT}
+\caption{Doby běhu algoritmů náhodných uzlech proložené křivkami, logaritmická škála.}
+\label{obr03:knotSrov}
+\end{figure}
+
+\begin{figure}[p]\centering
+\includegraphics{../img/alt_knotsFIT}
+\caption{Doby běhu algoritmů na náhodných alternujících uzlech proložené křivkami, logaritmická škála.}
+\label{obr03:altSrov}
+\end{figure}
+
+\begin{figure}[p]\centering
+\includegraphics{../img/linksFIT}
+\caption{Doby běhu algoritmů na náhodných lincích proložené křivkami, logaritmická škála.}
+\label{obr03:linkSrov}
+\end{figure}
+
+Rychlost algoritmů jsme tedy otestovali na uzlech (Obrázek~\ref{obr03:knotSrov}) , alternujících uzlech (Obrázek~\ref{obr03:altSrov}) a lincích (Obrázek~\ref{obr03:linkSrov}) s počtem křížení do 46. 
+
+Podle výsledků není znatelný rozdíl mezi dobou výpočtu na uzlech, alternujících uzlech či lincích. Ani jednotlivé algoritmy se od sebe výrazně neliší, nejrychleji ale Jonesův polynom vždy počítá algoritmus A. Jeho průměrná časová složitost je podle naměřených dat menší než $\mathcal{O}(2^{0,5n})$. 
+
+Na uzlech a alternujících uzlech běží algoritmy B i RND podobnou dobu, liší se na ovšem na lincích. Zde se algoritmus B vyrovná algoritmu A, ale algoritmus RND zaostává. Náhodná volba křížení k rozpojení pravděpodobně způsobí rozpadnutí na větší počet stále zamotaných linků.
+
+Odhad průměrné časové složitosti
+Chyby maximálně pět procent.
+
+\begin{table}[b!]
+
+\centering
+%%% Tabulka používá následující balíčky:
+%%%   - booktabs (\toprule, \midrule, \bottomrule)
+%%%   - dcolumn (typ sloupce D: vycentrovaná čísla zarovnaná na
+%%%     desetinnou čárku
+%%%     Všimněte si, že ve zdrojovém kódu jsou desetinné tečky, ale
+%%%     tisknou se čárky.
+%%% Dále používáme příkazy \pulrad a \mc definované v makra.tex
+
+\begin{tabular}{l@{\hspace{1.5cm}}D{.}{,}{3}D{.}{,}{1.3}D{.}{,}{2.4}} 
+\toprule
+ & \mc{} & \mc{} & \mc{} \\
+\mc{} & \mc{\pulrad{\textbf{A}}} & \mc{\pulrad{\textbf{B}}} &
+\mc{\pulrad{\textbf{RND}}} \\
+\midrule
+Uzel     & 0.487 & 0.503& 0.520 \\
+Alternující uzel & 0.469 & 0.519 & 0.509 \\
+Link   & 0.486 & 0.485 &  0.555\\
+\bottomrule
+\end{tabular}
+
+\caption{Odhady parametru $k$ průměrné časové složitosti $\mathcal{O}(2^{kn})$ jednotlivých algoritmů.}\label{tab03:algo}
+
+\end{table}
+
 
 \section{Torusové uzly}
 Rychlost algoritmů jsme vyzkoušeli na 36 nejmenších torusových uzlech. Jejich PD notaci jsme získali z databáze knot atlas.
+
+TO není torusový uzel!! Ale znamená to, že z toho dokážu vyrobit link? To by bylo fajn. Zmenším. A dám vedle toho. Pěkné to bude.
 
 \begin{figure}[p]\centering
 \includegraphics{../img/torusSrov}

@@ -20,8 +20,8 @@ set logscale y
 set xlabel 'Pocet krizeni'
 set ylabel 'Cas [s]'
 
-plot "links_log_A_13_44_.dat" using 1:2 title 'Algoritmus A',\
+plot "links_log_A_13_45_.dat" using 1:2 title 'Algoritmus A',\
 "links_log_B_13_44_.dat" using 1:2 title 'Algoritmus B',\
-"links_log_R_13_41_.dat" using 1:2 title 'Algoritmus R'
+"links_log_RND_13_44_.dat" using 1:2 title 'Algoritmus RND'
 
 

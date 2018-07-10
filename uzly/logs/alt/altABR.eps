@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0 EPSF-2.0
 %%Title: altABR.eps
 %%Creator: gnuplot 4.6 patchlevel 6
-%%CreationDate: Mon Jul  9 08:48:14 2018
+%%CreationDate: Tue Jul 10 10:49:55 2018
 %%DocumentFonts: (atend)
 %%BoundingBox: 50 50 410 302
 %%EndComments
@@ -420,6 +420,49 @@ Level1 {Level1PatternFill} {Level2PatternFill} ifelse
 /Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
 dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
 currentdict end definefont pop
+%
+% Encoding for ISO-8859-1 (also called Latin1)
+%
+/reencodeISO {
+dup dup findfont dup length dict begin
+{ 1 index /FID ne { def }{ pop pop } ifelse } forall
+currentdict /CharStrings known {
+	CharStrings /Idieresis known {
+		/Encoding ISOLatin1Encoding def } if
+} if
+currentdict end definefont
+} def
+/ISOLatin1Encoding [
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quoteright
+/parenleft/parenright/asterisk/plus/comma/minus/period/slash
+/zero/one/two/three/four/five/six/seven/eight/nine/colon/semicolon
+/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N
+/O/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright
+/asciicircum/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m
+/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar/braceright/asciitilde
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/dotlessi/grave/acute/circumflex/tilde/macron/breve
+/dotaccent/dieresis/.notdef/ring/cedilla/.notdef/hungarumlaut
+/ogonek/caron/space/exclamdown/cent/sterling/currency/yen/brokenbar
+/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot
+/hyphen/registered/macron/degree/plusminus/twosuperior/threesuperior
+/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine
+/guillemotright/onequarter/onehalf/threequarters/questiondown
+/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla
+/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
+/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute
+/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis
+/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave
+/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex
+/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis
+/yacute/thorn/ydieresis
+] def
 /MFshow {
    { dup 5 get 3 ge
      { 5 get 3 eq {gsave} {grestore} ifelse }
@@ -448,6 +491,7 @@ currentdict end definefont pop
   Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
 /XYsave    { [( ) 1 2 true false 3 ()] } bind def
 /XYrestore { [( ) 1 2 true false 4 ()] } bind def
+/Helvetica reencodeISO def
 Level1 SuppressPDFMark or 
 {} {
 /SDict 10 dict def
@@ -461,7 +505,7 @@ SDict begin [
   /Author (avodjag)
 %  /Producer (gnuplot)
 %  /Keywords ()
-  /CreationDate (Mon Jul  9 08:48:14 2018)
+  /CreationDate (Tue Jul 10 10:49:55 2018)
   /DOCINFO pdfmark
 end
 } ifelse
@@ -483,101 +527,87 @@ LT0
 63 0 V
 stroke
 1100 640 M
-[ [(Helvetica) 200.0 0.0 true true 0 ( 0.001)]
-] -66.7 MRshow
-1.000 UL
-LT0
-0.50 0.50 0.50 C 1220 819 M
-31 0 V
--31 236 R
-31 0 V
--31 122 R
-31 0 V
--31 57 R
-63 0 V
-stroke
-1100 1234 M
 [ [(Helvetica) 200.0 0.0 true true 0 ( 0.01)]
 ] -66.7 MRshow
 1.000 UL
 LT0
-0.50 0.50 0.50 C 1220 1413 M
+0.50 0.50 0.50 C 1220 849 M
 31 0 V
--31 236 R
+-31 276 R
 31 0 V
--31 122 R
+-31 141 R
 31 0 V
--31 57 R
+-31 67 R
 63 0 V
 stroke
-1100 1828 M
+1100 1333 M
 [ [(Helvetica) 200.0 0.0 true true 0 ( 0.1)]
 ] -66.7 MRshow
 1.000 UL
 LT0
-0.50 0.50 0.50 C 1220 2007 M
+0.50 0.50 0.50 C 1220 1542 M
 31 0 V
--31 237 R
+-31 276 R
 31 0 V
--31 121 R
+-31 141 R
 31 0 V
--31 57 R
+-31 67 R
 63 0 V
 stroke
-1100 2422 M
+1100 2026 M
 [ [(Helvetica) 200.0 0.0 true true 0 ( 1)]
 ] -66.7 MRshow
 1.000 UL
 LT0
-0.50 0.50 0.50 C 1220 2601 M
+0.50 0.50 0.50 C 1220 2235 M
 31 0 V
--31 237 R
+-31 276 R
 31 0 V
--31 121 R
+-31 141 R
 31 0 V
--31 58 R
+-31 68 R
 63 0 V
 stroke
-1100 3017 M
+1100 2720 M
 [ [(Helvetica) 200.0 0.0 true true 0 ( 10)]
 ] -66.7 MRshow
 1.000 UL
 LT0
-0.50 0.50 0.50 C 1220 3195 M
+0.50 0.50 0.50 C 1220 2928 M
 31 0 V
--31 237 R
+-31 276 R
 31 0 V
--31 121 R
+-31 141 R
 31 0 V
--31 58 R
+-31 68 R
 63 0 V
 stroke
-1100 3611 M
+1100 3413 M
 [ [(Helvetica) 200.0 0.0 true true 0 ( 100)]
 ] -66.7 MRshow
 1.000 UL
 LT0
-0.50 0.50 0.50 C 1220 3790 M
+0.50 0.50 0.50 C 1220 3621 M
 31 0 V
--31 236 R
+-31 276 R
 31 0 V
--31 121 R
+-31 142 R
 31 0 V
--31 58 R
+-31 67 R
 63 0 V
 stroke
-1100 4205 M
+1100 4106 M
 [ [(Helvetica) 200.0 0.0 true true 0 ( 1000)]
 ] -66.7 MRshow
 1.000 UL
 LT0
-0.50 0.50 0.50 C 1220 4384 M
+0.50 0.50 0.50 C 1220 4314 M
 31 0 V
--31 236 R
+-31 276 R
 31 0 V
--31 121 R
+-31 142 R
 31 0 V
--31 58 R
+-31 67 R
 63 0 V
 stroke
 1100 4799 M
@@ -678,44 +708,43 @@ LT0
 LT0
 LC0 setrgbcolor
 LCb setrgbcolor
-2780 4618 M
+3020 4618 M
 [ [(Helvetica) 200.0 0.0 true true 0 (Algoritmus A)]
 ] -66.7 MRshow
 LT0
-1702 880 Pls
-1862 1510 Pls
-2023 1802 Pls
-2183 1732 Pls
-2344 2063 Pls
-2504 2193 Pls
-2665 1970 Pls
-2825 2534 Pls
-2986 1998 Pls
-3147 2431 Pls
-3307 2309 Pls
-3468 2380 Pls
-3628 2536 Pls
-3789 2827 Pls
-3949 2762 Pls
-4110 2193 Pls
-4270 2891 Pls
-4431 2815 Pls
-4591 3045 Pls
-4752 3427 Pls
-4912 2609 Pls
-5073 3185 Pls
-5234 3895 Pls
-5394 4007 Pls
-5555 3549 Pls
-5715 3751 Pls
-5876 3590 Pls
-6036 4179 Pls
-6197 3647 Pls
-6357 4080 Pls
-6518 4241 Pls
-6678 3675 Pls
-6839 4365 Pls
-3171 4618 Pls
+1862 962 Pls
+2023 1302 Pls
+2183 1221 Pls
+2344 1607 Pls
+2504 1758 Pls
+2665 1499 Pls
+2825 2156 Pls
+2986 1531 Pls
+3147 2037 Pls
+3307 1894 Pls
+3468 1977 Pls
+3628 2159 Pls
+3789 2499 Pls
+3949 2422 Pls
+4110 1759 Pls
+4270 2573 Pls
+4431 2484 Pls
+4591 2752 Pls
+4752 3199 Pls
+4912 2244 Pls
+5073 2916 Pls
+5234 3744 Pls
+5394 3875 Pls
+5555 3341 Pls
+5715 3576 Pls
+5876 3388 Pls
+6036 4075 Pls
+6197 3455 Pls
+6357 3960 Pls
+6518 4148 Pls
+6678 3488 Pls
+6839 4293 Pls
+3411 4618 Pls
 % End plot #1
 % Begin plot #2
 1.000 UP
@@ -723,44 +752,43 @@ LT0
 LT1
 LC1 setrgbcolor
 LCb setrgbcolor
-2780 4382 M
+3020 4382 M
 [ [(Helvetica) 200.0 0.0 true true 0 (Algoritmus B)]
 ] -66.7 MRshow
 LT1
-1702 811 Crs
-1862 1678 Crs
-2023 1877 Crs
-2183 1588 Crs
-2344 2008 Crs
-2504 2306 Crs
-2665 2268 Crs
-2825 2685 Crs
-2986 2223 Crs
-3147 2369 Crs
-3307 2398 Crs
-3468 2020 Crs
-3628 2862 Crs
-3789 2318 Crs
-3949 2779 Crs
-4110 2924 Crs
-4270 3086 Crs
-4431 2999 Crs
-4591 3087 Crs
-4752 3431 Crs
-4912 2731 Crs
-5073 3628 Crs
-5234 4235 Crs
-5394 3911 Crs
-5555 3873 Crs
-5715 3966 Crs
-5876 4028 Crs
-6036 4510 Crs
-6197 3492 Crs
-6357 4423 Crs
-6518 4500 Crs
-6678 4113 Crs
-6839 4681 Crs
-3171 4382 Crs
+1862 1158 Crs
+2023 1390 Crs
+2183 1053 Crs
+2344 1543 Crs
+2504 1890 Crs
+2665 1846 Crs
+2825 2333 Crs
+2986 1794 Crs
+3147 1964 Crs
+3307 1998 Crs
+3468 1557 Crs
+3628 2540 Crs
+3789 1905 Crs
+3949 2442 Crs
+4110 2612 Crs
+4270 2801 Crs
+4431 2699 Crs
+4591 2801 Crs
+4752 3203 Crs
+4912 2386 Crs
+5073 3433 Crs
+5234 4142 Crs
+5394 3763 Crs
+5555 3719 Crs
+5715 3827 Crs
+5876 3899 Crs
+6036 4462 Crs
+6197 3274 Crs
+6357 4360 Crs
+6518 4450 Crs
+6678 3999 Crs
+6839 4662 Crs
+3411 4382 Crs
 % End plot #2
 % Begin plot #3
 1.000 UP
@@ -768,44 +796,42 @@ LT1
 LT2
 LC2 setrgbcolor
 LCb setrgbcolor
-2780 4146 M
-[ [(Helvetica) 200.0 0.0 true true 0 (Algoritmus R)]
+3020 4146 M
+[ [(Helvetica) 200.0 0.0 true true 0 (Algoritmus RND)]
 ] -66.7 MRshow
 LT2
-1702 797 Star
-1862 1366 Star
-2023 1620 Star
-2183 1742 Star
-2344 1542 Star
-2504 2099 Star
-2665 2113 Star
-2825 2593 Star
-2986 2097 Star
-3147 2211 Star
-3307 2620 Star
-3468 2444 Star
-3628 2662 Star
-3789 2723 Star
-3949 2702 Star
-4110 2479 Star
-4270 2666 Star
-4431 2520 Star
-4591 3343 Star
-4752 3450 Star
-4912 2564 Star
-5073 3092 Star
-5234 3769 Star
-5394 4063 Star
-5555 3942 Star
-5715 4432 Star
-5876 3986 Star
-6036 4224 Star
-6197 4158 Star
-6357 4573 Star
-6518 4297 Star
-6678 4116 Star
-6839 4166 Star
-3171 4146 Star
+1862 1002 Star
+2023 1569 Star
+2183 1289 Star
+2344 1795 Star
+2504 1741 Star
+2665 1661 Star
+2825 2242 Star
+2986 1714 Star
+3147 1968 Star
+3307 1939 Star
+3468 1884 Star
+3628 2546 Star
+3789 2921 Star
+3949 2294 Star
+4110 2682 Star
+4270 2727 Star
+4431 2655 Star
+4591 3089 Star
+4752 3625 Star
+4912 2528 Star
+5073 3252 Star
+5234 3974 Star
+5394 4205 Star
+5555 3756 Star
+5715 4311 Star
+5876 3112 Star
+6036 4384 Star
+6197 3658 Star
+6357 4276 Star
+6518 4495 Star
+6678 3961 Star
+3411 4146 Star
 % End plot #3
 1.000 UP
 1.000 UL

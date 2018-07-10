@@ -23,6 +23,6 @@ set ylabel 'Cas [s]'
 
 plot "alt_knots_log_A_13_45_.dat" using 1:2 title 'Algoritmus A',\
 "alt_knots_log_B_13_45_.dat" using 1:2 title 'Algoritmus B',\
-"alt_knots_log_R_13_45_.dat" using 1:2 title 'Algoritmus R'
+"alt_knots_log_RND_13_44_.dat" using 1:2 title 'Algoritmus RND'
 
 
