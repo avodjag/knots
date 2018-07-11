@@ -1,53 +1,50 @@
-\begin{thebibliography}{7}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{1}
 
-\bibitem[Aaronson a kol.()]{zoo}
-{\sc Aaronson, S. {\rm a} kol.}
+\bibitem{jaeger_vertigan_welsh_1990}
+F.~Jaeger, D.~L. Vertigan,, D.~J.~A. Welsh.
+\newblock On the computational complexity of the {J}ones and {T}utte
+  polynomials.
+\newblock {\em Mathematical Proceedings of the Cambridge Philosophical
+  Society}, 108(1):35–53, 1990.
+
+\bibitem{zoo}
+Scott Aaronson et~al.
 \newblock Complexity {Z}oo: Sharp-{P}.
 \newblock
   \url{https://complexityzoo.uwaterloo.ca/Complexity_Zoo:Symbols#sharpp}.
 \newblock [Online; navštíveno dne 10. 7. 2018].
 
-\bibitem[Adams(2004)]{Adams2004}
-{\sc Adams, C.} (2004).
-\newblock \emph{The knot book : an elementary introduction to the mathematical
+\bibitem{Adams2004}
+Colin Adams.
+\newblock {\em The knot book : an elementary introduction to the mathematical
   theory of knots}.
-\newblock American Mathematical Society, Providence, R.I.
-\newblock ISBN 978-0821836781.
+\newblock American Mathematical Society, Providence, R.I, 2004.
 
-\bibitem[Bar-Natan a~kol.()Bar-Natan, Morrison a kol.]{knotatlas}
-{\sc Bar-Natan, D., Morrison, S. {\rm a} kol.}
-\newblock The {K}not {A}tlas.
-\newblock \url{http://katlas.org}.
-\newblock [Online; navštíveno dne 2. 7. 2018].
+\bibitem{cromwell2004knots}
+Peter Cromwell.
+\newblock {\em Knots and links}.
+\newblock Cambridge University Press, Cambridge, UK New York, 2004.
 
-\bibitem[Cha a Livingston()]{knotinfo}
-{\sc Cha, J.~C. {\rm a} Livingston, C.}
+\bibitem{jones2005}
+F.~R.~V. Jones.
+\newblock The {J}ones {P}olynomial.
+\newblock \url{https://math.berkeley.edu/~vfr/jones.pdf}, 2005.
+
+\bibitem{knotinfo}
+J.~C. Cha, C.~Livingston.
 \newblock Knot{I}nfo: Table of {K}not {I}nvariants.
 \newblock \url{http://www.indiana.edu/~knotinfo}.
 \newblock [Online; navštíveno dne 2. 7. 2018].
 
-\bibitem[Cromwell(2004)]{cromwell2004knots}
-{\sc Cromwell, P.} (2004).
-\newblock \emph{Knots and links}.
-\newblock Cambridge University Press, Cambridge, UK New York.
-\newblock ISBN 9780521839471.
+\bibitem{knotatlas}
+Dror Bar-Natan, Scott Morrison, et~al.
+\newblock The {K}not {A}tlas.
+\newblock \url{http://katlas.org}.
+\newblock [Online; navštíveno dne 2. 7. 2018].
 
-\bibitem[Jaeger a~kol.(1990)Jaeger, Vertigan a
-  Welsh]{jaeger_vertigan_welsh_1990}
-{\sc Jaeger, F., Vertigan, D.~L. {\rm a} Welsh, D. J.~A.} (1990).
-\newblock On the computational complexity of the {J}ones and {T}utte
-  polynomials.
-\newblock \emph{Mathematical Proceedings of the Cambridge Philosophical
-  Society}, {\bf 108}\penalty0 (1), \penalty0 35–53.
-
-\bibitem[Jones(2005)]{jones2005}
-{\sc Jones, F. R.~V.} (2005).
-\newblock The {J}ones {P}olynomial.
-\newblock \url{https://math.berkeley.edu/~vfr/jones.pdf}.
+\bibitem{kapitoly}
+Jiří Matoušek, Nešetřil Jaroslav.
+\newblock {\em Kapitoly z diskrétni matematiky}.
+\newblock Karolinum, Praha, 2009.
 
 \end{thebibliography}

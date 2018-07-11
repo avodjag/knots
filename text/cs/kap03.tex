@@ -10,7 +10,7 @@ Varianty
 
 \begin{figure}[p]\centering
 \includegraphics{../img/multiTable}
-\caption{Doba běhu algoritmů na tabulkových uzlech do 12 křížení s vyznačenými průměry.}
+\caption{Graf dob běhu algoritmů na tabulkových uzlech do 12 křížení s vyznačenými průměry.}
 \label{obr03:multiTable}
 \end{figure}
 
@@ -22,7 +22,7 @@ Ze srovnání průměrných dob běhu plyne, že nejlepší čas dosahuje algori
 	
 \begin{figure}[p]\centering
 \includegraphics{../img/srovTable}
-\caption{Průměrné časy algoritmů na tabulkových uzlech do 12 křížení.}
+\caption{Graf průměrných časů algoritmů na tabulkových uzlech do 12 křížení.}
 \label{obr03:srovTable}
 \end{figure}
 
@@ -94,19 +94,19 @@ Takto generované uzly jsou také poměrně \uv{zamotané}, tedy rozmotávací k
 
 \begin{figure}[p]\centering
 \includegraphics{../img/knotsFIT}
-\caption{Doby běhu algoritmů náhodných uzlech proložené křivkami, logaritmická škála.}
+\caption{Graf dob běhu algoritmů náhodných uzlech proložené křivkami, logaritmická škála.}
 \label{obr03:knotSrov}
 \end{figure}
 
 \begin{figure}[p]\centering
 \includegraphics{../img/alt_knotsFIT}
-\caption{Doby běhu algoritmů na náhodných alternujících uzlech proložené křivkami, logaritmická škála.}
+\caption{Graf dob běhu algoritmů na náhodných alternujících uzlech proložené křivkami, logaritmická škála.}
 \label{obr03:altSrov}
 \end{figure}
 
 \begin{figure}[p]\centering
 \includegraphics{../img/linksFIT}
-\caption{Doby běhu algoritmů na náhodných lincích proložené křivkami, logaritmická škála.}
+\caption{Graf dob běhu algoritmů na náhodných lincích proložené křivkami, logaritmická škála.}
 \label{obr03:linkSrov}
 \end{figure}
 
@@ -136,9 +136,9 @@ Chyby maximálně pět procent.
 \mc{} & \mc{\pulrad{\textbf{A}}} & \mc{\pulrad{\textbf{B}}} &
 \mc{\pulrad{\textbf{RND}}} \\
 \midrule
-Uzel     & 0.487 & 0.503& 0.520 \\
-Alternující uzel & 0.469 & 0.519 & 0.509 \\
-Link   & 0.486 & 0.485 &  0.555\\
+Uzly     & 0.487 & 0.503& 0.520 \\
+Alternující uzly & 0.469 & 0.519 & 0.509 \\
+Linky   & 0.486 & 0.485 &  0.555\\
 \bottomrule
 \end{tabular}
 
@@ -154,7 +154,7 @@ TO není torusový uzel!! Ale znamená to, že z toho dokážu vyrobit link? To 
 
 \begin{figure}[p]\centering
 \includegraphics{../img/torusSrov}
-\caption{Doby běhu algoritmů na 36 torusových uzlech, logaritmická škála.}
+\caption{Graf dob běhu algoritmů na 36 torusových uzlech, logaritmická škála.}
 \label{obr03:torusSrov}
 \end{figure}
 
@@ -167,11 +167,11 @@ Na grafu dob běhu algoritmů lze rozlišit dva shluky bodů (viz Obrázek~\ref{
 %  draft mode=crossings,
   flip crossing/.list={2,4,6} 
 ]
-\strand ([closed]90:2) foreach \k in {1,...,11} { .. (90-360/11+\k*720/11:1.5) .. (90+\k*720/11:2) } (90:2);
+\strand ([closed]90:2) foreach \k in {1,...,7} { .. (90-360/7+\k*720/7:1.5) .. (90+\k*720/7:2) } (90:2);
 \end{knot}
 \end{tikzpicture}
-\caption{Torusový uzel (11,2).}
-\label{obr04:torus11}
+\caption{Torusový uzel (7,2).}
+\label{obr03:torus7}
 \end{figure}
 
 \begin{figure}[p]\centering

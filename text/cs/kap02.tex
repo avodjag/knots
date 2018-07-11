@@ -2,45 +2,24 @@
 \chapter{Výpočet Jonesova polynomu}
 
 
-Je to v tride number P  
-Popis algoritmu, vypocet horniho odhadu, dolní odhad pro nějakou třídu uzlů, na které se to rozbije, skripta z počítačové algebry, důkaz správnosti algoritmu
-Odhad složitosti?
+\section{Výpočetní složitost problému} 
 
+V článku \emph{On the computational complexity of the Jones and Tutte polynomials}~\cite{jaeger_vertigan_welsh_1990} je dokázáno, že problém výpočtu Jonesova polynomu alternujího uzlu je \#P-těžký. 
 
-Bylo by zajímavé identifikovat, pro které typy uzlů je algoritmus efektivní a pro které naopak dosahuje nejhorších výsledků.
-Rychle na kanonickych nakreslenich torus uzlu a preclikovych uzlu.
+Třída \#P obsahuje problémy určení počtu přijímacích cest nedeterministického Turingova stroje. Jedná se o rozšíření problémů třídy NP: míst otázky, jestli problém má řešení, se ptáme, kolik řešení vůbec existuje. Zástupcem této třídy je \#SAT, tedy problém určit, kolik existuje pravdivostních ohodnocení Boolovské formule. Dalším problémem této třídy je spočítat, kolik  existuje perfektních párování v bipartitním grafu. (Více v \emph{Complexity zoo}~\cite{zoo}.)
 
-Jak se používá velké O?
-Už jsem viděla, že můžu použít O(0.83). Ale co s tím spodním?
-Co problém, co algoritmus.
-
-\section{Výpočetní složitost problému}
-
-\citet*{jaeger_vertigan_welsh_1990} dokázali, že problém určení Jonesova polynomu alternujího uzlu patří do třídy složitosti \#P, dokonce je tento problém \# P-těžký. 
-
-Třída \#P obsahuje problémy, jejichž cílem je určit počet přijímacích cest nedeterministického Turingova stroje, jedná se tedy o rozšíření problémů třídy NP. Například problém \# SAT znamená nejen určit, jestli existuje pravdivostní ohodnocení Boolovské formule, ale i spočítat, kolik takových ohodnocení existuje celkem.
-
-Říct, co z toho plyne. Jako že nemůžu najít lineární algoritmus. Nebo bych jako byla fakt dobrá, kdyby ano.
+Není znám polynomiální algoritmus řešící NP-těžké problémy, tedy ani \#P-těžké problémy.
 
 \section{Algoritmus}
-Nejdriv chcu popsat, že to tak jde. Pak dodat pseudokód.
-
-Do jakých detailů? Jak popsat implementaci? Python? Důkaz správnosti - vždy se zastaví. Vstup s počtem křížení. Vstup je PD notace (to až nějak v implementaci).
-Podkapitola na implementační detaily a vychytávky?
-
---------------
-
-Náš algoritmus dostane na vstupu diagram orientovaného linku s $n$ kříženími zapsaný v PD notaci.
+Náš algoritmus na výpočet Jonesova polynomu předpokládá na vstupu diagram orientovaného linku zapsaný v PD notaci. Počet křížení diagramu označíme $n$.
 
 \subsection{PD notace} 
 
-PD notace je zápis sestávajací ze čtveřice čísel pro každé křížení a jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od $1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje spodem, a pokračuje se s úseky navazujícími proti směru hodinových ručiček. Viz obrázek.
-
-Linky
+PD notace je zápis sestávajací ze čtveřice čísel pro každé křížení a jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od $1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje zespodu, a pokračuje se s úseky navazujícími proti směru hodinových ručiček. Viz obrázek.
 
 \subsection{Výpočet Jonesova polynomu ze závorkového polynomu}
 
-Jak již bylo řečeno, k výpočtu Jonesova polynomu používáme závorkový polynom. Podle věty se Jonesův polynom získá z normalizovaného závorkového polynomu substitucí proměnné. 
+K výpočtu Jonesova polynomu použijeme závorkový polynom. Podle tvrzení~\ref{t01:6} se Jonesův polynom získá z normalizovaného závorkového polynomu substitucí proměnné. 
 
 \begin{algorithm}[H]
 \DontPrintSemicolon
@@ -62,28 +41,29 @@ Jak již bylo řečeno, k výpočtu Jonesova polynomu používáme závorkový p
 
 \writhe $\leftarrow$ \Writhe{$L$}
 
-\normal $\leftarrow$ $ (-A^3)^{\writhe} \times \bracketPoly $
-\jones $\leftarrow$ \Substituce{\normal , $A$, $t^{1/2}$}
+\normal $\leftarrow$ $ (-A^3)^{-\writhe} \times \bracketPoly$
+
+\jones $\leftarrow$ \Substituce{\normal , $A \rightarrow t^{1/4}$}
+
+\BlankLine
 
 \KwRet \jones 
 
-\caption{Jonesův polynom} 
+\caption{Jonesův polynom ze závorkového polynomu} 
 \end{algorithm}
 
-V PD notaci lze jednoduše určit, jestli je křížení kladné, či záporné orientace, tedy zamotání spočítáme v $\mathcal{O} (n)$ čase.
-spočítáme v lineárním čase vzhledem k počtu křížení.
+V PD notaci lze rychle určit, jestli je křížení kladné, či záporné orientace. Zamotání tedy s spočítáme v lineárním čase vzhledem k počtu křížení. Z toho plyne, že výpočet Jonesova polynomu ze závorkového polynomu má lineární časovou složitost.
 
-Dále se budeme zabývat výpočtem závorkový polynom.
-
-
+Dále se budeme zabývat algoritmem na výpočet závorkového polynomu.
 
 \subsection{Přímočarý výpočet závorkového polynomu}
 
-Možná to celé nahradit diagramy.
-
-Z definice závorkového polynomu plyne jednoduchý rekurzivní algoritmus.
+Z definice~\ref{def01:2} závorkového polynomu plyne jednoduchý rekurzivní algoritmus na jeho výpočet. Pokud diagram $L$ nemá žádná křížení, má polynom hodnotu 1. Pokud má diagram $n\geq 1$ křížení, jedno se náhodně zvolí. \emph{Rozpojením} tohoto křížení horizontálně a vertikálně vzniknou dva \emph{synové} $L_h$ a $L_v$, oba diagramy s $n-1$ kříženími. Závorkový polynom diagramu $L$ se spočítá ze závorkových polynomů jeho synů.
+V PD notaci nejsme schopni zapsat, jestli při rozpojení křížení nevznikla disjunktní kružnice, diagramy synů jsou tedy bez nich. Pokud to tak je, tak víme, že to máme dopočítat.
 
 Budu tomu říkat rozpojení křížení. Synové s $n-1$.
+
+Více to tu popsat slovně.
 
 Háčky jsou možné, ale nesmí být jednoslovné názvy.
 Polynomy rovnou psát v jake jsou proměnné.
@@ -224,7 +204,7 @@ Každopádně tady uvést pseudokód.
 \subsection{Implementace}
 Python?
 Práce, záludnosti? Rozdělování?
-Rychlá práce s PD notací? Jak jsem toho docílila?
+Rychlá práce s PD notací jako s grafem? Jak jsem toho docílila?
 \section{Analýza složitosti algoritmu}
 \subsection{Horní odhad}
 Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotávávaní. Například na diagramu, který je můžné absolutně rozmotat použitím prvních dvou Reidemasterových pohybů poběží nejhůř v kvadratickém čase. Zdůvodnit?

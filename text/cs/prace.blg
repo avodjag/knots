@@ -8,50 +8,46 @@ A level-1 auxiliary file: kap02.aux
 A level-1 auxiliary file: kap03.aux
 A level-1 auxiliary file: zaver.aux
 A level-1 auxiliary file: literatura.aux
-The style file: czplainnat.bst
+The style file: unsrt.bst
 Database file #1: literatura.bib
-Warning--empty year in zoo
-Warning--empty year in knotatlas
-Warning--empty year in knotinfo
-You've used 7 entries,
-            2828 wiz_defined-function locations,
-            653 strings with 5996 characters,
-and the built_in function-call counts, 2601 in all, are:
-= -- 228
-> -- 132
-< -- 5
-+ -- 46
-- -- 39
-* -- 187
-:= -- 417
-add.period$ -- 26
-call.type$ -- 7
-change.case$ -- 32
-chr.to.int$ -- 7
-cite$ -- 17
-duplicate$ -- 116
-empty$ -- 229
-format.name$ -- 50
-if$ -- 543
-int.to.chr$ -- 1
-int.to.str$ -- 1
-missing$ -- 5
-newline$ -- 48
-num.names$ -- 28
-pop$ -- 90
+You've used 8 entries,
+            1791 wiz_defined-function locations,
+            496 strings with 4668 characters,
+and the built_in function-call counts, 1324 in all, are:
+= -- 110
+> -- 58
+< -- 0
++ -- 23
+- -- 15
+* -- 45
+:= -- 218
+add.period$ -- 27
+call.type$ -- 8
+change.case$ -- 5
+chr.to.int$ -- 0
+cite$ -- 8
+duplicate$ -- 59
+empty$ -- 154
+format.name$ -- 15
+if$ -- 306
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 7
+newline$ -- 46
+num.names$ -- 8
+pop$ -- 46
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 0
 quote$ -- 0
-skip$ -- 76
+skip$ -- 21
 stack$ -- 0
-substring$ -- 35
-swap$ -- 15
+substring$ -- 21
+swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 67
-warning$ -- 3
-while$ -- 22
-width$ -- 0
-write$ -- 101
-(There were 3 warnings)
+type$ -- 0
+warning$ -- 0
+while$ -- 9
+width$ -- 9
+write$ -- 89
