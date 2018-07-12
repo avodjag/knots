@@ -1,11 +1,10 @@
 %%% První kapitola
 
 \chapter{Definice a vlastnosti Jonesova polynomu}
-Cílem této kapitoly je definovat Jonesův polynom, dokázat jeho základní vlastnosti a popsat souvislost se závorkovým polynomem. Vycházíme z knih
-Zapracovat, že je to z těch dvou knih a článku. 
+Cílem této kapitoly je definovat Jonesův polynom, dokázat jeho základní vlastnosti a popsat souvislost se závorkovým polynomem. Vycházíme z materiálů~\cite{cromwell2004knots, Adams2004, jones2005} a rozvinutí cvičení v těchto zdrojích.
 \section{Základní pojmy}
 Jonesův polynom je invariant nejen uzlů, ale také \emph{linků}, tedy více propletených uzlů. Pokud není řečeno jinak, pracujeme v textu s linky. \\
-Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho \emph{diagramem}. Diagram je vhodné rovinné nakreslení určité linkové projekce, v němž je rozlišeno, jestli křížení vedou zvrchu nebo zdola. Každý link má nekonečně mnoho diagramů.
+Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho \emph{diagramem}. Diagram je vhodné rovinné nakreslení určité linkové projekce, v němž je rozlišeno, jestli křížení vedou zvrchu, nebo zdola. Každý link má nekonečně mnoho diagramů.
 \\
 V diagramu orientovaného linku rozlišujeme křížení s \emph{kladnou} a \emph{zápornou orientací}, viz obrázek~\ref{orientace}.
 
@@ -66,7 +65,7 @@ Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_
 \section{Definice Jonesova polynomu}
 
 \begin{definice}\label{def01:1}
-\emph{Jonesův polynom} orientovaného linku $L$ je Laurentův polynom v proměnné $t^{1/2}$ (tj. polynom v $\Z[t^{1/2}, t^{-1/2}]$), značený $V_L(t)$ , který:
+\emph{Jonesův polynom} orientovaného linku $L$ je Laurentův polynom v proměnné $t^{1/2}$ (tj. polynom v $\Z[t^{1/2}, t^{-1/2}]$), značený $V_L(t)$ , který
 \begin{enumerate}
 \item
 je linkový invariant,
@@ -113,7 +112,7 @@ Pro $k > 2$ jsou $L_-$ a $L_+ $ diagramy linků s $k-1$ kružnicemi, z indukčn�
 \end{dukaz}  
 
 \begin{pozn}
-Z každého uzlového diagramu lze změnou několika křížení vedených zvrchu na křížení vedených zespodu získat diagram triviálního uzlu. Z každého diagramu linku tedy můžeme změnou křížení získat diagram sjednocení triviálních uzlů, jejichž Jonesův polynom je podle předchozího lemmatu známý. Jonesův polynom každého linku lze tedy pomocí skein vztahu rekurzivně spočítat z jeho libovolného diagramu. Z toho plyno korektnost a jednoznačnost definice.
+Z každého uzlového diagramu lze změnou několika křížení vedených zvrchu na křížení vedených zdola získat diagram triviálního uzlu. Z každého diagramu linku tedy můžeme změnou křížení získat diagram sjednocení triviálních uzlů, jejichž Jonesův polynom je podle předchozího lemmatu známý. Jonesův polynom každého linku lze tedy pomocí skein vztahu rekurzivně spočítat z jeho libovolného diagramu. Z toho plyno korektnost a jednoznačnost definice.
 \end{pozn}
 
 
@@ -188,7 +187,7 @@ $ \rangle $.
 \end{pozn}
 
 \begin{lemma}\label{l01:2}
-Pro závorkové polynomy linků, jejichž diagramy obsahují smyčku, platí:
+Pro závorkové polynomy linků, jejichž diagramy obsahují smyčku, platí
 \begin{enumerate}
 \item
 $ \langle $
@@ -280,7 +279,7 @@ $  \rangle$ \\
 Druhý bod se dokáže analogicky.
 \end{dukaz}
 
-Dva diagramy znázorňují stejný link (jsou ekvivalentní), pokud mezi nimi existuje série Reidemeisterových pohybů (kde dokázané?). Z lemmatu ~\ref{l01:2} plyne, že závorkový polynom není invariantní vůči Reidemeisterovu pohybu typu I. Ukážeme, že je invariantní Reidemeisterovým pohybům typu II a III.
+Dva diagramy znázorňují stejný link (jsou ekvivalentní), pokud mezi nimi existuje série Reidemeisterových pohybů. Z lemmatu ~\ref{l01:2} plyne, že závorkový polynom není invariantní vůči Reidemeisterovu pohybu typu I. Ukážeme, že je invariantní Reidemeisterovým pohybům typu II a III.
 
 \begin{figure}[h]
 \centering 
@@ -355,7 +354,7 @@ Dva diagramy znázorňují stejný link (jsou ekvivalentní), pokud mezi nimi ex
 Závorkový polynom je invariantní vůči Reidemeisterovým pohybům typu II a III.
 \end{tvrz}
 \begin{dukaz}
-fsfsdfs
+TODO, obrázky
 \end{dukaz}
 
 Aby byl závorkový polynom invariantní i vůči Reidemeisterovu pohybu typu I, je nutné vynásobit ho výrazem, který vyjadřuje míru zakroucení.
@@ -365,14 +364,14 @@ Aby byl závorkový polynom invariantní i vůči Reidemeisterovu pohybu typu I,
 \end{definice}
 
 \begin{lemma}\label{l01:4}
-Zakroucení je invariantní vůči Reidemeisterovým pohybům typu II a III.
+Zakroucení je invariantní vůči Reidemeisterovým pohybům typu~II a typu~III.
 \end{lemma}
 \begin{dukaz}
 Důkaz se provede rozborem případů.
 \end{dukaz}
 
 \begin{definice}\label{def01:4}
-Normalizovaný závorkový polynom $X_L(A)$ orientovaného linku $L$ definijeme $X_L(A) = (-A^3)^{-w(D)}\langle D \rangle$, kde $D$ je libovolný diagram linku $L$.
+\emph{Normalizovaný závorkový polynom} $X_L(A)$ orientovaného linku $L$ definijeme $X_L(A) = (-A^3)^{-w(D)}\langle D \rangle$, kde $D$ je libovolný diagram linku $L$.
 \end{definice}
 
 Definice je korektní, neboť následující tvrzení ukazuje, že nezáleží na volbě diagramu.
@@ -381,52 +380,45 @@ Definice je korektní, neboť následující tvrzení ukazuje, že nezáleží n
 Normalizovaný závorkový polynom je linkový invariant.
 \end{tvrz}
 \begin{dukaz}
-Závorkový polynom i zakroucení jsou invariantní vůči Reidemeisterovým pohybům typu II a III, invarientní je tedy i jejich součin.
+Závorkový polynom i zakroucení jsou invariantní vůči Reidemeisterovým pohybům typu II a III, invariantní je tedy i jejich součin.
 
-Invariance vůči typu I plyne z Lemmatu 2 a faktu, že křížení v  
+Invariance vůči typu I plyne z lemmatu~\ref{l01:2} a faktu, že křížení   
 \begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2, scale = 0.25]
 \begin{knot}[
 consider self intersections=true,
 clip width = 4,
 end tolerance=1pt,
 ] 
+\clip (0,-1) rectangle (2.5,1);
 \strand (0,-1) .. controls (3,3) and (3,-3) ..  (0,1);
 \end{knot}
 \end{tikzpicture}
-je vždy kladné a křížení v 
+je vždy kladné a křížení 
 \begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
 \begin{knot}[
 consider self intersections=true,
 clip width = 4,
 end tolerance=1pt,
 ] 
+\clip (0,-1) rectangle (2.5,1);
 \strand (0,1) .. controls (3,-3) and (3,3) ..  (0,-1);
 \end{knot}
-\end{tikzpicture} záporné.
+\end{tikzpicture} vždy záporné.
 \end{dukaz}
 
-\begin{veta}\label{t01:6}
+\begin{tvrz}\label{t01:6}
 Při substituce proměnné $A = t^{1/4}$ je normalizovaný závorkový polynom $X_L(A)$  roven Jonesovu polynomu $V_L(t)$.
-\end{veta}
+\end{tvrz}
 \begin{dukaz}
-Ověříme, že $X_L(t^{1/4})$ splňuje podmínky v Definici 1.
+Ověříme, že $X_L(t^{1/4})$ splňuje podmínky v definici~\ref{def01:1}:
 
 \begin{enumerate}
 \item
-Podle předchozího tvrzení je linkový invariant.
+Normalizovaný závorkový polynom je podle předchozího tvrzení linkový invariant.
 \item
-Zamotání triviální uzlu $w( \bigcirc) = 0$, tedy $X_\circlearrowleft = (-A^3)^{w( \bigcirc)} \langle \bigcirc  \rangle = 1$ 
+Pro zamotání triviálního uzlu platí $w( \bigcirc) = 0$, tedy $X_\circlearrowleft = (-A^3)^{w( \bigcirc)} \langle \bigcirc  \rangle = 1$ 
 \item
-fd
+TODO, dosazení
 \end{enumerate}
 $ $
 \end{dukaz}
-
-
-
-Vlastnosti:
-uzly mají jen celočíselné, Amphichiral knots, 
-
-Zminit, jake polynomy jsou zobecněním Jonesova?
-
-Měla bych také říct, že je otevřená otázka, jestli má nějaký ne unknot polynom jedna.

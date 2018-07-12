@@ -2,9 +2,8 @@
 
 \chapter{Testování algoritmu na datech}
 
-V této sekci představíme výsledky implementace výpočtu Jonesova polynomu. Změříme délku běhu algoritmu a jeho variant na malých uzlech, náhodých uzlech a lincích a na speciálních typech uzlů.
-
-Varianty
+V této části shrneme výsledky implementace výpočtu Jonesova polynomu. Změříme délku běhu algoritmu na malých uzlech, náhodých uzlech a lincích a na speciálních typech uzlů.
+Budeme se zabývat algoritmy A, B, a RND, které byli popsány v sekci~\ref{varianty}.
 
 \section{Malé tabulkové uzly}
 
@@ -14,11 +13,10 @@ Varianty
 \label{obr03:multiTable}
 \end{figure}
 
-Algoritmy jsme vyzkoušely na všech uzlech, které mají projekci s maximálně dvanácti kříženími. PD notace uzlů byla získána z databáze KnotInfo. 
-U všech tří algoritmů byl už u malých uzlů znatelný exponenciální růst doby běhu (viz Obrázek~\ref{obr03:multiTable}).
- 
+Algoritmy jsme vyzkoušely na všech uzlech, které mají projekci s maximálně dvanácti kříženími. PD notace uzlů byla získána z databáze KnotInfo~\cite{knotinfo}.
+U všech tří algoritmů byl už u malých uzlů znatelný exponenciální růst doby běhu, viz obrázek~\ref{obr03:multiTable}. 
 
-Ze srovnání průměrných dob běhu plyne, že nejlepší čas dosahuje algoritmus A, těsně následuje algoritmus RND a nejpomalejší je algoritmus B (viz Obrázek~\ref{obr03:srovTable}). Podobné výsledky se budou objevovat i nadále.
+Ze srovnání průměrných dob běhu plyne, že nejlepší čas dosahuje algoritmus A, těsně následuje algoritmus RND a nejpomalejší je algoritmus B, viz obrázek~\ref{obr03:srovTable}. 
 	
 \begin{figure}[p]\centering
 \includegraphics{../img/srovTable}
@@ -30,12 +28,10 @@ Ze srovnání průměrných dob běhu plyne, že nejlepší čas dosahuje algori
 \section{Náhodné uzly a linky}
 
 \subsection{Generování náhodných linků a uzlů}
-Náhodné linky budeme generovat pomocí rovinných grafů, neboť mezi linky a rovinnými grafy existuje vzájemně jednoznačná korespondence, zdroj?. (Jedná se o jinou korespondenci,  než tu mezi linky a rovinnými grafy s vrcholu stupně čtyři popsanou v sekci **).
+Náhodné linky jsme generovali pomocí rovinných grafů, neboť mezi linky a rovinnými grafy existuje vzájemně jednoznačná korespondence~\cite{Adams2004}. (Jedná se o jinou korespondenci, než mezi linky a rovinnými grafy s vrcholu stupně čtyři popsanou v sekci~\ref{jakograf}).
 
 \subsubsection{Převod rovinného grafu na link}
-Rovinný graf z $n$ hranami odpovídá linku s $n$ kříženími. Každé hraně přířadíme náhodně kladné, či záporné znamení a umístíme na ni křížení příslušného typu. Úseky mezi kříženími jsou tím již jednoznačně určené: musí spojovat křížení mezi nejbližšími hranami tak, aby nevznikla žádná další křížení.
-
-OBRÁZEK, KRESLENÝ RUKOU
+Rovinný graf s $n$ hranami odpovídá linku s $n$ kříženími. Každé hraně přířadíme náhodně kladné, či záporné znamení a umístíme na ni křížení příslušného typu. Úseky mezi kříženími jsou tím již jednoznačně určené: musí spojovat křížení mezi nejbližšími hranami tak, aby nevznikla žádná další křížení, viz obrázek TODO.
 
 \subsubsection{Generování náhodných rovinných grafů}
 Graf s $n$ hranami získáme následujícím způsobem. Vygenerujeme vhodný počet náhodných bodů v rovině a nalezeneme jejich triangulaci, tj. spojíme body hranami tak, aby byl polygon tvořící konvexní obal bodů rozdělen na trojúhelníky.
@@ -79,22 +75,27 @@ Graf s $n$ hranami získáme následujícím způsobem. Vygenerujeme vhodný po�
 
 Získali jsme tak rovinný graf s původními body jako vrcholy. Pokud je počet hran menší než $n$, provedeme triangulaci znovu s větším počtem bodů. Pokud je počet hran větší než $n$, odstraníme potřebný počet náhodně zvolených hran.
 
+Viz obrázek TODO. Stejný jako tam.
+
 \subsubsection{Implementace}
 
-Triangulace bodů je snadno implementovatelný geometrický problém. \\ Se získaným rovinným grafem pracujeme jako s množinou vrcholů a k nim příslušným hranám seřazeným v pořadí, jak k danému vrcholu přiléhají. Z této struktury je již možné získat PD notaci příslušného linku.
+Triangulace bodů je snadno implementovatelný geometrický problém. 
 
 
-V PD notaci lze procházkou po vláknu snadno poznat, jestli je vygenerovaný link uzlem. Také jsme v PD notaci jednoduchou operací schopni uzel změnit na alternující, tedy takový, v němž se střídají křížení vedená zespodu a zvrchu.
+Se získaným rovinným grafem pracujeme jako s množinou vrcholů a k nim příslušným hranám seřazeným v pořadí, jak k danému vrcholu přiléhají. Z této struktury je již možné získat PD notaci příslušného linku.
+
+
+V PD notaci lze procházkou po vláknu snadno poznat, jestli je vygenerovaný link uzlem. Také jsme v jednoduchou operací schopni uzel změnit na alternující, tedy takový, v němž se střídají křížení vedená zdola a zvrchu.
 
 Jsme tedy schopni nagenerovat uzly, alternující uzly a linky libovolné velikosti.
 
-Takto generované uzly jsou také poměrně \uv{zamotané}, tedy rozmotávací krok algoritmu neodstraní příliš mnoho křížení.
+Takto generované uzly jsou také poměrně \uv{zamotané}, tedy první rozmotávací krok algoritmu neodstraní příliš mnoho křížení.
 
 \subsection{Test}
 
 \begin{figure}[p]\centering
 \includegraphics{../img/knotsFIT}
-\caption{Graf dob běhu algoritmů náhodných uzlech proložené křivkami, logaritmická škála.}
+\caption{Graf dob běhu algoritmů na náhodných uzlech proložené křivkami, logaritmická škála.}
 \label{obr03:knotSrov}
 \end{figure}
 
@@ -110,7 +111,7 @@ Takto generované uzly jsou také poměrně \uv{zamotané}, tedy rozmotávací k
 \label{obr03:linkSrov}
 \end{figure}
 
-Rychlost algoritmů jsme tedy otestovali na uzlech (Obrázek~\ref{obr03:knotSrov}) , alternujících uzlech (Obrázek~\ref{obr03:altSrov}) a lincích (Obrázek~\ref{obr03:linkSrov}) s počtem křížení do 46. 
+Rychlost algoritmů jsme otestovali na uzlech (obrázek~\ref{obr03:knotSrov}) , alternujících uzlech (obrázek~\ref{obr03:altSrov}) a lincích (obrázek~\ref{obr03:linkSrov}) s počtem křížení do 46. 
 
 Podle výsledků není znatelný rozdíl mezi dobou výpočtu na uzlech, alternujících uzlech či lincích. Ani jednotlivé algoritmy se od sebe výrazně neliší, nejrychleji ale Jonesův polynom vždy počítá algoritmus A. Jeho průměrná časová složitost je podle naměřených dat menší než $\mathcal{O}(2^{0,5n})$. 
 

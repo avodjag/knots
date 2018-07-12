@@ -10,6 +10,17 @@ Peter Cromwell.
 \newblock {\em Knots and links}.
 \newblock Cambridge University Press, Cambridge, UK New York, 2004.
 
+\bibitem{Adams2004}
+Colin Adams.
+\newblock {\em The knot book : an elementary introduction to the mathematical
+  theory of knots}.
+\newblock American Mathematical Society, Providence, R.I, 2004.
+
+\bibitem{jones2005}
+F.~R.~V. Jones.
+\newblock The {J}ones {P}olynomial.
+\newblock \url{https://math.berkeley.edu/~vfr/jones.pdf}, 2005.
+
 \bibitem{jaeger_vertigan_welsh_1990}
 F.~Jaeger, D.~L. Vertigan,, D.~J.~A. Welsh.
 \newblock On the computational complexity of the {J}ones and {T}utte
@@ -28,17 +39,6 @@ Scott Aaronson et~al.
 Jiří Matoušek, Nešetřil Jaroslav.
 \newblock {\em Kapitoly z diskrétni matematiky}.
 \newblock Karolinum, Praha, 2009.
-
-\bibitem{Adams2004}
-Colin Adams.
-\newblock {\em The knot book : an elementary introduction to the mathematical
-  theory of knots}.
-\newblock American Mathematical Society, Providence, R.I, 2004.
-
-\bibitem{jones2005}
-F.~R.~V. Jones.
-\newblock The {J}ones {P}olynomial.
-\newblock \url{https://math.berkeley.edu/~vfr/jones.pdf}, 2005.
 
 \bibitem{knotinfo}
 J.~C. Cha, C.~Livingston.

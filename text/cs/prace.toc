@@ -11,27 +11,27 @@
 \contentsline {subsection}{\numberline {2.2.2}V\IeC {\'y}po\IeC {\v c}et Jonesova polynomu ze z\IeC {\'a}vorkov\IeC {\'e}ho polynomu}{8}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}P\IeC {\v r}\IeC {\'\i }mo\IeC {\v c}ar\IeC {\'y} v\IeC {\'y}po\IeC {\v c}et z\IeC {\'a}vorkov\IeC {\'e}ho polynomu}{9}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Pr\IeC {\r u}b\IeC {\v e}\IeC {\v z}n\IeC {\'e} rozmot\IeC {\'a}v\IeC {\'a}n\IeC {\'\i }}{9}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Vhodn\IeC {\'a} volba k\IeC {\v r}\IeC {\'\i }\IeC {\v z}en\IeC {\'\i }}{11}{subsection.2.2.5}
-\contentsline {subsubsection}{Diagram jako rovinn\IeC {\'y} graf}{11}{section*.8}
-\contentsline {subsubsection}{Typy st\IeC {\v e}n}{11}{section*.9}
-\contentsline {subsection}{\numberline {2.2.6}V\IeC {\'y}sledn\IeC {\'y} algoritmus v\IeC {\'y}po\IeC {\v c}tu z\IeC {\'a}vorkov\IeC {\'e}ho polynomu}{11}{subsection.2.2.6}
-\contentsline {subsection}{\numberline {2.2.7}Implementace algoritmu}{12}{subsection.2.2.7}
-\contentsline {section}{\numberline {2.3}Anal\IeC {\'y}za slo\IeC {\v z}itosti algoritmu}{12}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Horn\IeC {\'\i } odhad}{12}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.2.5}Vhodn\IeC {\'a} volba k\IeC {\v r}\IeC {\'\i }\IeC {\v z}en\IeC {\'\i }}{9}{subsection.2.2.5}
+\contentsline {subsubsection}{Diagram jako rovinn\IeC {\'y} graf}{10}{section*.9}
+\contentsline {subsubsection}{Typy st\IeC {\v e}n}{10}{section*.10}
+\contentsline {subsection}{\numberline {2.2.6}V\IeC {\'y}sledn\IeC {\'y} algoritmus pro v\IeC {\'y}po\IeC {\v c}et z\IeC {\'a}vorkov\IeC {\'e}ho polynomu}{11}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}Implementace algoritmu}{11}{subsection.2.2.7}
+\contentsline {section}{\numberline {2.3}Anal\IeC {\'y}za slo\IeC {\v z}itosti algoritmu}{13}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Horn\IeC {\'\i } odhad}{13}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Doln\IeC {\'\i } odhad}{14}{subsection.2.3.2}
-\contentsline {chapter}{\numberline {3}Testov\IeC {\'a}n\IeC {\'\i } algoritmu na datech}{16}{chapter.3}
-\contentsline {section}{\numberline {3.1}Mal\IeC {\'e} tabulkov\IeC {\'e} uzly}{16}{section.3.1}
-\contentsline {section}{\numberline {3.2}N\IeC {\'a}hodn\IeC {\'e} uzly a linky}{16}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Generov\IeC {\'a}n\IeC {\'\i } n\IeC {\'a}hodn\IeC {\'y}ch link\IeC {\r u} a uzl\IeC {\r u}}{16}{subsection.3.2.1}
-\contentsline {subsubsection}{P\IeC {\v r}evod rovinn\IeC {\'e}ho grafu na link}{16}{section*.13}
-\contentsline {subsubsection}{Generov\IeC {\'a}n\IeC {\'\i } n\IeC {\'a}hodn\IeC {\'y}ch rovinn\IeC {\'y}ch graf\IeC {\r u}}{16}{section*.14}
-\contentsline {subsubsection}{Implementace}{16}{section*.16}
-\contentsline {subsection}{\numberline {3.2.2}Test}{18}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Torusov\IeC {\'e} uzly}{20}{section.3.3}
-\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{24}{chapter*.25}
-\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'e} literatury}{25}{chapter*.26}
-\contentsline {chapter}{Seznam obr\'azk\r {u}}{26}{chapter*.27}
-\contentsline {chapter}{Seznam tabulek}{27}{chapter*.28}
-\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{28}{chapter*.29}
-\contentsline {chapter}{\numberline {A}P\IeC {\v r}\IeC {\'\i }lohy}{29}{appendix.A}
-\contentsline {section}{\numberline {A.1}Prvn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }loha}{29}{section.A.1}
+\contentsline {chapter}{\numberline {3}Testov\IeC {\'a}n\IeC {\'\i } algoritmu na datech}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Mal\IeC {\'e} tabulkov\IeC {\'e} uzly}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}N\IeC {\'a}hodn\IeC {\'e} uzly a linky}{15}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Generov\IeC {\'a}n\IeC {\'\i } n\IeC {\'a}hodn\IeC {\'y}ch link\IeC {\r u} a uzl\IeC {\r u}}{15}{subsection.3.2.1}
+\contentsline {subsubsection}{P\IeC {\v r}evod rovinn\IeC {\'e}ho grafu na link}{15}{section*.14}
+\contentsline {subsubsection}{Generov\IeC {\'a}n\IeC {\'\i } n\IeC {\'a}hodn\IeC {\'y}ch rovinn\IeC {\'y}ch graf\IeC {\r u}}{15}{section*.15}
+\contentsline {subsubsection}{Implementace}{15}{section*.17}
+\contentsline {subsection}{\numberline {3.2.2}Test}{17}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Torusov\IeC {\'e} uzly}{19}{section.3.3}
+\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{23}{chapter*.26}
+\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'e} literatury}{24}{chapter*.27}
+\contentsline {chapter}{Seznam obr\'azk\r {u}}{25}{chapter*.28}
+\contentsline {chapter}{Seznam tabulek}{26}{chapter*.29}
+\contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{27}{chapter*.30}
+\contentsline {chapter}{\numberline {A}P\IeC {\v r}\IeC {\'\i }lohy}{28}{appendix.A}
+\contentsline {section}{\numberline {A.1}Prvn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }loha}{28}{section.A.1}

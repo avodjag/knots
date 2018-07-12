@@ -15,7 +15,7 @@ Náš algoritmus na výpočet Jonesova polynomu předpokládá na vstupu diagram
 
 \subsection{PD notace} 
 
-PD notace je zápis sestávajací ze čtveřice čísel pro každé křížení a jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od $1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje zespodu, a pokračuje se s úseky navazujícími proti směru hodinových ručiček. Viz obrázek.
+PD notace je zápis sestávajací ze čtveřice čísel pro každé křížení a jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od $1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje zespodu, a pokračuje se s úseky navazujícími proti směru hodinových ručiček, viz obrázek TODO.
 
 Pro nejrychlejší práci s diagramem v PD notaci si pro každý úsek pamatujeme čtveřice popisující ta křížení, která mu náleží.
 
@@ -67,7 +67,8 @@ Dále se budeme zabývat algoritmem na výpočet závorkového polynomu.
 
 \subsection{Přímočarý výpočet závorkového polynomu}
 
-Z definice~\ref{def01:2} závorkového polynomu plyne jednoduchý rekurzivní algoritmus na jeho výpočet. Pokud diagram $D$ nemá žádná křížení, má polynom hodnotu 1. Pokud má diagram $n\geq 1$ křížení, jedno se náhodně zvolí. \emph{Rozpojením} tohoto křížení horizontálně a vertikálně vzniknou dva \emph{synové} $D_h$ a $D_v$, oba diagramy s $n-1$ kříženími. Závorkový polynom diagramu $D$ se spočítá ze závorkových polynomů jeho synů.\\
+Z definice~\ref{def01:2} závorkového polynomu plyne jednoduchý rekurzivní algoritmus na jeho výpočet. Pokud diagram $D$ nemá žádná křížení, má polynom hodnotu 1. Pokud má diagram $n\geq 1$ křížení, jedno se náhodně zvolí. \emph{Rozpojením} tohoto křížení horizontálně a vertikálně vzniknou dva \emph{synové} $D_h$ a $D_v$, oba diagramy s $n-1$ kříženími. Závorkový polynom diagramu $D$ se spočítá ze závorkových polynomů jeho synů.
+\\
 V PD notaci nejsme schopni zaznamenat, jestli při rozpojení křížení vznikla disjunktní kružnice, diagramy synů jsou tedy bez nich. Pokud při rozpojování disjunktní kružnice vznikla, musíme spočtený závorkový polynom syna vynásobit členem $-A^2 - A^{-2}$, podrobnosti viz algoritmus~\ref{alg02:02}.
 \\
 Algoritmus se vždy zastaví a má časovou složitost $\mathcal{O}(2^n)$. Stejnou časovou složitost má i výpočet Jonesova polynomu používající tento způsob výpočtu závorkového polynomu. 
@@ -124,7 +125,7 @@ Prvním Reidemeisterovým pohybem se zbavíme jednoho křížení, ovšem výsle
 
 Druhým Reidemeisterovým pohybem se zbavíme dvou křížení a polynom zůstane podle tvrzení~\ref{t01:3} stejný. Více viz algoritmus~\ref{alg02:03}.
 
-\begin{algorithm}[H]
+\begin{algorithm}[h]
 \caption{Výpočet závorkového polynomu s rozmotáváním} 
 \label{alg02:03}
 \DontPrintSemicolon
@@ -182,7 +183,7 @@ Křížení k rozpojení jsme doteď volili náhodně, algoritmus se pokusíme z
 Dokážeme, že ke vzniku diagramu, který lze částečně rozmotat způsobem popsaným v předchozí části, je vždy potřeba rozpojit nejvýše dvě křížení.
 Algoritmus bude volit právě ta křížení, jejichž rozpojení u synů zajistí možnost rozmotání.
 
-\subsubsection{Diagram jako rovinný graf}
+\subsubsection{Diagram jako rovinný graf} \label{jakograf}
 Každý linkový diagram odpovídá rovinnému grafu, v němž křížení představují vrcholy (vždy stupně čtyři) a úseky mezi kříženími hrany. Diagram s $n$ kříženími odpovídá grafu s $n$ vrcholy a 2$n$ hranami.
 Dále budeme v této sekci k popisu diagramů používat grafovou terminologii. Předpokládejme také, že pracujeme s diagramem, který už je rozmotaný.
 
@@ -196,7 +197,7 @@ Každá hrana náleží dvěma stěnám, rozdělujeme tedy 4$n$ hran mezi $n+2$ 
 
 Stěna s jednou hranou by v diagramu odpovídala smyčce, ty jsou ovšem podle předpokladu už odstraněny rozmotáním.
 
-Možné stěny s dvěma a třemi hranami jsou zobrazené na obrázku ????.
+Možné stěny s dvěma a třemi hranami jsou zobrazené na obrázku TODO.
 
 Stěna se dvěma hranami, která není rozmotatelná druhým Reidemeistrovým pohybem, musí v diagramu odpovídat typu A. Všimněme si, že rozpojením křížení $a_1$ i $a_2$ buď ve vertikálním, nebo horizontálním směru vznikne smyčka. Volbou křížení $a_1$ nebo $a_2$ je tedy zaručeno, že jeden syn má po rozmotání nejvýše $n-2$ křížení.
 
@@ -206,7 +207,7 @@ Ve stěně typu B získáme horizontálním rozpojením křížení $b_1$ syna, 
 
 Ve stěně typu C není rozpojením žádného křížení rozmotání zaručeno. Ovšem rozpojením libovolného křížení získáme jednoho syna se stěnou typu A. Existuje tedy vnuk s nejvýše $n-3$ kříženími.
 
-\subsection{Výsledný algoritmus výpočtu závorkového polynomu}
+\subsection{Výsledný algoritmus pro výpočet závorkového polynomu} \label{varianty}
 Chceme maximalizovat rozmotání u synů, budeme tedy při rozpojování prefeferovat křížení stěn A a B před stěnou C. Dále rozlišíme dvě varianty výsledného algoritmu: \emph{algoritmus A} navíc preferuje křížení $a_i$ před $b_1$,  \emph{algoritmus B} preferuje $b_1$ před $a_i$. Celý pseudokód je popsán v algoritmu~\ref{alg02:04}.
 
 Původní algoritmus~\ref{alg02:03} s náhodnou volbou křížení a rozmotáváním budeme označovat \emph{algoritmus RND}.
@@ -328,13 +329,13 @@ Výpočet Jonesova polynomu založený na algoritmu na výpočet závorkového p
 \end{tvrz}
 
 \begin{dukaz}
-Provedeme analýzu průběhu algoritmu~\ref{alg02:04} na linku $L$ s diagramem, který vznikne z diagramu Borromeovských kruhů přidáváním kružnic. Kružnici přidáváme tak, aby vždy protla dva další kruhy celkem ve čtyřech bodech a vzniklý diagram byl alternující, tj. aby se střídala křížení vedená zdola a zvrchu. Příklad na obrázku.
+Provedeme analýzu průběhu algoritmu~\ref{alg02:04} na linku $L$ s diagramem, který vznikne z diagramu Borromeovských kruhů přidáváním kružnic. Kružnici přidáváme tak, aby vždy protla dva další kruhy celkem ve čtyřech bodech a vzniklý diagram byl alternující, tj. aby se střídala křížení vedená zdola a zvrchu, viz obrázek TODO.
 
 %Diagram skládající se z $k$ kružnic má $4k-6$ křížení.
 
-Na obrázku ??  je znázorněn možný průběh algoritmu na tomto diagramu takový, že jsou postupně odpojovány krajní kružnice. 
+Na obrázku TODO je znázorněn možný průběh algoritmu na tomto diagramu takový, že jsou postupně odpojovány krajní kružnice. 
 
-Z obrázku plyne, že časová složitost algoritmu na diagramu s $n$ kříženími splňuje rekurenci
+Z obrázku TODO plyne, že časová složitost algoritmu na diagramu s $n$ kříženími splňuje rekurenci
 $$ T(n) = 8T(n-4) + C_1 n + C_0  $$
 pro jisté konstanty $C_0$, $C_1$.
 
