@@ -1,5 +1,15 @@
 \begin{thebibliography}{1}
 
+\bibitem{jones1985}
+Vaughan F.~R. Jones.
+\newblock A polynomial invariant for knots via von {N}eumann algebras.
+\newblock {\em Bull. Amer. Math. Soc. (N.S.)}, 12(1):103--111, 01 1985.
+
+\bibitem{cromwell2004knots}
+Peter Cromwell.
+\newblock {\em Knots and links}.
+\newblock Cambridge University Press, Cambridge, UK New York, 2004.
+
 \bibitem{jaeger_vertigan_welsh_1990}
 F.~Jaeger, D.~L. Vertigan,, D.~J.~A. Welsh.
 \newblock On the computational complexity of the {J}ones and {T}utte
@@ -14,16 +24,16 @@ Scott Aaronson et~al.
   \url{https://complexityzoo.uwaterloo.ca/Complexity_Zoo:Symbols#sharpp}.
 \newblock [Online; navštíveno dne 10. 7. 2018].
 
+\bibitem{kapitoly}
+Jiří Matoušek, Nešetřil Jaroslav.
+\newblock {\em Kapitoly z diskrétni matematiky}.
+\newblock Karolinum, Praha, 2009.
+
 \bibitem{Adams2004}
 Colin Adams.
 \newblock {\em The knot book : an elementary introduction to the mathematical
   theory of knots}.
 \newblock American Mathematical Society, Providence, R.I, 2004.
-
-\bibitem{cromwell2004knots}
-Peter Cromwell.
-\newblock {\em Knots and links}.
-\newblock Cambridge University Press, Cambridge, UK New York, 2004.
 
 \bibitem{jones2005}
 F.~R.~V. Jones.
@@ -41,10 +51,5 @@ Dror Bar-Natan, Scott Morrison, et~al.
 \newblock The {K}not {A}tlas.
 \newblock \url{http://katlas.org}.
 \newblock [Online; navštíveno dne 2. 7. 2018].
-
-\bibitem{kapitoly}
-Jiří Matoušek, Nešetřil Jaroslav.
-\newblock {\em Kapitoly z diskrétni matematiky}.
-\newblock Karolinum, Praha, 2009.
 
 \end{thebibliography}

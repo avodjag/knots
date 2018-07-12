@@ -1,19 +1,16 @@
 %%% První kapitola
 
 \chapter{Definice a vlastnosti Jonesova polynomu}
-
-Vhodné věci kurzívou, Zmínit původní definici?, Nekonzistentní používání V(t), V? Dvojtečky po platí
-
-Původní definice Jonesova polynomu vycházela z operátorových algeber. A že tady to je na lincích.
-
-Zapracovat, že je to z těch dvou knih a článku. Zmínit původní paper?
+Cílem této kapitoly je definovat Jonesův polynom, dokázat jeho základní vlastnosti a popsat souvislost se závorkovým polynomem. Vycházíme z knih
+Zapracovat, že je to z těch dvou knih a článku. 
 \section{Základní pojmy}
-Jonesův polynom je invariant nejen uzlů, ale také linků, tedy více propletených uzlů. Pokud není řečeno jinak, pracujeme v textu s linky. 
-Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho diagramem. Diagram je vhodné rovinné nakreslení nějaké linkové projekce, v němž je rozlišeno, jestli křížení vedou zvrchu nebo zespodu. Každý link má nekonečně mnoho diagramů.
-
-V diagramu orientovaného linku rozlišujeme křížení s kladnou a zápornou orientací.
+Jonesův polynom je invariant nejen uzlů, ale také \emph{linků}, tedy více propletených uzlů. Pokud není řečeno jinak, pracujeme v textu s linky. \\
+Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho \emph{diagramem}. Diagram je vhodné rovinné nakreslení určité linkové projekce, v němž je rozlišeno, jestli křížení vedou zvrchu nebo zdola. Každý link má nekonečně mnoho diagramů.
+\\
+V diagramu orientovaného linku rozlišujeme křížení s \emph{kladnou} a \emph{zápornou orientací}, viz obrázek~\ref{orientace}.
 
 \begin{figure}[h]  
+
 \centering 
 \begin{subfigure}[t]{0.4\linewidth}\centering
 \begin{tikzpicture}[scale=2] 
@@ -31,12 +28,12 @@ V diagramu orientovaného linku rozlišujeme křížení s kladnou a zápornou o
 \end{tikzpicture}  
 \caption{Záporná orientace}
 \end{subfigure}
-\caption{Orientace křížení}
+\caption{Orientace křížení} \label{orientace}
 \end{figure}  
 
 
 Pro popis polynomů na uzlech a lincích se často používají \emph{skein vztahy} \footnote{česky přadenové vztahy}.
-Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_-$ a $L_0$, jejichž diagramy jsou identické až na oblast jednoho křížení. V linku $L_+$ má toto křížení kladnou orientaci, v $L_-$ zápornou a v $L_0$ je křížení rozpojené.
+Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_-$ a $L_0$, jejichž diagramy jsou identické až na oblast jednoho křížení. V linku $L_+$ má toto křížení kladnou orientaci, v $L_-$ zápornou a v $L_0$ je křížení rozpojené, viz obrázek~\ref{skein}.
 
 \begin{figure}[h]  
 \centering 
@@ -63,13 +60,13 @@ Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_
 \end{tikzpicture}
 \caption{$L_0$}
 \end{subfigure}
-\caption{Diagramy skein vztahu}
+\caption{Diagramy skein vztahu} \label{skein}
 \end{figure}
 
-\section{Definice}
+\section{Definice Jonesova polynomu}
 
 \begin{definice}\label{def01:1}
-\emph{Jonesův polynom} orientovaného linku $L$ je Laurentův polynom v proměnné $\sqrt t$ (tj. polynom v $\Z[t^{1/2}, t^{-1/2}]$), značený $V_L(t)$ , který:
+\emph{Jonesův polynom} orientovaného linku $L$ je Laurentův polynom v proměnné $t^{1/2}$ (tj. polynom v $\Z[t^{1/2}, t^{-1/2}]$), značený $V_L(t)$ , který:
 \begin{enumerate}
 \item
 je linkový invariant,
@@ -77,12 +74,12 @@ je linkový invariant,
   je normalizovaný, tedy polynom  $V_\circlearrowleft$, kde $\circlearrowleft$ je orientovaný triviální uzel, má hodnotu $1,$
 \item  
 splňuje skein vztah 
-$$ \frac{1}{t} V_{L_+} - t V_{L_-} = (\sqrt{t}  - \frac{1}{\sqrt{t}}) V_{L_0}.$$
+$$ \frac{1}{t} V_{L_+} - t V_{L_-} = \left( \sqrt{t}  - \frac{1}{\sqrt{t}}\right) V_{L_0}.$$
 \end{enumerate}
 \end{definice}
 
 \begin{lemma}\label{l01:1}
-Buď $L$ link, který se skládá z $k$ neprotínajících se orientovaných triviálních uzlů. Pak pro Jonesův polynom linku $L$ platí: $$V_L(t) = (- \sqrt{t} -\frac{1}{\sqrt{t}} )^{k-1}.$$
+Buď $L$ link, který se skládá z $k$ neprotínajících se orientovaných triviálních uzlů. Pak pro Jonesův polynom linku $L$ platí: $$V_L(t) = \left(- \sqrt{t} -\frac{1}{\sqrt{t}}\right) ^{k-1}.$$
 \end{lemma}
 \begin{dukaz}
 Libovolně orientované triviální uzly jsou ekvivalentní. Vzorec tedy stačí dokázat pro diagram skládající se z $k$ libovolně orientovaných disjunktních kružnic, použijeme matematickou indukci.\\
@@ -112,7 +109,7 @@ Předvedeme i případ, kdy $k = 2$. Pak $L_0 = $
 \draw [line width=0.5pt] (1.9692781611446357,0.6947891351587211)-- (1.977324654938205,0.966222453023282);
 \draw [line width=0.5pt] (1.7119284298490884,1.200910273373297)-- (1.977324654938205,0.966222453023282);
 \end{tikzpicture}. Diagramy $L_+$ a $L_-$ zobrazují triviální uzly, takže $V_{L_+} = V_{L_-} = 1$. Použitím skein vztahu získáme $$V_ L = V_{L_0} = - \sqrt{t} -\frac{1}{\sqrt{t}} .$$ \\
-Pro $k > 2$ jsou $L_-$ a $L_+ $ diagramy linků s $k-1$ kružnicemi, z indukčního předpokladu a ze skein vztahu získáme vzorec $$V_ L = V_{L_0} = (- \sqrt{t} -\frac{1}{\sqrt{t}} )^{k-1}.$$
+Pro $k > 2$ jsou $L_-$ a $L_+ $ diagramy linků s $k-1$ kružnicemi, z indukčního předpokladu a ze skein vztahu získáme vzorec $$V_ L = V_{L_0} = \left(- \sqrt{t} -\frac{1}{\sqrt{t}}\right) ^{k-1}.$$
 \end{dukaz}  
 
 \begin{pozn}
