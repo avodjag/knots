@@ -1,6 +1,7 @@
 %%% Druhá kapitola
 \chapter{Výpočet Jonesova polynomu}
-V této kapitole .. TODO
+
+V této kapitole se budeme zabývat problémem výpočtu Jonesova polynomu. Odvodíme algoritmus na jeho výpočet a odhadneme jeho časovou složitost.
 
 \section{Výpočetní složitost problému} 
 
@@ -15,7 +16,32 @@ Náš algoritmus na výpočet Jonesova polynomu předpokládá na vstupu diagram
 
 \subsection{PD notace} 
 
-PD notace je zápis sestávajací ze čtveřice čísel pro každé křížení a jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od $1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje zespodu, a pokračuje se s úseky navazujícími proti směru hodinových ručiček, viz obrázek TODO.
+PD \footnote{planar diagram} notace je zápis sestávajací ze čtveřice čísel pro každé křížení a jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od $1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje zespodu, a pokračuje se s úseky navazujícími proti směru hodinových ručiček, viz obrázek~\ref{pd}.
+
+\begin{figure}[h]
+\centering 
+\begin{tikzpicture}[use Hobby shortcut]
+\begin{knot}[
+  consider self intersections=true,
+%  draft mode=crossings,
+  ignore endpoint intersections=false,
+  flip crossing/.list={6,4,2}
+  ]
+\node at (0.7,-0.2) {4};
+\node at (-0.7,-0.2) {9};
+\node at (-0.8,1.3) {3};
+\node at (0.8,1.3) {8};
+\node at (-2.5,1.3) {7};
+\node at (2.5,1.3) {2};
+\node at (2.5,-1.7) {5};
+\node at (-2.5,-1.7) {10};
+\node at (0.7,-1.2) {1};
+\node at (-0.7,-1.2) {6};
+\strand ([closed]2,2) .. (1.8,0) .. (-2.3,-1) .. (.5,1) .. (-2,2) .. (-1.8,0) .. (2.3,-1) .. (-.5,1) .. (2,2);
+\end{knot}
+\end{tikzpicture}
+\caption{Uzel s PD notací [1, 5, 2, 4], [7, 3, 8, 2], [3, 9, 4, 8], [5, 1, 6, 10], [9,~7,~10,~6].} \label{pd}
+\end{figure}
 
 Pro nejrychlejší práci s diagramem v PD notaci si pro každý úsek pamatujeme čtveřice popisující ta křížení, která mu náleží.
 
@@ -23,7 +49,7 @@ Pro nejrychlejší práci s diagramem v PD notaci si pro každý úsek pamatujem
 
 K výpočtu Jonesova polynomu použijeme závorkový polynom. Podle tvrzení~\ref{t01:6} se Jonesův polynom získá z normalizovaného závorkového polynomu substitucí proměnné, viz algoritmus~\ref{alg02:01}.
 
-\begin{algorithm}[h]
+\begin{algorithm}[t]
 
 \caption{  Výpočet Jonesova polynomu ze závorkového polynomu.} 
 {\label{alg02:01}}
@@ -74,7 +100,7 @@ V PD notaci nejsme schopni zaznamenat, jestli při rozpojení křížení vznikl
 Algoritmus se vždy zastaví a má časovou složitost $\mathcal{O}(2^n)$. Stejnou časovou složitost má i výpočet Jonesova polynomu používající tento způsob výpočtu závorkového polynomu. 
 
 
-\begin{algorithm}[h]
+\begin{algorithm}[p]
 
 \caption{Výpočet závorkového polynomu.}
 \label{alg02:02}
@@ -125,7 +151,7 @@ Prvním Reidemeisterovým pohybem se zbavíme jednoho křížení, ovšem výsle
 
 Druhým Reidemeisterovým pohybem se zbavíme dvou křížení a polynom zůstane podle tvrzení~\ref{t01:3} stejný. Více viz algoritmus~\ref{alg02:03}.
 
-\begin{algorithm}[h]
+\begin{algorithm}[p]
 \caption{Výpočet závorkového polynomu s rozmotáváním} 
 \label{alg02:03}
 \DontPrintSemicolon
@@ -191,19 +217,80 @@ Eulerův vzorec pro rovinné grafy říká, že $v - e +f = 2$, kde $v$ značí 
 \\
 V našem případě tedy dostáváme vzorec pro počet stěn v linkovém diagramu $f = n+2$.
 \\
-Každá hrana náleží dvěma stěnám, rozdělujeme tedy 4$n$ hran mezi $n+2$ stěn. Z toho plyne, že musí existovat stěna, která je ohraničená méně než čtyřmi hranami.
+Každá hrana náleží dvěma stěnám, rozdělujeme tedy 4$n$ hran mezi $n+2$ stěn. Z toho plyne, že musí existovat stěna, která je ohraničená méně než čtyřmi hranami.  
 
 \subsubsection{Typy stěn} \label{steny}
 
+\begin{figure}[h]
+\centering 
+\begin{subfigure}[t]{0.4\linewidth}\centering
+\begin{tikzpicture}
+%\clip(-2,-2) rectangle (7,1.3);
+
+\draw (-1,-0.75) arc (270:90:0.75);
+\draw (-1, -0.75) -- (1, -0.75);
+%\draw (-1, 1) -- (1, 1);
+\draw (0, -1.3) -- (0, -1);
+\draw (0, -0.6) -- (0, 1.3);
+
+\draw (-1, 0.75) -- (-0.25, 0.75);
+\draw (0.25, 0.75) -- (1, 0.75);
+\node [below] at (0.3, -0.3) {$a_1$};
+\node [below] at (0.3, .7) {$a_2$};
+\end{tikzpicture}
+\caption{Typ A} 
+\end{subfigure}
+\begin{subfigure}[t]{0.4\linewidth}\centering
+\begin{tikzpicture}
+%\clip(-4.5,-1.65) rectangle (4.5, 1.65);
+
+
+\draw (-4,1) -- (-3.58, 0.72);
+\draw (-3.4, 0.6) -- (-1.6,-.6);
+\draw (-4, -1) -- (-3.58, -0.72);
+\draw (-3.4, -0.6) -- (-2.8, -0.2);
+\draw (-2.2, 0.2) -- (-1.6, 0.6);
+
+
+\draw (-3.5, -1.3) -- (-3.5, 1.3);
+
+\node [below, right] at (-3.3, -0.7) {$b_2$};
+\node [above, right] at (-3.3, 0.7) {$b_3$};
+\node [right] at (-2.3,0) {$b_1$};
+\end{tikzpicture} 
+\caption{Typ B}
+\end{subfigure}
+\begin{subfigure}[t]{0.4\linewidth}\centering
+\begin{tikzpicture}
+%\clip(-4.5,-1.65) rectangle (4.5, 1.65);
+
+
+\draw (-4,1) -- (-3.58, 0.72);
+\draw (-3.4, 0.6) -- (-1.6,-.6);
+\draw (-4, -1) -- (-2.8, -0.2);
+\draw (-2.2, 0.2) -- (-1.6, 0.6);
+
+
+\draw (-3.5, -1.3) -- (-3.5, -0.9);
+\draw (-3.5, -0.5) -- (-3.5, 1.3);
+\node [below, right] at (-3.3, -0.7) {$c_2$};
+\node [above, right] at (-3.3, 0.7) {$c_3$};
+\node [right] at (-2.3,0) {$c_1$};
+\end{tikzpicture}
+\caption{Typ C}
+\end{subfigure}
+\caption{Typy stěn ohraničených třemi a méně hranami.} \label{stenyobr}
+\end{figure}
+
 Stěna s jednou hranou by v diagramu odpovídala smyčce, ty jsou ovšem podle předpokladu už odstraněny rozmotáním.
 
-Možné stěny s dvěma a třemi hranami jsou zobrazené na obrázku TODO.
+Možné stěny s dvěma a třemi hranami jsou zobrazené na obrázku~\ref{stenyobr}.
 
 Stěna se dvěma hranami, která není rozmotatelná druhým Reidemeisterovým pohybem, musí v diagramu odpovídat typu A. Všimněme si, že rozpojením křížení $a_1$ i $a_2$ buď ve vertikálním, nebo horizontálním směru vznikne smyčka. Volbou křížení $a_1$ nebo $a_2$ je tedy zaručeno, že jeden syn má po rozmotání nejvýše $n-2$ křížení.
 
-Stěna se třemi hranami v diagramu odpovídá buď typu B, nebo C zobrazeným na obrázku.
+Stěna se třemi hranami v diagramu odpovídá buď typu B, nebo C.
 
-Ve stěně typu B získáme horizontálním rozpojením křížení $b_1$ syna, jenž jde rozmotat druhým Reidemeisterovým pohybem. Jeho diagram tedy bude mít po rozmotání nejvýše $n-3$ křížení.
+Ve stěně typu B získáme vertikálním rozpojením křížení $b_1$ syna, jenž jde rozmotat druhým Reidemeisterovým pohybem. Jeho diagram tedy bude mít po rozmotání nejvýše $n-3$ křížení.
 
 Ve stěně typu C není rozpojením žádného křížení rozmotání zaručeno. Ovšem rozpojením libovolného křížení získáme jednoho syna se stěnou typu A. Existuje tedy vnuk s nejvýše $n-3$ kříženími.
 
