@@ -1,6 +1,6 @@
 %%% Druhá kapitola
 \chapter{Výpočet Jonesova polynomu}
-V této kapitole
+V této kapitole .. TODO
 
 \section{Výpočetní složitost problému} 
 
@@ -193,7 +193,7 @@ V našem případě tedy dostáváme vzorec pro počet stěn v linkovém diagram
 \\
 Každá hrana náleží dvěma stěnám, rozdělujeme tedy 4$n$ hran mezi $n+2$ stěn. Z toho plyne, že musí existovat stěna, která je ohraničená méně než čtyřmi hranami.
 
-\subsubsection{Typy stěn}
+\subsubsection{Typy stěn} \label{steny}
 
 Stěna s jednou hranou by v diagramu odpovídala smyčce, ty jsou ovšem podle předpokladu už odstraněny rozmotáním.
 
@@ -208,7 +208,7 @@ Ve stěně typu B získáme horizontálním rozpojením křížení $b_1$ syna, 
 Ve stěně typu C není rozpojením žádného křížení rozmotání zaručeno. Ovšem rozpojením libovolného křížení získáme jednoho syna se stěnou typu A. Existuje tedy vnuk s nejvýše $n-3$ kříženími.
 
 \subsection{Výsledný algoritmus pro výpočet závorkového polynomu} \label{varianty}
-Chceme maximalizovat rozmotání u synů, budeme tedy při rozpojování prefeferovat křížení stěn A a B před stěnou C. Dále rozlišíme dvě varianty výsledného algoritmu: \emph{algoritmus A} navíc preferuje křížení $a_i$ před $b_1$,  \emph{algoritmus B} preferuje $b_1$ před $a_i$. Celý pseudokód je popsán v algoritmu~\ref{alg02:04}.
+Chceme maximalizovat rozmotání u synů, budeme tedy při rozpojování prefeferovat křížení stěn A a B před stěnou C. Dále rozlišíme dvě varianty výsledného algoritmu: \emph{algoritmus A} navíc preferuje křížení $a_i$ před $b_1$,  \emph{algoritmus B} preferuje $b_1$ před $a_i$. Celý postup je shrnut v algoritmu~\ref{alg02:04}.
 
 Původní algoritmus~\ref{alg02:03} s náhodnou volbou křížení a rozmotáváním budeme označovat \emph{algoritmus RND}.
 

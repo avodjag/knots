@@ -63,6 +63,7 @@
 \usepackage[ruled, czech, vlined]{algorithm2e} 
 \usepackage[linguistics]{forest}
 \usepackage{subcaption}
+\usepackage{float}
 
 
 \usepackage{tikz}
@@ -179,7 +180,13 @@ Abstract.
 
 %%% Použité zkratky v bakalářské práci (opět nemusí být nutné uvádět)
 %%% U matematických prací může být lepší přemístit seznam zkratek na začátek práce.
-\chapwithtoc{Seznam použitých zkratek}
+
+%\chapwithtoc{Seznam použitých zkratek}
+
+%ja
+\listofalgorithms
+\addcontentsline{toc}{chapter}{Seznam algoritmů}
+
 
 %%% Přílohy k bakalářské práci, existují-li. Každá příloha musí být alespoň jednou
 %%% odkazována z vlastního textu práce. Přílohy se číslují.
@@ -191,10 +198,10 @@ Abstract.
 %%% interaktivní grafy apod.). Elektronické přílohy se nahrávají do SISu a lze
 %%% je také do práce vložit na CD/DVD. Povolené formáty souborů specifikuje
 %%% opatření rektora č. 72/2017.
-\appendix
-\chapter{Přílohy}
+%\appendix
+%\chapter{Přílohy}
 
-\section{První příloha}
+%\section{První příloha}
 
 \openright
 \end{document}

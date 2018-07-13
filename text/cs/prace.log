@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  12 JUL 2018 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  13 JUL 2018 12:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2911,12 +2911,20 @@ Package caption Info: hyperref package is loaded.
 \c@subfigure=\count329
 \c@subtable=\count330
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count331
+\float@exts=\toks59
+\float@box=\box86
+\@float@everytoks=\toks60
+\@floatcapt=\box87
+)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/spath3/tikzlibraryknots.code.tex
 (/usr/local/texlive/2017/texmf-dist/tex/latex/spath3/spath3.sty
 Package: spath3 2016/02/19 v1.1 Functions for manipulating PGF soft paths
 \l__spath_tmpa_dim=\dimen286
 \l__spath_tmpb_dim=\dimen287
-\l__spath_tmpa_int=\count331
+\l__spath_tmpa_int=\count332
 
 *************************************************
 * LaTeX warning: "kernel/deprecated-variant"
@@ -2932,9 +2940,9 @@ Package: spath3 2016/02/19 v1.1 Functions for manipulating PGF soft paths
 * change an argument from type 'N' to type 'V': base form only accepts a
 * single token argument.
 *************************************************
-\l__spath_l_int=\count332
-\l__spath_rl_int=\count333
-\l__spath_nc_int=\count334
+\l__spath_l_int=\count333
+\l__spath_rl_int=\count334
+\l__spath_nc_int=\count335
 \l__spath_minx_dim=\dimen288
 \l__spath_miny_dim=\dimen289
 \l__spath_maxx_dim=\dimen290
@@ -3012,11 +3020,11 @@ Package: spath3 2016/02/19 v1.1 Functions for manipulating PGF soft paths
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryintersections.code.tex)
-\l__knot_tmpa_int=\count335
-\l__knot_strands_int=\count336
-\l__knot_intersections_int=\count337
-\l__knot_filaments_int=\count338
-\l__knot_component_start_int=\count339
+\l__knot_tmpa_int=\count336
+\l__knot_strands_int=\count337
+\l__knot_intersections_int=\count338
+\l__knot_filaments_int=\count339
+\l__knot_component_start_int=\count340
 \l__knot_tmpa_dim=\dimen292
 \l__knot_tmpb_dim=\dimen293
 \l__knot_tmpc_dim=\dimen294
@@ -3047,10 +3055,10 @@ s/tikzlibraryintersections.code.tex)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hobby/pgflibraryhobby.code.tex
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hobby/hobby.code.tex
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hobby/pml3array.sty
-\l_array_base_int=\count340
-\l_array_top_int=\count341
-\l_array_tmp_int=\count342
-\g_array_base_int=\count343
+\l_array_base_int=\count341
+\l_array_top_int=\count342
+\l_array_tmp_int=\count343
+\g_array_base_int=\count344
 )
 .................................................
 . LaTeX info: "xparse/define-command"
@@ -3067,8 +3075,8 @@ s/tikzlibraryintersections.code.tex)
 . 
 . Defining command \HobbyDisableAux with sig. '' on line 59.
 .................................................
-\l_hobby_npoints_int=\count344
-\l_hobby_draw_int=\count345
+\l_hobby_npoints_int=\count345
+\l_hobby_draw_int=\count346
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -3141,11 +3149,11 @@ s.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen299
 \pgfdecoratedinputsegmentremainingdistance=\dimen300
 \pgf@decorate@distancetomove=\dimen301
-\pgf@decorate@repeatstate=\count346
+\pgf@decorate@repeatstate=\count347
 \pgfdecorationsegmentamplitude=\dimen302
 \pgfdecorationsegmentlength=\dimen303
 )
-\tikz@lib@dec@box=\box86
+\tikz@lib@dec@box=\box88
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.pathreplacing.code.tex))
@@ -3183,12 +3191,12 @@ File: pgflibrarycurvilinear.code.tex 2015/05/14 v3.0.1a (rcs-revision 1.4)
 Package: pgfplots 2017/06/05 v1.15 Data Visualization (1.15)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks59
-\t@pgfplots@tokb=\toks60
-\t@pgfplots@tokc=\toks61
+\t@pgfplots@toka=\toks61
+\t@pgfplots@tokb=\toks62
+\t@pgfplots@tokc=\toks63
 \pgfplots@tmpa=\dimen311
-\c@pgfplots@coordindex=\count347
-\c@pgfplots@scanlineindex=\count348
+\c@pgfplots@coordindex=\count348
+\c@pgfplots@scanlineindex=\count349
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric
 .code.tex))
@@ -3202,7 +3210,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 soldpgfsupp_pgflibraryfpu.code.tex)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
 soldpgfsupp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count349
+\c@pgfmathroundto@lastzeros=\count350
 ))
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code
 .tex
@@ -3212,14 +3220,14 @@ liststructure.code.tex)
 liststructureext.code.tex)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 array.code.tex
-\c@pgfplotsarray@tmp=\count350
+\c@pgfplotsarray@tmp=\count351
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 matrix.code.tex)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable
 shared.code.tex
-\c@pgfplotstable@counta=\count351
-\t@pgfplotstable@a=\toks62
+\c@pgfplotstable@counta=\count352
+\t@pgfplotstable@a=\toks64
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 deque.code.tex)
@@ -3231,7 +3239,7 @@ ta.code.tex))
 .code.tex)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplot
 s.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count352
+\c@pgfplotslibrarysurf@no=\count353
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
 .surfshading.pgfsys-pdftex.def)))
@@ -3263,7 +3271,7 @@ x)
 s/tikzlibrarydecorations.pathmorphing.code.tex
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.pathmorphing.code.tex))
-\pgfplots@numplots=\count353
+\pgfplots@numplots=\count354
 \pgfplots@xmin@reg=\dimen312
 \pgfplots@xmax@reg=\dimen313
 \pgfplots@ymin@reg=\dimen314
@@ -3292,50 +3300,50 @@ code.tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 \arrowsize=\dimen318
 ))
-Package hyperref Info: Option `unicode' set `true' on input line 147.
-Package hyperref Info: Option `breaklinks' set `true' on input line 148.
+Package hyperref Info: Option `unicode' set `true' on input line 148.
+Package hyperref Info: Option `breaklinks' set `true' on input line 149.
 
 \@input{makra.aux}
 \openout2 = `makra.aux'.
 
 (./makra.tex
-\c@veta=\count354
-\c@definice=\count355
+\c@veta=\count355
+\c@definice=\count356
 ) (./prace.aux (./titulka.aux) (./uvod.aux) (./kap01.aux)
 (./kap02.aux) (./kap03.aux) (./zaver.aux) (./literatura.aux))
 \openout1 = `prace.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 154.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 154.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 155.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 155.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 154.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 155.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-\AtBeginShipoutBox=\box87
-Package hyperref Info: Link coloring OFF on input line 154.
+\AtBeginShipoutBox=\box89
+Package hyperref Info: Link coloring OFF on input line 155.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -3343,11 +3351,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count356
+\c@section@level=\count357
 )
-LaTeX Info: Redefining \ref on input line 154.
-LaTeX Info: Redefining \pageref on input line 154.
-LaTeX Info: Redefining \nameref on input line 154.
+LaTeX Info: Redefining \ref on input line 155.
+LaTeX Info: Redefining \pageref on input line 155.
+LaTeX Info: Redefining \nameref on input line 155.
 
 (./prace.out) (./prace.out)
 \@outlinefile=\write7
@@ -3356,17 +3364,17 @@ LaTeX Info: Redefining \nameref on input line 154.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count357
+\scratchcounter=\count358
 \scratchdimen=\dimen319
-\scratchbox=\box88
-\nofMPsegments=\count358
-\nofMParguments=\count359
-\everyMPshowfont=\toks63
-\MPscratchCnt=\count360
+\scratchbox=\box90
+\nofMPsegments=\count359
+\nofMParguments=\count360
+\everyMPshowfont=\toks65
+\MPscratchCnt=\count361
 \MPscratchDim=\dimen320
-\MPnumerator=\count361
-\makeMPintoPDFobject=\count362
-\everyMPtoPDFconversion=\toks64
+\MPnumerator=\count362
+\makeMPintoPDFobject=\count363
+\everyMPtoPDFconversion=\toks66
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -3386,6 +3394,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 Package pgfplots notification 'compat/show suggested version=true': document ha
@@ -3399,7 +3408,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 6.
 
 pdfTeX warning: pdflatex (file ../img/logo-cs.pdf): PDF inclusion: found PDF ve
 rsion <1.5>, but at most version <1.4> allowed
-<../img/logo-cs.pdf, id=133, 506.4591pt x 156.49065pt>
+<../img/logo-cs.pdf, id=125, 506.4591pt x 156.49065pt>
 File: ../img/logo-cs.pdf Graphic file (type pdf)
 <use ../img/logo-cs.pdf>
 Package pdftex.def Info: ../img/logo-cs.pdf  used on input line 10.
@@ -3505,7 +3514,7 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 167.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 234--281
+Underfull \hbox (badness 10000) in paragraph at lines 234--284
 
  []
 
@@ -3513,22 +3522,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 234--281
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--359
+Underfull \hbox (badness 10000) in paragraph at lines 359--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--372
+Underfull \hbox (badness 10000) in paragraph at lines 372--375
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 385--408
+Underfull \hbox (badness 10000) in paragraph at lines 388--411
 
  []
 
 [6])
-Underfull \hbox (badness 10000) in paragraph at lines 423--163
+Underfull \hbox (badness 10000) in paragraph at lines 426--164
 
  []
 
@@ -3571,7 +3580,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 342--343
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 344--164
+Underfull \hbox (badness 10000) in paragraph at lines 344--165
 
  []
 
@@ -3584,7 +3593,7 @@ Kapitola 3.
 
 pdfTeX warning: pdflatex (file ../img/multiTable.pdf): PDF inclusion: found PDF
  version <1.5>, but at most version <1.4> allowed
-<../img/multiTable.pdf, id=362, 361.35pt x 252.945pt>
+<../img/multiTable.pdf, id=352, 361.35pt x 252.945pt>
 File: ../img/multiTable.pdf Graphic file (type pdf)
 <use ../img/multiTable.pdf>
 Package pdftex.def Info: ../img/multiTable.pdf  used on input line 11.
@@ -3593,7 +3602,7 @@ Package pdftex.def Info: ../img/multiTable.pdf  used on input line 11.
 
 pdfTeX warning: pdflatex (file ../img/srovTable.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<../img/srovTable.pdf, id=366, 361.35pt x 252.945pt>
+<../img/srovTable.pdf, id=356, 361.35pt x 252.945pt>
 File: ../img/srovTable.pdf Graphic file (type pdf)
 <use ../img/srovTable.pdf>
 Package pdftex.def Info: ../img/srovTable.pdf  used on input line 22.
@@ -3609,7 +3618,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 pdfTeX warning: pdflatex (file ../img/knotsFIT.pdf): PDF inclusion: found PDF v
 ersion <1.5>, but at most version <1.4> allowed
-<../img/knotsFIT.pdf, id=394, 361.35pt x 252.945pt>
+<../img/knotsFIT.pdf, id=384, 361.35pt x 252.945pt>
 File: ../img/knotsFIT.pdf Graphic file (type pdf)
 <use ../img/knotsFIT.pdf>
 Package pdftex.def Info: ../img/knotsFIT.pdf  used on input line 97.
@@ -3618,7 +3627,7 @@ Package pdftex.def Info: ../img/knotsFIT.pdf  used on input line 97.
 
 pdfTeX warning: pdflatex (file ../img/alt_knotsFIT.pdf): PDF inclusion: found P
 DF version <1.5>, but at most version <1.4> allowed
-<../img/alt_knotsFIT.pdf, id=395, 361.35pt x 252.945pt>
+<../img/alt_knotsFIT.pdf, id=385, 361.35pt x 252.945pt>
 File: ../img/alt_knotsFIT.pdf Graphic file (type pdf)
 <use ../img/alt_knotsFIT.pdf>
 Package pdftex.def Info: ../img/alt_knotsFIT.pdf  used on input line 103.
@@ -3627,7 +3636,7 @@ Package pdftex.def Info: ../img/alt_knotsFIT.pdf  used on input line 103.
 
 pdfTeX warning: pdflatex (file ../img/linksFIT.pdf): PDF inclusion: found PDF v
 ersion <1.5>, but at most version <1.4> allowed
-<../img/linksFIT.pdf, id=396, 361.35pt x 252.945pt>
+<../img/linksFIT.pdf, id=386, 361.35pt x 252.945pt>
 File: ../img/linksFIT.pdf Graphic file (type pdf)
 <use ../img/linksFIT.pdf>
 Package pdftex.def Info: ../img/linksFIT.pdf  used on input line 109.
@@ -3636,45 +3645,41 @@ Package pdftex.def Info: ../img/linksFIT.pdf  used on input line 109.
 
 pdfTeX warning: pdflatex (file ../img/torusSrov.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<../img/torusSrov.pdf, id=423, 361.35pt x 252.945pt>
+<../img/torusSrov.pdf, id=417, 361.35pt x 252.945pt>
 File: ../img/torusSrov.pdf Graphic file (type pdf)
 <use ../img/torusSrov.pdf>
-Package pdftex.def Info: ../img/torusSrov.pdf  used on input line 157.
+Package pdftex.def Info: ../img/torusSrov.pdf  used on input line 163.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 
 
 pdfTeX warning: pdflatex (file ../img/torus2.pdf): PDF inclusion: found PDF ver
 sion <1.5>, but at most version <1.4> allowed
-<../img/torus2.pdf, id=425, 361.35pt x 252.945pt>
+<../img/torus2.pdf, id=418, 361.35pt x 252.945pt>
 File: ../img/torus2.pdf Graphic file (type pdf)
 <use ../img/torus2.pdf>
-Package pdftex.def Info: ../img/torus2.pdf  used on input line 179.
+Package pdftex.def Info: ../img/torus2.pdf  used on input line 169.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 
 
 pdfTeX warning: pdflatex (file ../img/torusNe2FIT.pdf): PDF inclusion: found PD
 F version <1.5>, but at most version <1.4> allowed
-<../img/torusNe2FIT.pdf, id=427, 361.35pt x 252.945pt>
+<../img/torusNe2FIT.pdf, id=420, 361.35pt x 252.945pt>
 File: ../img/torusNe2FIT.pdf Graphic file (type pdf)
 <use ../img/torusNe2FIT.pdf>
-Package pdftex.def Info: ../img/torusNe2FIT.pdf  used on input line 187.
+Package pdftex.def Info: ../img/torusNe2FIT.pdf  used on input line 177.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 ) [19] [20 <../img/linksFIT.pdf> <../img/torusSrov.pdf>] [21 <../img/torus2.pdf
->] [22 <../img/torusNe2FIT.pdf>]
+> <../img/torusNe2FIT.pdf>]
 \openout2 = `zaver.aux'.
 
- (./zaver.tex) [23
+ (./zaver.tex) [22
 
 
 
 ]
 \openout2 = `literatura.aux'.
 
- (./literatura.tex
-(./prace.bbl)) [24
+ (./literatura.tex (./prace.bbl)) [23
 
 
 
@@ -3682,37 +3687,38 @@ Package pdftex.def Info: ../img/torusNe2FIT.pdf  used on input line 187.
 \tf@lof=\write9
 \openout9 = `prace.lof'.
 
- [25
+ [24
 
 
 ] (./prace.lot)
 \tf@lot=\write10
 \openout10 = `prace.lot'.
 
+ [25
+
+] (./prace.loa)
+\tf@loa=\write11
+\openout11 = `prace.loa'.
+
  [26
 
-] [27
-
 ]
-P\v {r}\'{\i }loha A.
-[28
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
- (./prace.aux (./titulka.aux) (./uvod.aux) (./kap01.aux) (./kap02.aux)
-(./kap03.aux) (./zaver.aux) (./literatura.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 207.
+ (./prace.aux
+(./titulka.aux) (./uvod.aux) (./kap01.aux) (./kap02.aux) (./kap03.aux)
+(./zaver.aux) (./literatura.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
 Package rerunfilecheck Info: File `prace.out' has not changed.
-(rerunfilecheck)             Checksum: 6C10A942C1AD5355DCC242C1F918243D;5269.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 200.
+(rerunfilecheck)             Checksum: 8FF42193E8CE34D67012151AEE7464C9;5004.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
  ) 
 Here is how much of TeX's memory you used:
- 60188 strings out of 492982
- 1357412 string characters out of 6132512
- 1476965 words of memory out of 5000000
- 62748 multiletter control sequences out of 15000+600000
+ 60239 strings out of 492982
+ 1358099 string characters out of 6132512
+ 1478305 words of memory out of 5000000
+ 62795 multiletter control sequences out of 15000+600000
  644254 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  158i,19n,338p,10380b,3397s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3740,9 +3746,9 @@ live/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2017/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on prace.pdf (32 pages, 875211 bytes).
+Output written on prace.pdf (30 pages, 876044 bytes).
 PDF statistics:
- 650 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
- 318 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 642 PDF objects out of 1000 (max. 8388607)
+ 126 named destinations out of 1000 (max. 500000)
+ 302 words of extra memory for PDF output out of 10000 (max. 10000000)
 
