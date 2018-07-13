@@ -27,6 +27,22 @@
 \pagestyle{empty}
 \begin{document}
 
+\begin{tikzpicture}
+\begin{knot}[
+%  draft mode=crossings,
+  flip crossing/.list={3,4}
+]
+\strand (1,0) circle[radius=2cm];
+\strand[blue] (-1,0) circle[radius=2cm];
+\strand[green] (0,{sqrt(3)}) circle[radius=2cm];
+\strand[green] (0,-3) circle[radius=2cm];
+\strand[green] (0,-3) circle[radius=2cm];
+\node at (0,0) {A}
+\end{knot}
+\end{tikzpicture}
+
+
+
 Druhy reid
 
 

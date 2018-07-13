@@ -3,7 +3,7 @@
 \chapter{Testování algoritmu na datech}
 
 V této části shrneme výsledky implementace výpočtu Jonesova polynomu na malých uzlech, náhodých uzlech a lincích a na speciálních typech uzlů.
-Budeme se zabývat algoritmy A, B, a RND, které byli popsány v sekci~\ref{varianty}.
+Budeme se zabývat algoritmy A, B, a RND, které byly popsány v sekci~\ref{varianty}.
 
 \section{Malé tabulkové uzly}
 
@@ -13,7 +13,7 @@ Budeme se zabývat algoritmy A, B, a RND, které byli popsány v sekci~\ref{vari
 \label{obr03:multiTable}
 \end{figure}
 
-Algoritmy jsme vyzkoušely na všech uzlech, které mají projekci s maximálně dvanácti kříženími. PD notace uzlů byla získána z databáze KnotInfo~\cite{knotinfo}.
+Algoritmy jsme vyzkoušeli na všech uzlech, které mají projekci s maximálně dvanácti kříženími. PD notace uzlů byla získána z databáze KnotInfo~\cite{knotinfo}.
 U všech tří algoritmů byl už u malých uzlů znatelný exponenciální růst doby běhu, viz graf~\ref{obr03:multiTable}. 
 
 Ze srovnání průměrných dob běhu plyne, že nejlepší čas dosahuje algoritmus A, těsně následuje algoritmus RND a nejpomalejší je algoritmus B, viz graf~\ref{obr03:srovTable}. 
@@ -28,7 +28,7 @@ Ze srovnání průměrných dob běhu plyne, že nejlepší čas dosahuje algori
 \section{Náhodné uzly a linky}
 
 \subsection{Generování náhodných linků a uzlů}
-Náhodné linky jsme generovali pomocí rovinných grafů, neboť mezi linky a rovinnými grafy existuje vzájemně jednoznačná korespondence~\cite{Adams2004}. (Jedná se o jinou korespondenci než mezi linky a rovinnými grafy s vrcholu stupně čtyři popsanou v sekci~\ref{jakograf}).
+Náhodné linky jsme generovali pomocí rovinných grafů, neboť mezi linky a rovinnými grafy existuje vzájemně jednoznačná korespondence~\cite{Adams2004}. (Jedná se o jinou korespondenci než mezi linky a rovinnými grafy s vrcholy stupně čtyři popsanou v sekci~\ref{jakograf}).
 
 \subsubsection{Převod rovinného grafu na link}
 Rovinný graf s $n$ hranami odpovídá linku s $n$ kříženími. Každé hraně přířadíme náhodně kladné, či záporné znamení a umístíme na ni křížení příslušného typu. Úseky mezi kříženími jsou tím již jednoznačně určené: musí spojovat křížení mezi nejbližšími hranami tak, aby nevznikla žádná další křížení, viz obrázek TODO.
@@ -85,7 +85,7 @@ Triangulace bodů je snadno implementovatelný geometrický problém.
 Se získaným rovinným grafem pracujeme jako s množinou vrcholů a k nim příslušným hranám seřazeným v pořadí, jak k danému vrcholu přiléhají. Z této struktury je již možné získat PD notaci příslušného linku.
 
 
-V PD notaci lze procházkou po vláknu snadno poznat, jestli je vygenerovaný link uzlem. Také jsme v jednoduchou operací schopni uzel změnit na alternující, tedy takový, v němž se střídají křížení vedená zdola a zvrchu.
+V PD notaci lze procházkou po vláknu snadno poznat, jestli je vygenerovaný link uzlem. Také jsme jednoduchou operací schopni uzel změnit na alternující, tedy takový, v němž se střídají křížení vedená zdola a zvrchu.
 
 Jsme tedy schopni nagenerovat uzly, alternující uzly a linky libovolné velikosti.
 

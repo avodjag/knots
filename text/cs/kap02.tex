@@ -6,7 +6,7 @@ V této kapitole .. TODO
 
 Je dokázáno, že problém výpočtu Jonesova polynomu alternujího uzlu je \mbox{\#P-těžký}~\cite{jaeger_vertigan_welsh_1990}. 
 
-Třída \#P obsahuje problémy určení počtu přijímacích cest nedeterministického Turingova stroje. Jedná se o rozšíření problémů třídy NP: míst otázky, jestli problém má řešení, se ptáme, kolik řešení vůbec existuje. Zástupcem této třídy je \#SAT, tedy problém určit, kolik existuje pravdivostních ohodnocení Boolovské formule. Dalším problémem této třídy je spočítat, kolik  existuje perfektních párování v bipartitním grafu~\cite{zoo}.
+Třída \#P obsahuje problémy určení počtu přijímacích cest nedeterministického Turingova stroje. Jedná se o rozšíření problémů třídy NP: místo otázky, jestli problém má řešení, se ptáme, kolik řešení vůbec existuje. Zástupcem této třídy je \#SAT, tedy problém určit, kolik existuje pravdivostních ohodnocení Boolovské formule. Dalším problémem této třídy je jak spočítat, kolik  existuje perfektních párování v bipartitním grafu~\cite{zoo}.
 
 Není znám polynomiální algoritmus, který by řešil NP-těžký problém, tedy ani \#P-těžký problém.
 
@@ -61,7 +61,7 @@ K výpočtu Jonesova polynomu použijeme závorkový polynom. Podle tvrzení~\re
 
 \end{algorithm}
 
-V PD notaci lze rychle určit, jestli je křížení kladné, či záporné orientace. Zamotání tedy s spočítáme v lineárním čase vzhledem k počtu křížení. Z toho plyne, že výpočet Jonesova polynomu ze závorkového polynomu má lineární časovou složitost.
+V PD notaci lze rychle určit, jestli je křížení kladné, či záporné orientace. Zamotání tedy spočítáme v lineárním čase vzhledem k počtu křížení. Z toho plyne, že výpočet Jonesova polynomu ze závorkového polynomu má lineární časovou složitost.
 
 Dále se budeme zabývat algoritmem na výpočet závorkového polynomu. 
 
@@ -119,7 +119,7 @@ zvol náhodně \cross linku $L$
 \subsection{Průběžné rozmotávání}
 Algoritmus na výpočet závorkového polynomu zrychlíme, pokud se link pokusíme \emph{částečně rozmotat}, tedy pokud nalezneme diagram ekvivalentního linku s menším množstvím křížení. 
 
-V PD notaci lze v lineárním čase vzhledem k počtu křížení rozpoznat případy, kdy je možné link rozmotat použitím prvního či druhého Reidemastreiva pohybu.
+V PD notaci lze v lineárním čase vzhledem k počtu křížení rozpoznat případy, kdy je možné link rozmotat použitím prvního či druhého Reidemasterova pohybu.
 
 Prvním Reidemeisterovým pohybem se zbavíme jednoho křížení, ovšem výsledný závorkový polynom se podle lemmatu~\ref{l01:2} změní o násobek $-A^{\pm3}$.
 
@@ -199,7 +199,7 @@ Stěna s jednou hranou by v diagramu odpovídala smyčce, ty jsou ovšem podle p
 
 Možné stěny s dvěma a třemi hranami jsou zobrazené na obrázku TODO.
 
-Stěna se dvěma hranami, která není rozmotatelná druhým Reidemeistrovým pohybem, musí v diagramu odpovídat typu A. Všimněme si, že rozpojením křížení $a_1$ i $a_2$ buď ve vertikálním, nebo horizontálním směru vznikne smyčka. Volbou křížení $a_1$ nebo $a_2$ je tedy zaručeno, že jeden syn má po rozmotání nejvýše $n-2$ křížení.
+Stěna se dvěma hranami, která není rozmotatelná druhým Reidemeisterovým pohybem, musí v diagramu odpovídat typu A. Všimněme si, že rozpojením křížení $a_1$ i $a_2$ buď ve vertikálním, nebo horizontálním směru vznikne smyčka. Volbou křížení $a_1$ nebo $a_2$ je tedy zaručeno, že jeden syn má po rozmotání nejvýše $n-2$ křížení.
 
 Stěna se třemi hranami v diagramu odpovídá buď typu B, nebo C zobrazeným na obrázku.
 
@@ -288,9 +288,9 @@ Algoritmus jsme implementovali v programovacím jazyce Python.
 Práce s diagramem v PD notací s využitím vhodných datových struktur je sice rychlá, ale náročná na rozbor všech možných případů. Ačkoli je tedy samotný algoritmus poměrně přímočarý, délka kódu narostla kvůli nutnosti rozlišení všech případů při rozpojování křížení, rozmotávání diagramu a hledání vhodného křížení.
 
 \section{Analýza složitosti algoritmu}  \label{analyza}
-V těto sekci vypočteme horní a dolní odhad algoritmu na výpočet závorkového a Jonesova polynomu. V následující analýze nezaleží, jestli se jedná o variantu A, nebo B.
+V teto sekci vypočteme horní a dolní odhad algoritmu na výpočet závorkového a Jonesova polynomu. V následující analýze nezáleží, jestli se jedná o variantu A, nebo B.
 \subsection{Horní odhad}
-Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotávávaní. Například na diagramu, který je možné absolutně rozmotat použitím prvních dvou Reidemasterových pohybů, poběží nejhůř v kvadratickém čase (příkladem je typ torusových uzlů, viz sekce~\ref{torus}).
+Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotávání. Například na diagramu, který je možné absolutně rozmotat použitím prvních dvou Reidemasterových pohybů, poběží nejhůř v kvadratickém čase (příkladem je typ torusových uzlů, viz sekce~\ref{torus}).
 
 \begin{tvrz}
 Výpočet Jonesova polynomu založený na algoritmu na výpočet závorkového polynomu~\ref{alg02:04} má časovou složitost  $\mathcal{O}( 2^{0.82 n })$.
@@ -324,14 +324,50 @@ Podle sekce~\ref{jones} je na výpočet Jonesova polynomu ze závorkového potř
 
 \subsection{Dolní odhad}
 
-\begin{tvrz}
+\begin{tvrz} \label{dolni}
 Výpočet Jonesova polynomu založený na algoritmu na výpočet závorkového polynomu~\ref{alg02:04} má časovou složitost  $\Omega(2^{0.75 n})$.
 \end{tvrz}
 
 \begin{dukaz}
-Provedeme analýzu průběhu algoritmu~\ref{alg02:04} na linku $L$ s diagramem, který vznikne z diagramu Borromeovských kruhů přidáváním kružnic. Kružnici přidáváme tak, aby vždy protla dva další kruhy celkem ve čtyřech bodech a vzniklý diagram byl alternující, tj. aby se střídala křížení vedená zdola a zvrchu, viz obrázek TODO.
+Provedeme analýzu průběhu algoritmu~\ref{alg02:04} na linku $L$ s diagramem, který vznikne z diagramu Borromeovských kruhů přidáváním kružnic. Kružnici přidáváme tak, aby vždy protla dva další kruhy celkem ve čtyřech bodech a upravíme křížení, aby vzniklý diagram byl alternující, tj. aby se střídala křížení vedená zdola a zvrchu, viz obrázek~\ref{borro}.
 
-%Diagram skládající se z $k$ kružnic má $4k-6$ křížení.
+\begin{figure}[h]  
+
+\centering 
+\begin{subfigure}[t]{0.4\linewidth}\centering
+\begin{tikzpicture}[scale=0.5]
+\begin{knot}[
+%  draft mode=crossings,
+  flip crossing/.list={3,4}
+]
+\strand (1.5,0) circle[radius=2cm];
+\strand (-1.5,0) circle[radius=2cm];
+\strand (0,{1.5*sqrt(3)}) circle[radius=2cm];
+\strand[white] (0,{-1.5*sqrt(3)}) circle[radius=2cm];
+\end{knot}
+\end{tikzpicture} 
+\caption{Borromeovské kruhy} 
+\end{subfigure}
+\begin{subfigure}[t]{0.4\linewidth}\centering
+\begin{tikzpicture}[scale=0.5]
+\begin{knot}[
+% draft mode=crossings,
+  flip crossing/.list={8, 7, 4,12, 2,11}
+]
+\strand (1.5,0) circle[radius=2cm];
+\strand(-1.5,0) circle[radius=2cm];
+\strand (0,{1.5*sqrt(3)}) circle[radius=2cm];
+\strand[blue] (0,{-1.5*sqrt(3)}) circle[radius=2cm];
+\strand[blue] (3,{1.5*sqrt(3)}) circle[radius=2cm];
+\end{knot}
+\end{tikzpicture}
+\caption{Přidání dvou kružnic}
+\end{subfigure}
+\caption{Vznik diagramu $L$ z důkazu tvrzení~\ref{dolni}.} \label{borro}
+\end{figure}  
+
+
+Diagram skládající se z $k$ kružnic má $4k-6$ křížení, můžeme tedy tímto způsobem získat diagram s počtem křížením větším než libovolné $n$.
 
 Na obrázku TODO je znázorněn možný průběh algoritmu na tomto diagramu takový, že jsou postupně odpojovány krajní kružnice. 
 
