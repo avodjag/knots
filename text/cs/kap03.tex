@@ -2,7 +2,7 @@
 
 \chapter{Testování algoritmu na datech}
 
-V této části shrneme výsledky implementace výpočtu Jonesova polynomu na malých uzlech, náhodých uzlech a lincích a na speciálních typech uzlů.
+V této části shrneme výsledky implementace výpočtu Jonesova polynomu na malých uzlech, náhodých uzlech a na speciálních typech uzlů.
 Budeme se zabývat algoritmy A, B, a RND, které byly popsány v sekci~\ref{varianty}.
 
 \section{Malé tabulkové uzly}
@@ -31,13 +31,15 @@ Ze srovnání průměrných dob běhu plyne, že nejlepší čas dosahuje algori
 Náhodné linky jsme generovali pomocí rovinných grafů, neboť mezi linky a rovinnými grafy existuje vzájemně jednoznačná korespondence~\cite{Adams2004}. (Jedná se o jinou korespondenci než mezi linky a rovinnými grafy s vrcholy stupně čtyři popsanou v sekci~\ref{jakograf}).
 
 \subsubsection{Převod rovinného grafu na link}
-Rovinný graf s $n$ hranami odpovídá linku s $n$ kříženími. Každé hraně přířadíme náhodně kladné, či záporné znamení a umístíme na ni křížení příslušného typu. Úseky mezi kříženími jsou tím již jednoznačně určené: musí spojovat křížení mezi nejbližšími hranami tak, aby nevznikla žádná další křížení, viz obrázek TODO.
+Rovinný graf s $n$ hranami odpovídá linku s $n$ kříženími. Každé hraně přířadíme náhodně kladné, či záporné znamení a umístíme na ni křížení příslušného typu. Úseky mezi kříženími jsou tím již jednoznačně určené: musí spojovat křížení mezi nejbližšími hranami tak, aby nevznikla žádná další křížení, viz obrázek~\ref{linktriang}.
 
 \subsubsection{Generování náhodných rovinných grafů}
-Graf s $n$ hranami získáme následujícím způsobem. Vygenerujeme vhodný počet náhodných bodů v rovině a nalezeneme jejich triangulaci, tj. spojíme body hranami tak, aby byl polygon tvořící konvexní obal bodů rozdělen na trojúhelníky.
+Graf s $n$ hranami získáme následujícím způsobem. Vygenerujeme vhodný počet náhodných bodů v rovině a nalezeneme jejich triangulaci, tj. spojíme body hranami tak, aby byl polygon tvořící konvexní obal bodů rozdělen na trojúhelníky, viz obrázek~\ref{triang}.
+
 
 \begin{figure}[h]  
 \centering 
+\begin{subfigure}{0.5\linewidth}\centering
 \begin{tikzpicture}
 \draw[fill] (1,1) circle [radius=0.05];
 \node [below] at (1,1) {$P_1$};
@@ -70,22 +72,27 @@ Graf s $n$ hranami získáme následujícím způsobem. Vygenerujeme vhodný po�
 \draw  (1,1)  -- (2,-1/2);
 \draw  (2,3)-- (2,-1/2);
 \end{tikzpicture}
-\caption{Triangulace šesti bodů}
+\caption{Triangulace šesti bodů.} \label{triang}
+\end{subfigure}
+\begin{subfigure}{0.5\linewidth}\centering
+\includegraphics[scale= 0.3]{../img/trianguzel}
+\caption{Link vzniklý z triangulace.} \label{linktriang}
+\end{subfigure}
+\caption{Převod rovinného grafu na link.} 
 \end{figure}  
+
 
 Získali jsme tak rovinný graf s původními body jako vrcholy. Pokud je počet hran menší než $n$, provedeme triangulaci znovu s větším počtem bodů. Pokud je počet hran větší než $n$, odstraníme potřebný počet náhodně zvolených hran.
 
-Viz obrázek TODO, uzel vytvořený z triangulace.
 
 \subsubsection{Implementace}
 
 Triangulace bodů je snadno implementovatelný geometrický problém. 
 
+Se získaným rovinným grafem pracujeme jako s množinou vrcholů a k nim příslušným hranám. Hrany jsou seřazeny podle pořadí, jak k danému vrcholu v nakreslení grafu přiléhají. Z této struktury je již možné získat PD notaci příslušného linku.
 
-Se získaným rovinným grafem pracujeme jako s množinou vrcholů a k nim příslušným hranám seřazeným v pořadí, jak k danému vrcholu přiléhají. Z této struktury je již možné získat PD notaci příslušného linku.
 
-
-V PD notaci lze procházkou po vláknu snadno poznat, jestli je vygenerovaný link uzlem. Také jsme jednoduchou operací schopni uzel změnit na alternující, tedy takový, v němž se střídají křížení vedená zdola a zvrchu.
+V PD notaci lze procházkou po vláknu snadno poznat, jestli je vygenerovaný link uzlem. Také jsme jednoduchou operací schopni uzel změnit na alternující, tedy takový, v němž se střídají křížení vedená zdola a svrchu.
 
 Jsme tedy schopni nagenerovat uzly, alternující uzly a linky libovolné velikosti.
 
@@ -111,7 +118,7 @@ Takto generované uzly jsou také poměrně \uv{zamotané}, tedy první rozmotá
 \label{obr03:linkSrov}
 \end{figure}
 
-Rychlost algoritmů jsme otestovali na uzlech, viz graf~\ref{obr03:knotSrov}, alternujících uzlech, viz graf~\ref{obr03:altSrov}, a lincích, viz graf~\ref{obr03:linkSrov}, s počtem křížení $n \leq 46$. 
+Rychlost algoritmů jsme otestovali na uzlech (graf~\ref{obr03:knotSrov}), alternujících uzlech (graf~\ref{obr03:altSrov}), a lincích (graf~\ref{obr03:linkSrov}), s počtem křížení $n \leq 46$. 
 
 Získaná data jsme použitím lineární regrese proložili exponenciálními křivkami tvaru $c 2^{kn}$, kde $c$ je určitá  konstanta a $k$ je hledaný parametr. Dostali jsme tedy odhad průměrné časové složitosti $\mathcal{O}(2^{kn})$, viz tabulka~\ref{datatab}.
 

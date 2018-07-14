@@ -7,7 +7,7 @@ V této kapitole se budeme zabývat problémem výpočtu Jonesova polynomu. Odvo
 
 Je dokázáno, že problém výpočtu Jonesova polynomu alternujího uzlu je \mbox{\#P-těžký}~\cite{jaeger_vertigan_welsh_1990}. 
 
-Třída \#P obsahuje problémy určení počtu přijímacích cest nedeterministického Turingova stroje. Jedná se o rozšíření problémů třídy NP: místo otázky, jestli problém má řešení, se ptáme, kolik řešení vůbec existuje. Zástupcem této třídy je \#SAT, tedy problém určit, kolik existuje pravdivostních ohodnocení Boolovské formule. Dalším problémem této třídy je jak spočítat, kolik  existuje perfektních párování v bipartitním grafu~\cite{zoo}.
+Třída \#P obsahuje problémy určení počtu přijímacích cest nedeterministického Turingova stroje. Jedná se o rozšíření problémů třídy NP: místo otázky, jestli problém má řešení, se ptáme, kolik řešení vůbec existuje. Zástupcem této třídy je \#SAT, tedy problém určit, kolik existuje pravdivostních ohodnocení Boolovské formule. Dalším problémem této třídy je, jak spočítat, kolik  existuje perfektních párování v bipartitním grafu~\cite{zoo}.
 
 Není znám polynomiální algoritmus, který by řešil NP-těžký problém, tedy ani \#P-těžký problém.
 
@@ -295,7 +295,7 @@ Ve stěně typu B získáme vertikálním rozpojením křížení $b_1$ syna, je
 Ve stěně typu C není rozpojením žádného křížení rozmotání zaručeno. Ovšem rozpojením libovolného křížení získáme jednoho syna se stěnou typu A. Existuje tedy vnuk s nejvýše $n-3$ kříženími.
 
 \subsection{Výsledný algoritmus pro výpočet závorkového polynomu} \label{varianty}
-Chceme maximalizovat rozmotání u synů, budeme tedy při rozpojování prefeferovat křížení stěn A a B před stěnou C. Dále rozlišíme dvě varianty výsledného algoritmu: \emph{algoritmus A} navíc preferuje křížení $a_i$ před $b_1$,  \emph{algoritmus B} preferuje $b_1$ před $a_i$. Celý postup je shrnut v algoritmu~\ref{alg02:04}.
+Snažíme se maximalizovat rozmotání u synů, budeme tedy při rozpojování prefeferovat křížení stěn A a B před stěnou C. Dále rozlišíme dvě varianty výsledného algoritmu: \emph{algoritmus A} navíc preferuje křížení $a_i$ před $b_1$,  \emph{algoritmus B} preferuje $b_1$ před $a_i$. Celý postup je shrnut v algoritmu~\ref{alg02:04}.
 
 Původní algoritmus~\ref{alg02:03} s náhodnou volbou křížení a rozmotáváním budeme označovat \emph{algoritmus RND}.
 
@@ -383,10 +383,10 @@ Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotáv�
 Výpočet Jonesova polynomu založený na algoritmu na výpočet závorkového polynomu~\ref{alg02:04} má časovou složitost  $\mathcal{O}( 2^{0.82 n })$.
 \end{tvrz}
 \begin{dukaz}
-Horní odhad rychlosti algoritmu~\ref{alg02:04} provedeme na případu diagramu, v němž dojde pouze k minimálnímu rozmotávání. Tedy nejdode k rozmotání jiných křížení než těch, která jsou zaručená rozborem v sekci~\ref{volba}.
+Horní odhad rychlosti algoritmu~\ref{alg02:04} provedeme na příkladu diagramu, v němž dojde pouze k minimálnímu rozmotávání. Nedojde tedy k rozmotání jiných křížení než těch, u kterých je to zaručeno volbou křížení k rozpojení, viz rozbor v sekci~\ref{volba}.
 Také v případech, kdy není předchozí volbou křížení zaručena existence stěny typu A, bude existovat pouze stěna typu C, která zaručuje rozmotání pouze u vnuka.
 
-Průběh algoritmu zakreslíme jako binární strom, kde číslo ve vrcholu je počet křížení diagramu. V kořeni máme diagram s $n$ kříženími, v němž rozmotáme křížení stěny C, takže jeho synové jsou diagramy s $n-1$ kříženími obsahující stěnu typu A. Jejich synové budou diagramy velikosti $n-2$ a $n-3$.
+Průběh algoritmu zakreslíme jako binární strom, kde číslo ve vrcholu je počet křížení diagramu. V kořeni máme diagram s $n$ kříženími, v němž rozmotáme křížení stěny C, takže jeho synové jsou diagramy s $n-1$ kříženími a obsahují stěnu typu A. Jejich synové budou diagramy velikosti $n-2$ a $n-3$.
 V lichých hladinách stromu má tedy vrchol syny o jedno křížení menší, v sudých hladinách je jeden syn o dvě křížení menší.
 
 \begin{forest}
@@ -406,7 +406,7 @@ kde $C_i$ jsou jisté konstanty.
 
 Z vzorce plyne, že $ T(n)= \mathcal{O}( 2^{0.82 n })  $.
 
-Podle sekce~\ref{jones} je na výpočet Jonesova polynomu ze závorkového potřeba pouze lineární počet operací. Dohromady má tedy náš výpočet Jonesova polynomu časovou složitost $\mathcal{O}( 2^{0.82 n })$.
+Podle sekce~\ref{jones} je na výpočet Jonesova polynomu ze závorkového polynomu potřeba pouze lineární počet operací. Dohromady má tedy náš výpočet Jonesova polynomu časovou složitost $\mathcal{O}( 2^{0.82 n })$.
 \end{dukaz}
 
 \subsection{Dolní odhad}
@@ -416,7 +416,7 @@ Výpočet Jonesova polynomu založený na algoritmu na výpočet závorkového p
 \end{tvrz}
 
 \begin{dukaz}
-Provedeme analýzu průběhu algoritmu~\ref{alg02:04} na linku $L$ s diagramem, který vznikne z diagramu Borromeovských kruhů přidáváním kružnic. Kružnici přidáváme tak, aby vždy protla dva další kruhy celkem ve čtyřech bodech a upravíme křížení, aby vzniklý diagram byl alternující, tj. aby se střídala křížení vedená zdola a zvrchu, viz obrázek~\ref{borro}.
+Provedeme analýzu průběhu algoritmu~\ref{alg02:04} na linku $L$ s diagramem, který vznikne z diagramu Borromeovských kruhů přidáváním kružnic. Kružnici přidáváme tak, aby vždy protla dva další kruhy celkem ve čtyřech bodech a upravíme křížení, aby vzniklý diagram byl alternující, tj. aby se střídala křížení vedená zdola a shora, viz obrázek~\ref{borro}.
 
 \begin{figure}[h]  
 
