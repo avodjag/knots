@@ -4,7 +4,7 @@
 Cílem této kapitoly je definovat Jonesův polynom, dokázat jeho základní vlastnosti a popsat souvislost se závorkovým polynomem. Vycházíme z materiálů~\cite{cromwell2004knots, Adams2004, jones2005} a vypracování cvičení z těchto zdrojů.
 \section{Základní pojmy}
 Jonesův polynom je invariant nejen uzlů, ale také \emph{linků}, tedy více propletených uzlů. Pokud není řečeno jinak, pracujeme v textu s linky. \\
-Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho \emph{diagramem}. Diagram je vhodné rovinné nakreslení určité linkové projekce, v němž je rozlišeno, jestli křížení vedou zvrchu, nebo zdola. Každý link má nekonečně mnoho diagramů.
+Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho \emph{diagramem}. Diagram je vhodné rovinné nakreslení určité linkové projekce, v němž je rozlišeno, jestli křížení vedou svrchu, nebo zdola. Každý link má nekonečně mnoho diagramů.
 \\
 V diagramu orientovaného linku rozlišujeme křížení s \emph{kladnou} a \emph{zápornou orientací}, viz obrázek~\ref{orientace}.
 
@@ -73,7 +73,9 @@ je linkový invariant,
   je normalizovaný, tedy polynom  $V_\circlearrowleft$, kde $\circlearrowleft$ je orientovaný triviální uzel, má hodnotu $1,$
 \item  
 splňuje skein vztah 
-$$ \frac{1}{t} V_{L_+} - t V_{L_-} = \left( \sqrt{t}  - \frac{1}{\sqrt{t}}\right) V_{L_0}.$$
+\begin{equation} \label{skein}
+\frac{1}{t} V_{L_+} - t V_{L_-} = \left( \sqrt{t}  - \frac{1}{\sqrt{t}}\right) V_{L_0}.
+\end{equation}
 \end{enumerate}
 \end{definice}
 
@@ -112,7 +114,7 @@ Pro $k > 2$ jsou $L_-$ a $L_+ $ diagramy linků s $k-1$ kružnicemi, z indukčn�
 \end{dukaz}  
 
 \begin{pozn}
-Z každého uzlového diagramu lze změnou několika křížení vedených zvrchu na křížení vedených zdola získat diagram triviálního uzlu. Z každého diagramu linku tedy můžeme změnou křížení získat diagram sjednocení triviálních uzlů, jejichž Jonesův polynom je podle předchozího lemmatu známý. Jonesův polynom každého linku lze tedy pomocí skein vztahu rekurzivně spočítat z jeho libovolného diagramu. Z toho plyno korektnost a jednoznačnost definice.
+Z každého uzlového diagramu lze změnou několika křížení vedených shora na křížení vedených zdola získat diagram triviálního uzlu. Z každého diagramu linku tedy můžeme změnou křížení získat diagram sjednocení triviálních uzlů, jejichž Jonesův polynom je podle předchozího lemmatu známý. Jonesův polynom každého linku lze tedy pomocí skein vztahu rekurzivně spočítat z jeho libovolného diagramu. Z toho plyno korektnost a jednoznačnost definice.
 \end{pozn}
 
 
@@ -127,162 +129,70 @@ Závorkový polynom \footnote{anglicky bracket polynomial nebo Kauffman bracket}
 \item
 $ \langle \bigcirc  \rangle = 1$, kde $\bigcirc$ značí diagram s jednou komponentou bez křížení,
 \item
-$ \langle$ 
-\begin{tikzpicture}[scale=0.4]
-\draw (0,0) -- (1,1);
-\draw (0,1) -- (0.33, 0.66);
-\draw (0.66, 0.33) -- (1,0);
-\end{tikzpicture}   
+$ \langle$ \pluskriz
 $\rangle = A  \langle $
 %vert
-\begin{tikzpicture} [scale=0.4]
-\draw (0,0) .. controls (1/2,1/2)  .. (0,1);
-\draw (1,0) .. controls (1/2,1/2)  .. (1,1);
-\end{tikzpicture}
+\vertkriz
 $ \rangle + A^{-1}  \langle $
 %hor 
-\begin{tikzpicture} [scale=0.4]
-\draw (0,0) .. controls (1/2,1/2)  .. (1,0);
-\draw (0,1) .. controls (1/2,1/2)  .. (1,1);
-\end{tikzpicture}
-$\rangle $, kde \begin{tikzpicture}[scale=0.4]
-\draw (0,0) -- (1,1);
-\draw (0,1) -- (0.33, 0.66);
-\draw (0.66, 0.33) -- (1,0);
-\end{tikzpicture} značí diagram obsahující toto křížení; \begin{tikzpicture} [scale=0.4]
-\draw (0,0) .. controls (1/2,1/2)  .. (0,1);
-\draw (1,0) .. controls (1/2,1/2)  .. (1,1);
-\end{tikzpicture} je diagram, který je s ním shodný až na dané křížení, které je zde vertikální rozpojeno; a \begin{tikzpicture} [scale=0.4]
-\draw (0,0) .. controls (1/2,1/2)  .. (1,0);
-\draw (0,1) .. controls (1/2,1/2)  .. (1,1);
-\end{tikzpicture} je diagram, v němž je křížení rozpojeno horizontálně,
+\horkriz
+$\rangle $, kde~\pluskriz~značí diagram obsahující toto křížení;~\vertkriz~je diagram, který je s ním shodný až na dané křížení, které je zde vertikální rozpojeno;~a~\horkriz je diagram, v němž je křížení rozpojeno horizontálně,
 \item
 $ \langle D \cup \bigcirc \rangle = (-A^2 - A^{-2}) \langle D \rangle$, kde $D \cup \bigcirc $ značí sjednocení diagramu $D$ a diagramu s jednou komponentou bez křížení.
 \end{enumerate}
-
-
 \end{definice}
 
 \begin{pozn}
-Pokud vztah v bodě \emph{ii.} předchozí definice otočíme o 90°, získáme vztah
-$ \langle $ 
-\begin{tikzpicture}[scale=0.4]
-\draw (0,0) -- (0.33,0.33);
-\draw  (0.66,0.66)-- (1,1);
-\draw (0,1)  -- (1,0);
-\end{tikzpicture} 
-$ \rangle = A  \langle $
-%hor 
-\begin{tikzpicture} [scale=0.4]
-\draw (0,0) .. controls (1/2,1/2)  .. (1,0);
-\draw (0,1) .. controls (1/2,1/2)  .. (1,1);
-\end{tikzpicture}
-$ \rangle + A^{-1}  \langle $
-%vert
-\begin{tikzpicture} [scale=0.4]
-\draw (0,0) .. controls (1/2,1/2)  .. (0,1);
-\draw (1,0) .. controls (1/2,1/2)  .. (1,1);
-\end{tikzpicture}
-$ \rangle $.
+Pokud vztah v bodě \emph{2.} předchozí definice otočíme o 90°, získáme vztah
+$ \langle 
+\minuskriz
+ \rangle = A  \langle 
+\horkriz
+ \rangle + A^{-1}  \langle 
+\vertkriz
+\rangle $.
 \end{pozn}
 
 \begin{lemma}\label{l01:2}
 Pro závorkové polynomy linků, jejichž diagramy obsahují smyčku, platí
 \begin{enumerate}
 \item
-$ \langle $
+$ \langle 
 %smycka 
-\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2, scale = 0.25]
-\begin{knot}[
-consider self intersections=true,
-clip width = 4,
-end tolerance=1pt,
-] 
-\clip (0,-1) rectangle (2.5,1);
-\strand (0,-1) .. controls (3,3) and (3,-3) ..  (0,1);
-\end{knot}
-\end{tikzpicture}
-$\rangle = -A^{-3} \langle $
-%odsmycka
-\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
-\clip (0,-1) rectangle (2,1);
-\draw (0,1) .. controls (2.5,0) ..  (0,-1);
-\end{tikzpicture}
-$  \rangle$ 
+\plussmycka
+\rangle = -A^{-3} \langle 
+\odsmycka
+  \rangle$ 
 \item
-$ \langle $
-\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
-\begin{knot}[
-consider self intersections=true,
-clip width = 4,
-end tolerance=1pt,
-] 
-\clip (0,-1) rectangle (2.5,1);
-\strand (0,1) .. controls (3,-3) and (3,3) ..  (0,-1);
-\end{knot}
-\end{tikzpicture}
-$  \rangle = -A^{3} \langle $
-%odsmycka
-\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
-\clip (0,-1) rectangle (2,1);
-\draw (0,1) .. controls (2.5,0) ..  (0,-1);
-\end{tikzpicture}
-$ \rangle$
+$ \langle 
+\minussmycka
+  \rangle = -A^{3} \langle 
+\odsmycka
+ \rangle$
 \end{enumerate}
 \end{lemma}
 
 \begin{dukaz}
-Použitím odvozovacích pravidel dokážeme první bod. \\ 
-$ \hspace*{0.35cm} \langle $
-%smycka 
-\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2, scale = 0.25]
-\begin{knot}[
-consider self intersections=true,
-clip width = 4,
-end tolerance=1pt,
-] 
-\clip (0,-1) rectangle (2.5,1);
-\strand (0,-1) .. controls (3,3) and (3,-3) ..  (0,1);
-\end{knot}
-\end{tikzpicture}
-$\rangle =  A \langle $
-%odsmycka
-\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
-\draw (0,1) .. controls (2.5,0) ..  (0,-1);
-\end{tikzpicture}
-$ \bigcup \bigcirc \rangle + A^{-1} \langle$  
-%odsmycka
-\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
-\clip (0,-1) rectangle (2,1);
-\draw (0,1) .. controls (2.5,0) ..  (0,-1);
-\end{tikzpicture}
-$\rangle  $
-\\
- $ \hspace*{0.35cm}  \hspace*{1.37cm} = A (-A^2 - A^{-2})  \langle$  
-%odsmycka
-\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
-\clip (0,-1) rectangle (2,1);
-\draw (0,1) .. controls (2.5,0) ..  (0,-1);
-\end{tikzpicture}
-$\rangle+ A^{-1}  \langle$  
-%odsmycka
-\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
-\clip (0,-1) rectangle (2,1);
-\draw (0,1) .. controls (2.5,0) ..  (0,-1);
-\end{tikzpicture}
-$\rangle  $
-\\
- $\hspace*{0.35cm} \hspace*{1.37cm} = -A^{-3} \langle $
-%odsmycka
-\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
-\clip (0,-1) rectangle (2,1);
-\draw (0,1) .. controls (2.5,0) ..  (0,-1);
-\end{tikzpicture}
-$  \rangle$ \\
+Použitím odvozovacích pravidel dokážeme první bod. 
+\begin{equation*}
+\langle 
+\plussmycka
+\rangle =  A \langle 
+\odsmycka
+\bigcup \bigcirc \rangle + A^{-1} \langle  
+\odsmycka
+\rangle  = A (-A^2 - A^{-2})  \langle 
+\odsmycka
+\rangle+ A^{-1}  \langle  
+\odsmycka
+\rangle   = -A^{-3} \langle 
+\odsmycka
+ \rangle
+\end{equation*}
 Druhý bod se dokáže analogicky.
 \end{dukaz}
 
-Dva diagramy znázorňují stejný link (jsou ekvivalentní), pokud mezi nimi existuje série Reidemeisterových pohybů. Z lemmatu ~\ref{l01:2} plyne, že závorkový polynom není invariantní vůči Reidemeisterovu pohybu typu I. Ukážeme, že je invariantní Reidemeisterovým pohybům typu II a III.
+Dva diagramy znázorňují stejný link (jsou ekvivalentní), pokud mezi nimi existuje série Reidemeisterových pohybů, viz obrázek~\ref{reid}. Z lemmatu ~\ref{l01:2} plyne, že závorkový polynom není invariantní vůči Reidemeisterovu pohybu typu I. Ukážeme, že je invariantní Reidemeisterovým pohybům typu II a III.
 
 \begin{figure}[h]
 \centering 
@@ -350,7 +260,7 @@ Dva diagramy znázorňují stejný link (jsou ekvivalentní), pokud mezi nimi ex
 \end{tikzpicture}
 \caption{Typ III}
 \end{subfigure}
-\caption{Reidemeisterovy pohyby}
+\caption{Reidemeisterovy pohyby} \label{reid}
 \end{figure}
 
 \begin{tvrz}\label{t01:3}
@@ -385,35 +295,14 @@ Normalizovaný závorkový polynom je linkový invariant.
 \begin{dukaz}
 Závorkový polynom i zakroucení jsou invariantní vůči Reidemeisterovým pohybům typu II a III, invariantní je tedy i jejich součin.
 
-Invariance vůči typu I plyne z lemmatu~\ref{l01:2} a faktu, že křížení   
-\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2, scale = 0.25]
-\begin{knot}[
-consider self intersections=true,
-clip width = 4,
-end tolerance=1pt,
-] 
-\clip (0,-1) rectangle (2.5,1);
-\strand (0,-1) .. controls (3,3) and (3,-3) ..  (0,1);
-\end{knot}
-\end{tikzpicture}
-je vždy kladné a křížení 
-\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
-\begin{knot}[
-consider self intersections=true,
-clip width = 4,
-end tolerance=1pt,
-] 
-\clip (0,-1) rectangle (2.5,1);
-\strand (0,1) .. controls (3,-3) and (3,3) ..  (0,-1);
-\end{knot}
-\end{tikzpicture} vždy záporné.
+Invariance vůči typu I plyne z lemmatu~\ref{l01:2} a faktu, že křížení~\plussmycka~je vždy kladné a křížení~\minussmycka~vždy záporné.
 \end{dukaz}
 
 \begin{tvrz}\label{t01:6}
-Při substituce proměnné $A = t^{1/4}$ je normalizovaný závorkový polynom $X_L(A)$  roven Jonesovu polynomu $V_L(t)$.
+Při substituce proměnné $A = t^{-1/4}$ je normalizovaný závorkový polynom $X_L(A)$  roven Jonesovu polynomu $V_L(t)$.
 \end{tvrz}
 \begin{dukaz}
-Ověříme, že $X_L(t^{1/4})$ splňuje podmínky v definici~\ref{def01:1}:
+Ověříme, že $X_L(t^{-1/4})$ splňuje podmínky v definici~\ref{def01:1}:
 
 \begin{enumerate}
 \item
@@ -421,7 +310,24 @@ Normalizovaný závorkový polynom je podle předchozího tvrzení linkový inva
 \item
 Pro zamotání triviálního uzlu platí $w( \bigcirc) = 0$, tedy $$X_\circlearrowleft = (-A^3)^{w( \bigcirc)} \langle \bigcirc  \rangle = 1.$$ 
 \item
-TODO, dosazení
+Dokážeme ekvivalentní tvrzení, že $X_L(A)$ splňuje skein vztah~\ref{skein} při substituci $t=A^{-4}$. Buď $L_+$, $ L_-$ a $L_0$ diagramy, pak platí
+\begin{equation*}
+\begin{split}
+X_{L_+}(A) & = (-A^{-3})^{-w(L_+)} \langle L_+ \rangle = -A^{-3} (-A^3)^{-w(L_0)}  \langle \minuskriz  \rangle \\ & = -A^{-3} (-A^3)^{-w(L_0)} (A \langle \horkriz \rangle + A^{-1}  \langle \vertkriz \rangle) 
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+X_{L_-}(A) & = (-A^{3})^{-w(L_-)} \langle L_- \rangle = -A^{3} (-A^3)^{-w(L_0)}  \langle \pluskriz  \rangle \\ & = -A^{3} (-A^3)^{-w(L_0)} (A \langle \vertkriz \rangle + A^{-1}  \langle \horkriz \rangle) 
+\end{split}
+\end{equation*}
+Levá strana vztahu~\ref{skein} se tedy při substituci $t=A^{-4}$ rovná
+\begin{equation*}
+\begin{split}
+A^4 X_{L_+}(t^{1/4})  - A^{-4} X_{L_-} (t^{1/4})  = & (-A^3)^{-w(L_0)} \left[ -A  (A \langle \horkriz \rangle + A^{-1}  \langle \vertkriz \rangle ) \right. \\ & \left. + A^{-1} (A \langle \vertkriz \rangle + A^{-1}  \langle \horkriz \rangle) \right] \\ & = (-A^3)^{-w(L_0)} (A^{-2} -A^2) \langle \horkriz \rangle \\ & =  (A^{-2} -A^2) X_{L_0},
+\end{split}
+\end{equation*}
+což jsme měli dokázat.
 \end{enumerate}
 $ $
 \end{dukaz}

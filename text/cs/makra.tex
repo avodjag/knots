@@ -90,3 +90,57 @@
 %%% Vychytávky pro tabulky
 \newcommand{\pulrad}[1]{\raisebox{1.5ex}[0pt]{#1}}
 \newcommand{\mc}[1]{\multicolumn{1}{c}{#1}}
+
+\newcommand{\minuskriz}{
+\begin{tikzpicture}[scale=0.4]
+\draw (0,0) -- (0.33,0.33);
+\draw  (0.66,0.66)-- (1,1);
+\draw (0,1)  -- (1,0);
+\end{tikzpicture}
+}
+
+\newcommand{\pluskriz}{\begin{tikzpicture}[scale=0.4]
+\draw (0,0) -- (1,1);
+\draw (0,1) -- (0.33, 0.66);
+\draw (0.66, 0.33) -- (1,0);
+\end{tikzpicture}}
+
+\newcommand{\vertkriz}{\begin{tikzpicture} [scale=0.4]
+\draw (0,0) .. controls (1/2,1/2)  .. (0,1);
+\draw (1,0) .. controls (1/2,1/2)  .. (1,1);
+\end{tikzpicture}}
+
+\newcommand{\horkriz}{\begin{tikzpicture} [scale=0.4]
+\draw (0,0) .. controls (1/2,1/2)  .. (1,0);
+\draw (0,1) .. controls (1/2,1/2)  .. (1,1);
+\end{tikzpicture}}
+
+\newcommand{\plussmycka}{
+\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2, scale = 0.25]
+\begin{knot}[
+consider self intersections=true,
+clip width = 4,
+end tolerance=1pt,
+] 
+\clip (0,-1) rectangle (2.5,1);
+\strand (0,-1) .. controls (3,3) and (3,-3) ..  (0,1);
+\end{knot}
+\end{tikzpicture}}
+
+\newcommand{\odsmycka}{
+\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
+\clip (0,-1) rectangle (2,1);
+\draw (0,1) .. controls (2.5,0) ..  (0,-1);
+\end{tikzpicture}}
+
+\newcommand{\minussmycka}{
+\begin{tikzpicture}[baseline =\dimexpr-\fontdimen22\textfont2,scale = 0.25]
+\begin{knot}[
+consider self intersections=true,
+clip width = 4,
+end tolerance=1pt,
+] 
+\clip (0,-1) rectangle (2.5,1);
+\strand (0,1) .. controls (3,-3) and (3,3) ..  (0,-1);
+\end{knot}
+\end{tikzpicture}}

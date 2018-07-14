@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  13 JUL 2018 21:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  14 JUL 2018 11:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3309,8 +3309,11 @@ Package hyperref Info: Option `breaklinks' set `true' on input line 149.
 (./makra.tex
 \c@veta=\count355
 \c@definice=\count356
-) (./prace.aux (./titulka.aux) (./uvod.aux) (./kap01.aux)
-(./kap02.aux) (./kap03.aux) (./zaver.aux) (./literatura.aux))
+) (./prace.aux (./titulka.aux) (./uvod.aux) (./kap01.aux
+
+LaTeX Warning: Label `skein' multiply defined.
+
+) (./kap02.aux) (./kap03.aux) (./zaver.aux) (./literatura.aux))
 \openout1 = `prace.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 155.
@@ -3504,17 +3507,17 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 111--113
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
 
  []
 
 [4]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 167.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 146.
 
  (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 234--284
+Underfull \hbox (badness 10000) in paragraph at lines 191--194
 
  []
 
@@ -3522,22 +3525,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 234--284
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--362
+Underfull \hbox (badness 10000) in paragraph at lines 269--272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--375
+Underfull \hbox (badness 10000) in paragraph at lines 282--285
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 388--411
+Underfull \hbox (badness 10000) in paragraph at lines 298--300
 
  []
 
 [6])
-Underfull \hbox (badness 10000) in paragraph at lines 426--164
+Underfull \hbox (badness 10000) in paragraph at lines 332--164
 
  []
 
@@ -3589,7 +3592,7 @@ Kapitola 3.
 
 pdfTeX warning: pdflatex (file ../img/multiTable.pdf): PDF inclusion: found PDF
  version <1.5>, but at most version <1.4> allowed
-<../img/multiTable.pdf, id=367, 361.35pt x 252.945pt>
+<../img/multiTable.pdf, id=371, 361.35pt x 252.945pt>
 File: ../img/multiTable.pdf Graphic file (type pdf)
 <use ../img/multiTable.pdf>
 Package pdftex.def Info: ../img/multiTable.pdf  used on input line 11.
@@ -3598,7 +3601,7 @@ Package pdftex.def Info: ../img/multiTable.pdf  used on input line 11.
 
 pdfTeX warning: pdflatex (file ../img/srovTable.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<../img/srovTable.pdf, id=371, 361.35pt x 252.945pt>
+<../img/srovTable.pdf, id=375, 361.35pt x 252.945pt>
 File: ../img/srovTable.pdf Graphic file (type pdf)
 <use ../img/srovTable.pdf>
 Package pdftex.def Info: ../img/srovTable.pdf  used on input line 22.
@@ -3614,7 +3617,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 pdfTeX warning: pdflatex (file ../img/knotsFIT.pdf): PDF inclusion: found PDF v
 ersion <1.5>, but at most version <1.4> allowed
-<../img/knotsFIT.pdf, id=398, 361.35pt x 252.945pt>
+<../img/knotsFIT.pdf, id=402, 361.35pt x 252.945pt>
 File: ../img/knotsFIT.pdf Graphic file (type pdf)
 <use ../img/knotsFIT.pdf>
 Package pdftex.def Info: ../img/knotsFIT.pdf  used on input line 97.
@@ -3623,7 +3626,7 @@ Package pdftex.def Info: ../img/knotsFIT.pdf  used on input line 97.
 
 pdfTeX warning: pdflatex (file ../img/alt_knotsFIT.pdf): PDF inclusion: found P
 DF version <1.5>, but at most version <1.4> allowed
-<../img/alt_knotsFIT.pdf, id=399, 361.35pt x 252.945pt>
+<../img/alt_knotsFIT.pdf, id=403, 361.35pt x 252.945pt>
 File: ../img/alt_knotsFIT.pdf Graphic file (type pdf)
 <use ../img/alt_knotsFIT.pdf>
 Package pdftex.def Info: ../img/alt_knotsFIT.pdf  used on input line 103.
@@ -3632,7 +3635,7 @@ Package pdftex.def Info: ../img/alt_knotsFIT.pdf  used on input line 103.
 
 pdfTeX warning: pdflatex (file ../img/linksFIT.pdf): PDF inclusion: found PDF v
 ersion <1.5>, but at most version <1.4> allowed
-<../img/linksFIT.pdf, id=400, 361.35pt x 252.945pt>
+<../img/linksFIT.pdf, id=404, 361.35pt x 252.945pt>
 File: ../img/linksFIT.pdf Graphic file (type pdf)
 <use ../img/linksFIT.pdf>
 Package pdftex.def Info: ../img/linksFIT.pdf  used on input line 109.
@@ -3641,7 +3644,7 @@ Package pdftex.def Info: ../img/linksFIT.pdf  used on input line 109.
 
 pdfTeX warning: pdflatex (file ../img/torusSrov.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<../img/torusSrov.pdf, id=431, 361.35pt x 252.945pt>
+<../img/torusSrov.pdf, id=435, 361.35pt x 252.945pt>
 File: ../img/torusSrov.pdf Graphic file (type pdf)
 <use ../img/torusSrov.pdf>
 Package pdftex.def Info: ../img/torusSrov.pdf  used on input line 163.
@@ -3650,7 +3653,7 @@ Package pdftex.def Info: ../img/torusSrov.pdf  used on input line 163.
 
 pdfTeX warning: pdflatex (file ../img/torus2.pdf): PDF inclusion: found PDF ver
 sion <1.5>, but at most version <1.4> allowed
-<../img/torus2.pdf, id=432, 361.35pt x 252.945pt>
+<../img/torus2.pdf, id=436, 361.35pt x 252.945pt>
 File: ../img/torus2.pdf Graphic file (type pdf)
 <use ../img/torus2.pdf>
 Package pdftex.def Info: ../img/torus2.pdf  used on input line 169.
@@ -3659,7 +3662,7 @@ Package pdftex.def Info: ../img/torus2.pdf  used on input line 169.
 
 pdfTeX warning: pdflatex (file ../img/torusNe2FIT.pdf): PDF inclusion: found PD
 F version <1.5>, but at most version <1.4> allowed
-<../img/torusNe2FIT.pdf, id=434, 361.35pt x 252.945pt>
+<../img/torusNe2FIT.pdf, id=438, 361.35pt x 252.945pt>
 File: ../img/torusNe2FIT.pdf Graphic file (type pdf)
 <use ../img/torusNe2FIT.pdf>
 Package pdftex.def Info: ../img/torusNe2FIT.pdf  used on input line 177.
@@ -3708,16 +3711,20 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
 Package rerunfilecheck Info: File `prace.out' has not changed.
 (rerunfilecheck)             Checksum: 4DFE20C0E4FAE1C5D5E523D020AC28B3;5004.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
  ) 
 Here is how much of TeX's memory you used:
- 60326 strings out of 492982
- 1359582 string characters out of 6132512
+ 60335 strings out of 492982
+ 1359685 string characters out of 6132512
  1479305 words of memory out of 5000000
- 62877 multiletter control sequences out of 15000+600000
+ 62885 multiletter control sequences out of 15000+600000
  644254 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 158i,19n,402p,10380b,3397s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 158i,19n,402p,10380b,3398s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
 cal/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/20
 17/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2017/texmf-dist
@@ -3742,9 +3749,9 @@ live/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2017/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on prace.pdf (31 pages, 886567 bytes).
+Output written on prace.pdf (31 pages, 889143 bytes).
 PDF statistics:
- 663 PDF objects out of 1000 (max. 8388607)
- 131 named destinations out of 1000 (max. 500000)
+ 667 PDF objects out of 1000 (max. 8388607)
+ 132 named destinations out of 1000 (max. 500000)
  302 words of extra memory for PDF output out of 10000 (max. 10000000)
 
