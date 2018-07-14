@@ -416,7 +416,7 @@ Výpočet Jonesova polynomu založený na algoritmu na výpočet závorkového p
 \end{tvrz}
 
 \begin{dukaz}
-Provedeme analýzu průběhu algoritmu~\ref{alg02:04} na linku $L$ s diagramem, který vznikne z diagramu Borromeovských kruhů přidáváním kružnic. Kružnici přidáváme tak, aby vždy protla dva další kruhy celkem ve čtyřech bodech a upravíme křížení, aby vzniklý diagram byl alternující, tj. aby se střídala křížení vedená zdola a shora, viz obrázek~\ref{borro}.
+Provedeme analýzu průběhu algoritmu~\ref{alg02:04} na linku s diagramem, který vznikne z diagramu Borromeovských kruhů přidáváním kružnic. Kružnici přidáváme tak, aby vždy protla dva další kruhy celkem ve čtyřech bodech a upravíme křížení, aby vzniklý diagram byl alternující, tj. aby se střídala křížení vedená zdola a shora, viz obrázek~\ref{borro}. Diagram složený z $k$ kružnic označíme $B_k$.
 
 \begin{figure}[h]  
 
@@ -454,15 +454,27 @@ Provedeme analýzu průběhu algoritmu~\ref{alg02:04} na linku $L$ s diagramem, 
 \end{figure}  
 
 
-Diagram skládající se z $k$ kružnic má $4k-6$ křížení, můžeme tedy tímto způsobem získat diagram s počtem křížením větším než libovolné $n$.
+Diagram $B_k$ má $4k-6$ křížení, můžeme tedy tímto způsobem získat diagram s počtem křížením větším než libovolné $n$.
 
-Na obrázku TODO je znázorněn možný průběh algoritmu na tomto diagramu takový, že jsou postupně odpojovány krajní kružnice. 
+\begin{figure}[p] \centering
+\includegraphics[scale=0.68]{../img/horniodhad}
+\caption{Průběh} \label{prubehhorni}
+\end{figure}
 
-Z obrázku TODO plyne, že časová složitost algoritmu na diagramu s $n$ kříženími splňuje rekurenci
+Na obrázku~\ref{prubehhorni} je znázorněn strom s průběhem algoritmu na diagramu $B_k$ takový, že jsou postupně odstraňovány krajní kružnice. V kořeni se nachází úsek diagramu obsahující nějakou krajní kružnici. Zakroužkováním je označeno křížení, které bylo vybráno k rozpojení (volba křížení odpovídá variantám A i B a samozřejmě i RND). Šipkou je znázorněno, pokud dojde k rozmotání diagramu. Žlutě podtržení potomci jsou diagramy $B_{k-1}$. Červeně a zeleně podržení potomci jsou synové diagramu $B_{k-1}$, jak je vidět na obrázku~\ref{rozdvojeni}.
+
+\begin{figure}[p] \centering
+\includegraphics[scale=0.7]{../img/rozdvojeni}
+\caption{Rozdvojení}  \label{rozdvojeni}
+\end{figure}
+
+Dohromady tedy z diagramu $B_k$ rozpojováním vznikne šest diagramů $B_{k-1}$ a čtyři synové $B_{k-1}$. Výpočet závorkového polynomu diagramu $B_k$ je tedy těžký alespoň jako výpočet polynomu osmi diagramů $B_{k-1}$. 
+
+Časová složitost algoritmu na diagramu s $n$ kříženími splňuje rekurenci
 $$ T(n) = 8T(n-4) + C_1 n + C_0  $$
 pro jisté konstanty $C_0$, $C_1$.
 
 Z toho plyne, že $T(n) = \Omega(8^{\frac{n}{4}})  =  \Omega(2^{0.75 n})$. \\
 
-Podle předchozích úvah má i výpočet Jonesova polynomu časovou složitost $\Omega(2^{0.75n})$.
+Na výpočet Jonesova polynomu ze závorkového polynomu je potřeba pouze lineární počet operací, tedy i výpočet Jonesova polynomu má časovou složitost $\Omega(2^{0.75n})$.
 \end{dukaz}
