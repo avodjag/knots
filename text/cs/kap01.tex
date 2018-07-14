@@ -144,60 +144,60 @@ $ \langle D \cup \bigcirc \rangle = (-A^2 - A^{-2}) \langle D \rangle$, kde $D \
 
 \begin{pozn}
 Pokud vztah v bodě \emph{2.} předchozí definice otočíme o 90°, získáme vztah
-$ \langle 
+$ \left\langle
 \minuskriz
- \rangle = A  \langle 
+\right\rangle = A  \left\langle
 \horkriz
- \rangle + A^{-1}  \langle 
+\right\rangle+ A^{-1} \left\langle
 \vertkriz
-\rangle $.
+\right\rangle $.
 \end{pozn}
 
 \begin{lemma}\label{l01:2}
 Pro závorkové polynomy linků, jejichž diagramy obsahují smyčku, platí
 \begin{enumerate}
 \item
-$ \langle 
+$ \left\langle 
 %smycka 
 \plussmycka
-\rangle = -A^{-3} \langle 
+\right\rangle = -A^{-3} \left\langle 
 \odsmycka
-  \rangle$ 
+  \right\rangle$ 
 \item
-$ \langle 
+$ \left\langle 
 \minussmycka
-  \rangle = -A^{3} \langle 
+  \right\rangle = -A^{3} \left\langle 
 \odsmycka
- \rangle$
+ \right\rangle$
 \end{enumerate}
 \end{lemma}
 
 \begin{dukaz}
 Použitím odvozovacích pravidel dokážeme první bod. 
 \begin{equation*}
-\langle 
+\left\langle
 \plussmycka
-\rangle =  A \langle 
+ \right\rangle =  A \left\langle 
 \odsmycka
-\bigcup \bigcirc \rangle + A^{-1} \langle  
+\cup \bigcirc  \right\rangle + A^{-1} \left\langle 
 \odsmycka
-\rangle  = A (-A^2 - A^{-2})  \langle 
+ \right\rangle  = A (-A^2 - A^{-2}) \left\langle
 \odsmycka
-\rangle+ A^{-1}  \langle  
+ \right\rangle + A^{-1}  \left\langle
 \odsmycka
-\rangle   = -A^{-3} \langle 
+ \right\rangle  = -A^{-3} \left\langle
 \odsmycka
- \rangle
+ \right\rangle
 \end{equation*}
 Druhý bod se dokáže analogicky.
 \end{dukaz}
 
-Dva diagramy znázorňují stejný link (jsou ekvivalentní), pokud mezi nimi existuje série Reidemeisterových pohybů, viz obrázek~\ref{reid}. Z lemmatu ~\ref{l01:2} plyne, že závorkový polynom není invariantní vůči Reidemeisterovu pohybu typu I. Ukážeme, že je invariantní Reidemeisterovým pohybům typu II a III.
+Dva diagramy znázorňují stejný link (jsou ekvivalentní), pokud mezi nimi existuje série Reidemeisterových pohybů, viz obrázek~\ref{reid}. Z lemmatu ~\ref{l01:2} plyne, že závorkový polynom není invariantní vůči Reidemeisterovu pohybu typu I. Ukážeme, že je invariantní Reidemeisterovým pohybům typu~II a typu~III.
 
 \begin{figure}[h]
 \centering 
 \begin{subfigure}{1\linewidth}\centering
-\begin{tikzpicture}
+\begin{tikzpicture}[scale = 0.70]
 \clip(-2,-2) rectangle (7,1.3);
 \draw (-1,1) .. controls (-2,2) and (-2,-2) .. (-1, -1);
 \draw (-1,1) -- (1, -1);
@@ -214,7 +214,7 @@ Dva diagramy znázorňují stejný link (jsou ekvivalentní), pokud mezi nimi ex
 \caption{Typ I} 
 \end{subfigure}
 \begin{subfigure}{1\linewidth}\centering
-\begin{tikzpicture}
+\begin{tikzpicture}[scale = 0.70]
 \clip(-2,-2) rectangle (7,1.3);
 
 \draw (-1,-1) arc (270:90:1);
@@ -237,7 +237,7 @@ Dva diagramy znázorňují stejný link (jsou ekvivalentní), pokud mezi nimi ex
 \caption{Typ II}
 \end{subfigure}
 \begin{subfigure}{1\linewidth}\centering
-\begin{tikzpicture}
+\begin{tikzpicture}[scale = 0.70]
 \clip(-4.5,-1.65) rectangle (4.5, 1.65);
 
 \draw [thick, <->] (-1/2,0) -- (1/2,0);
@@ -267,7 +267,18 @@ Dva diagramy znázorňují stejný link (jsou ekvivalentní), pokud mezi nimi ex
 Závorkový polynom je invariantní vůči Reidemeisterovým pohybům typu II a III.
 \end{tvrz}
 \begin{dukaz}
-TODO, obrázky
+Použitím odvozovacích pravidel dokážeme invarianci vůči pohybu typu~II.
+\begin{equation*}
+\begin{split}
+\left< \reiddva \right> & = A \left< \FO \right> - A^{-1} \left< \BO \right> \\ & = A \left( A \left< \DO \right> - A^{-1} \left< \EO \right> \right) \\ & - A^{-1} \left( A \left< \CO \right> - A^{-1} \left< \DO \right> \right) \\ & = \left< \CO \right> + \left( A^2 + A^{-2} \right) \left< \DO \right> + \left( -A^2 + -A^{-2} \right) \left< \DO \right>  \\ & = \left< \CO \right>
+\end{split}
+\end{equation*}
+Invariance vůči pohybu typu III plyne z invariance vůči typu II.
+\begin{equation*}
+\begin{split}
+\left< \GO \right> & = A \left< \JO \right> - A^{-1} \left< \IO \right> \\ & = A \left< \JO \right> - A^{-1} \left< \KO \right>  \\ & = A \left< \JO \right> - A^{-1} \left< \LO \right> = \left< \HO \right>
+\end{split}
+\end{equation*}
 \end{dukaz}
 
 Aby byl závorkový polynom invariantní i vůči Reidemeisterovu pohybu typu I, je nutné vynásobit ho výrazem, který vyjadřuje míru zakroucení.
