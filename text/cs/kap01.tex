@@ -138,7 +138,7 @@ $ \left\langle  \pluskriz
 \horkriz
 \right\rangle $, kde~~\pluskriz~značí~~diagram obsahující toto křížení,~~\vertkriz~~je diagram, který je s ním shodný až na dané křížení, které je zde \emph{vertikální rozpojeno} a~~\horkriz~~je diagram, v němž je křížení \emph{rozpojeno horizontálně},
 \item
-$ \left\langle D \cup \pmb{\bigcirc} \right\rangle = (-A^2 - A^{-2}) \left\langle D \right\rangle$, kde $D \cup \pmb{\bigcirc} $ značí sjednocení diagramu $D$ a~diagramu s jednou komponentou bez křížení.
+$ \left\langle D \cup \pmb{\bigcirc} \right\rangle = \left(-A^2 - A^{-2}\right) \left\langle D \right\rangle$, kde $D \cup \pmb{\bigcirc} $ značí sjednocení diagramu $D$ a~diagramu s jednou komponentou bez křížení.
 \end{enumerate}
 \end{definice} 
 
@@ -175,19 +175,8 @@ $ \left\langle
 \begin{dukaz}
 Použitím odvozovacích pravidel dokážeme první bod. 
 \begin{equation*}
-\left\langle
-\plussmycka
- \right\rangle =  A \left\langle 
-\odsmycka
-\cup  \pmb{\bigcirc}   \right\rangle + A^{-1} \left\langle 
-\odsmycka
- \right\rangle  = A (-A^2 - A^{-2}) \left\langle
-\odsmycka
- \right\rangle + A^{-1}  \left\langle
-\odsmycka
- \right\rangle  = -A^{-3} \left\langle
-\odsmycka
- \right\rangle
+\left\langle \plussmycka \right\rangle  =  A \left\langle \odsmycka \cup  \pmb{\bigcirc}   \right\rangle + A^{-1} \left\langle \odsmycka
+ \right\rangle  \\  = A  (-A^2 - A^{-2} ) \left\langle \odsmycka \right\rangle + A^{-1}  \left\langle \odsmycka  \right\rangle  \\  = -A^{-3} \left\langle \odsmycka \right\rangle
 \end{equation*}
 Druhý bod se dokáže analogicky.
 \end{dukaz}
@@ -295,7 +284,7 @@ Důkaz se provede rozborem případů možných orientací křížení, která b
 \end{dukaz}
 
 \begin{definice}\label{def01:4}
-\emph{Normalizovaný závorkový polynom} $X_L(A)$ orientovaného linku $L$ definijeme $$X_L(A) = (-A^3)^{-w(D)}\langle D \rangle,$$ kde $D$ značí libovolný diagram linku $L$.
+\emph{Normalizovaný závorkový polynom} $X_L(A)$ orientovaného linku $L$ definijeme $$X_L(A) = \left(-A^{-3}\right)^{-w\left(L_+\right)}\langle D \rangle,$$ kde $D$ značí libovolný diagram linku $L$.
 \end{definice}
 
 \begin{pozn}
@@ -315,29 +304,29 @@ Invariance vůči typu I plyne z lemmatu~\ref{l01:2} a faktu, že křížení~\p
 Při substituci proměnné $A = t^{-1/4}$ je normalizovaný závorkový polynom $X_L(A)$  roven Jonesovu polynomu $V_L(t)$.
 \end{tvrz}
 \begin{dukaz}
-Ověříme, že $X_L(t^{-1/4})$ splňuje podmínky v definici~\ref{def01:1}:
+Ověříme, že $X_L\left(t^{-1/4}\right)$ splňuje podmínky v definici~\ref{def01:1}:
 
 \begin{enumerate}
 \item
 Normalizovaný závorkový polynom je podle předchozího tvrzení linkový invariant.
 \item
-Pro zamotání triviálního uzlu platí $w( \pmb{\bigcirc}) = 0$, tedy $$X_{\pmb{\circlearrowleft}} = (-A^3)^{w( \pmb{\bigcirc})} \langle \pmb{\bigcirc} \rangle = 1.$$ 
+Pro zamotání triviálního uzlu platí $w\left( \pmb{\bigcirc}\right) = 0$, tedy $$X_{\pmb{\circlearrowleft}} = \left(-A^3\right)^{w( \pmb{\bigcirc})} \left\langle \pmb{\bigcirc} \right\rangle = 1.$$ 
 \item
 Dokážeme ekvivalentní tvrzení, že $X_L(A)$ splňuje skein vztah~\ref{skein} při substituci $t=A^{-4}$. \\ Buď $L_+$, $ L_-$ a $L_0$ diagramy, pak platí
 \begin{equation*}
 \begin{split}
-X_{L_+}(A) & = (-A^{-3})^{-w(L_+)} \langle L_+ \rangle = -A^{-3} (-A^3)^{-w(L_0)}  \langle \minuskriz  \rangle \\ & = -A^{-3} (-A^3)^{-w(L_0)} (A \langle \horkriz \rangle + A^{-1}  \langle \vertkriz \rangle)
+X_{L_+}(A) & = \left(-A^{-3}\right)^{-w(L_+)} \left\langle L_+  \right\rangle = -A^{-3} \left(-A^{-3}\right)^{-w(L_+)}  \left\langle \minuskriz   \right\rangle \\ & = -A^{-3} \left(-A^{-3}\right)^{-w(L_+)} \left(A \left\langle \horkriz  \right\rangle + A^{-1}  \left\langle \vertkriz  \right\rangle\right)
 \end{split}
 \end{equation*}
 \begin{equation*}
 \begin{split}
-X_{L_-}(A) & = (-A^{3})^{-w(L_-)} \langle L_- \rangle = -A^{3} (-A^3)^{-w(L_0)}  \langle \pluskriz  \rangle \\ & = -A^{3} (-A^3)^{-w(L_0)} (A \langle \vertkriz \rangle + A^{-1}  \langle \horkriz \rangle) .
+X_{L_-}\left(A\right) & =\left(-A^{-3}\right)^{-w(L_+)} \left\langle L_-  \right\rangle = -A^{3}\left(-A^{-3}\right)^{-w(L_+)} \left\langle \pluskriz   \right\rangle \\ & = -A^{3} \left(-A^{-3}\right)^{-w(L_+)} \left(A \left\langle \vertkriz  \right\rangle + A^{-1}  \left\langle \horkriz  \right\rangle\right) .
 \end{split}
 \end{equation*}
 Levá strana vztahu~\ref{skein} se tedy při substituci $t=A^{-4}$ rovná
 \begin{equation*}
 \begin{split}
-A^4 X_{L_+}(t^{1/4})  - A^{-4} X_{L_-} (t^{1/4}) &  =  (-A^3)^{-w(L_0)} \left[ -A  (A \langle \horkriz \rangle + A^{-1}  \langle \vertkriz \rangle ) \right. \\ & \left. + A^{-1} (A \langle \vertkriz \rangle + A^{-1}  \langle \horkriz \rangle) \right] \\ & = (-A^3)^{-w(L_0)} (A^{-2} -A^2) \langle \horkriz \rangle \\ & =  (A^{-2} -A^2) X_{L_0},
+A^4 X_{L_+}\left(t^{1/4}\right)  - A^{-4} X_{L_-} \left(t^{1/4}\right) &  =  \left(-A^3\right)^{-w(L_0)} \left[ -A  \left(A \left\langle \horkriz \right\rangle + A^{-1}  \left\langle \vertkriz \right\rangle \right) \right. \\ & \left. + A^{-1} \left(A \left\langle \vertkriz \right\rangle + A^{-1}  \left\langle \horkriz \right\rangle\right) \right] \\ & = \left(-A^3\right)^{-w(L_0)} \left(A^{-2} -A^2\right) \left\langle \horkriz \right\rangle \\ & =  \left(A^{-2} -A^2\right) X_{L_0},
 \end{split}
 \end{equation*}
 což jsme měli dokázat.
