@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  15 JUL 2018 19:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  15 JUL 2018 21:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3313,7 +3313,11 @@ Package hyperref Info: Option `breaklinks' set `true' on input line 150.
 
 LaTeX Warning: Label `skein' multiply defined.
 
-) (./kap02.aux) (./kap03.aux) (./zaver.aux) (./literatura.aux))
+) (./kap02.aux
+
+LaTeX Warning: Label `rozmot' multiply defined.
+
+) (./kap03.aux) (./zaver.aux) (./literatura.aux))
 \openout1 = `prace.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
@@ -3564,43 +3568,47 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 
 ] [10]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11] [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 409--411
+Underfull \hbox (badness 10000) in paragraph at lines 236--240
 
  []
 
-[15]
+[11] [12] [13] [14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 428--430
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 
 pdfTeX warning: pdflatex (file ../img/horniodhad.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.4> allowed
-<../img/horniodhad.pdf, id=365, 845.76376pt x 597.2503pt>
+<../img/horniodhad.pdf, id=370, 845.76376pt x 597.2503pt>
 File: ../img/horniodhad.pdf Graphic file (type pdf)
 <use ../img/horniodhad.pdf>
-Package pdftex.def Info: ../img/horniodhad.pdf  used on input line 460.
+Package pdftex.def Info: ../img/horniodhad.pdf  used on input line 479.
 (pdftex.def)             Requested size: 380.59016pt x 268.76015pt.
-
+[16]
 
 pdfTeX warning: pdflatex (file ../img/rozdvojeni.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.4> allowed
-<../img/rozdvojeni.pdf, id=368, 846.44331pt x 248.52548pt>
+<../img/rozdvojeni.pdf, id=381, 846.44331pt x 248.52548pt>
 File: ../img/rozdvojeni.pdf Graphic file (type pdf)
 <use ../img/rozdvojeni.pdf>
-Package pdftex.def Info: ../img/rozdvojeni.pdf  used on input line 467.
+Package pdftex.def Info: ../img/rozdvojeni.pdf  used on input line 486.
 (pdftex.def)             Requested size: 253.93495pt x 74.55821pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--478
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
 
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 479--166
+Underfull \hbox (badness 10000) in paragraph at lines 498--166
 
  []
 
-[16] [17 <../img/horniodhad.pdf> <../img/rozdvojeni.pdf>] [18]
+[17] [18 <../img/horniodhad.pdf> <../img/rozdvojeni.pdf>]
 \openout2 = `kap03.aux'.
 
  (./kap03.tex
@@ -3609,7 +3617,7 @@ Kapitola 3.
 
 pdfTeX warning: pdflatex (file ../img/multiTable.pdf): PDF inclusion: found PDF
  version <1.5>, but at most version <1.4> allowed
-<../img/multiTable.pdf, id=393, 361.35pt x 252.945pt>
+<../img/multiTable.pdf, id=398, 361.35pt x 252.945pt>
 File: ../img/multiTable.pdf Graphic file (type pdf)
 <use ../img/multiTable.pdf>
 Package pdftex.def Info: ../img/multiTable.pdf  used on input line 11.
@@ -3618,7 +3626,7 @@ Package pdftex.def Info: ../img/multiTable.pdf  used on input line 11.
 
 pdfTeX warning: pdflatex (file ../img/srovTable.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<../img/srovTable.pdf, id=397, 361.35pt x 252.945pt>
+<../img/srovTable.pdf, id=402, 361.35pt x 252.945pt>
 File: ../img/srovTable.pdf Graphic file (type pdf)
 <use ../img/srovTable.pdf>
 Package pdftex.def Info: ../img/srovTable.pdf  used on input line 22.
@@ -3627,7 +3635,7 @@ Package pdftex.def Info: ../img/srovTable.pdf  used on input line 22.
 
 pdfTeX warning: pdflatex (file ../img/trianguzel.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.4> allowed
-<../img/trianguzel.pdf, id=402, 593.96906pt x 481.8pt>
+<../img/trianguzel.pdf, id=407, 593.96906pt x 481.8pt>
 File: ../img/trianguzel.pdf Graphic file (type pdf)
 <use ../img/trianguzel.pdf>
 Package pdftex.def Info: ../img/trianguzel.pdf  used on input line 78.
@@ -3643,7 +3651,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 pdfTeX warning: pdflatex (file ../img/knotsFIT.pdf): PDF inclusion: found PDF v
 ersion <1.5>, but at most version <1.4> allowed
-<../img/knotsFIT.pdf, id=428, 361.35pt x 252.945pt>
+<../img/knotsFIT.pdf, id=433, 361.35pt x 252.945pt>
 File: ../img/knotsFIT.pdf Graphic file (type pdf)
 <use ../img/knotsFIT.pdf>
 Package pdftex.def Info: ../img/knotsFIT.pdf  used on input line 104.
@@ -3652,7 +3660,7 @@ Package pdftex.def Info: ../img/knotsFIT.pdf  used on input line 104.
 
 pdfTeX warning: pdflatex (file ../img/alt_knotsFIT.pdf): PDF inclusion: found P
 DF version <1.5>, but at most version <1.4> allowed
-<../img/alt_knotsFIT.pdf, id=429, 361.35pt x 252.945pt>
+<../img/alt_knotsFIT.pdf, id=434, 361.35pt x 252.945pt>
 File: ../img/alt_knotsFIT.pdf Graphic file (type pdf)
 <use ../img/alt_knotsFIT.pdf>
 Package pdftex.def Info: ../img/alt_knotsFIT.pdf  used on input line 110.
@@ -3661,7 +3669,7 @@ Package pdftex.def Info: ../img/alt_knotsFIT.pdf  used on input line 110.
 
 pdfTeX warning: pdflatex (file ../img/linksFIT.pdf): PDF inclusion: found PDF v
 ersion <1.5>, but at most version <1.4> allowed
-<../img/linksFIT.pdf, id=430, 361.35pt x 252.945pt>
+<../img/linksFIT.pdf, id=435, 361.35pt x 252.945pt>
 File: ../img/linksFIT.pdf Graphic file (type pdf)
 <use ../img/linksFIT.pdf>
 Package pdftex.def Info: ../img/linksFIT.pdf  used on input line 116.
@@ -3671,7 +3679,7 @@ Package pdftex.def Info: ../img/linksFIT.pdf  used on input line 116.
 
 pdfTeX warning: pdflatex (file ../img/torusSrov.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<../img/torusSrov.pdf, id=464, 361.35pt x 252.945pt>
+<../img/torusSrov.pdf, id=469, 361.35pt x 252.945pt>
 File: ../img/torusSrov.pdf Graphic file (type pdf)
 <use ../img/torusSrov.pdf>
 Package pdftex.def Info: ../img/torusSrov.pdf  used on input line 170.
@@ -3680,7 +3688,7 @@ Package pdftex.def Info: ../img/torusSrov.pdf  used on input line 170.
 
 pdfTeX warning: pdflatex (file ../img/torus2.pdf): PDF inclusion: found PDF ver
 sion <1.5>, but at most version <1.4> allowed
-<../img/torus2.pdf, id=465, 361.35pt x 252.945pt>
+<../img/torus2.pdf, id=470, 361.35pt x 252.945pt>
 File: ../img/torus2.pdf Graphic file (type pdf)
 <use ../img/torus2.pdf>
 Package pdftex.def Info: ../img/torus2.pdf  used on input line 176.
@@ -3689,7 +3697,7 @@ Package pdftex.def Info: ../img/torus2.pdf  used on input line 176.
 
 pdfTeX warning: pdflatex (file ../img/torusNe2FIT.pdf): PDF inclusion: found PD
 F version <1.5>, but at most version <1.4> allowed
-<../img/torusNe2FIT.pdf, id=467, 361.35pt x 252.945pt>
+<../img/torusNe2FIT.pdf, id=472, 361.35pt x 252.945pt>
 File: ../img/torusNe2FIT.pdf Graphic file (type pdf)
 <use ../img/torusNe2FIT.pdf>
 Package pdftex.def Info: ../img/torusNe2FIT.pdf  used on input line 184.
@@ -3746,10 +3754,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 208.
  ) 
 Here is how much of TeX's memory you used:
- 60379 strings out of 492982
- 1360377 string characters out of 6132512
- 1484305 words of memory out of 5000000
- 62921 multiletter control sequences out of 15000+600000
+ 60385 strings out of 492982
+ 1360426 string characters out of 6132512
+ 1487472 words of memory out of 5000000
+ 62923 multiletter control sequences out of 15000+600000
  644254 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  158i,19n,402p,10380b,3398s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3777,9 +3785,9 @@ live/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2017/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on prace.pdf (34 pages, 2742125 bytes).
+Output written on prace.pdf (34 pages, 2743258 bytes).
 PDF statistics:
- 702 PDF objects out of 1000 (max. 8388607)
- 137 named destinations out of 1000 (max. 500000)
+ 708 PDF objects out of 1000 (max. 8388607)
+ 141 named destinations out of 1000 (max. 500000)
  317 words of extra memory for PDF output out of 10000 (max. 10000000)
 

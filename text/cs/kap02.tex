@@ -1,22 +1,22 @@
 %%% Druhá kapitola
 \chapter{Výpočet Jonesova polynomu}
 
-V této kapitole se budeme zabývat problémem výpočtu Jonesova polynomu. Odvodíme algoritmus na jeho výpočet a odhadneme jeho časovou složitost.
+V této kapitole se budeme zabývat problémem výpočtu Jonesova polynomu. Odvodíme algoritmus na výpočet a odhadneme jeho časovou složitost.
 
 \section{Výpočetní složitost problému} 
 
 Je dokázáno, že problém výpočtu Jonesova polynomu alternujího uzlu je \mbox{\#P-těžký}~\cite{jaeger_vertigan_welsh_1990}. 
 
-Třída \#P obsahuje problémy určení počtu přijímacích cest nedeterministického Turingova stroje. Jedná se o rozšíření problémů třídy NP: místo otázky, jestli problém má řešení, se ptáme, kolik řešení vůbec existuje. Zástupcem této třídy je \#SAT, tedy problém určit, kolik existuje pravdivostních ohodnocení Boolovské formule. Dalším problémem této třídy je, jak spočítat, kolik  existuje perfektních párování v bipartitním grafu~\cite{zoo}.
+Třída \#P obsahuje problémy určení počtu přijímacích cest nedeterministického Turingova stroje. Jedná se o rozšíření problémů třídy NP, místo otázky, jestli problém má řešení, se ptáme, kolik řešení vůbec existuje. Zástupcem této třídy je \#SAT, tedy problém určit, kolik existuje pravdivostních ohodnocení Boolovské formule. Dalším problémem této třídy je, jak spočítat, kolik  existuje perfektních párování v bipartitním grafu~\cite{zoo}.
 
 Není znám polynomiální algoritmus, který by řešil NP-těžký problém, tedy ani \#P-těžký problém.
 
 \section{Algoritmus}
-Náš algoritmus na výpočet Jonesova polynomu předpokládá na vstupu diagram orientovaného linku zapsaný v PD notaci. Počet křížení diagramu označíme $n$.
+Náš algoritmus na výpočet Jonesova polynomu předpokládá na vstupu diagram orientovaného linku zapsaný v PD notaci. Počet křížení diagramu označíme~$n$.
 
 \subsection{PD notace} 
 
-PD \footnote{planar diagram} notace je zápis sestávajací ze čtveřice čísel pro každé křížení a jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od $1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje zespodu, a pokračuje se s úseky navazujícími proti směru hodinových ručiček, viz obrázek~\ref{pd}.
+PD \footnote{planar diagram} notace je zápis sestávajací z $n$  čtveřic čísel, pro každé křížení jedno. Notace jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od~$1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje zdola, a pokračuje se s úseky navazujícími proti směru hodinových ručiček, viz obrázek~\ref{pd}.
 
 \begin{figure}[h]
 \centering 
@@ -47,7 +47,7 @@ Pro nejrychlejší práci s diagramem v PD notaci si pro každý úsek pamatujem
 
 \subsection{Výpočet Jonesova polynomu ze závorkového polynomu} \label{jones}
 
-K výpočtu Jonesova polynomu použijeme závorkový polynom. Podle tvrzení~\ref{t01:6} se Jonesův polynom získá z normalizovaného závorkového polynomu substitucí proměnné, viz algoritmus~\ref{alg02:01}.
+K výpočtu Jonesova polynomu použijeme závorkový polynom. Podle tvrzení~\ref{t01:6} se Jonesův polynom získá z normalizovaného závorkového polynomu substitucí proměnné. Pokud tedy známe závorkový polynom daného diagramu, stačí vypočítat zamotání a provést substituci proměnné,  viz algoritmus~\ref{alg02:01}.
 
 \begin{algorithm}[t]
 
@@ -57,7 +57,7 @@ K výpočtu Jonesova polynomu použijeme závorkový polynom. Podle tvrzení~\re
 \DontPrintSemicolon
 \SetKwData{D}{D}
 \KwData{Diagram \D linku $L$  s $n$ kríženími}
-\KwResult{Jonesův polynom v proměnné $t$}
+\KwResult{Jonesův polynom linku $L$ v proměnné $t$}
 \SetKwData{bracketPoly}{závorkovýPolynom($A$)}
 \SetKwData{writhe}{zamotání}
 
@@ -93,7 +93,11 @@ Dále se budeme zabývat algoritmem na výpočet závorkového polynomu.
 
 \subsection{Přímočarý výpočet závorkového polynomu}
 
-Z definice~\ref{def01:2} závorkového polynomu plyne jednoduchý rekurzivní algoritmus na jeho výpočet. Pokud diagram $D$ nemá žádná křížení, má polynom hodnotu 1. Pokud má diagram $n\geq 1$ křížení, jedno se náhodně zvolí. \emph{Rozpojením} tohoto křížení horizontálně a vertikálně vzniknou dva \emph{synové} $D_h$ a $D_v$, oba diagramy s $n-1$ kříženími. Závorkový polynom diagramu $D$ se spočítá ze závorkových polynomů jeho synů.
+\begin{definice} \label{rozpoj}
+\emph{Rozpojením křížení} diagramu $D$ rozumíme rozpojení v horizontálním a vertikálním směru ve smyslu bodu 2 v definici~\ref{def01:2} závorkového polynomu. Rozpojením diagramu s $n$ kříženími vzniknou dva \emph{synové}, oba diagramy s $n-1$~kříženími.
+\end{definice}
+
+Z definice~\ref{def01:2} závorkového polynomu plyne jednoduchý rekurzivní algoritmus na jeho výpočet. Pokud diagram $D$ nemá žádná křížení, má polynom hodnotu~1. Pokud má diagram $n\geq 1$ křížení, jedno se náhodně zvolí. Rozpojením tohoto křížení horizontálně a vertikálně vzniknou dva synové $D_h$ a $D_v$. Závorkový polynom diagramu $D$ se spočítá ze závorkových polynomů jeho synů.
 \\
 V PD notaci nejsme schopni zaznamenat, jestli při rozpojení křížení vznikla disjunktní kružnice, diagramy synů jsou tedy bez nich. Pokud při rozpojování disjunktní kružnice vznikla, musíme spočtený závorkový polynom syna vynásobit členem $-A^2 - A^{-2}$, podrobnosti viz algoritmus~\ref{alg02:02}.
 \\
@@ -119,13 +123,13 @@ Algoritmus se vždy zastaví a má časovou složitost $\mathcal{O}(2^n)$. Stejn
 \SetKwProg{Fn}{Function}{}{end} 
 
 
-\Fn{\Bracket{$D$}}{
-\KwData{Diagram $D$ linku $L$ s $n$ kríženími}
-\KwResult{Závorkový polynom v proměnné $A$}
+\Fn{\Bracket{\D}}{
+\KwData{Diagram \D linku $L$ s $n$ kríženími}
+\KwResult{Závorkový polynom diagramu \D v proměnné $A$}
 \BlankLine
 \If{diagram $D$ nemá žádná křížení}{\KwRet 1}
 \BlankLine
-zvol náhodně \cross linku $L$
+zvol náhodně \cross diagramu \D
 \BlankLine
 \lh $\leftarrow$ link \D, kde \cross je rozpojeno horizontálně
 
@@ -135,21 +139,27 @@ zvol náhodně \cross linku $L$
 \eIf{v linku \lh vznikla disjunktní kružnice} {\Hk $\leftarrow$ 1} {\Hk $\leftarrow$ 0}
 \eIf{v linku \lv vznikla disjunktní kružnice} {\Vk $\leftarrow$ 1} {\Vk $\leftarrow$ 0}
 \BlankLine
-\bracketPoly $\leftarrow$ $A(-A^2 - A^{-2})^{\Hk} $ \Bracket{\lh} \\  $ \hspace{2.75cm} +A^{-1}(-A^2 - A^{-2})^{\Vk} $ \Bracket{\lv}
+\bracketPoly $\leftarrow$ $A(-A^2 - A^{-2})^{\Hk} $ \Bracket{\lh} \\  $ \hspace{3.2cm} +A^{-1}(-A^2 - A^{-2})^{\Vk} $ \Bracket{\lv}
 \BlankLine
 \KwRet \bracketPoly
 }
 
 \end{algorithm}
 
-\subsection{Průběžné rozmotávání}
-Algoritmus na výpočet závorkového polynomu zrychlíme, pokud se link pokusíme \emph{částečně rozmotat}, tedy pokud nalezneme diagram ekvivalentního linku s menším množstvím křížení. 
+\subsection{Průběžné rozmotávání} \label{rozmot}
+Algoritmus na výpočet závorkového polynomu zrychlíme, pokud se link pokusíme průběžně rozmotávat, tedy pokud nalezneme diagram ekvivalentního linku s~menším množstvím křížení.
 
-V PD notaci lze v lineárním čase vzhledem k počtu křížení rozpoznat případy, kdy je možné link rozmotat použitím prvního či druhého Reidemasterova pohybu.
+\begin{definice} \label{rozmot}
+Diagram je \emph{rozmotaný}, pokud v něm nelze odstranit křížení použitím Reidemeisterova pohybu typu I či II. V opačném případě řekneme, že diagram je možné \emph{rozmotat}.
+\end{definice}
 
-Prvním Reidemeisterovým pohybem se zbavíme jednoho křížení, ovšem výsledný závorkový polynom se podle lemmatu~\ref{l01:2} změní o násobek $-A^{\pm3}$.
+V PD notaci lze v lineárním čase vzhledem k počtu křížení rozpoznat případy, kdy je možné link rozmotat.
 
-Druhým Reidemeisterovým pohybem se zbavíme dvou křížení a polynom zůstane podle tvrzení~\ref{t01:3} stejný. Více viz algoritmus~\ref{alg02:03}.
+Reidemeisterovým pohybem typu I se zbavíme jednoho křížení, ovšem výsledný závorkový polynom se podle lemmatu~\ref{l01:2} změní o násobek $-A^{\pm3}$.
+
+Reidemeisterovým pohybem typu II se zbavíme dvou křížení a závorkový polynom zůstane podle tvrzení~\ref{t01:3} stejný. Více viz algoritmus~\ref{alg02:03}.
+
+
 
 \begin{algorithm}[p]
 \caption{Výpočet závorkového polynomu s rozmotáváním} 
@@ -171,7 +181,7 @@ Druhým Reidemeisterovým pohybem se zbavíme dvou křížení a polynom zůstan
 
 \Fn{\Bracket{\D}}{
 \BlankLine
-rozmotej diagram \D prvním Reidemeisterovým pohybem\\
+rozmotej diagram \D Reidemeisterovým pohybem typu I\\
 \BlankLine
 \If{něco rozmotáno}{
 \e $\leftarrow$ součet znamení rozmotaných křížení\\
@@ -179,11 +189,11 @@ rozmotej diagram \D prvním Reidemeisterovým pohybem\\
 \KwRet $(-A^2 - A^{-2})^{\hk} (-A^{-3 \e})$ \Bracket{rozmotaný diagram} \\
 }
 \BlankLine
-rozmotej diagram \D druhým Reidemeisterovým pohybem\\
+rozmotej diagram \D Reidemeisterovým pohybem typu II\\
 \BlankLine
-znovu rozmotej diagram \D prvním Reidemeisterovým pohybem\\
+znovu rozmotej diagram \D Reidemeisterovým pohybem typu I\\
 \BlankLine
-\If{něco rozmotáno prvním pohybem}{
+\If{něco rozmotáno typem I}{
 \e $\leftarrow$ součet znamení rozmotaných křížení\\
 \hk $\leftarrow$ počet vzniklých disjunktních kružnic\\
 \KwRet $(-A^2 - A^{-2})^{\hk} (-A^{-3 \e})$ \Bracket{rozmotaný diagram} \\
@@ -205,19 +215,28 @@ znovu rozmotej diagram \D prvním Reidemeisterovým pohybem\\
 Rozmotávání běží v lineárním čase vzhledem k $n$, celková časová složitost tedy zůstává $\mathcal{O}(2^n)$.
 
 \subsection{Vhodná volba křížení} \label{volba}
-Křížení k rozpojení jsme doteď volili náhodně, algoritmus se pokusíme zlepšit vhodnou volbou křížení, aby bylo diagram možné průběžně rozmotávat.
-Dokážeme, že ke vzniku diagramu, který lze částečně rozmotat způsobem popsaným v předchozí části, je vždy potřeba rozpojit nejvýše dvě křížení.
-Algoritmus bude volit právě ta křížení, jejichž rozpojení u synů zajistí možnost rozmotání.
+Křížení k rozpojení jsme volili náhodně, algoritmus se pokusíme zlepšit vhodnou volbou křížení, aby bylo diagram možné průběžně rozmotávat.
+V této sekci dokážeme následující lemma.
+\begin{lemma}
+Ke vzniku diagramu, který lze rozmotat, stačí vždy rozpojit nejvýše dvě křížení.
+\end{lemma}
+Algoritmus bude volit právě ta křížení, jejichž rozpojení u synů (nebo vnuků) zajistí možnost rozmotání.
 
 \subsubsection{Diagram jako rovinný graf} \label{jakograf}
-Každý linkový diagram odpovídá rovinnému grafu, v němž křížení představují vrcholy (vždy stupně čtyři) a úseky mezi kříženími hrany. Diagram s $n$ kříženími odpovídá grafu s $n$ vrcholy a 2$n$ hranami.
-Dále budeme v této sekci k popisu diagramů používat grafovou terminologii. Předpokládejme také, že pracujeme s diagramem, který už je rozmotaný.
+Každý linkový diagram odpovídá rovinnému grafu, v němž křížení představují vrcholy (vždy stupně čtyři) a úseky mezi kříženími hrany. Diagram s $n$ kříženími odpovídá grafu s $n$ vrcholy a $2n$ hranami.
+Dále budeme v této sekci k popisu diagramů používat grafovou terminologii. 
 
-Eulerův vzorec pro rovinné grafy říká, že $v - e +f = 2$, kde $v$ značí počet vrcholů, $e$ počet hran a $f$ počet stěn (důkaz např. v~\cite{kapitoly}).
+\begin{lemma}
+V rozmotaném diagramu existuje stěna ohraničená méně než čtyřmi hranami.
+\end{lemma}
+
+\begin{dukaz}
+Podle Eulerova vzorce pro rovinné grafy platí $$v - e +f = 2,$$ kde $v$ značí počet vrcholů, $e$ počet hran a $f$ počet stěn (důkaz např. v~\cite{kapitoly}).
 \\
-V našem případě tedy dostáváme vzorec pro počet stěn v linkovém diagramu $f = n+2$.
+V našem případě tedy dostáváme vzorec pro počet stěn v linkovém diagramu $$f = n+2$$.
 \\
-Každá hrana náleží dvěma stěnám, rozdělujeme tedy 4$n$ hran mezi $n+2$ stěn. Z toho plyne, že musí existovat stěna, která je ohraničená méně než čtyřmi hranami.  
+Každá hrana diagramu náleží dvěma stěnám, rozdělujeme tedy $4n$ hran mezi $n+2$~stěn. Z toho plyne, že musí existovat stěna, která je ohraničená méně než čtyřmi hranami. 
+\end{dukaz} 
 
 \subsubsection{Typy stěn} \label{steny}
 
@@ -282,7 +301,9 @@ Každá hrana náleží dvěma stěnám, rozdělujeme tedy 4$n$ hran mezi $n+2$ 
 \caption{Typy stěn ohraničených třemi a méně hranami.} \label{stenyobr}
 \end{figure}
 
-Stěna s jednou hranou by v diagramu odpovídala smyčce, ty jsou ovšem podle předpokladu už odstraněny rozmotáním.
+Popíšeme, jak mohou v rozmotaném diagramu vypadat stěny ohraničené méně než čtyřmi hranami
+
+Stěna s jednou hranou by v diagramu odpovídala smyčce, ty jsou už odstraněny rozmotáním.
 
 Možné stěny s dvěma a třemi hranami jsou zobrazené na obrázku~\ref{stenyobr}.
 
