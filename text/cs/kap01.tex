@@ -4,9 +4,9 @@
 Cílem této kapitoly je definovat Jonesův polynom, dokázat jeho základní vlastnosti a popsat souvislost se závorkovým polynomem. Vycházíme z materiálů~\cite{cromwell2004knots, Adams2004, jones2005} a vypracování cvičení z těchto zdrojů.
 \section{Základní pojmy}
 Jonesův polynom je invariant nejen uzlů, ale také \emph{linků}, tedy více propletených uzlů. Pokud není řečeno jinak, pracujeme v textu s linky. \\
-Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho \emph{diagramem}. Diagram je vhodné rovinné nakreslení určité linkové projekce, v němž je rozlišeno, jestli křížení vedou svrchu, nebo zdola. Každý link má nekonečně mnoho diagramů.
+Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho \emph{diagramem}. Diagram je vhodné rovinné nakreslení určité linkové projekce, v němž je rozlišeno, jestli křížení vedou \emph{svrchu}, nebo \emph{zdola}. Každý link má nekonečně mnoho diagramů.
 \\
-V diagramu orientovaného linku rozlišujeme křížení s \emph{kladnou} a \emph{zápornou orientací}, viz obrázek~\ref{orientace}.
+V diagramu \emph{orientovaného} linku rozlišujeme křížení s \emph{kladnou} a se \emph{zápornou orientací}, viz obrázek~\ref{orientace}.
 
 \begin{figure}[h]  
 
@@ -17,7 +17,7 @@ V diagramu orientovaného linku rozlišujeme křížení s \emph{kladnou} a \emp
 \draw [thick,->] (0.66,0.66)-- (1,1);
 \draw [thick,->] (0,1)  -- (1,0);
 \end{tikzpicture} 
-\caption{Kladná orientace} 
+\caption{Kladná orientace.} 
 \end{subfigure}
 \begin{subfigure}[t]{0.4\linewidth}\centering
 \begin{tikzpicture}[scale=2]
@@ -25,9 +25,9 @@ V diagramu orientovaného linku rozlišujeme křížení s \emph{kladnou} a \emp
 \draw [thick] (0,1) -- (0.33, 0.66);
 \draw [thick,->] (0.66, 0.33) -- (1,0);
 \end{tikzpicture}  
-\caption{Záporná orientace}
+\caption{Záporná orientace.}
 \end{subfigure}
-\caption{Orientace křížení} \label{orientace}
+\caption{Orientace křížení.} \label{orientace}
 \end{figure}  
 
 
@@ -59,18 +59,18 @@ Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_
 \end{tikzpicture}
 \caption{$L_0$}
 \end{subfigure}
-\caption{Diagramy skein vztahu} \label{skein}
+\caption{Diagramy skein vztahu.} \label{skein}
 \end{figure}
 
 \section{Definice Jonesova polynomu}
 
 \begin{definice}\label{def01:1}
-\emph{Jonesův polynom} orientovaného linku $L$ je Laurentův polynom v proměnné $t^{1/2}$ (tj. polynom v $\Z[t^{1/2}, t^{-1/2}]$), značený $V_L(t)$ , který
+\emph{Jonesův polynom} orientovaného linku $L$ je Laurentův polynom v~proměnné $\sqrt{t}$ (tj. polynom v $\Z[t^{1/2}, t^{-1/2}]$), značený $V_L(t)$ , který
 \begin{enumerate}
 \item
 je linkový invariant,
 \item 
-  je normalizovaný, tedy polynom  $V_\circlearrowleft$, kde $\circlearrowleft$ je orientovaný triviální uzel, má hodnotu $1,$
+  je normalizovaný, tedy polynom  $V_{\pmb{\circlearrowleft}}$ =1, kde ${\pmb{\circlearrowleft}}$ značí orientovaný triviální uzel,
 \item  
 splňuje skein vztah 
 \begin{equation} \label{skein}
@@ -80,10 +80,10 @@ splňuje skein vztah
 \end{definice}
 
 \begin{lemma}\label{l01:1}
-Buď $L$ link, který se skládá z $k$ neprotínajících se orientovaných triviálních uzlů. Pak pro Jonesův polynom linku $L$ platí: $$V_L(t) = \left(- \sqrt{t} -\frac{1}{\sqrt{t}}\right) ^{k-1}.$$
+Buď $L$ link, který se skládá z $k$ neprotínajících se orientovaných triviálních uzlů. Pak pro Jonesův polynom linku $L$ platí $$V_L(t) = \left(- \sqrt{t} -\frac{1}{\sqrt{t}}\right) ^{k-1}.$$
 \end{lemma}
 \begin{dukaz}
-Libovolně orientované triviální uzly jsou ekvivalentní. Vzorec tedy stačí dokázat pro diagram skládající se z $k$ libovolně orientovaných disjunktních kružnic, použijeme matematickou indukci.\\
+Libovolně orientované triviální uzly jsou navzájem ekvivalentní. Vzorec tedy stačí dokázat pro diagram skládající se z $k$ libovolně orientovaných disjunktních kružnic. Použijeme matematickou indukci.\\
 Pro $ k=1$ vzorec platí podle druhé podmínky v definici ~\ref{def01:1}. \\
 Předvedeme i případ, kdy $k = 2$. Pak $L_0 = $
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm, scale = 0.2]
@@ -110,7 +110,7 @@ Předvedeme i případ, kdy $k = 2$. Pak $L_0 = $
 \draw [line width=0.5pt] (1.9692781611446357,0.6947891351587211)-- (1.977324654938205,0.966222453023282);
 \draw [line width=0.5pt] (1.7119284298490884,1.200910273373297)-- (1.977324654938205,0.966222453023282);
 \end{tikzpicture}. Diagramy $L_+$ a $L_-$ zobrazují triviální uzly, takže $V_{L_+} = V_{L_-} = 1$. Použitím skein vztahu získáme $$V_ L = V_{L_0} = - \sqrt{t} -\frac{1}{\sqrt{t}} .$$ \\
-Pro $k > 2$ jsou $L_-$ a $L_+ $ diagramy linků s $k-1$ kružnicemi, z indukčního předpokladu a ze skein vztahu získáme vzorec $$V_ L = V_{L_0} = \left(- \sqrt{t} -\frac{1}{\sqrt{t}}\right) ^{k-1}.$$
+Pro $k > 2$ jsou $L_-$ a $L_+ $ diagramy linků s $k-1$ kružnicemi. Z indukčního předpokladu a ze skein vztahu získáme vzorec $$V_ L = V_{L_0} = \left(- \sqrt{t} -\frac{1}{\sqrt{t}}\right) ^{k-1}.$$
 \end{dukaz}  
 
 \begin{pozn}
@@ -118,7 +118,7 @@ Z každého uzlového diagramu lze změnou několika křížení vedených shora
 \end{pozn}
 
 
-Definice Jonesova polynomu pomocí skein vztahů není vhodná pro algoritmický výpočet, neboť rozpoznání, jestli diagram odpovídá triviálnímu uzlu, je složitý problém. K výpočtu využijeme ekvivalentní definici založenou na použití \emph{závorkového polynomu}.
+Definice Jonesova polynomu pomocí skein vztahů není vhodná pro algoritmický výpočet, neboť rozpoznat, jestli diagram odpovídá triviálnímu uzlu, je složitý problém. K výpočtu využijeme ekvivalentní definici založenou na použití \emph{závorkového polynomu}.
 
 \section{Závorkový polynom}
 Závorkový polynom \footnote{anglicky bracket polynomial nebo Kauffman bracket} je definován pouze pro diagramy neorientovaných linků, nikoli pro samotné linky.
@@ -127,20 +127,20 @@ Závorkový polynom \footnote{anglicky bracket polynomial nebo Kauffman bracket}
 \emph{Závorkový polynom} neorientovaného diagramu $D$, značený $\langle D \rangle$, je Laurentův polynom v proměnné $A$ definovaný třemi odvozovacími pravidly:
 \begin{enumerate}
 \item
-$ \langle \bigcirc  \rangle = 1$, kde $\bigcirc$ značí diagram s jednou komponentou bez křížení,
+$ \left\langle \pmb{\bigcirc} \right\rangle = 1$, kde $\pmb{\bigcirc}$ značí diagram s jednou komponentou bez křížení,
 \item
-$ \langle$ \pluskriz
-$\rangle = A  \langle $
+$ \left\langle  \pluskriz
+\right\rangle = A  \left\langle 
 %vert
 \vertkriz
-$ \rangle + A^{-1}  \langle $
+ \right\rangle + A^{-1}  \left\langle
 %hor 
 \horkriz
-$\rangle $, kde~\pluskriz~značí diagram obsahující toto křížení;~\vertkriz~je diagram, který je s ním shodný až na dané křížení, které je zde vertikální rozpojeno;~a~\horkriz je diagram, v němž je křížení rozpojeno horizontálně,
+\right\rangle $, kde~~\pluskriz~značí~~diagram obsahující toto křížení,~~\vertkriz~~je diagram, který je s ním shodný až na dané křížení, které je zde \emph{vertikální rozpojeno} a~~\horkriz~~je diagram, v němž je křížení \emph{rozpojeno horizontálně},
 \item
-$ \langle D \cup \bigcirc \rangle = (-A^2 - A^{-2}) \langle D \rangle$, kde $D \cup \bigcirc $ značí sjednocení diagramu $D$ a diagramu s jednou komponentou bez křížení.
+$ \left\langle D \cup \pmb{\bigcirc} \right\rangle = (-A^2 - A^{-2}) \left\langle D \right\rangle$, kde $D \cup \pmb{\bigcirc} $ značí sjednocení diagramu $D$ a~diagramu s jednou komponentou bez křížení.
 \end{enumerate}
-\end{definice}
+\end{definice} 
 
 \begin{pozn}
 Pokud vztah v bodě \emph{2.} předchozí definice otočíme o 90°, získáme vztah
@@ -179,7 +179,7 @@ Použitím odvozovacích pravidel dokážeme první bod.
 \plussmycka
  \right\rangle =  A \left\langle 
 \odsmycka
-\cup \bigcirc  \right\rangle + A^{-1} \left\langle 
+\cup  \pmb{\bigcirc}   \right\rangle + A^{-1} \left\langle 
 \odsmycka
  \right\rangle  = A (-A^2 - A^{-2}) \left\langle
 \odsmycka
@@ -273,7 +273,7 @@ Použitím odvozovacích pravidel dokážeme invarianci vůči pohybu typu~II.
 \left< \reiddva \right> & = A \left< \FO \right> - A^{-1} \left< \BO \right> \\ & = A \left( A \left< \DO \right> - A^{-1} \left< \EO \right> \right) \\ & - A^{-1} \left( A \left< \CO \right> - A^{-1} \left< \DO \right> \right) \\ & = \left< \CO \right> + \left( A^2 + A^{-2} \right) \left< \DO \right> + \left( -A^2 + -A^{-2} \right) \left< \DO \right>  \\ & = \left< \CO \right>
 \end{split}
 \end{equation*}
-Invariance vůči pohybu typu III plyne z invariance vůči typu II.
+Invariance vůči pohybu typu III plyne z invariance vůči pohybu typu~II.
 \begin{equation*}
 \begin{split}
 \left< \GO \right> & = A \left< \JO \right> - A^{-1} \left< \IO \right> \\ & = A \left< \JO \right> - A^{-1} \left< \KO \right>  \\ & = A \left< \JO \right> - A^{-1} \left< \LO \right> = \left< \HO \right>
@@ -281,36 +281,38 @@ Invariance vůči pohybu typu III plyne z invariance vůči typu II.
 \end{equation*}
 \end{dukaz}
 
-Aby byl závorkový polynom invariantní i vůči Reidemeisterovu pohybu typu I, je nutné vynásobit ho výrazem, který vyjadřuje míru zakroucení.
+Aby byl závorkový polynom invariantní i vůči Reidemeisterovu pohybu typu~I, je nutné vynásobit jej výrazem, který vyjadřuje míru zakroucení.
 
 \begin{definice}\label{def01:3}
 \emph{Zakroucení} (writhe) orientovaného diagramu $D$ je součet znamení všech křížení v $D$. Zakroucení značíme $w(D)$.
 \end{definice}
 
 \begin{lemma}\label{l01:4}
-Zakroucení je invariantní vůči Reidemeisterovým pohybům typu~II a typu~III.
+Zakroucení je invariantní vůči Reidemeisterovým pohybům typu~II a~typu~III.
 \end{lemma}
 \begin{dukaz}
-Důkaz se provede rozborem případů.
+Důkaz se provede rozborem případů možných orientací křížení, která byla změněna daným Reidemeisterovým pohybem.
 \end{dukaz}
 
 \begin{definice}\label{def01:4}
-\emph{Normalizovaný závorkový polynom} $X_L(A)$ orientovaného linku $L$ definijeme $X_L(A) = (-A^3)^{-w(D)}\langle D \rangle$, kde $D$ je libovolný diagram linku $L$.
+\emph{Normalizovaný závorkový polynom} $X_L(A)$ orientovaného linku $L$ definijeme $$X_L(A) = (-A^3)^{-w(D)}\langle D \rangle,$$ kde $D$ značí libovolný diagram linku $L$.
 \end{definice}
 
+\begin{pozn}
 Definice je korektní, neboť následující tvrzení ukazuje, že nezáleží na volbě diagramu.
+\end{pozn}
 
 \begin{tvrz}\label{t01:5}
 Normalizovaný závorkový polynom je linkový invariant.
 \end{tvrz}
 \begin{dukaz}
-Závorkový polynom i zakroucení jsou invariantní vůči Reidemeisterovým pohybům typu II a III, invariantní je tedy i jejich součin.
+Závorkový polynom i zakroucení jsou podle tvrzení~\ref{t01:3} a~lemmatu~\ref{l01:4} invariantní vůči Reidemeisterovým pohybům typu II a III, invariantní je tedy i jejich součin.
 
 Invariance vůči typu I plyne z lemmatu~\ref{l01:2} a faktu, že křížení~\plussmycka~je vždy kladné a křížení~\minussmycka~vždy záporné.
 \end{dukaz}
 
 \begin{tvrz}\label{t01:6}
-Při substituce proměnné $A = t^{-1/4}$ je normalizovaný závorkový polynom $X_L(A)$  roven Jonesovu polynomu $V_L(t)$.
+Při substituci proměnné $A = t^{-1/4}$ je normalizovaný závorkový polynom $X_L(A)$  roven Jonesovu polynomu $V_L(t)$.
 \end{tvrz}
 \begin{dukaz}
 Ověříme, že $X_L(t^{-1/4})$ splňuje podmínky v definici~\ref{def01:1}:
@@ -319,17 +321,17 @@ Ověříme, že $X_L(t^{-1/4})$ splňuje podmínky v definici~\ref{def01:1}:
 \item
 Normalizovaný závorkový polynom je podle předchozího tvrzení linkový invariant.
 \item
-Pro zamotání triviálního uzlu platí $w( \bigcirc) = 0$, tedy $$X_\circlearrowleft = (-A^3)^{w( \bigcirc)} \langle \bigcirc  \rangle = 1.$$ 
+Pro zamotání triviálního uzlu platí $w( \pmb{\bigcirc}) = 0$, tedy $$X_{\pmb{\circlearrowleft}} = (-A^3)^{w( \pmb{\bigcirc})} \langle \pmb{\bigcirc} \rangle = 1.$$ 
 \item
-Dokážeme ekvivalentní tvrzení, že $X_L(A)$ splňuje skein vztah~\ref{skein} při substituci $t=A^{-4}$. Buď $L_+$, $ L_-$ a $L_0$ diagramy, pak platí
+Dokážeme ekvivalentní tvrzení, že $X_L(A)$ splňuje skein vztah~\ref{skein} při substituci $t=A^{-4}$. \\ Buď $L_+$, $ L_-$ a $L_0$ diagramy, pak platí
 \begin{equation*}
 \begin{split}
-X_{L_+}(A) & = (-A^{-3})^{-w(L_+)} \langle L_+ \rangle = -A^{-3} (-A^3)^{-w(L_0)}  \langle \minuskriz  \rangle \\ & = -A^{-3} (-A^3)^{-w(L_0)} (A \langle \horkriz \rangle + A^{-1}  \langle \vertkriz \rangle) 
+X_{L_+}(A) & = (-A^{-3})^{-w(L_+)} \langle L_+ \rangle = -A^{-3} (-A^3)^{-w(L_0)}  \langle \minuskriz  \rangle \\ & = -A^{-3} (-A^3)^{-w(L_0)} (A \langle \horkriz \rangle + A^{-1}  \langle \vertkriz \rangle)
 \end{split}
 \end{equation*}
 \begin{equation*}
 \begin{split}
-X_{L_-}(A) & = (-A^{3})^{-w(L_-)} \langle L_- \rangle = -A^{3} (-A^3)^{-w(L_0)}  \langle \pluskriz  \rangle \\ & = -A^{3} (-A^3)^{-w(L_0)} (A \langle \vertkriz \rangle + A^{-1}  \langle \horkriz \rangle) 
+X_{L_-}(A) & = (-A^{3})^{-w(L_-)} \langle L_- \rangle = -A^{3} (-A^3)^{-w(L_0)}  \langle \pluskriz  \rangle \\ & = -A^{3} (-A^3)^{-w(L_0)} (A \langle \vertkriz \rangle + A^{-1}  \langle \horkriz \rangle) .
 \end{split}
 \end{equation*}
 Levá strana vztahu~\ref{skein} se tedy při substituci $t=A^{-4}$ rovná

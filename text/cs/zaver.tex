@@ -1,4 +1,6 @@
 \chapter*{Závěr}
 \addcontentsline{toc}{chapter}{Závěr}
 
-TODO
+Hlavním cílem práce bylo odvodit a implementovat algoritmus na výpočet Jonesova polynomu. V první kapitole jsme dokázali souvislost mezi Jonesovým a závorkovým polynomem.  Na základě tohoto vztahu jsme v druhé kapitole odvodili algoritmus založený na rekurzivním rozpojování křížení a postupném rozpojování zadaného diagramu. Dokázali jsme, že vhodnou volbou křížení, které rozpojíme, získáme algoritmus s časovou složitostí $\mathcal{O}(2^0,832 n)$, kde $n$ značí počet křížení vstupního diagramu. Zároveň jsme nelezli typ diagramu, na němž algoritmus běží v čase $\Omega (2^0,75 n)$, a získali jsme tak dolní odhad složitosti algoritmu.
+
+V poslední části práce jsme shrnuli výsledky testování algoritmu na datech. Algoritmus jsme otestovali na tabulkových uzlech, torusových uzlech a různých větších náhodných lincích. Náhodné linky a uzly jsme vygenerovali pomocí převodu z rovinného grafu. U nejrychlejší varianty algoritmu  jsme na náhodných uzlech odhadli průměrnou časovou složitost výpočtu $\mathcal{O}(2^{0,468n})$. Taktéž jsme zjistili, že na jednoduchém typu torusových uzlů běží algoritmus v kvadratickém čase. Na složitějších torusových uzlech dosahuje algoritmus horších výsledků, průměrnou složitost výpočtu Jonesova polynomu torusových uzlů jsme odhadli $\mathcal{O}(2^{0,533n})$
