@@ -3,16 +3,18 @@
 \chapter{Definice a vlastnosti Jonesova polynomu}
 Cílem této kapitoly je definovat Jonesův polynom, dokázat jeho základní vlastnosti a popsat souvislost se závorkovým polynomem. Vycházíme z materiálů~\cite{cromwell2004knots, Adams2004, jones2005} a vypracování cvičení z těchto zdrojů.
 \section{Základní pojmy}
-Jonesův polynom je invariant nejen uzlů, ale také \emph{linků}, tedy více propletených uzlů. Pokud není řečeno jinak, pracujeme v textu s linky. \\
-Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho \emph{diagramem}. Diagram je vhodné rovinné nakreslení určité linkové projekce, v němž je rozlišeno, jestli křížení vedou \emph{svrchu}, nebo \emph{zdola}. Každý link má nekonečně mnoho diagramů.
+Matematický \emph{uzel} je vnoření kružnice do trojrozměrného euklidovského prostoru. Dva uzly jsou \emph{ekvivalentní}, pokud mezi nimi existuje homeomorfismus zachovávající orientaci. \emph{Invariant} je zobrazení, které ekvivalentním uzlům přiřadí stejnou hodnotu.
+\emph{Link} je více disjunktních či propletených uzlů. Pokud není řečeno jinak, pracujeme v textu s linky. 
+\\
+Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho \emph{diagramem}. Diagram je vhodné rovinné nakreslení určité linkové projekce, v němž je rozlišeno, jestli křížení vedou \emph{svrchu}, nebo \emph{zdola}.  \emph{Triviální uzel} je uzel, k němuž existuje diagram bez křížení.
 \\
 V diagramu \emph{orientovaného} linku rozlišujeme křížení s \emph{kladnou} a se \emph{zápornou orientací}, viz obrázek~\ref{orientace}.
 
-\begin{figure}[h]  
+\begin{figure}[h]    
 
 \centering 
 \begin{subfigure}[t]{0.4\linewidth}\centering
-\begin{tikzpicture}[scale=2] 
+\begin{tikzpicture}[scale=1.6] 
 \draw [thick] (0,0) -- (0.33,0.33);
 \draw [thick,->] (0.66,0.66)-- (1,1);
 \draw [thick,->] (0,1)  -- (1,0);
@@ -20,24 +22,26 @@ V diagramu \emph{orientovaného} linku rozlišujeme křížení s \emph{kladnou}
 \caption{Kladná orientace.} 
 \end{subfigure}
 \begin{subfigure}[t]{0.4\linewidth}\centering
-\begin{tikzpicture}[scale=2]
+\begin{tikzpicture}[scale=1.6]
 \draw [thick,->] (0,0) -- (1,1);
 \draw [thick] (0,1) -- (0.33, 0.66);
 \draw [thick,->] (0.66, 0.33) -- (1,0);
 \end{tikzpicture}  
 \caption{Záporná orientace.}
 \end{subfigure}
-\caption{Orientace křížení.} \label{orientace}
+
+\caption{Orientace křížení.}
+\label{orientace}
 \end{figure}  
 
 
 Pro popis polynomů na uzlech a lincích se často používají \emph{skein vztahy} \footnote{česky přadenové vztahy}.
-Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_-$ a $L_0$, jejichž diagramy jsou identické až na oblast jednoho křížení. V linku $L_+$ má toto křížení kladnou orientaci, v $L_-$ zápornou a v $L_0$ je křížení rozpojené, viz obrázek~\ref{skein}.
+Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_-$ a $L_0$, jejichž diagramy jsou identické až na oblast jednoho křížení. V linku $L_+$ má toto křížení kladnou orientaci, v $L_-$ zápornou a v $L_0$ je křížení rozpojené, viz obrázek~\ref{skeinobr}.
 
-\begin{figure}[h]  
+\begin{figure}[h]    
 \centering 
 \begin{subfigure}[t]{0.4\linewidth}\centering
-\begin{tikzpicture}[scale=2] 
+\begin{tikzpicture}[scale=1.6] 
 \draw [thick] (0,0) -- (0.33,0.33);
 \draw [thick,->] (0.66,0.66)-- (1,1);
 \draw [thick,->] (0,1)  -- (1,0);
@@ -45,7 +49,7 @@ Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_
 \caption{$L_+$} 
 \end{subfigure}
 \begin{subfigure}[t]{0.4\linewidth}\centering
-\begin{tikzpicture}[scale=2]
+\begin{tikzpicture}[scale=1.6]
 \draw [thick,->] (0,0) -- (1,1);
 \draw [thick] (0,1) -- (0.33, 0.66);
 \draw [thick,->] (0.66, 0.33) -- (1,0);
@@ -53,13 +57,14 @@ Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_
 \caption{$L_-$}
 \end{subfigure}
 \begin{subfigure}[t]{0.4\linewidth}\centering
-\begin{tikzpicture} [scale=2]
+\begin{tikzpicture} [scale=1.6]
 \draw  [thick,->](0,0) .. controls (1/2,1/2)  .. (1,0);
 \draw  [thick,->](0,1) .. controls (1/2,1/2)  .. (1,1);
 \end{tikzpicture}
 \caption{$L_0$}
 \end{subfigure}
-\caption{Diagramy skein vztahu.} \label{skein}
+\caption{Diagramy skein vztahu.}
+\label{skeinobr}
 \end{figure}
 
 \section{Definice Jonesova polynomu}
@@ -114,7 +119,7 @@ Pro $k > 2$ jsou $L_-$ a $L_+ $ diagramy linků s $k-1$ kružnicemi. Z indukčn�
 \end{dukaz}  
 
 \begin{pozn}
-Z každého uzlového diagramu lze změnou několika křížení vedených shora na křížení vedených zdola získat diagram triviálního uzlu. Z každého diagramu linku tedy můžeme změnou křížení získat diagram sjednocení triviálních uzlů, jejichž Jonesův polynom je podle předchozího lemmatu známý. Jonesův polynom každého linku lze tedy pomocí skein vztahu rekurzivně spočítat z jeho libovolného diagramu. Z toho plyno korektnost a jednoznačnost definice.
+Z každého uzlového diagramu lze změnou několika křížení vedených shora na křížení vedených zdola získat diagram triviálního uzlu~\cite{Adams2004}. Z každého diagramu linku tedy můžeme změnou křížení získat diagram sjednocení triviálních uzlů, jejichž Jonesův polynom je podle předchozího lemmatu známý. Jonesův polynom každého linku lze tedy pomocí skein vztahu rekurzivně spočítat z jeho libovolného diagramu. Z toho plyno korektnost a jednoznačnost definice.
 \end{pozn}
 
 
@@ -136,7 +141,8 @@ $ \left\langle  \pluskriz
  \right\rangle + A^{-1}  \left\langle
 %hor 
 \horkriz
-\right\rangle $, kde~~\pluskriz~značí~~diagram obsahující toto křížení,~~\vertkriz~~je diagram, který je s ním shodný až na dané křížení, které je zde \emph{vertikální rozpojeno} a~~\horkriz~~je diagram, v němž je křížení \emph{rozpojeno horizontálně},
+\right\rangle $, kde
+\begin{itemize} \item ~~\pluskriz~značí~~diagram obsahující toto křížení, \item ~~\vertkriz~~je diagram, který je s ním shodný až na dané křížení, které je zde \emph{vertikální rozpojeno}, \item ~~\horkriz~~je diagram, v němž je křížení \emph{rozpojeno horizontálně}, \end{itemize}
 \item
 $ \left\langle D \cup \pmb{\bigcirc} \right\rangle = \left(-A^2 - A^{-2}\right) \left\langle D \right\rangle$, kde $D \cup \pmb{\bigcirc} $ značí sjednocení diagramu $D$ a~diagramu s jednou komponentou bez křížení.
 \end{enumerate}
@@ -144,13 +150,13 @@ $ \left\langle D \cup \pmb{\bigcirc} \right\rangle = \left(-A^2 - A^{-2}\right) 
 
 \begin{pozn}
 Pokud vztah v bodě \emph{2.} předchozí definice otočíme o 90°, získáme vztah
-$ \left\langle
+$$ \left\langle
 \minuskriz
 \right\rangle = A  \left\langle
 \horkriz
 \right\rangle+ A^{-1} \left\langle
 \vertkriz
-\right\rangle $.
+\right\rangle. $$
 \end{pozn}
 
 \begin{lemma}\label{l01:2}
@@ -181,7 +187,7 @@ Použitím odvozovacích pravidel dokážeme první bod.
 Druhý bod se dokáže analogicky.
 \end{dukaz}
 
-Dva diagramy znázorňují stejný link (jsou ekvivalentní), pokud mezi nimi existuje série Reidemeisterových pohybů, viz obrázek~\ref{reid}. Z lemmatu ~\ref{l01:2} plyne, že závorkový polynom není invariantní vůči Reidemeisterovu pohybu typu I. Ukážeme, že je invariantní Reidemeisterovým pohybům typu~II a typu~III.
+Dva diagramy znázorňují ekvivalentní linky, pokud lze jeden získat z druhého sérií Reidemeisterových pohybů~\cite{Adams2004}, viz obrázek~\ref{reid}. Z lemmatu ~\ref{l01:2} plyne, že závorkový polynom není invariantní vůči Reidemeisterovu pohybu typu I. Ukážeme, že je invariantní vůči Reidemeisterovým pohybům typu~II a typu~III.
 
 \begin{figure}[h]
 \centering 
@@ -270,17 +276,17 @@ Invariance vůči pohybu typu III plyne z invariance vůči pohybu typu~II.
 \end{equation*}
 \end{dukaz}
 
-Aby byl závorkový polynom invariantní i vůči Reidemeisterovu pohybu typu~I, je nutné vynásobit jej výrazem, který vyjadřuje míru zakroucení.
+Aby byl závorkový polynom invariantní také vůči Reidemeisterovu pohybu typu~I, je nutné vynásobit jej výrazem, který vyjadřuje míru zakroucení.
 
 \begin{definice}\label{def01:3}
-\emph{Zakroucení} (writhe) orientovaného diagramu $D$ je součet znamení orientací všech křížení v $D$. Zakroucení značíme $w(D)$.
+Buď $D$ orientovaný diagram. \emph{Zakroucení} (writhe) $w(D) \in \Z$ je součet znamení orientací všech křížení v $D$.
 \end{definice}
 
 \begin{lemma}\label{l01:4}
 Zakroucení je invariantní vůči Reidemeisterovým pohybům typu~II a~typu~III.
 \end{lemma}
 \begin{dukaz}
-Důkaz se provede rozborem případů možných orientací křížení, která byla změněna daným Reidemeisterovým pohybem.
+Uvažujme ta dvě křížení, která jsou v diagramu odstraněna nebo vzniknou pohybem typu~II či pohybem typu~III. Jedno křížení musí vždy být kladné a druhé záporné orientace. Jejich odstranění tedy neovlivní hodnotu zamotání.
 \end{dukaz}
 
 \begin{definice}\label{def01:4}
