@@ -2,5 +2,5 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Odhady koeficientu $k$ pr\IeC {\r u}m\IeC {\v e}rn\IeC {\'e} \IeC {\v c}asov\IeC {\'e} slo\IeC {\v z}itosti $\mathcal {O}\left (2^{kn + o(n)}\right )$ jednotliv\IeC {\'y}ch algoritm\IeC {\r u} podle druhu dat.\relax }}{21}{table.caption.26}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Odhady koeficientu $k$ pr\IeC {\r u}m\IeC {\v e}rn\IeC {\'e} \IeC {\v c}asov\IeC {\'e} slo\IeC {\v z}itosti $\mathcal {O}\left (2^{kn} + o(n)\right )$ jednotliv\IeC {\'y}ch algoritm\IeC {\r u} na typu torusov\IeC {\'y}ch uzl\IeC {\r u} ($p$, $q\not =2$) .\relax }}{24}{table.caption.31}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Odhady koeficientu $k$ pr\IeC {\r u}m\IeC {\v e}rn\IeC {\'e} \IeC {\v c}asov\IeC {\'e} slo\IeC {\v z}itosti $\mathcal {O}\left (2^{kn + o(n)}\right )$ jednotliv\IeC {\'y}ch algoritm\IeC {\r u} podle druhu dat.\relax }}{23}{table.caption.26}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Odhady koeficientu $k$ pr\IeC {\r u}m\IeC {\v e}rn\IeC {\'e} \IeC {\v c}asov\IeC {\'e} slo\IeC {\v z}itosti $\mathcal {O}\left (2^{kn} + o(n)\right )$ jednotliv\IeC {\'y}ch algoritm\IeC {\r u} na typu torusov\IeC {\'y}ch uzl\IeC {\r u} ($p$, $q\not =2$) .\relax }}{26}{table.caption.31}

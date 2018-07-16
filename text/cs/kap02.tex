@@ -16,7 +16,7 @@ Náš algoritmus na výpočet Jonesova polynomu předpokládá na vstupu diagram
 
 \subsection{PD notace} 
 
-PD \footnote{planar diagram} notace je zápis sestávajací z $n$  čtveřic čísel, pro každé křížení jedno. Notace jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od~$1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje zdola, a pokračuje se s úseky navazujícími proti směru hodinových ručiček, viz obrázek~\ref{pd}.
+PD\footnote{planar diagram} notace je zápis sestávajací z $n$  čtveřic čísel, pro každé křížení jedno. Notace jednoznačně popisuje daný diagram. Zápis diagramu v PD notaci se získá následovně: úseky mezi kříženími se očíslují po směru orientace linku čísly od~$1$ do $2 n$. Každé křížení se označí čtyřmi přilehlými úseky, přičemž se začne úsekem, který do křížení vstupuje zdola, a pokračuje se s úseky navazujícími proti směru hodinových ručiček, viz obrázek~\ref{pd}.
 
 \begin{figure}[h]
 \centering 
@@ -174,7 +174,7 @@ Reidemeisterovým pohybem typu II se zbavíme dvou křížení a závorkový pol
 \SetKwData{D}{D}
 \SetKwData{e}{e}
 \SetKwFunction{Bracket}{Bracket}%
-\SetKwData{bracketPoly}{zavorkPoly}
+\SetKwData{bracketPoly}{zavorkovýPoly}
 
 \SetKwProg{Fn}{Function}{}{end}
 
@@ -317,7 +317,7 @@ Ve stěně typu B získáme vertikálním rozpojením křížení $b_1$ syna, je
 
 Ve stěně typu C není rozpojením žádného křížení rozmotání zaručeno. Ovšem rozpojením libovolného křížení získáme jednoho syna se stěnou typu A. Existuje tedy vnuk s nejvýše $n-3$ kříženími.
 
-Tímto jsme dokázali lemma~\ref{volbalemma}.
+Tímto jsme dokázali lemma~\ref{volbalemma}.varianta
 
 \subsection{Výsledný algoritmus pro výpočet závorkového polynomu} \label{varianty}
 Snažíme se zajistit možnost rozmotání u synů, budeme tedy při rozpojování preferovat křížení stěn A a B před stěnou C. Dále rozlišíme dvě varianty výsledného algoritmu: \emph{algoritmus A} navíc preferuje křížení $a_i$ před $b_1$,  \emph{algoritmus B} preferuje $b_1$ před $a_i$. Celý postup je shrnut v algoritmu~\ref{alg02:04}.
@@ -402,7 +402,7 @@ Práce s diagramem v PD notaci s využitím vhodných datových struktur je sice
 \section{Analýza složitosti algoritmu}  \label{analyza}
 V teto sekci získáme horní a dolní odhad časové složitosti algoritmu na výpočet závorkového a Jonesova polynomu. V následující analýze nezáleží, jestli se jedná o variantu A, nebo B.
 
-Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotávání. Například na diagramu, který je možné rozmotat absolutně, poběží nejhůř v kvadratickém čase vzhledem k $n$. V kvadratickém čase také algoritmus běží na typu torusových uzlů, viz sekce~\ref{torus}).
+Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotávání. Například na diagramu, který je možné rozmotat absolutně, poběží nejhůř v kvadratickém čase vzhledem k $n$. V kvadratickém čase také algoritmus běží na jistém typu torusových uzlů, viz sekce~\ref{torus}.
 
 \subsection{Horní odhad}
 
