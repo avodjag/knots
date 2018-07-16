@@ -422,17 +422,44 @@ V lichých hladinách stromu má tedy vrchol syny o jedno křížení menší, v
 \end{forest}
 
 Získali jsme následující rekurentní rovnici na počet operací výpočtu závorkového polynomu diagramu velikosti $n$.
-
-$$T(n) = 2 T(n-2) + 2 T(n-3) + c_l n + 2 c_l (n-1)$$
+\begin{equation} \label{rek1}
+T(n) = 2 T(n-2) + 2 T(n-3) + c_l n + 2 c_l (n-1)
+\end{equation}
 
 Člen $c_l n + 2 c_l (n-1)$, kde $c_l$ je konstanta, vyjadřuje, že na rozdělení každého diagramu na syny (rozmotání a volba křížení) je potřeba lineární počet operací vzhledem k počtu křížení.
 
-Rekurenci je možné řešit pomocí vytvořujících funkcí a rozkladu na parciální zlomky. Výpočtem získáme vzorec
-$$ T(n) \approx c_1 2^{0,823 n } + c_2 n 2^{0,088 n } + c_3 2^{0,088 n } + c_4 n + c_5 ,  $$
+Rovnici vyřešíme podle postupu uvedeného v~\cite{kapitoly}. Nejprve nalezneme vytvořující funkci $F(x)$ posloupnosti $\displaystyle (T_n)_0^\infty$, tedy funkci, pro kterou platí
+$$ F(x) = \sum_{n=0}^{\infty} T(n)x^n.$$
+V našem případě dostaneme z rekurentního vztahu~\ref{rek1} rovnici
+\begin{equation*}
+F(x) - x^2 -x -1 = 2 x^2 F(x) + 2 x^3 F(x) - \frac{x^3(4x-7)}{(x-1)^2}
+\end{equation*}
+a jejím vyřešením
+\begin{equation*}
+F(x) = \frac{-1+x+2x^2-10x^3+5x^4}{{(1-x)}^2(-1+2x^2+2 x^3)}.
+\end{equation*}
+Označme $r_1, r_2, \bar{r_2}$ kořeny polynomu $-1+2x^2+2 x^3$. Rozklad funkce $F(x)$ na parciální zlomky je
+\begin{equation*}
+F(x) = \frac{a_1 x}{1 - \frac{1}{r_1} x} + \frac{a_2 x + b_2}{\left(1-\frac{1}{ |r_2|} x \right) ^2} + \frac{a_3 x + b_3}{\left( 1-x \right) ^2}
+\end{equation*}
+pro jisté konstanty $a_i$, $b_i$.\\
+Platí
+\begin{align*}
+\frac{1}{r_1} &= \frac{6}{-2+\left( {46-6\sqrt{57}} \right)^{1/3} + \left( {46-6\sqrt{57}}\right)^{1/3}} \approx 2^{0,823} \\
+\frac{1}{ |r_2|} & \approx 2^{0,088  }.
+\end{align*}
+Vzorec pro $T_n$ získáme rozvinutím $F(x)$ do mocninné řady. To provedeme využitím známých vztahů
+\begin{align*}
+\frac{1}{1-x} &= \sum_{n=0}^{\infty} x^n \\
+\frac{1}{ (1-x)^2}  &= \sum_{n=0}^{\infty}(n+1) x^n
+\end{align*}
+a získáme výsledný vzorec
+\begin{equation} \label{odhadnum}
+T(n) \approx c_1 2^{0,823 n } + c_2 n 2^{0,088 n } + c_3 2^{0,088 n } + c_4 n + c_5 
+\end{equation} 
+kde $c_i$ jsou jisté konstanty. \\
 
-kde $c_i$ jsou jisté konstanty.
-
-Ze vzorce plyne $$ T(n)= \mathcal{O}( 2^{0,823 n }).$$
+Ze vzorce~\ref{odhadnum} plyne $$ T(n)= \mathcal{O}( 2^{0,823 n }).$$
 
 Podle sekce~\ref{jones} je na výpočet Jonesova polynomu ze závorkového polynomu potřeba pouze lineární počet operací. Dohromady má tedy výpočet Jonesova polynomu časovou složitost $\mathcal{O}( 2^{0,823 n })$.
 \end{dukaz}
@@ -484,15 +511,17 @@ Provedeme analýzu průběhu algoritmu~\ref{alg02:04} na linku s diagramem, kter
 
 Diagram $B_k$ má $4k-6$ křížení, můžeme tedy tímto způsobem získat diagram s počtem křížení větším než libovolné $n$. Každá stěna diagramu $B_k$ je typu C.
 
-\begin{figure}[p] \centering
-\includegraphics[scale=0.45]{../img/horniodhad}
-\caption{Průběh algoritmu na diagramu $B_k$.} \label{prubehhorni}
-\end{figure}
 
 Na obrázku~\ref{prubehhorni} je znázorněn strom s průběhem algoritmu na diagramu $B_k$ takový, že jsou postupně odstraňovány krajní kružnice. V kořeni se nachází úsek diagramu obsahující nějakou krajní kružnici. Zakroužkováním je označeno křížení, které bylo vybráno k rozpojení (volba křížení odpovídá variantám A i B). Šipkou je znázorněno, pokud dojde k rozmotání diagramu. Žlutě podtržení potomci jsou diagramy $B_{k-1}$. Červeně a zeleně podržení potomci jsou synové diagramu $B_{k-1}$, jak je vidět na obrázku~\ref{rozdvojeni}.
 
-\begin{figure}[p] \centering
-\includegraphics[scale=0.3]{../img/rozdvojeni}
+
+\begin{figure}[h] \centering
+\includegraphics[scale=0.43]{../img/horniodhad}
+\caption{Průběh algoritmu na diagramu $B_k$.} \label{prubehhorni}
+\end{figure}
+
+\begin{figure}[h] \centering
+\includegraphics[scale=0.28]{../img/rozdvojeni}
 \caption{Synové diagramu $B_{k-1}$.}  \label{rozdvojeni}
 \end{figure}
 
@@ -500,9 +529,7 @@ Dohromady tedy z diagramu $B_k$ rozpojováním vznikne šest diagramů $B_{k-1}$
 
 Počet operací výpočtu závorkového polynomu diagramu s $n$ kříženími tedy splňuje pro jisté kladné konstanty $c_0$, $c_1$ rekurenci
 $$ T(n) = 8T(n-4) + c_1 n + c_0 \geq 8T(n-4). $$
-
-
 Z toho plyne, že $T(n) = \Omega(8^{\frac{n}{4}})  =  \Omega(2^{0,75 n})$. \\
 
-Na výpočet Jonesova polynomu ze závorkového polynomu je potřeba pouze lineární počet operací, tedy i výpočet Jonesova polynomu má časovou složitost $\Omega(2^{0,75n})$.
+Na výpočet Jonesova polynomu ze závorkového polynomu je potřeba lineární počet operací, tedy i výpočet Jonesova polynomu má časovou složitost $\Omega(2^{0,75n})$.
 \end{dukaz}
