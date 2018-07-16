@@ -217,7 +217,7 @@ Rozmotávání běží v lineárním čase vzhledem k $n$, celková časová slo
 \subsection{Vhodná volba křížení} \label{volba}
 Křížení k rozpojení jsme volili náhodně, algoritmus se pokusíme zlepšit vhodnou volbou křížení, aby bylo diagram možné průběžně rozmotávat.
 V této sekci dokážeme následující lemma.
-\begin{lemma}
+\begin{lemma} \label{volbalemma}
 Ke vzniku diagramu, který lze rozmotat, stačí vždy rozpojit nejvýše dvě křížení.
 \end{lemma}
 Algoritmus bude volit právě ta křížení, jejichž rozpojení u synů (nebo vnuků) zajistí možnost rozmotání.
@@ -239,6 +239,14 @@ Každá hrana diagramu náleží dvěma stěnám, rozdělujeme tedy $4n$ hran me
 \end{dukaz} 
 
 \subsubsection{Typy stěn} \label{steny}
+
+
+
+Popíšeme, jak mohou v rozmotaném diagramu vypadat stěny ohraničené méně než čtyřmi hranami
+
+Stěna s jednou hranou by v diagramu odpovídala smyčce, ty jsou už odstraněny rozmotáním.
+
+Možné stěny s dvěma a třemi hranami jsou zobrazené na obrázku~\ref{stenyobr}.
 
 \begin{figure}[h]
 \centering 
@@ -301,13 +309,7 @@ Každá hrana diagramu náleží dvěma stěnám, rozdělujeme tedy $4n$ hran me
 \caption{Typy stěn ohraničených třemi a méně hranami.} \label{stenyobr}
 \end{figure}
 
-Popíšeme, jak mohou v rozmotaném diagramu vypadat stěny ohraničené méně než čtyřmi hranami
-
-Stěna s jednou hranou by v diagramu odpovídala smyčce, ty jsou už odstraněny rozmotáním.
-
-Možné stěny s dvěma a třemi hranami jsou zobrazené na obrázku~\ref{stenyobr}.
-
-Stěna se dvěma hranami, která není rozmotatelná druhým Reidemeisterovým pohybem, musí v diagramu odpovídat typu A. Všimněme si, že rozpojením křížení $a_1$ i $a_2$ buď ve vertikálním, nebo horizontálním směru vznikne smyčka. Volbou křížení $a_1$ nebo $a_2$ je tedy zaručeno, že jeden syn má po rozmotání nejvýše $n-2$ křížení.
+Stěna se dvěma hranami, kterou není možné rozmotat druhým Reidemeisterovým pohybem, musí v diagramu odpovídat typu A. Všimněme si, že rozpojením křížení $a_1$ i $a_2$ buď ve vertikálním, nebo horizontálním směru vznikne smyčka. Volbou křížení $a_1$ nebo $a_2$ je tedy zaručeno, že jeden syn má po rozmotání nejvýše $n-2$ křížení.
 
 Stěna se třemi hranami v diagramu odpovídá buď typu B, nebo C.
 
@@ -315,8 +317,10 @@ Ve stěně typu B získáme vertikálním rozpojením křížení $b_1$ syna, je
 
 Ve stěně typu C není rozpojením žádného křížení rozmotání zaručeno. Ovšem rozpojením libovolného křížení získáme jednoho syna se stěnou typu A. Existuje tedy vnuk s nejvýše $n-3$ kříženími.
 
+Tímto jsme dokázali lemma~\ref{volbalemma}.
+
 \subsection{Výsledný algoritmus pro výpočet závorkového polynomu} \label{varianty}
-Snažíme se maximalizovat rozmotání u synů, budeme tedy při rozpojování prefeferovat křížení stěn A a B před stěnou C. Dále rozlišíme dvě varianty výsledného algoritmu: \emph{algoritmus A} navíc preferuje křížení $a_i$ před $b_1$,  \emph{algoritmus B} preferuje $b_1$ před $a_i$. Celý postup je shrnut v algoritmu~\ref{alg02:04}.
+Snažíme se zajistit možnost rozmotání u synů, budeme tedy při rozpojování preferovat křížení stěn A a B před stěnou C. Dále rozlišíme dvě varianty výsledného algoritmu: \emph{varianta A} navíc preferuje křížení $a_i$ před $b_1$,  \emph{varianta B} preferuje $b_1$ před $a_i$. Celý postup je shrnut v algoritmu~\ref{alg02:04}.
 
 Původní algoritmus~\ref{alg02:03} s náhodnou volbou křížení a rozmotáváním budeme označovat \emph{algoritmus RND}.
 
@@ -350,11 +354,11 @@ Obě varianty výsledného algoritmu jsou podle úvah v předchozích částech 
 \SetKwProg{Fn}{Function}{}{end} 
 
 
-\Fn{\Bracket{$D$}}{
-\KwData{Diagram $D$ linku $L$ s $n$ kríženími}
+\Fn{\Bracket{\D}}{
+\KwData{Diagram \D linku $L$ s $n$ kríženími}
 \KwResult{Závorkový polynom v proměnné $A$}
 \BlankLine
-\If{diagram $D$ nemá žádná křížení}{\KwRet 1}
+\If{diagram \D nemá žádná křížení}{\KwRet 1}
 \BlankLine
 
 rozmotej diagram jako v algoritmu~\ref{alg02:03}
@@ -382,7 +386,7 @@ rozmotej diagram jako v algoritmu~\ref{alg02:03}
 \eIf{v linku \lh vznikla disjunktní kružnice} {\Hk $\leftarrow$ 1} {\Hk $\leftarrow$ 0}
 \eIf{v linku \lv vznikla disjunktní kružnice} {\Vk $\leftarrow$ 1} {\Vk $\leftarrow$ 0}
 \BlankLine
-\bracketPoly $\leftarrow$ $A(-A^2 - A^{-2})^{\Hk} $ \Bracket{\lh} \\  $ \hspace{2.75cm} +A^{-1}(-A^2 - A^{-2})^{\Vk} $ \Bracket{\lv}
+\bracketPoly $\leftarrow$ $A(-A^2 - A^{-2})^{\Hk} $ \Bracket{\lh} \\  $ \hspace{3.3cm} +A^{-1}(-A^2 - A^{-2})^{\Vk} $ \Bracket{\lv}
 \BlankLine
 \KwRet \bracketPoly
 }
@@ -393,47 +397,50 @@ rozmotej diagram jako v algoritmu~\ref{alg02:03}
 \subsection{Implementace algoritmu}
 Algoritmus jsme implementovali v programovacím jazyce Python. 
 
-Práce s diagramem v PD notací s využitím vhodných datových struktur je sice rychlá, ale náročná na rozbor všech možných případů. Ačkoli je tedy samotný algoritmus poměrně přímočarý, délka kódu narostla kvůli nutnosti rozlišení všech případů při rozpojování křížení, rozmotávání diagramu a hledání vhodného křížení.
+Práce s diagramem v PD notaci s využitím vhodných datových struktur je sice rychlá, ale náročná na rozbor všech možných případů. Ačkoli je tedy samotný algoritmus poměrně přímočarý, délka kódu narostla kvůli nutnosti rozlišení všech případů při rozpojování křížení, rozmotávání diagramu a hledání vhodného křížení.
 
 \section{Analýza složitosti algoritmu}  \label{analyza}
-V teto sekci vypočteme horní a dolní odhad algoritmu na výpočet závorkového a Jonesova polynomu. V následující analýze nezáleží, jestli se jedná o variantu A, nebo B.
+V teto sekci získáme horní a dolní odhad časové složitosti algoritmu na výpočet závorkového a Jonesova polynomu. V následující analýze nezáleží, jestli se jedná o variantu A, nebo B.
+
+Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotávání. Například na diagramu, který je možné rozmotat absolutně, poběží nejhůř v kvadratickém čase vzhledem k $n$. V kvadratickém čase také algoritmus běží na typu torusových uzlů, viz sekce~\ref{torus}).
+
 \subsection{Horní odhad}
-Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotávání. Například na diagramu, který je možné absolutně rozmotat použitím prvních dvou Reidemasterových pohybů, poběží nejhůř v kvadratickém čase (příkladem je typ torusových uzlů, viz sekce~\ref{torus}).
+
 
 \begin{tvrz}
-Výpočet Jonesova polynomu založený na algoritmu na výpočet závorkového polynomu~\ref{alg02:04} má časovou složitost  $\mathcal{O}( 2^{0.82 n })$.
+Výpočet Jonesova polynomu založený na algoritmu~\ref{alg02:04} na výpočet závorkového polynomu má časovou složitost  $\mathcal{O}( 2^{0,823 n })$.
 \end{tvrz}
 \begin{dukaz}
-Horní odhad rychlosti algoritmu~\ref{alg02:04} provedeme na příkladu diagramu, v němž dojde pouze k minimálnímu rozmotávání. Nedojde tedy k rozmotání jiných křížení než těch, u kterých je to zaručeno volbou křížení k rozpojení, viz rozbor v sekci~\ref{volba}.
-Také v případech, kdy není předchozí volbou křížení zaručena existence stěny typu A, bude existovat pouze stěna typu C, která zaručuje rozmotání pouze u vnuka.
+Horní odhad rychlosti algoritmu provedeme na příkladu diagramu, v~němž dojde pouze k minimálnímu rozmotávání. Nedojde tedy k rozmotání jiných křížení než těch, u kterých je to zaručeno volbou křížení k rozpojení, viz rozbor v~sekci~\ref{volba}.
+Také v případech, kdy není předchozí volbou křížení zaručena existence stěny typu A, bude existovat pouze stěna typu C, která zaručuje rozmotání pouze u vnuka. V tomto případě tedy nezáleží, jestli se jedná o variantu algoritmu A, nebo B.
 
-Průběh algoritmu zakreslíme jako binární strom, kde číslo ve vrcholu je počet křížení diagramu. V kořeni máme diagram s $n$ kříženími, v němž rozmotáme křížení stěny C, takže jeho synové jsou diagramy s $n-1$ kříženími a obsahují stěnu typu A. Jejich synové budou diagramy velikosti $n-2$ a $n-3$.
+Průběh algoritmu zakreslíme formou binárního stromu, kde číslo ve vrcholu značí počet křížení diagramu. V kořeni máme diagram s $n$ kříženími, v němž rozmotáme křížení stěny C, takže jeho synové jsou diagramy s $n-1$ kříženími a obsahují stěnu typu A. Jejich synové budou diagramy velikosti $n-2$ a $n-3$.
 V lichých hladinách stromu má tedy vrchol syny o jedno křížení menší, v sudých hladinách je jeden syn o dvě křížení menší.
 
 \begin{forest}
   [n[n-1[n-2[n-3[n-4[...][...]][n-5[...][...]]][n-3[...][...]]][n-3[n-4[n-5[...][...]][n-6[...][...]]][n-4[...][...]]]][n-1[n-2[...][...]][n-3[...][...]]]]
 \end{forest}
 
-Získali jsme rekurentní rovnici na počet operací výpočtu závorkového polynomu diagramu velikosti $n$
+Získali jsme následující rekurentní rovnici na počet operací výpočtu závorkového polynomu diagramu velikosti $n$.
 
-$$T(n) = 2 T(n-2) + 2 T(n-3) + C_L n + 2 C_L (n-1).$$
+$$T(n) = 2 T(n-2) + 2 T(n-3) + c_l n + 2 c_l (n-1)$$
 
-Člen $C_L n + 2 C_L (n-1)$, kde $C_L$ je konstanta, vyjadřuje, že na rozdělení každého diagramu na syny (rozmotání a volba křížení) je potřeba lineární počet operací vzhledem k počtu křížení.
+Člen $c_l n + 2 c_l (n-1)$, kde $c_l$ je konstanta, vyjadřuje, že na rozdělení každého diagramu na syny (rozmotání a volba křížení) je potřeba lineární počet operací vzhledem k počtu křížení.
 
 Rekurenci je možné řešit pomocí vytvořujících funkcí a rozkladu na parciální zlomky. Výpočtem získáme vzorec
-$$ T(n) \approx C_1 2^{0.823 n } + C_2 n 2^{0.088 n } + C_3 2^{0.088 n } + C_4 n + C_5 ,  $$
+$$ T(n) \approx c_1 2^{0,823 n } + c_2 n 2^{0,088 n } + c_3 2^{0,088 n } + c_4 n + c_5 ,  $$
 
-kde $C_i$ jsou jisté konstanty.
+kde $c_i$ jsou jisté konstanty.
 
-Z vzorce plyne, že $ T(n)= \mathcal{O}( 2^{0.82 n })  $.
+Ze vzorce plyne $$ T(n)= \mathcal{O}( 2^{0,823 n }).$$
 
-Podle sekce~\ref{jones} je na výpočet Jonesova polynomu ze závorkového polynomu potřeba pouze lineární počet operací. Dohromady má tedy náš výpočet Jonesova polynomu časovou složitost $\mathcal{O}( 2^{0.82 n })$.
+Podle sekce~\ref{jones} je na výpočet Jonesova polynomu ze závorkového polynomu potřeba pouze lineární počet operací. Dohromady má tedy výpočet Jonesova polynomu časovou složitost $\mathcal{O}( 2^{0,823 n })$.
 \end{dukaz}
 
 \subsection{Dolní odhad}
 
 \begin{tvrz} \label{dolni}
-Výpočet Jonesova polynomu založený na algoritmu na výpočet závorkového polynomu~\ref{alg02:04} má časovou složitost  $\Omega(2^{0.75 n})$.
+Výpočet Jonesova polynomu založený na algoritmu~\ref{alg02:04}  na výpočet závorkového polynomumá časovou složitost  $\Omega(2^{0,75 n})$.
 \end{tvrz}
 
 \begin{dukaz}
@@ -471,18 +478,18 @@ Provedeme analýzu průběhu algoritmu~\ref{alg02:04} na linku s diagramem, kter
 \end{tikzpicture}
 \caption{Přidání dvou kružnic}
 \end{subfigure}
-\caption{Vznik diagramu $L$ z důkazu tvrzení~\ref{dolni}.} \label{borro}
+\caption{Vznik diagramu $B_k$ z důkazu tvrzení~\ref{dolni}.} \label{borro}
 \end{figure}  
 
 
-Diagram $B_k$ má $4k-6$ křížení, můžeme tedy tímto způsobem získat diagram s počtem křížením větším než libovolné $n$. Každá stěna diagramu $B_k$ je typu C.
+Diagram $B_k$ má $4k-6$ křížení, můžeme tedy tímto způsobem získat diagram s počtem křížení větším než libovolné $n$. Každá stěna diagramu $B_k$ je typu C.
 
 \begin{figure}[p] \centering
 \includegraphics[scale=0.45]{../img/horniodhad}
 \caption{Průběh algoritmu na diagramu $B_k$.} \label{prubehhorni}
 \end{figure}
 
-Na obrázku~\ref{prubehhorni} je znázorněn strom s průběhem algoritmu na diagramu $B_k$ takový, že jsou postupně odstraňovány krajní kružnice. V kořeni se nachází úsek diagramu obsahující nějakou krajní kružnici. Zakroužkováním je označeno křížení, které bylo vybráno k rozpojení (volba křížení odpovídá variantám A i B a samozřejmě i RND). Šipkou je znázorněno, pokud dojde k rozmotání diagramu. Žlutě podtržení potomci jsou diagramy $B_{k-1}$. Červeně a zeleně podržení potomci jsou synové diagramu $B_{k-1}$, jak je vidět na obrázku~\ref{rozdvojeni}.
+Na obrázku~\ref{prubehhorni} je znázorněn strom s průběhem algoritmu na diagramu $B_k$ takový, že jsou postupně odstraňovány krajní kružnice. V kořeni se nachází úsek diagramu obsahující nějakou krajní kružnici. Zakroužkováním je označeno křížení, které bylo vybráno k rozpojení (volba křížení odpovídá variantám A i B). Šipkou je znázorněno, pokud dojde k rozmotání diagramu. Žlutě podtržení potomci jsou diagramy $B_{k-1}$. Červeně a zeleně podržení potomci jsou synové diagramu $B_{k-1}$, jak je vidět na obrázku~\ref{rozdvojeni}.
 
 \begin{figure}[p] \centering
 \includegraphics[scale=0.3]{../img/rozdvojeni}
@@ -491,11 +498,11 @@ Na obrázku~\ref{prubehhorni} je znázorněn strom s průběhem algoritmu na dia
 
 Dohromady tedy z diagramu $B_k$ rozpojováním vznikne šest diagramů $B_{k-1}$ a čtyři synové $B_{k-1}$. Výpočet závorkového polynomu diagramu $B_k$ je tedy těžký alespoň jako výpočet polynomu osmi diagramů $B_{k-1}$. 
 
-Časová složitost algoritmu na diagramu s $n$ kříženími splňuje rekurenci
-$$ T(n) = 8T(n-4) + C_1 n + C_0  $$
-pro jisté konstanty $C_0$, $C_1$.
+Počet operací výpočtu závorkového polynomu diagramu s $n$ kříženími tedy splňuje pro jisté kladné konstanty $c_0$, $c_1$ rekurenci
+$$ T(n) = 8T(n-4) + c_1 n + c_0 \geq 8T(n-4). $$
 
-Z toho plyne, že $T(n) = \Omega(8^{\frac{n}{4}})  =  \Omega(2^{0.75 n})$. \\
 
-Na výpočet Jonesova polynomu ze závorkového polynomu je potřeba pouze lineární počet operací, tedy i výpočet Jonesova polynomu má časovou složitost $\Omega(2^{0.75n})$.
+Z toho plyne, že $T(n) = \Omega(8^{\frac{n}{4}})  =  \Omega(2^{0,75 n})$. \\
+
+Na výpočet Jonesova polynomu ze závorkového polynomu je potřeba pouze lineární počet operací, tedy i výpočet Jonesova polynomu má časovou složitost $\Omega(2^{0,75n})$.
 \end{dukaz}
