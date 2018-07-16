@@ -259,13 +259,13 @@ Závorkový polynom je invariantní vůči Reidemeisterovým pohybům typu II a 
 Použitím odvozovacích pravidel dokážeme invarianci vůči pohybu typu~II.
 \begin{equation*}
 \begin{split}
-\left< \reiddva \right> & = A \left< \FO \right> - A^{-1} \left< \BO \right> \\ & = A \left( A \left< \DO \right> - A^{-1} \left< \EO \right> \right) \\ & - A^{-1} \left( A \left< \CO \right> - A^{-1} \left< \DO \right> \right) \\ & = \left< \CO \right> + \left( A^2 + A^{-2} \right) \left< \DO \right> + \left( -A^2 + -A^{-2} \right) \left< \DO \right>  \\ & = \left< \CO \right>
+\left< \reiddva \right> & = A \left< \FO \right> + A^{-1} \left< \BO \right> \\ & = A \left( A \left< \DO \right> + A^{-1} \left< \EO \right> \right) \\ & + A^{-1} \left( A \left< \CO \right> +  A^{-1} \left< \DO \right> \right) \\ & = \left< \CO \right> + \left( A^2 + A^{-2} \right) \left< \DO \right> + \left( -A^2 + -A^{-2} \right) \left< \DO \right>  \\ & = \left< \CO \right>
 \end{split}
 \end{equation*}
 Invariance vůči pohybu typu III plyne z invariance vůči pohybu typu~II.
 \begin{equation*}
 \begin{split}
-\left< \GO \right> & = A \left< \JO \right> - A^{-1} \left< \IO \right> \\ & = A \left< \JO \right> - A^{-1} \left< \KO \right>  \\ & = A \left< \JO \right> - A^{-1} \left< \LO \right> = \left< \HO \right>
+\left< \GO \right> & = A \left< \JO \right>+  A^{-1} \left< \IO \right> \\ & = A \left< \JO \right> + A^{-1} \left< \KO \right>  \\ & = A \left< \JO \right> + A^{-1} \left< \LO \right> = \left< \HO \right>
 \end{split}
 \end{equation*}
 \end{dukaz}
@@ -273,7 +273,7 @@ Invariance vůči pohybu typu III plyne z invariance vůči pohybu typu~II.
 Aby byl závorkový polynom invariantní i vůči Reidemeisterovu pohybu typu~I, je nutné vynásobit jej výrazem, který vyjadřuje míru zakroucení.
 
 \begin{definice}\label{def01:3}
-\emph{Zakroucení} (writhe) orientovaného diagramu $D$ je součet znamení všech křížení v $D$. Zakroucení značíme $w(D)$.
+\emph{Zakroucení} (writhe) orientovaného diagramu $D$ je součet znamení orientací všech křížení v $D$. Zakroucení značíme $w(D)$.
 \end{definice}
 
 \begin{lemma}\label{l01:4}
@@ -284,7 +284,7 @@ Důkaz se provede rozborem případů možných orientací křížení, která b
 \end{dukaz}
 
 \begin{definice}\label{def01:4}
-\emph{Normalizovaný závorkový polynom} $X_L(A)$ orientovaného linku $L$ definijeme $$X_L(A) = \left(-A^{-3}\right)^{-w\left(L_+\right)}\langle D \rangle,$$ kde $D$ značí libovolný diagram linku $L$.
+\emph{Normalizovaný závorkový polynom} $X_L(A)$ orientovaného linku $L$ definujeme $$X_L(A) = \left(-A^{-3}\right)^{-w\left(L_+\right)}\langle D \rangle,$$ kde $D$ značí libovolný diagram linku $L$.
 \end{definice}
 
 \begin{pozn}
@@ -312,15 +312,16 @@ Normalizovaný závorkový polynom je podle předchozího tvrzení linkový inva
 \item
 Pro zamotání triviálního uzlu platí $w\left( \pmb{\bigcirc}\right) = 0$, tedy $$X_{\pmb{\circlearrowleft}} = \left(-A^3\right)^{w( \pmb{\bigcirc})} \left\langle \pmb{\bigcirc} \right\rangle = 1.$$ 
 \item
-Dokážeme ekvivalentní tvrzení, že $X_L(A)$ splňuje skein vztah~\ref{skein} při substituci $t=A^{-4}$. \\ Buď $L_+$, $ L_-$ a $L_0$ diagramy, pak platí
+Dokážeme ekvivalentní tvrzení, že $X_L(A)$ splňuje skein vztah~\ref{skein} při substituci $t=A^{-4}$. \\ 
+Buď $L_+$, $ L_-$ a $L_0$ diagramy, pak platí $$\left(-A^{-3}\right)^{-w(L_{\pm})} = -A^{\mp 3} \left(-A^{-3}\right)^{-w(L_0)}$$ a dostáváme
 \begin{equation*}
 \begin{split}
-X_{L_+}(A) & = \left(-A^{-3}\right)^{-w(L_+)} \left\langle L_+  \right\rangle = -A^{-3} \left(-A^{-3}\right)^{-w(L_+)}  \left\langle \minuskriz   \right\rangle \\ & = -A^{-3} \left(-A^{-3}\right)^{-w(L_+)} \left(A \left\langle \horkriz  \right\rangle + A^{-1}  \left\langle \vertkriz  \right\rangle\right)
+X_{L_+}(A) & = \left(-A^{-3}\right)^{-w(L_+)} \left\langle L_+  \right\rangle = -A^{-3} \left(-A^{-3}\right)^{-w(L_0)}  \left\langle \minuskriz   \right\rangle \\ & = -A^{-3} \left(-A^{-3}\right)^{-w(L_0)} \left(A \left\langle \horkriz  \right\rangle + A^{-1}  \left\langle \vertkriz  \right\rangle\right)
 \end{split}
 \end{equation*}
 \begin{equation*}
 \begin{split}
-X_{L_-}\left(A\right) & =\left(-A^{-3}\right)^{-w(L_+)} \left\langle L_-  \right\rangle = -A^{3}\left(-A^{-3}\right)^{-w(L_+)} \left\langle \pluskriz   \right\rangle \\ & = -A^{3} \left(-A^{-3}\right)^{-w(L_+)} \left(A \left\langle \vertkriz  \right\rangle + A^{-1}  \left\langle \horkriz  \right\rangle\right) .
+X_{L_-}\left(A\right) & =\left(-A^{-3}\right)^{-w(L_-)} \left\langle L_-  \right\rangle = -A^{3}\left(-A^{-3}\right)^{-w(L_0)} \left\langle \pluskriz   \right\rangle \\ & = -A^{3} \left(-A^{-3}\right)^{-w(L_0)} \left(A \left\langle \vertkriz  \right\rangle + A^{-1}  \left\langle \horkriz  \right\rangle\right) .
 \end{split}
 \end{equation*}
 Levá strana vztahu~\ref{skein} se tedy při substituci $t=A^{-4}$ rovná

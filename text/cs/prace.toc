@@ -27,7 +27,7 @@
 \contentsline {subsubsection}{Generov\IeC {\'a}n\IeC {\'\i } n\IeC {\'a}hodn\IeC {\'y}ch rovinn\IeC {\'y}ch graf\IeC {\r u}}{19}{section*.20}
 \contentsline {subsubsection}{Implementace}{19}{section*.22}
 \contentsline {subsection}{\numberline {3.2.2}Test}{21}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Torusov\IeC {\'e} uzly}{23}{section.3.3}
+\contentsline {section}{\numberline {3.3}Torusov\IeC {\'e} uzly}{24}{section.3.3}
 \contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{27}{chapter*.32}
 \contentsline {chapter}{Seznam pou\IeC {\v z}it\IeC {\'e} literatury}{28}{chapter*.33}
 \contentsline {chapter}{Seznam obr\'azk\r {u}}{29}{chapter*.34}

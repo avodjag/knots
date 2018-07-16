@@ -56,7 +56,7 @@ K výpočtu Jonesova polynomu použijeme závorkový polynom. Podle tvrzení~\re
 
 \DontPrintSemicolon
 \SetKwData{D}{D}
-\KwData{Diagram \D linku $L$  s $n$ kríženími}
+\KwData{Diagram \D linku $L$  s $n$ kříženími}
 \KwResult{Jonesův polynom linku $L$ v proměnné $t$}
 \SetKwData{bracketPoly}{závorkovýPolynom($A$)}
 \SetKwData{writhe}{zamotání}
@@ -124,7 +124,7 @@ Algoritmus se vždy zastaví a má časovou složitost $\mathcal{O}(2^n)$. Stejn
 
 
 \Fn{\Bracket{\D}}{
-\KwData{Diagram \D linku $L$ s $n$ kríženími}
+\KwData{Diagram \D linku $L$ s $n$ kříženími}
 \KwResult{Závorkový polynom diagramu \D v proměnné $A$}
 \BlankLine
 \If{diagram $D$ nemá žádná křížení}{\KwRet 1}
@@ -355,7 +355,7 @@ Obě varianty výsledného algoritmu jsou podle úvah v předchozích částech 
 
 
 \Fn{\Bracket{\D}}{
-\KwData{Diagram \D linku $L$ s $n$ kríženími}
+\KwData{Diagram \D linku $L$ s $n$ kříženími}
 \KwResult{Závorkový polynom v proměnné $A$}
 \BlankLine
 \If{diagram \D nemá žádná křížení}{\KwRet 1}
@@ -408,7 +408,7 @@ Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotáv�
 
 
 \begin{tvrz}
-Výpočet Jonesova polynomu založený na algoritmu~\ref{alg02:04} na výpočet závorkového polynomu má časovou složitost  $\mathcal{O}( 2^{0,823 n })$.
+Výpočet Jonesova polynomu založený na algoritmu~\ref{alg02:04} na výpočet závorkového polynomu má v nejhorším případě časovou složitost  $\mathcal{O}( 2^{0,823 n })$.
 \end{tvrz}
 \begin{dukaz}
 Horní odhad rychlosti algoritmu provedeme na příkladu diagramu, v~němž dojde pouze k minimálnímu rozmotávání. Nedojde tedy k rozmotání jiných křížení než těch, u kterých je to zaručeno volbou křížení k rozpojení, viz rozbor v~sekci~\ref{volba}.
@@ -440,7 +440,7 @@ Podle sekce~\ref{jones} je na výpočet Jonesova polynomu ze závorkového polyn
 \subsection{Dolní odhad}
 
 \begin{tvrz} \label{dolni}
-Výpočet Jonesova polynomu založený na algoritmu~\ref{alg02:04}  na výpočet závorkového polynomumá časovou složitost  $\Omega(2^{0,75 n})$.
+Výpočet Jonesova polynomu založený na algoritmu~\ref{alg02:04}  na výpočet závorkového polynomu má v nejhorším případě časovou složitost  $\Omega(2^{0,75 n})$.
 \end{tvrz}
 
 \begin{dukaz}

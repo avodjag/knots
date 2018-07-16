@@ -3,24 +3,24 @@
 \chapter{Testování algoritmu na datech}
 
 V této části shrneme výsledky implementace výpočtu Jonesova polynomu na malých uzlech, náhodých uzlech a na speciálních typech uzlů.
-Budeme se zabývat algoritmy A, B, a RND, které byly popsány v sekci~\ref{varianty}.
+Budeme se zabývat algoritmy A, B a RND, které byly popsány v sekci~\ref{varianty}.
 
 \section{Malé tabulkové uzly}
 
 \begin{figure}[p]\centering
 \includegraphics{../img/multiTable}
-\caption{Graf dob běhu algoritmů na tabulkových uzlech do 12 křížení s vyznačenými průměry.}
+\caption{Graf dob běhu algoritmů na tabulkových uzlech do 12 křížení s~vyznačenými průměry.}
 \label{obr03:multiTable}
 \end{figure}
 
 Algoritmy jsme vyzkoušeli na všech uzlech, které mají projekci s maximálně dvanácti kříženími. PD notace uzlů byla získána z databáze KnotInfo~\cite{knotinfo}.
-U všech tří algoritmů byl už u malých uzlů znatelný exponenciální růst doby běhu, viz graf~\ref{obr03:multiTable}. 
+U~všech tří algoritmů byl už u malých uzlů znatelný exponenciální růst doby běhu, viz~graf~\ref{obr03:multiTable}. 
 
-Ze srovnání průměrných dob běhu plyne, že nejlepší čas dosahuje algoritmus A, těsně následuje algoritmus RND a nejpomalejší je algoritmus B, viz graf~\ref{obr03:srovTable}. 
+Ze srovnání průměrných dob běhu plyne, že nejlepšího času dosahuje algoritmus~A, těsně následuje algoritmus RND a nejpomalejší je algoritmus B, viz~graf~\ref{obr03:srovTable}. 
 	
 \begin{figure}[p]\centering
 \includegraphics{../img/srovTable}
-\caption{Graf průměrných časů algoritmů na tabulkových uzlech do 12 křížení.}
+\caption{Graf průměrných dob běhu algoritmů na tabulkových uzlech do 12~křížení.}
 \label{obr03:srovTable}
 \end{figure}
 
@@ -89,14 +89,14 @@ Získali jsme tak rovinný graf s původními body jako vrcholy. Pokud je počet
 
 Triangulace bodů je snadno implementovatelný geometrický problém. 
 
-Se získaným rovinným grafem pracujeme jako s množinou vrcholů a k nim příslušným hranám. Hrany jsou seřazeny podle pořadí, jak k danému vrcholu v nakreslení grafu přiléhají. Z této struktury je již možné získat PD notaci příslušného linku.
+Se získaným rovinným grafem pracujeme jako s množinou vrcholů a k nim příslušným hranám. Hrany jsou seřazeny podle pořadí, jak k danému vrcholu v~nakreslení grafu přiléhají. Z této struktury je již možné získat PD notaci příslušného linku.
 
 
 V PD notaci lze procházkou po vláknu snadno poznat, jestli je vygenerovaný link uzlem. Také jsme jednoduchou operací schopni uzel změnit na alternující, tedy takový, v němž se střídají křížení vedená zdola a svrchu.
 
-Jsme tedy schopni nagenerovat uzly, alternující uzly a linky libovolné velikosti.
+Dokážeme tedy nagenerovat uzly, alternující uzly a linky libovolné velikosti.
 
-Takto generované uzly jsou také poměrně \uv{zamotané}, tedy první rozmotávací krok algoritmu neodstraní příliš mnoho křížení.
+Takto generované uzly jsou většinou buď rozmotané, nebo lze rozmotáním odstranit pouze několik křížení.
 
 \subsection{Test}
 
@@ -112,21 +112,12 @@ Takto generované uzly jsou také poměrně \uv{zamotané}, tedy první rozmotá
 \label{obr03:altSrov}
 \end{figure}
 
-\begin{figure}[p]\centering
+\begin{figure}[t]\centering
 \includegraphics{../img/linksFIT}
 \caption{Graf dob běhu algoritmů na náhodných lincích proložené křivkami, logaritmická škála.}
 \label{obr03:linkSrov}
 \end{figure}
 
-Rychlost algoritmů jsme otestovali na uzlech (graf~\ref{obr03:knotSrov}), alternujících uzlech (graf~\ref{obr03:altSrov}), a lincích (graf~\ref{obr03:linkSrov}), s počtem křížení $n \leq 46$. 
-
-Získaná data jsme použitím lineární regrese proložili exponenciálními křivkami tvaru $c 2^{kn}$, kde $c$ je určitá  konstanta a $k$ je hledaný parametr. Dostali jsme tedy odhad průměrné časové složitosti $\mathcal{O}(2^{kn})$, viz tabulka~\ref{datatab}.
-
-Podle výsledků Jonesův polynom nejrychleji počítá algoritmus A, který volí křížení ve stěně ohraničené dvěma hranami. Odhad jeho průměrné časové složitosti na uzlech a lincích je $\mathcal{O}(2^{0,49n})$, na alternujících uzlech $\mathcal{O}(2^{0.468 n})$. Volba tohoto křížení tedy v průměru vede k většímu rozmotávání než volba křížení ve stěně typu B nebo náhodná volba křížení. 
-
-Algoritmus B dosahuje různých výsledků v závislosti na druhu dat. Na lincích má podobnou průměrnou časovou složitost jako algoritmus A, ovšem na alternujících uzlech odhaduje jeho průměrnou složitost $\mathcal{O}(2^{0,519 n})$, což je ze všech variant nejvíce. Odpovídá to i výsledku testování na tabulkových uzlech, kde byl tento algoritmus také nejpomalejší, neboť v tabulce bývá uzel zaznamenán v alternujícím nakreslení, pokud takové nakreslení existuje. Ačkoli tedy algoritmus B zaručuje ze všech algoritmů u synů největší rozmotání, viz sekce~\ref{steny}, může na určitých datech běžet nejpomaleji. Na obecných uzlech ovšem dostáváme podobný odhad průměrné složitosti jako u algoritmu A.
-
-Výsledky algoritmu RND se také liší podle druhu testovaných dat. Nejlépe se mu daří na alternujících uzlech, kde průměrnou složitost odhadujeme $\mathcal{O}(2^{0,509 n})$. Naopak nejpomalejší je na lincích s odhadem $\mathcal{O}(2^{0,555 n})$. Náhodná volba křížení pravděpodobně vede k rozpadání na disjuntkní uzly, což prodlužuje výpočet.
 
 \begin{table}[t]
 \centering
@@ -139,9 +130,26 @@ Výsledky algoritmu RND se také liší podle druhu testovaných dat. Nejlépe s
     Linky  & 0,486 &  $\pm$ 0,024 &   0,485 & $\pm$  0,032  &   0,555 & $\pm$ 0,024\\
     \bottomrule
   \end{tabular}
-    \caption{Odhady parametru $k$ průměrné časové složitosti $\mathcal{O}(2^{kn})$ jednotlivých algoritmů podle druhu dat.} \label{datatab}
+    \caption{Odhady koeficientu $k$ průměrné časové složitosti $\mathcal{O}\left(2^{kn + o(n)}\right)$ jednotlivých algoritmů podle druhu dat.} \label{datatab}
 
 \end{table} 
+
+Rychlost algoritmů jsme otestovali na uzlech (graf~\ref{obr03:knotSrov}), alternujících uzlech (graf~\ref{obr03:altSrov}) a lincích (graf~\ref{obr03:linkSrov}) s počtem křížení $n \leq 46$. 
+
+Pokusíme se u jednotlivých algoritmů v závisloti na druhu testovaných dat odhadnout průměrnou časovou složitost $T(n)$. Na základě odhadů složitosti dokázaných v sekci~\ref{analyza} budeme předpokládat, že $T(n) = \mathcal{O} \left(2^{kn + o(n)}\right)$ pro jistý koeficient $k$.
+
+Označme $t(n) = \log_2(T(n)) = \mathcal{O} \left(kn + o(n)\right) $. Sublineární členy nahradíme konstantou a odhad koeficientu $k$ získáme lineární regresí logaritmu naměřených dat, viz tabulka~\ref{datatab}.
+
+Podle výsledků Jonesův polynom nejrychleji počítá algoritmus A, který volí křížení ve stěně ohraničené dvěma hranami. Odhad jeho průměrné časové složitosti na uzlech a lincích je $\mathcal{O}\left(2^{0,49n+ o(n)}\right)$, na alternujících uzlech $\mathcal{O}\left(2^{0.468 n+ o(n)}\right)$. Volba tohoto křížení tedy v průměru vede k většímu rozmotávání než volba křížení ve stěně typu B nebo náhodná volba křížení. 
+
+Algoritmus B dosahuje různých výsledků v závislosti na druhu dat. Na lincích má podobnou průměrnou časovou složitost jako algoritmus A, ovšem na alternujících uzlech odhaduje jeho průměrnou složitost $\mathcal{O}\left(2^{0,519 n+ o(n)}\right)$, což je ze všech variant nejvíce. Odpovídá to i výsledku testování na tabulkových uzlech, kde byl tento algoritmus také nejpomalejší, neboť uzel bývá zaznamenán v alternujícím nakreslení, pokud takové nakreslení existuje. Ačkoli tedy algoritmus B zaručuje ze všech algoritmů u synů největší rozmotání, viz sekce~\ref{steny}, může na určitých datech běžet nejpomaleji. Na obecných uzlech ovšem dostáváme podobný odhad průměrné složitosti jako u algoritmu A.
+
+Také výsledky algoritmu RND se liší podle druhu testovaných dat. Nejlépe se mu daří na alternujících uzlech, u nichž průměrnou složitost odhadujeme $\mathcal{O}\left(2^{0,509 n+ o(n)}\right)$. Naopak nejpomalejší je na lincích s odhadem $\mathcal{O}\left(2^{0,555 n+ o(n)}\right)$. Náhodná volba křížení pravděpodobně vede k rozpadání na disjuntkní uzly, což prodlužuje výpočet.
+
+Odhad koeficientu $k$ se často pohybuje kolem hodnoty $k=0,5$. Složitost $\mathcal{O}\left(2^{0,5 n}\right)$ odpovídá průběhu algoritmu, v němž dojde u každého syna k rozmotání právě jednoho křížení. Platila by tedy rekurence
+$$T(n) = 2T(n-2).$$
+
+
 
 
 \section{Torusové uzly} \label{torus}
@@ -150,7 +158,7 @@ Výsledky algoritmu RND se také liší podle druhu testovaných dat. Nejlépe s
 
 Rychlost algoritmů jsme vyzkoušeli na 36 nejmenších torusových uzlech. Jejich PD notaci jsme získali z databáze Knot Atlas~\cite{knotatlas}.
 
-Na grafu dob běhu algoritmů lze rozlišit dva shluky bodů, viz graf~\ref{obr03:torusSrov}. Spodní shluk odpovídá torusovým uzlům ($2k+1$, 2), tedy těm, které se obmotají dvakrát podél osy rotace torusu a jejich diagram má tvar dvou zakroucených vláken s $2k+1$ kříženími.
+Na grafu dob běhu algoritmů lze rozlišit dva shluky bodů, viz graf~\ref{obr03:torusSrov}. Spodní shluk odpovídá torusovým uzlům ($2k+1$, 2), tedy těm, které se obmotají dvakrát podél osy rotace torusu a jejich diagram má tvar dvou zakroucených vláken s~$2k+1$ kříženími.
 
 \begin{figure}[H]\centering
 \begin{tikzpicture}[use Hobby shortcut, scale=0.75]
@@ -178,7 +186,7 @@ Na grafu dob běhu algoritmů lze rozlišit dva shluky bodů, viz graf~\ref{obr0
 \label{obr03:torus2}
 \end{figure}
 
-Všechny stěny těchto uzlů jsou ohraničené pouze dvěma hranami. Rozpojením libovolného křížení jedním směrem vznikne torusový link ($2k$, 2), druhým směrem triviální uzel, který lze rozmotat několika prvními Reidemeistrovými pohyby. Z linku zase rozpojením libovolného křížení vznikne uzel ($2k-1$, 2). Rozpojení a rozmotávání má lineární časovou složitost, celkově tedy všechny tři algoritmy spočítají Jonesův polynom tohoto typu torusových uzlů v kvadratickém čase, což lze pozorovat na grafu~\ref{obr03:torus2}.
+Všechny stěny těchto uzlů jsou ohraničené pouze dvěma hranami. Rozpojením libovolného křížení jedním směrem vznikne torusový link ($2k$, 2), druhým směrem triviální uzel, který lze rozmotat několika prvními Reidemeistrovými pohyby. Z~linku zase rozpojením libovolného křížení vznikne uzel ($2k-1$, 2). Rozpojení a rozmotávání má lineární časovou složitost, celkově tedy všechny tři algoritmy spočítají Jonesův polynom tohoto typu torusových uzlů v kvadratickém čase, což lze pozorovat na grafu~\ref{obr03:torus2}.
 
 \begin{figure}[p]\centering
 \includegraphics{../img/torusNe2FIT}
@@ -197,8 +205,8 @@ Na torusových uzlech tvaru ($p$, $q$), kde $q\neq 2$ již doba běhu algoritmu 
       & 0,533 & $\pm$ 0,032  &   0,638 & $\pm$ 0,048   &  0,572 & $\pm$ 0,035\\
     \bottomrule
   \end{tabular}
-    \caption{Odhady parametru $k$ průměrné časové složitosti $\mathcal{O}(2^{kn})$ jednotlivých algoritmů na typu torusových uzlech ($p$, $q\neq 2$) .} \label{torustab}
+    \caption{Odhady koeficientu $k$ průměrné časové složitosti $\mathcal{O}\left(2^{kn} + o(n)\right)$ jednotlivých algoritmů na typu torusových uzlů ($p$, $q\neq 2$) .} \label{torustab}
     
 \end{table}
 
-Všechny varianty algoritmů jsou na torusových uzlích pomalejší než na náhodných datech. Nejrychlejší je opět algoritmus A s průměrnou časovou složitostí $\mathcal{O}(2^{0,533 n})$. Naopak nejpomalejší je algoritmus B se složitostí $\mathcal{O}(2^{0,638 n})$, což je nejvyšší složitost, kterou jsme při testování získali.
+Všechny varianty algoritmů jsou na torusových uzlích pomalejší než na náhodných datech. Nejrychlejší je opět algoritmus A s průměrnou časovou složitostí $\mathcal{O}\left(2^{0,533 n + o(n)}\right)$. Naopak nejpomalejší je algoritmus B se složitostí $\mathcal{O}\left(2^{0,638 n + o(n)}\right)$, což je nejvyšší složitost, kterou jsme při testování získali.
