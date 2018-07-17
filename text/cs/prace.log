@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  17 JUL 2018 10:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  17 JUL 2018 14:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3579,7 +3579,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 464--466
 
 pdfTeX warning: pdflatex (file ../img/horniodhad.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.4> allowed
-<../img/horniodhad.pdf, id=395, 845.76376pt x 597.2503pt>
+<../img/horniodhad.pdf, id=397, 845.76376pt x 597.2503pt>
 File: ../img/horniodhad.pdf Graphic file (type pdf)
 <use ../img/horniodhad.pdf>
 Package pdftex.def Info: ../img/horniodhad.pdf  used on input line 519.
@@ -3588,7 +3588,7 @@ Package pdftex.def Info: ../img/horniodhad.pdf  used on input line 519.
 
 pdfTeX warning: pdflatex (file ../img/rozdvojeni.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.4> allowed
-<../img/rozdvojeni.pdf, id=396, 846.44331pt x 248.52548pt>
+<../img/rozdvojeni.pdf, id=398, 846.44331pt x 248.52548pt>
 File: ../img/rozdvojeni.pdf Graphic file (type pdf)
 <use ../img/rozdvojeni.pdf>
 Package pdftex.def Info: ../img/rozdvojeni.pdf  used on input line 524.
@@ -3612,7 +3612,7 @@ Kapitola 3.
 
 pdfTeX warning: pdflatex (file ../img/multiTable.pdf): PDF inclusion: found PDF
  version <1.5>, but at most version <1.4> allowed
-<../img/multiTable.pdf, id=410, 361.35pt x 252.945pt>
+<../img/multiTable.pdf, id=412, 361.35pt x 252.945pt>
 File: ../img/multiTable.pdf Graphic file (type pdf)
 <use ../img/multiTable.pdf>
 Package pdftex.def Info: ../img/multiTable.pdf  used on input line 11.
@@ -3621,7 +3621,7 @@ Package pdftex.def Info: ../img/multiTable.pdf  used on input line 11.
 
 pdfTeX warning: pdflatex (file ../img/srovTable.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<../img/srovTable.pdf, id=414, 361.35pt x 252.945pt>
+<../img/srovTable.pdf, id=416, 361.35pt x 252.945pt>
 File: ../img/srovTable.pdf Graphic file (type pdf)
 <use ../img/srovTable.pdf>
 Package pdftex.def Info: ../img/srovTable.pdf  used on input line 22.
@@ -3630,7 +3630,7 @@ Package pdftex.def Info: ../img/srovTable.pdf  used on input line 22.
 
 pdfTeX warning: pdflatex (file ../img/trianguzel.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.4> allowed
-<../img/trianguzel.pdf, id=419, 593.96906pt x 481.8pt>
+<../img/trianguzel.pdf, id=421, 593.96906pt x 481.8pt>
 File: ../img/trianguzel.pdf Graphic file (type pdf)
 <use ../img/trianguzel.pdf>
 Package pdftex.def Info: ../img/trianguzel.pdf  used on input line 78.
@@ -3646,7 +3646,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 pdfTeX warning: pdflatex (file ../img/knotsFIT.pdf): PDF inclusion: found PDF v
 ersion <1.5>, but at most version <1.4> allowed
-<../img/knotsFIT.pdf, id=445, 361.35pt x 252.945pt>
+<../img/knotsFIT.pdf, id=447, 361.35pt x 252.945pt>
 File: ../img/knotsFIT.pdf Graphic file (type pdf)
 <use ../img/knotsFIT.pdf>
 Package pdftex.def Info: ../img/knotsFIT.pdf  used on input line 104.
@@ -3655,7 +3655,7 @@ Package pdftex.def Info: ../img/knotsFIT.pdf  used on input line 104.
 
 pdfTeX warning: pdflatex (file ../img/alt_knotsFIT.pdf): PDF inclusion: found P
 DF version <1.5>, but at most version <1.4> allowed
-<../img/alt_knotsFIT.pdf, id=446, 361.35pt x 252.945pt>
+<../img/alt_knotsFIT.pdf, id=448, 361.35pt x 252.945pt>
 File: ../img/alt_knotsFIT.pdf Graphic file (type pdf)
 <use ../img/alt_knotsFIT.pdf>
 Package pdftex.def Info: ../img/alt_knotsFIT.pdf  used on input line 110.
@@ -3664,7 +3664,7 @@ Package pdftex.def Info: ../img/alt_knotsFIT.pdf  used on input line 110.
 
 pdfTeX warning: pdflatex (file ../img/linksFIT.pdf): PDF inclusion: found PDF v
 ersion <1.5>, but at most version <1.4> allowed
-<../img/linksFIT.pdf, id=447, 361.35pt x 252.945pt>
+<../img/linksFIT.pdf, id=449, 361.35pt x 252.945pt>
 File: ../img/linksFIT.pdf Graphic file (type pdf)
 <use ../img/linksFIT.pdf>
 Package pdftex.def Info: ../img/linksFIT.pdf  used on input line 116.
@@ -3674,7 +3674,7 @@ Package pdftex.def Info: ../img/linksFIT.pdf  used on input line 116.
 
 pdfTeX warning: pdflatex (file ../img/torusSrov.pdf): PDF inclusion: found PDF 
 version <1.5>, but at most version <1.4> allowed
-<../img/torusSrov.pdf, id=491, 361.35pt x 252.945pt>
+<../img/torusSrov.pdf, id=493, 361.35pt x 252.945pt>
 File: ../img/torusSrov.pdf Graphic file (type pdf)
 <use ../img/torusSrov.pdf>
 Package pdftex.def Info: ../img/torusSrov.pdf  used on input line 178.
@@ -3683,7 +3683,7 @@ Package pdftex.def Info: ../img/torusSrov.pdf  used on input line 178.
 
 pdfTeX warning: pdflatex (file ../img/torus2.pdf): PDF inclusion: found PDF ver
 sion <1.5>, but at most version <1.4> allowed
-<../img/torus2.pdf, id=492, 361.35pt x 252.945pt>
+<../img/torus2.pdf, id=494, 361.35pt x 252.945pt>
 File: ../img/torus2.pdf Graphic file (type pdf)
 <use ../img/torus2.pdf>
 Package pdftex.def Info: ../img/torus2.pdf  used on input line 184.
@@ -3692,7 +3692,7 @@ Package pdftex.def Info: ../img/torus2.pdf  used on input line 184.
 
 pdfTeX warning: pdflatex (file ../img/torusNe2FIT.pdf): PDF inclusion: found PD
 F version <1.5>, but at most version <1.4> allowed
-<../img/torusNe2FIT.pdf, id=494, 361.35pt x 252.945pt>
+<../img/torusNe2FIT.pdf, id=496, 361.35pt x 252.945pt>
 File: ../img/torusNe2FIT.pdf Graphic file (type pdf)
 <use ../img/torusNe2FIT.pdf>
 Package pdftex.def Info: ../img/torusNe2FIT.pdf  used on input line 192.
@@ -3748,10 +3748,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 209.
  ) 
 Here is how much of TeX's memory you used:
- 60396 strings out of 492982
- 1360546 string characters out of 6132512
- 1483305 words of memory out of 5000000
- 62929 multiletter control sequences out of 15000+600000
+ 60398 strings out of 492982
+ 1360589 string characters out of 6132512
+ 1488118 words of memory out of 5000000
+ 62930 multiletter control sequences out of 15000+600000
  644669 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  158i,19n,402p,10380b,3396s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3779,9 +3779,9 @@ live/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2017/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on prace.pdf (36 pages, 2755611 bytes).
+Output written on prace.pdf (36 pages, 2761005 bytes).
 PDF statistics:
- 730 PDF objects out of 1000 (max. 8388607)
- 145 named destinations out of 1000 (max. 500000)
+ 733 PDF objects out of 1000 (max. 8388607)
+ 146 named destinations out of 1000 (max. 500000)
  317 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,7 +1,7 @@
 % Metadata k uložení do PDF, podrobnější popis viz dokumentace balíčku pdfx.
 
-\Author{Jméno Příjmení}
-\Title{Název práce}
-\Keywords{klíčová slova\sep další taková\sep ještě jiná}
-\Subject{Abstrakt práce}
+\Author{Anna Gajdová}
+\Title{Jonesův polynom}
+\Keywords{teorie uzlů\sep Jonesův polynom\sep uzlový invariant}
+\Subject{Tématem této práce je Jonesův polynom daného uzlu a jeho výpočet. Nejprve definujeme Jonesův polynom dvěma způsoby: pomocí skein vztahů a~pomocí závorkového polynomu a dokážeme ekvivalenci těchto definic. Dále na základě vztahu Jonesova a závorkového polynomu odvodíme algoritmus na jeho výpočet. Dokážeme, že algoritmus má časovou složitost O(2^(0,823n)), kde n značí počet křížení linkového diagramu. Nakonec shrneme výsledky testování algoritmu a jeho variant na datech. Algoritmus otestujeme mimo jiné na  malých tabulkových uzlech, větších náhodných uzlech a torusových uzlech. U~nejrychlejší varianty algoritmu odhadneme průměrnou časovou složitost výpočtu na náhodných uzlech O(2^(0,487n + o(n))).}
 \Publisher{Univerzita Karlova}

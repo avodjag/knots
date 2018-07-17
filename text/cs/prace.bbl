@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{jones1985}
 Vaughan F.~R. Jones.
@@ -22,6 +22,12 @@ Colin Adams.
 Vaughan F.~R. Jones.
 \newblock The {J}ones {P}olynomial.
 \newblock \url{https://math.berkeley.edu/~vfr/jones.pdf}, 2005.
+
+\bibitem{weiping2016lecture}
+Li~Weiping.
+\newblock {\em {L}ecture notes on knot invariants}.
+\newblock World Scientific, Singapore Hackensack, 2016.
+\newblock {I}{S}{B}{N} 978-981-4675-97-0.
 
 \bibitem{jaeger_vertigan_welsh_1990}
 F.~Jaeger, D.~L. Vertigan,, D.~J.~A. Welsh.

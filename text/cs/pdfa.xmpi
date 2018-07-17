@@ -57,15 +57,15 @@
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
          <dc:format>application/pdf</dc:format> 
-         <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Název práce</rdf:li></rdf:Alt></dc:title>
-         <dc:creator><rdf:Seq><rdf:li>Jméno Příjmení</rdf:li></rdf:Seq></dc:creator>
+         <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Jonesův polynom</rdf:li></rdf:Alt></dc:title>
+         <dc:creator><rdf:Seq><rdf:li>Anna Gajdová</rdf:li></rdf:Seq></dc:creator>
          <dc:publisher><rdf:Bag><rdf:li>Univerzita Karlova</rdf:li></rdf:Bag></dc:publisher>
          
          
-         <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Abstrakt práce</rdf:li></rdf:Alt></dc:description>
-         <dc:subject><rdf:Bag><rdf:li>klíčová slova</rdf:li>
-     <rdf:li>další taková</rdf:li>
-     <rdf:li>ještě jiná</rdf:li></rdf:Bag></dc:subject>
+         <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Tématem této práce je Jonesův polynom daného uzlu a jeho výpočet. Nejprve definujeme Jonesův polynom dvěma způsoby: pomocí skein vztahů a~pomocí závorkového polynomu a dokážeme ekvivalenci těchto definic. Dále na základě vztahu Jonesova a závorkového polynomu odvodíme algoritmus na jeho výpočet. Dokážeme, že algoritmus má časovou složitost O(2^(0,823n)), kde n značí počet křížení linkového diagramu. Nakonec shrneme výsledky testování algoritmu a jeho variant na datech. Algoritmus otestujeme mimo jiné na malých tabulkových uzlech, větších náhodných uzlech a torusových uzlech. U~nejrychlejší varianty algoritmu odhadneme průměrnou časovou složitost výpočtu na náhodných uzlech O(2^(0,487n + o(n))).</rdf:li></rdf:Alt></dc:description>
+         <dc:subject><rdf:Bag><rdf:li>teorie uzlů</rdf:li>
+     <rdf:li>Jonesův polynom</rdf:li>
+     <rdf:li>uzlový invariant</rdf:li></rdf:Bag></dc:subject>
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:prism="http://prismstandard.org/namespaces/basic/2.2/"> 
          
@@ -90,9 +90,9 @@
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
          <xmp:CreatorTool>LaTeX with hyperref package</xmp:CreatorTool> 
-         <xmp:ModifyDate>2018-07-17T10:11:00+02:00</xmp:ModifyDate> 
-         <xmp:CreateDate>2018-07-17T10:11:00+02:00</xmp:CreateDate> 
-         <xmp:MetadataDate>2018-07-17T10:11:00+02:00</xmp:MetadataDate> 
+         <xmp:ModifyDate>2018-07-17T14:38:35+02:00</xmp:ModifyDate> 
+         <xmp:CreateDate>2018-07-17T14:38:35+02:00</xmp:CreateDate> 
+         <xmp:MetadataDate>2018-07-17T14:38:35+02:00</xmp:MetadataDate> 
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
          
@@ -100,7 +100,7 @@
       </rdf:Description> 
       <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
          <xmpMM:DocumentID>uuid:E471EDA9-0143-B4EC-2929-27CBFE26697B</xmpMM:DocumentID> 
-         <xmpMM:InstanceID>uuid:0F92D172-963B-0347-DCA6-385DE63401F2</xmpMM:InstanceID> 
+         <xmpMM:InstanceID>uuid:062FD027-BAC8-AE5F-34E9-5C05E401BFDF</xmpMM:InstanceID> 
       </rdf:Description> 
    </rdf:RDF> 
 </x:xmpmeta> 
