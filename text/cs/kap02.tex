@@ -242,7 +242,7 @@ Každá hrana diagramu náleží dvěma stěnám, rozdělujeme tedy $4n$ hran me
 
 
 
-Popíšeme, jak mohou v rozmotaném diagramu vypadat stěny ohraničené méně než čtyřmi hranami
+Popíšeme, jak mohou v rozmotaném diagramu vypadat stěny ohraničené méně než čtyřmi hranami.
 
 Stěna s jednou hranou by v diagramu odpovídala smyčce, ty jsou už odstraněny rozmotáním.
 
@@ -317,10 +317,10 @@ Ve stěně typu B získáme vertikálním rozpojením křížení $b_1$ syna, je
 
 Ve stěně typu C není rozpojením žádného křížení rozmotání zaručeno. Ovšem rozpojením libovolného křížení získáme jednoho syna se stěnou typu A. Existuje tedy vnuk s nejvýše $n-3$ kříženími.
 
-Tímto jsme dokázali lemma~\ref{volbalemma}.varianta
+Tímto jsme dokázali lemma~\ref{volbalemma}.
 
 \subsection{Výsledný algoritmus pro výpočet závorkového polynomu} \label{varianty}
-Snažíme se zajistit možnost rozmotání u synů, budeme tedy při rozpojování preferovat křížení stěn A a B před stěnou C. Dále rozlišíme dvě varianty výsledného algoritmu: \emph{algoritmus A} navíc preferuje křížení $a_i$ před $b_1$,  \emph{algoritmus B} preferuje $b_1$ před $a_i$. Celý postup je shrnut v algoritmu~\ref{alg02:04}.
+Snažíme se zajistit možnost rozmotání u synů, budeme tedy při rozpojování preferovat křížení ve stěnách A a B před stěnou C. Dále rozlišíme dvě varianty výsledného algoritmu: \emph{algoritmus A} navíc preferuje křížení $a_i$ před $b_1$,  \emph{algoritmus B} preferuje $b_1$ před $a_i$. Celý postup je shrnut v algoritmu~\ref{alg02:04}.
 
 Původní algoritmus~\ref{alg02:03} s náhodnou volbou křížení a rozmotáváním budeme označovat \emph{algoritmus RND}.
 
@@ -400,7 +400,7 @@ Algoritmus jsme implementovali v programovacím jazyce Python.
 Práce s diagramem v PD notaci s využitím vhodných datových struktur je sice rychlá, ale náročná na rozbor všech možných případů. Ačkoli je tedy samotný algoritmus poměrně přímočarý, délka kódu narostla kvůli nutnosti rozlišení všech případů při rozpojování křížení, rozmotávání diagramu a hledání vhodného křížení.
 
 \section{Analýza složitosti algoritmu}  \label{analyza}
-V teto sekci získáme horní a dolní odhad časové složitosti algoritmu na výpočet závorkového a Jonesova polynomu. V následující analýze nezáleží, jestli se jedná o variantu A, nebo B.
+V této sekci získáme horní a dolní odhad časové složitosti algoritmu na výpočet závorkového a Jonesova polynomu. V následující analýze nezáleží, jestli se jedná o variantu A, nebo B.
 
 Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotávání. Například na diagramu, který je možné rozmotat absolutně, poběží nejhůř v kvadratickém čase vzhledem k $n$. V kvadratickém čase také algoritmus běží na jistém typu torusových uzlů, viz sekce~\ref{torus}.
 
@@ -408,7 +408,7 @@ Rychlost algoritmu je závislá na počtu křížení $n$ a na míře rozmotáv�
 
 
 \begin{tvrz}
-Výpočet Jonesova polynomu založený na algoritmu~\ref{alg02:04} na výpočet závorkového polynomu má v nejhorším případě časovou složitost  $\mathcal{O}( 2^{0,823 n })$.
+Výpočet Jonesova polynomu založený na algoritmu~\ref{alg02:04} na výpočet závorkového polynomu má v nejhorším případě časovou složitost  $\mathcal{O}\left( 2^{0,823 n }\right)$.
 \end{tvrz}
 \begin{dukaz}
 Horní odhad rychlosti algoritmu provedeme na příkladu diagramu, v~němž dojde pouze k minimálnímu rozmotávání. Nedojde tedy k rozmotání jiných křížení než těch, u kterých je to zaručeno volbou křížení k rozpojení, viz rozbor v~sekci~\ref{volba}.
@@ -459,15 +459,15 @@ T(n) \approx c_1 2^{0,823 n } + c_2 n 2^{0,088 n } + c_3 2^{0,088 n } + c_4 n + 
 \end{equation} 
 kde $c_i$ jsou jisté konstanty. \\
 
-Ze vzorce~\ref{odhadnum} plyne $$ T(n)= \mathcal{O}( 2^{0,823 n }).$$
+Ze vzorce~\ref{odhadnum} plyne $$ T(n)= \mathcal{O}\left( 2^{0,823 n }\right).$$
 
-Podle sekce~\ref{jones} je na výpočet Jonesova polynomu ze závorkového polynomu potřeba pouze lineární počet operací. Dohromady má tedy výpočet Jonesova polynomu časovou složitost $\mathcal{O}( 2^{0,823 n })$.
+Podle sekce~\ref{jones} je na výpočet Jonesova polynomu ze závorkového polynomu potřeba pouze lineární počet operací. Dohromady má tedy výpočet Jonesova polynomu časovou složitost $\mathcal{O}\left( 2^{0,823 n }\right)$.
 \end{dukaz}
 
 \subsection{Dolní odhad}
 
 \begin{tvrz} \label{dolni}
-Výpočet Jonesova polynomu založený na algoritmu~\ref{alg02:04}  na výpočet závorkového polynomu má v nejhorším případě časovou složitost  $\Omega(2^{0,75 n})$.
+Výpočet Jonesova polynomu založený na algoritmu~\ref{alg02:04}  na výpočet závorkového polynomu má v nejhorším případě časovou složitost  $\Omega\left(2^{0,75 n}\right)$.
 \end{tvrz}
 
 \begin{dukaz}
@@ -529,7 +529,7 @@ Dohromady tedy z diagramu $B_k$ rozpojováním vznikne šest diagramů $B_{k-1}$
 
 Počet operací výpočtu závorkového polynomu diagramu s $n$ kříženími tedy splňuje pro jisté kladné konstanty $c_0$, $c_1$ rekurenci
 $$ T(n) = 8T(n-4) + c_1 n + c_0 \geq 8T(n-4). $$
-Z toho plyne, že $T(n) = \Omega(8^{\frac{n}{4}})  =  \Omega(2^{0,75 n})$. \\
+Z toho plyne, že $T(n) = \Omega\left(8^{\frac{n}{4}}\right)  =  \Omega\left(2^{0,75 n}\right)$. \\
 
-Na výpočet Jonesova polynomu ze závorkového polynomu je potřeba lineární počet operací, tedy i výpočet Jonesova polynomu má časovou složitost $\Omega(2^{0,75n})$.
+Na výpočet Jonesova polynomu ze závorkového polynomu je potřeba lineární počet operací, tedy i výpočet Jonesova polynomu má časovou složitost $\Omega\left(2^{0,75n}\right)$.
 \end{dukaz}
