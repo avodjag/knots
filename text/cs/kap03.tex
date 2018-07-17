@@ -3,7 +3,8 @@
 \chapter{Testování algoritmu na datech}
 
 V této části shrneme výsledky implementace výpočtu Jonesova polynomu na malých uzlech, náhodých uzlech a na speciálních typech uzlů.
-Budeme se zabývat algoritmy A, B a RND, které byly popsány v sekci~\ref{varianty}.
+Budeme se zabývat algoritmy A, B a RND, které byly popsány v sekci~\ref{varianty}. \\
+Ve zbytku práce nebudeme pro přehlednost rozlišovat mezi linkem (či uzlem) a~jeho diagramem.
 
 \section{Malé tabulkové uzly}
 
@@ -28,7 +29,7 @@ Ze srovnání průměrných dob běhu plyne, že nejlepšího času dosahuje alg
 \section{Náhodné uzly a linky}
 
 \subsection{Generování náhodných linků a uzlů}
-Náhodné linky jsme generovali pomocí rovinných grafů, neboť mezi linky a rovinnými grafy existuje vzájemně jednoznačná korespondence~\cite{Adams2004}. (Jedná se o jinou korespondenci než mezi linky a rovinnými grafy s vrcholy stupně čtyři popsanou v sekci~\ref{jakograf}).
+Náhodné linky jsme generovali pomocí rovinných grafů, neboť mezi diagramy linků a rovinnými grafy existuje vzájemně jednoznačná korespondence~\cite{Adams2004}. (Jedná se o jinou korespondenci než mezi linky a rovinnými grafy s vrcholy stupně čtyři popsanou v sekci~\ref{jakograf}).
 
 \subsubsection{Převod rovinného grafu na link}
 Rovinný graf s $n$ hranami odpovídá linku s $n$ kříženími. Každé hraně přiřadíme náhodně kladné, či záporné znamení a umístíme na ni křížení příslušného typu. Úseky mezi kříženími jsou tím již jednoznačně určené: musí spojovat křížení mezi nejbližšími hranami tak, aby nevznikla žádná další křížení, viz obrázek~\ref{linktriang}.
@@ -86,13 +87,10 @@ Získali jsme tak rovinný graf s původními body jako vrcholy. Pokud je počet
 
 
 \subsubsection{Implementace}
-
-Triangulace bodů je snadno implementovatelný geometrický problém. 
-
-Se získaným rovinným grafem pracujeme jako s množinou vrcholů a k nim příslušným hranám. Hrany jsou seřazeny podle pořadí, jak k danému vrcholu v~nakreslení grafu přiléhají. Z této struktury je již možné získat PD notaci příslušného linku.
+Se získaným rovinným grafem pracujeme jako s množinou vrcholů a k nim příslušnými hranámi. Hrany jsou seřazeny podle pořadí, jak k danému vrcholu v~nakreslení grafu přiléhají. Z této struktury je již možné získat PD notaci příslušného linku.
 
 
-V PD notaci lze procházkou po vláknu snadno poznat, jestli je vygenerovaný link uzlem. Také jsme jednoduchou operací schopni uzel změnit na alternující, tedy takový, v němž se střídají křížení vedená zdola a svrchu.
+V PD notaci lze procházkou po vláknu snadno poznat, jestli je vygenerovaný link uzlem. Také jsme jednoduchou operací schopni diagram změnit na alternující, tedy takový, v němž se střídají křížení vedená zdola a shora.
 
 Dokážeme tedy nagenerovat uzly, alternující uzly a linky libovolné velikosti.
 
@@ -194,7 +192,7 @@ Všechny stěny těchto uzlů jsou ohraničené pouze dvěma hranami. Rozpojení
 \label{obr03:torusFIT}
 \end{figure}
 
-Na torusových uzlech tvaru ($p$, $q$), kde $q\neq 2$ již doba běhu algoritmu roste exponenciálně, viz graf~\ref{obr03:torusFIT}). Opět jsme provedli odhad průměrných časových složitostí, viz tabulka~\ref{torustab}.
+Na torusových uzlech tvaru ($p$, $q$), kde $q\neq 2$, již doba běhu algoritmu roste exponenciálně, viz graf~\ref{obr03:torusFIT}). Opět jsme provedli odhad průměrných časových složitostí, viz tabulka~\ref{torustab}.
 
 \begin{table}[t]
 \centering
@@ -209,4 +207,4 @@ Na torusových uzlech tvaru ($p$, $q$), kde $q\neq 2$ již doba běhu algoritmu 
     
 \end{table}
 
-Všechny varianty algoritmů jsou na torusových uzlech pomalejší než na náhodných datech. Nejrychlejší je opět algoritmus A s průměrnou časovou složitostí $\mathcal{O}\left(2^{0,533 n + o(n)}\right)$. Naopak nejpomalejší je algoritmus B se složitostí $\mathcal{O}\left(2^{0,638 n + o(n)}\right)$, což je nejvyšší složitost, kterou jsme při testování získali.
+Všechny varianty algoritmů jsou na torusových uzlech pomalejší než na náhodných datech. Nejrychlejší je opět algoritmus A s odhadem  průměrné časové složitosti $\mathcal{O}\left(2^{0,533 n + o(n)}\right)$. Naopak nejpomalejší je algoritmus B s odhadem průměrné složitosti $\mathcal{O}\left(2^{0,638 n + o(n)}\right)$, což je nejvyšší průměrná složitost, kterou jsme při testování získali.

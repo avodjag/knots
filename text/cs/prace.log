@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  17 JUL 2018 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.25)  17 JUL 2018 20:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3615,7 +3615,7 @@ pdfTeX warning: pdflatex (file ../img/multiTable.pdf): PDF inclusion: found PDF
 <../img/multiTable.pdf, id=412, 361.35pt x 252.945pt>
 File: ../img/multiTable.pdf Graphic file (type pdf)
 <use ../img/multiTable.pdf>
-Package pdftex.def Info: ../img/multiTable.pdf  used on input line 11.
+Package pdftex.def Info: ../img/multiTable.pdf  used on input line 12.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 
 
@@ -3624,7 +3624,7 @@ version <1.5>, but at most version <1.4> allowed
 <../img/srovTable.pdf, id=416, 361.35pt x 252.945pt>
 File: ../img/srovTable.pdf Graphic file (type pdf)
 <use ../img/srovTable.pdf>
-Package pdftex.def Info: ../img/srovTable.pdf  used on input line 22.
+Package pdftex.def Info: ../img/srovTable.pdf  used on input line 23.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 
 
@@ -3633,7 +3633,7 @@ pdfTeX warning: pdflatex (file ../img/trianguzel.pdf): PDF inclusion: found PDF
 <../img/trianguzel.pdf, id=421, 593.96906pt x 481.8pt>
 File: ../img/trianguzel.pdf Graphic file (type pdf)
 <use ../img/trianguzel.pdf>
-Package pdftex.def Info: ../img/trianguzel.pdf  used on input line 78.
+Package pdftex.def Info: ../img/trianguzel.pdf  used on input line 79.
 (pdftex.def)             Requested size: 178.1921pt x 144.5411pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -3649,7 +3649,7 @@ ersion <1.5>, but at most version <1.4> allowed
 <../img/knotsFIT.pdf, id=447, 361.35pt x 252.945pt>
 File: ../img/knotsFIT.pdf Graphic file (type pdf)
 <use ../img/knotsFIT.pdf>
-Package pdftex.def Info: ../img/knotsFIT.pdf  used on input line 104.
+Package pdftex.def Info: ../img/knotsFIT.pdf  used on input line 102.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 
 
@@ -3658,7 +3658,7 @@ DF version <1.5>, but at most version <1.4> allowed
 <../img/alt_knotsFIT.pdf, id=448, 361.35pt x 252.945pt>
 File: ../img/alt_knotsFIT.pdf Graphic file (type pdf)
 <use ../img/alt_knotsFIT.pdf>
-Package pdftex.def Info: ../img/alt_knotsFIT.pdf  used on input line 110.
+Package pdftex.def Info: ../img/alt_knotsFIT.pdf  used on input line 108.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 
 
@@ -3667,7 +3667,7 @@ ersion <1.5>, but at most version <1.4> allowed
 <../img/linksFIT.pdf, id=449, 361.35pt x 252.945pt>
 File: ../img/linksFIT.pdf Graphic file (type pdf)
 <use ../img/linksFIT.pdf>
-Package pdftex.def Info: ../img/linksFIT.pdf  used on input line 116.
+Package pdftex.def Info: ../img/linksFIT.pdf  used on input line 114.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 [21 <../img/trianguzel.pdf>] [22 <../img/knotsFIT.pdf> <../img/alt_knotsFIT.pdf
 >] [23 <../img/linksFIT.pdf>]
@@ -3677,7 +3677,7 @@ version <1.5>, but at most version <1.4> allowed
 <../img/torusSrov.pdf, id=493, 361.35pt x 252.945pt>
 File: ../img/torusSrov.pdf Graphic file (type pdf)
 <use ../img/torusSrov.pdf>
-Package pdftex.def Info: ../img/torusSrov.pdf  used on input line 178.
+Package pdftex.def Info: ../img/torusSrov.pdf  used on input line 176.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 
 
@@ -3686,7 +3686,7 @@ sion <1.5>, but at most version <1.4> allowed
 <../img/torus2.pdf, id=494, 361.35pt x 252.945pt>
 File: ../img/torus2.pdf Graphic file (type pdf)
 <use ../img/torus2.pdf>
-Package pdftex.def Info: ../img/torus2.pdf  used on input line 184.
+Package pdftex.def Info: ../img/torus2.pdf  used on input line 182.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 
 
@@ -3695,7 +3695,7 @@ F version <1.5>, but at most version <1.4> allowed
 <../img/torusNe2FIT.pdf, id=496, 361.35pt x 252.945pt>
 File: ../img/torusNe2FIT.pdf Graphic file (type pdf)
 <use ../img/torusNe2FIT.pdf>
-Package pdftex.def Info: ../img/torusNe2FIT.pdf  used on input line 192.
+Package pdftex.def Info: ../img/torusNe2FIT.pdf  used on input line 190.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 [24]) [25] [26 <../img/torusSrov.pdf> <../img/torus2.pdf>] [27 <../img/torusNe2
 FIT.pdf>]
@@ -3749,8 +3749,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 209.
  ) 
 Here is how much of TeX's memory you used:
  60398 strings out of 492982
- 1360589 string characters out of 6132512
- 1488118 words of memory out of 5000000
+ 1360588 string characters out of 6132512
+ 1489118 words of memory out of 5000000
  62930 multiletter control sequences out of 15000+600000
  644669 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3779,7 +3779,7 @@ live/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2017/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on prace.pdf (36 pages, 2761005 bytes).
+Output written on prace.pdf (36 pages, 2761169 bytes).
 PDF statistics:
  733 PDF objects out of 1000 (max. 8388607)
  146 named destinations out of 1000 (max. 500000)

@@ -6,7 +6,7 @@ Cílem této kapitoly je definovat Jonesův polynom, dokázat jeho základní vl
 Matematický \emph{uzel} je vnoření kružnice do trojrozměrného euklidovského prostoru. Dva uzly jsou \emph{ekvivalentní}, pokud mezi nimi existuje homeomorfismus zachovávající orientaci. \emph{Invariant} je zobrazení, které ekvivalentním uzlům přiřadí stejnou hodnotu.
 \emph{Link} je více disjunktních či propletených uzlů. Pokud není řečeno jinak, pracujeme v textu s linky. 
 \\
-Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho \emph{diagramem}. Diagram je vhodné rovinné nakreslení určité linkové projekce, v němž je rozlišeno, jestli křížení vedou \emph{svrchu}, nebo \emph{zdola}.  \emph{Triviální uzel} je uzel, k němuž existuje diagram bez křížení.
+Při definování Jonesova polynomu je důležité rozlišovat mezi linkem a jeho \emph{diagramem}. Diagram je vhodné rovinné nakreslení určité linkové projekce, v němž je rozlišeno, jestli křížení vedou \emph{shora}, nebo \emph{zdola}. \emph{Alternující uzel} je uzel s diagramem, v němž se křížení vedená shora a zdola střídají. \emph{Triviální uzel} je uzel, k němuž existuje diagram bez křížení.
 \\
 V diagramu \emph{orientovaného} linku rozlišujeme křížení s \emph{kladnou} a se \emph{zápornou orientací}, viz obrázek~\ref{orientace}.
 
@@ -14,7 +14,7 @@ V diagramu \emph{orientovaného} linku rozlišujeme křížení s \emph{kladnou}
 
 \centering 
 \begin{subfigure}[t]{0.4\linewidth}\centering
-\begin{tikzpicture}[scale=1.6] 
+\begin{tikzpicture}[scale=1.5] 
 \draw [thick] (0,0) -- (0.33,0.33);
 \draw [thick,->] (0.66,0.66)-- (1,1);
 \draw [thick,->] (0,1)  -- (1,0);
@@ -22,7 +22,7 @@ V diagramu \emph{orientovaného} linku rozlišujeme křížení s \emph{kladnou}
 \caption{Kladná orientace.} 
 \end{subfigure}
 \begin{subfigure}[t]{0.4\linewidth}\centering
-\begin{tikzpicture}[scale=1.6]
+\begin{tikzpicture}[scale=1.5]
 \draw [thick,->] (0,0) -- (1,1);
 \draw [thick] (0,1) -- (0.33, 0.66);
 \draw [thick,->] (0.66, 0.33) -- (1,0);
@@ -41,7 +41,7 @@ Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_
 \begin{figure}[h]    
 \centering 
 \begin{subfigure}[t]{0.4\linewidth}\centering
-\begin{tikzpicture}[scale=1.6] 
+\begin{tikzpicture}[scale=1.5] 
 \draw [thick] (0,0) -- (0.33,0.33);
 \draw [thick,->] (0.66,0.66)-- (1,1);
 \draw [thick,->] (0,1)  -- (1,0);
@@ -49,7 +49,7 @@ Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_
 \caption{$L_+$} 
 \end{subfigure}
 \begin{subfigure}[t]{0.4\linewidth}\centering
-\begin{tikzpicture}[scale=1.6]
+\begin{tikzpicture}[scale=1.5]
 \draw [thick,->] (0,0) -- (1,1);
 \draw [thick] (0,1) -- (0.33, 0.66);
 \draw [thick,->] (0.66, 0.33) -- (1,0);
@@ -57,7 +57,7 @@ Skein vztahy určují, jaká je spojitost mezi polynomy tří linků $L_+$, $ L_
 \caption{$L_-$}
 \end{subfigure}
 \begin{subfigure}[t]{0.4\linewidth}\centering
-\begin{tikzpicture} [scale=1.6]
+\begin{tikzpicture} [scale=1.5]
 \draw  [thick,->](0,0) .. controls (1/2,1/2)  .. (1,0);
 \draw  [thick,->](0,1) .. controls (1/2,1/2)  .. (1,1);
 \end{tikzpicture}
