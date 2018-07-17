@@ -1,0 +1,10 @@
+Složka "skripty" obsahuje me skripty v jazyce Python.
+     - jones.py: výpočet Jonesova polynomu
+     - laurent.py: třída na práci s Laurentovými polynomy
+     - generator.py: generátor náhodných uzlů, linků, alternujících uzlů
+
+Ve složce "testovana_data" se nachází textové soubory s vygenerovanými náhodnými uzly a linky (jména souborů odpovídají počtu křížení), s tabulkovými uzly (z databáze Knot Info) a torusovými uzly (z databáze Knot Atlas). Všechny uzly jsou zapsané v PD notaci.
+
+Složka "vysledky_testu" obsahuje časy výpočtu algoritmů A, B a RND na jednotlivých datech. 
+U náhodných uzlů, linků, alternujících uzlů jsou výsledky zapsané v souborech podle algoritmu po řádcích ve formátu: "velikost uzlu" "čas výpočtu v sekundách" "log_2(čas výpočtu v sekundách)".
+U torusových uzlů a tabulkových uzlů jsou výsledky zapsané v souborech podle typu algoritmu po řádcích ve formátu: "jméno souboru" "počet křížení" "čas výpočtu v sekundách".
